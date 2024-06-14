@@ -5,26 +5,6 @@
 
 {% block page_content %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Plasmid Construct</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="plasmid-container">
-      <img src="https://docs.google.com/drawings/d/e/2PACX-1vQwZv-FWpMXAAX2KZZcdkJ2_GjEpe6C_F_Sim8g7pCxbVhYWnxBDyci0tv9FGV6bCHW-2vRaNzi0_QV/pub?w=960&h=720" alt="Plasmid Construct" usemap="#plasmidmap">
-      <map name="plasmidmap">
-          <area shape="circle" coords="200,200,30" alt="Origin of Replication" data-info="Origin of Replication: Essential for plasmid replication">
-          <area shape="circle" coords="300,200,30" alt="Promoter" data-info="Promoter: Drives expression of the gene">
-          <area shape="circle" coords="400,200,30" alt="Antibiotic Resistance Gene" data-info="Antibiotic Resistance Gene: Provides resistance to antibiotics">
-      </map>
-      <div id="tooltip" class="tooltip"></div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
-
 <div class="row mt-4">
   <div class="col">
     <div class="bd-callout bd-callout-info">
@@ -36,5 +16,69 @@
     </div>
   </div>
 </div>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+   height: 100vh;
+   background-color: #f0f0f0;
+  }
 
-{% endblock %}
+.plasmid-container {
+  position: relative;
+}
+
+#plasmid {
+  width: 400px;
+  height: 400px;
+  transition: opacity 0.3s;
+}
+
+.info-container {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 420px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.info-container h3 {
+  margin-top: 0;
+}</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Plasmid Construct</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="plasmid-container">
+        <img src="Plasmid.png" alt="Plasmid Construct" id="plasmid">
+        <div class="info-container" id="origin-info">
+            <h3>Origin of Replication</h3>
+            <p>Essential for plasmid replication.</p>
+        </div>
+        <div class="info-container" id="promoter-info">
+            <h3>Promoter</h3>
+            <p>Drives expression of the gene.</p>
+        </div>
+        <div class="info-container" id="antibiotic-info">
+            <h3>Antibiotic Resistance Gene</h3>
+            <p>Provides resistance to antibiotics.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
