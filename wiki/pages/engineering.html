@@ -6,6 +6,7 @@
 {% block page_content %}
 
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +15,19 @@
 </head>
 <body>
     <div class="plasmid-container">
-        <img src="https://docs.google.com/drawings/d/e/2PACX-1vQwZv-FWpMXAAX2KZZcdkJ2_GjEpe6C_F_Sim8g7pCxbVhYWnxBDyci0tv9FGV6bCHW-2vRaNzi0_QV/pub?w=960&h=720" alt="Plasmid Construct" usemap="#plasmidmap">
-        <map name="plasmidmap">
-            <area shape="circle" coords="200,200,30" alt="Origin of Replication" data-info="Origin of Replication: Essential for plasmid replication">
-            <area shape="circle" coords="300,200,30" alt="Promoter" data-info="Promoter: Drives expression of the gene">
-            <area shape="circle" coords="400,200,30" alt="Antibiotic Resistance Gene" data-info="Antibiotic Resistance Gene: Provides resistance to antibiotics">
-        </map>
-        <div id="tooltip" class="tooltip"></div>
+        <img src="plasmid.png" alt="Plasmid Construct" id="plasmid">
+        <div class="info-container" id="origin-info">
+            <h3>Origin of Replication</h3>
+            <p>Essential for plasmid replication.</p>
+        </div>
+        <div class="info-container" id="promoter-info">
+            <h3>Promoter</h3>
+            <p>Drives expression of the gene.</p>
+        </div>
+        <div class="info-container" id="antibiotic-info">
+            <h3>Antibiotic Resistance Gene</h3>
+            <p>Provides resistance to antibiotics.</p>
+        </div>
     </div>
     <script src="plasmid.js"></script>
 </body>
