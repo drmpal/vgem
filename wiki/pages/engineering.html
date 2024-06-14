@@ -5,6 +5,26 @@
 
 {% block page_content %}
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Plasmid Construct</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="plasmid-container">
+      <img src="plasmid.png" alt="Plasmid Construct" usemap="#plasmidmap">
+      <map name="plasmidmap">
+          <area shape="circle" coords="200,200,30" alt="Origin of Replication" data-info="Origin of Replication: Essential for plasmid replication">
+          <area shape="circle" coords="300,200,30" alt="Promoter" data-info="Promoter: Drives expression of the gene">
+          <area shape="circle" coords="400,200,30" alt="Antibiotic Resistance Gene" data-info="Antibiotic Resistance Gene: Provides resistance to antibiotics">
+      </map>
+      <div id="tooltip" class="tooltip"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
 <div class="row mt-4">
   <div class="col">
     <div class="bd-callout bd-callout-info">
