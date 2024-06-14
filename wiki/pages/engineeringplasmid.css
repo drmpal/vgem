@@ -13,9 +13,12 @@ body {
     position: relative;
 }
 
-#plasmid {
+#plasmid-svg {
     width: 400px;
     height: 400px;
+}
+
+path {
     transition: opacity 0.3s;
 }
 

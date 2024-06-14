@@ -7,6 +7,8 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +17,12 @@
 </head>
 <body>
     <div class="plasmid-container">
-        <img src="https://blog.addgene.org/hs-fs/hubfs/01_21_to_03_21/WhatIsAPlasmid_update_JT_2021_01_28/Plasmid%20Map_00000.png?width=1800&name=Plasmid%20Map_00000.png" alt="Plasmid Construct" id="plasmid">
+        <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Define arcs for different plasmid parts -->
+            <path id="origin" d="M100,100 L100,20 A80,80 0 0,1 180,100 z" fill="none" stroke="blue" stroke-width="20"/>
+            <path id="promoter" d="M100,100 L180,100 A80,80 0 0,1 100,180 z" fill="none" stroke="green" stroke-width="20"/>
+            <path id="antibiotic" d="M100,100 L100,180 A80,80 0 0,1 20,100 z" fill="none" stroke="red" stroke-width="20"/>
+        </svg>
         <div class="info-container" id="origin-info">
             <h3>Origin of Replication</h3>
             <p>Essential for plasmid replication.</p>
@@ -31,6 +38,8 @@
     </div>
     <script src="plasmid.js"></script>
 </body>
+</html>
+
 
 <div class="row mt-4">
   <div class="col">
