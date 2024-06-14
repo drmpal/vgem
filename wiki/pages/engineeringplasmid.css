@@ -16,7 +16,6 @@ body {
 #plasmid-svg {
     width: 200px;
     height: 200px;
-    transform: scale(0.75); /* Scale down the plasmid image */
 }
 
 path {
@@ -27,7 +26,7 @@ path {
     display: none; /* Initially hide all info containers */
     position: absolute;
     top: 20px;
-    left: 240px; /* Adjusted for scaled-down SVG */
+    left: 220px; /* Position the info box next to the SVG */
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 10px;
@@ -39,4 +38,3 @@ path {
 .info-container h3 {
     margin-top: 0;
 }
-
