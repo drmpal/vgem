@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plasmid Construct</title>
-    <link rel="stylesheet" href="engineeringplasmid.css">
+    <link rel="stylesheet" href="plasmid.css">
 </head>
 <body>
     <div class="plasmid-container">
@@ -22,21 +22,87 @@
             <path id="promoter" d="M100,100 L100,20 A80,80 0 0,1 180,100 z" fill="none" stroke="green" stroke-width="10"/>
             <path id="coding-sequence" d="M100,100 L180,100 A80,80 0 0,1 100,180 z" fill="none" stroke="blue" stroke-width="10"/>
             <path id="terminator" d="M100,100 L100,180 A80,80 0 0,1 20,100 z" fill="none" stroke="red" stroke-width="10"/>
+            
+            <!-- Text along arcs -->
+            <text>
+                <textPath href="#promoter" startOffset="50%" text-anchor="middle" fill="green" font-size="12">pT7lac</textPath>
+            </text>
+            <text>
+                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" fill="blue" font-size="12">PNLIP</textPath>
+            </text>
+            <text>
+                <textPath href="#terminator" startOffset="50%" text-anchor="middle" fill="red" font-size="12">B0015</textPath>
+            </text>
         </svg>
         <div class="info-container" id="promoter-info">
-            <h3>Promoter Region</h3>
+            <h3>Promoter Region (pT7lac)</h3>
             <p>Drives the expression of the gene.</p>
         </div>
         <div class="info-container" id="coding-sequence-info">
-            <h3>Coding Sequence</h3>
+            <h3>Coding Sequence (PNLIP)</h3>
             <p>Encodes the protein of interest.</p>
         </div>
         <div class="info-container" id="terminator-info">
-            <h3>Terminator</h3>
+            <h3>Terminator (B0015)</h3>
             <p>Signals the end of transcription.</p>
         </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const promoter = document.getElementById('promoter');
+    const codingSequence = document.getElementById('coding-sequence');
+    const terminator = document.getElementById('terminator');
+    
+    const promoterInfo = document.getElementById('promoter-info');
+    const codingSequenceInfo = document.getElementById('coding-sequence-info');
+    const terminatorInfo = document.getElementById('terminator-info');
+
+    const showInfo = (infoContainer, path) => {
+        // Hide all info containers first
+        promoterInfo.style.display = 'none';
+        codingSequenceInfo.style.display = 'none';
+        terminatorInfo.style.display = 'none';
+
+        // Show the relevant info container
+        infoContainer.style.display = 'block';
+
+        // Dim all paths first
+        promoter.style.opacity = '0.3';
+        codingSequence.style.opacity = '0.3';
+        terminator.style.opacity = '0.3';
+
+        // Highlight the relevant path
+        path.style.opacity = '1';
+    };
+
+    const hideInfo = () => {
+        // Hide all info containers
+        promoterInfo.style.display = 'none';
+        codingSequenceInfo.style.display = 'none';
+        terminatorInfo.style.display = 'none';
+
+        // Reset all paths to full opacity
+        promoter.style.opacity = '1';
+        codingSequence.style.opacity = '1';
+        terminator.style.opacity = '1';
+    };
+
+    promoter.addEventListener('mouseover', () => {
+        showInfo(promoterInfo, promoter);
+    });
+    promoter.addEventListener('mouseout', hideInfo);
+
+    codingSequence.addEventListener('mouseover', () => {
+        showInfo(codingSequenceInfo, codingSequence);
+    });
+    codingSequence.addEventListener('mouseout', hideInfo);
+
+    terminator.addEventListener('mouseover', () => {
+        showInfo(terminatorInfo, terminator);
+    });
+    terminator.addEventListener('mouseout', hideInfo);
+});
+      </script>
     </div>
-    <script src="plasmid.js"></script>
 </body>
 </html>
 
