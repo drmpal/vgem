@@ -7,33 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const antibioticInfo = document.getElementById('antibiotic-info');
 
     const showInfo = (infoContainer, path) => {
-        path.style.opacity = '0.3';
+        // Hide all info containers first
+        originInfo.style.display = 'none';
+        promoterInfo.style.display = 'none';
+        antibioticInfo.style.display = 'none';
+        
+        // Show the relevant info container
         infoContainer.style.display = 'block';
+
+        // Dim all paths first
+        origin.style.opacity = '0.3';
+        promoter.style.opacity = '0.3';
+        antibiotic.style.opacity = '0.3';
+        
+        // Highlight the relevant path
+        path.style.opacity = '1';
     };
 
-    const hideInfo = (infoContainer, path) => {
-        path.style.opacity = '1';
-        infoContainer.style.display = 'none';
+    const hideInfo = () => {
+        // Hide all info containers
+        originInfo.style.display = 'none';
+        promoterInfo.style.display = 'none';
+        antibioticInfo.style.display = 'none';
+
+        // Reset all paths to full opacity
+        origin.style.opacity = '1';
+        promoter.style.opacity = '1';
+        antibiotic.style.opacity = '1';
     };
 
     origin.addEventListener('mouseover', () => {
         showInfo(originInfo, origin);
     });
-    origin.addEventListener('mouseout', () => {
-        hideInfo(originInfo, origin);
-    });
+    origin.addEventListener('mouseout', hideInfo);
 
     promoter.addEventListener('mouseover', () => {
         showInfo(promoterInfo, promoter);
     });
-    promoter.addEventListener('mouseout', () => {
-        hideInfo(promoterInfo, promoter);
-    });
+    promoter.addEventListener('mouseout', hideInfo);
 
     antibiotic.addEventListener('mouseover', () => {
         showInfo(antibioticInfo, antibiotic);
     });
-    antibiotic.addEventListener('mouseout', () => {
-        hideInfo(antibioticInfo, antibiotic);
-    });
+    antibiotic.addEventListener('mouseout', hideInfo);
 });
