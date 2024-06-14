@@ -1,51 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const plasmid = document.getElementById('plasmid');
-    const originInfo = document.getElementById('origin-info');
-    const promoterInfo = document.getElementById('promoter-info');
-    const antibioticInfo = document.getElementById('antibiotic-info');
+    const tooltip = document.getElementById('tooltip');
+    const areas = document.querySelectorAll('area');
 
-    const showInfo = (infoContainer) => {
-        plasmid.style.opacity = '0.3';
-        infoContainer.style.display = 'block';
-    };
+    areas.forEach(area => {
+        area.addEventListener('mouseover', (event) => {
+            const info = event.target.getAttribute('data-info');
+            tooltip.textContent = info;
+            tooltip.style.display = 'block';
+            const rect = event.target.getBoundingClientRect();
+            tooltip.style.left = `${rect.left + window.scrollX}px`;
+            tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 5}px`;
+        });
 
-    const hideInfo = (infoContainer) => {
-        plasmid.style.opacity = '1';
-        infoContainer.style.display = 'none';
-    };
+        area.addEventListener('mousemove', (event) => {
+            const rect = event.target.getBoundingClientRect();
+            tooltip.style.left = `${rect.left + window.scrollX}px`;
+            tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight - 5}px`;
+        });
 
-    plasmid.addEventListener('mousemove', (event) => {
-        const rect = plasmid.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        const radius = rect.width / 2;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const distanceFromCenter = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
-
-        if (distanceFromCenter < radius / 3) {
-            showInfo(originInfo);
-            hideInfo(promoterInfo);
-            hideInfo(antibioticInfo);
-        } else if (distanceFromCenter < 2 * radius / 3) {
-            showInfo(promoterInfo);
-            hideInfo(originInfo);
-            hideInfo(antibioticInfo);
-        } else if (distanceFromCenter < radius) {
-            showInfo(antibioticInfo);
-            hideInfo(originInfo);
-            hideInfo(promoterInfo);
-        } else {
-            hideInfo(originInfo);
-            hideInfo(promoterInfo);
-            hideInfo(antibioticInfo);
-        }
-    });
-
-    plasmid.addEventListener('mouseleave', () => {
-        hideInfo(originInfo);
-        hideInfo(promoterInfo);
-        hideInfo(antibioticInfo);
+        area.addEventListener('mouseout', () => {
+            tooltip.style.display = 'none';
+        });
     });
 });
