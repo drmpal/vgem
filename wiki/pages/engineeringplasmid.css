@@ -14,9 +14,9 @@ body {
 }
 
 #plasmid-svg {
-    width: 200px;
-    height: 200px;
-    transform: scale(0.75); /* Scale down the plasmid image */
+    width: 100px;
+    height: 100px;
+    transform: scale(0.50); /* Scale down the plasmid image */
 }
 
 path {
@@ -31,7 +31,7 @@ path {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
