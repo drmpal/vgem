@@ -13,14 +13,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plasmid Construct</title>
-    <link rel="stylesheet" href="engineeringplasmid.css">
 </head>
 <body>
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
             <!-- Promoter arc with black border -->
-            <path id="promoter-border" d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="black" stroke-width="8"/>
+            <path id="promoter-border" d="M43.431,43.431 A80,80 0 0,1 79,22.805" fill="none" stroke="black" stroke-width="8"/>
             <path id="promoter" d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="green" stroke-width="6"/>
 
             <!-- Coding sequence arc with black border -->
@@ -33,22 +32,22 @@
             
             <!-- Text along arcs -->
             <text>
-                <textPath href="#promoter" startOffset="50%" text-anchor="middle" fill="green" font-size="12">pT7lac</textPath>
+                <textPath href="#promoter" startOffset="80%" text-anchor="middle" fill="green" font-size="12">pT7lac</textPath>
             </text>
             <text>
-                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" fill="blue" font-size="12">PNLIP</textPath>
+                <textPath href="#coding-sequence" startOffset="80%" text-anchor="middle" fill="blue" font-size="12">PNLIP</textPath>
             </text>
             <text>
-                <textPath href="#terminator" startOffset="50%" text-anchor="middle" fill="red" font-size="12">B0015</textPath>
+                <textPath href="#terminator" startOffset="80%" text-anchor="middle" fill="red" font-size="12">B0015</textPath>
             </text>
         </svg>
         <div class="info-container" id="promoter-info">
             <h3>Promoter Region (pT7lac)</h3>
-            <p>Drives the expression of the gene.</p>
+            <p>Gene initation point regulated by glucose.</p>
         </div>
         <div class="info-container" id="coding-sequence-info">
             <h3>Coding Sequence (PNLIP)</h3>
-            <p>Encodes the protein of interest.</p>
+            <p>Encodes the human pancreatic lipase gene.</p>
         </div>
         <div class="info-container" id="terminator-info">
             <h3>Terminator (B0015)</h3>
