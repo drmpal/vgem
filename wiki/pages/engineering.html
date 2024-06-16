@@ -13,15 +13,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plasmid Construct</title>
-    <link rel="stylesheet" href="plasmid.css">
+    <link rel="stylesheet" href="engineeringplasmid.css">
 </head>
 <body>
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
-            <path id="promoter" d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="green" stroke-width="4"/>
-            <path id="coding-sequence" d="M180,100 A80,80 0 0,1 100,180" fill="none" stroke="blue" stroke-width="4"/>
-            <path id="terminator" d="M100,180 A80,80 0 0,1 20,100" fill="none" stroke="red" stroke-width="4"/>
+            <!-- Promoter arc with black border -->
+            <path id="promoter-border" d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="black" stroke-width="8"/>
+            <path id="promoter" d="M100,20 A80,80 0 0,1 180,100" fill="none" stroke="green" stroke-width="6"/>
+
+            <!-- Coding sequence arc with black border -->
+            <path id="coding-sequence-border" d="M180,100 A80,80 0 0,1 100,180" fill="none" stroke="black" stroke-width="8"/>
+            <path id="coding-sequence" d="M180,100 A80,80 0 0,1 100,180" fill="none" stroke="blue" stroke-width="6"/>
+
+            <!-- Terminator arc with black border -->
+            <path id="terminator-border" d="M100,180 A80,80 0 0,1 20,100" fill="none" stroke="black" stroke-width="8"/>
+            <path id="terminator" d="M100,180 A80,80 0 0,1 20,100" fill="none" stroke="red" stroke-width="6"/>
             
             <!-- Text along arcs -->
             <text>
@@ -46,9 +54,14 @@
             <h3>Terminator (B0015)</h3>
             <p>Signals the end of transcription.</p>
         </div>
+    </div>
+</body>
+</html>
 
-    <style>
-        body {
+
+<style>
+    /* Text box description display */
+    body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -64,8 +77,8 @@
         }
         
         #plasmid-svg {
-            width: 200px;
-            height: 200px;
+            width: 400px;
+            height: 400px;
         }
         
         path {
@@ -88,10 +101,11 @@
         .info-container h3 {
             margin-top: 0;
         }
-    </style>
+</style>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
+<script>
+    // Appear & reappear sequence
+document.addEventListener('DOMContentLoaded', () => {
     const promoter = document.getElementById('promoter');
     const codingSequence = document.getElementById('coding-sequence');
     const terminator = document.getElementById('terminator');
@@ -110,12 +124,11 @@
         infoContainer.style.display = 'block';
 
         // Dim all paths first
-        promoter.style.opacity = '0.3';
-        codingSequence.style.opacity = '0.3';
-        terminator.style.opacity = '0.3';
+        document.querySelectorAll('path').forEach(p => p.style.opacity = '0.3');
 
-        // Highlight the relevant path
+        // Highlight the relevant path and its border
         path.style.opacity = '1';
+        document.getElementById(`${path.id}-border`).style.opacity = '1';
     };
 
     const hideInfo = () => {
@@ -125,9 +138,7 @@
         terminatorInfo.style.display = 'none';
 
         // Reset all paths to full opacity
-        promoter.style.opacity = '1';
-        codingSequence.style.opacity = '1';
-        terminator.style.opacity = '1';
+        document.querySelectorAll('path').forEach(p => p.style.opacity = '1');
     };
 
     promoter.addEventListener('mouseover', () => {
