@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-
+{% block title %}Engineering{% endblock %}
 {% block page_content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -7,53 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plasmid Construct</title>
-    <style>
-        body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
-.plasmid-container {
-    position: relative;
-}
-
-#plasmid-svg {
-    width: 400px;
-    height: 400px;
-}
-
-path {
-    transition: opacity 0.3s;
-}
-
-textPath {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-}
-
-.info-container {
-    display: none; /* Initially hide all info containers */
-    position: absolute;
-    top: 0px;
-    left: 220px; /* Position the info box next to the SVG */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-}
-
-.info-container h3 {
-    margin-top: 0;
-}
-    </style>
+    {% include 'plasmid.css' %}
 </head>
 <body>
     <div class="plasmid-container">
@@ -98,68 +52,7 @@ textPath {
             <p>Signals the end of transcription.</p>
         </div>
     </div>
-    <script>
-    // Appear & reappear sequence
-    document.addEventListener('DOMContentLoaded', () => {
-        const promoter = document.getElementById('promoter');
-        const codingSequence = document.getElementById('coding-sequence');
-        const terminator = document.getElementById('terminator');
-    
-        const promoterText = document.getElementById('promoter-text');
-        const codingSequenceText = document.getElementById('coding-sequence-text');
-        const terminatorText = document.getElementById('terminator-text');
-    
-        const promoterInfo = document.getElementById('promoter-info');
-        const codingSequenceInfo = document.getElementById('coding-sequence-info');
-        const terminatorInfo = document.getElementById('terminator-info');
-    
-        const promoterColorInput = document.getElementById('promoter-color');
-        const codingSequenceColorInput = document.getElementById('coding-sequence-color');
-        const terminatorColorInput = document.getElementById('terminator-color');
-    
-        const showInfo = (infoContainer, path) => {
-            // Hide all info containers first
-            promoterInfo.style.display = 'none';
-            codingSequenceInfo.style.display = 'none';
-            terminatorInfo.style.display = 'none';
-    
-            // Show the relevant info container
-            infoContainer.style.display = 'block';
-    
-            // Dim all paths first
-            document.querySelectorAll('path').forEach(p => p.style.opacity = '0.3');
-    
-            // Highlight the relevant path and its border
-            path.style.opacity = '1';
-            document.getElementById(`${path.id}-border`).style.opacity = '1';
-        };
-    
-        const hideInfo = () => {
-            // Hide all info containers
-            promoterInfo.style.display = 'none';
-            codingSequenceInfo.style.display = 'none';
-            terminatorInfo.style.display = 'none';
-    
-            // Reset all paths to full opacity
-            document.querySelectorAll('path').forEach(p => p.style.opacity = '1');
-        };
-    
-        promoter.addEventListener('mouseover', () => {
-            showInfo(promoterInfo, promoter);
-        });
-        promoter.addEventListener('mouseout', hideInfo);
-    
-        codingSequence.addEventListener('mouseover', () => {
-            showInfo(codingSequenceInfo, codingSequence);
-        });
-        codingSequence.addEventListener('mouseout', hideInfo);
-    
-        terminator.addEventListener('mouseover', () => {
-            showInfo(terminatorInfo, terminator);
-        });
-        terminator.addEventListener('mouseout', hideInfo);
-    });
-</script>
+    {% include 'plasmid.js' %}
 </body>
 </html>
 
