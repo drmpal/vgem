@@ -34,7 +34,25 @@
 
   <!-- Page Content -->
   <div class="container">
-    {% block page_content %}{% endblock %}
+    {% block page_content %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parallax Effect</title>
+        <link rel="stylesheet" href="{{ url_for('Parallax', filename = 'parallax.css') }}">
+    </head>
+    <body>
+        <div class="parallax">
+            <div class="parallax-layer parallax-layer-back"></div>
+            <div class="parallax-layer parallax-layer-front"></div>
+            <div class="content">
+                <h1>Par Effect</h1>
+                <p>Test 1 random text to fill space.</p>
+            </div>
+        </div>
+    </body>
+    
+    {% endblock %}
   </div>
 
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
