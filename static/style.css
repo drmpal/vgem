@@ -1,6 +1,6 @@
 body { padding-top: 56px; }
 .left-aligned { margin-left: auto; }
-.bg-dark { background-color: #343a40 !important; }
+.bg-dark { background-color: #343a40; }
 .bg-hero { background-color: #45b06cff; }
 
 /* CALLOUT */

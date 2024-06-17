@@ -34,77 +34,7 @@
 
   <!-- Page Content -->
   <div class="container">
-    {% block page_content %}
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Parallax Effect</title>
-        <style>
-          body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-}
-
-.parallax {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: rgb(204, 31, 31);
-}
-
-.parallax-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.parallax-layer-back {
-    background-image: url('https://docs.google.com/drawings/d/e/2PACX-1vSLHEfEfbT54YNXRl-cxEZymJIn7DAwdyzoDtqb913O16D_XyOiUafkEKO-9mrTZyWMceFc2U_iWvYJ/pub?w=244&h=719');
-    z-index: 1;
-    transform: translateZ(-1px) scale(1.5);
-}
-
-.parallax-layer-front {
-    background-image: url('https://docs.google.com/drawings/d/1YrrA-DE_72Q48DHoZ0xx8LHl1tTRSJNUullHrsyqkw4/edit');
-    z-index: 2;
-    transform: translateZ(0) scale(1.2);
-}
-
-.content {
-    position: relative;
-    z-index: 3;
-}
-
-.content h1, .content p {
-    margin: 0;
-}
-
-        </style>
-    </head>
-    <body>
-        <div class="parallax">
-            <div class="parallax-layer parallax-layer-back"></div>
-            <div class="parallax-layer parallax-layer-front"></div>
-            <div class="content">
-                <h1>Par Effect</h1>
-                <p>Test 1 random text to fill space.</p>
-            </div>
-        </div>
-    </body>
-    
-    {% endblock %}
+    {% block page_content %}{% endblock %}
   </div>
 
   <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
