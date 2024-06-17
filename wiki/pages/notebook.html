@@ -4,7 +4,12 @@
 {% block lead %}Document the dates you worked on your project. This should be a detailed account of the work done each day for your project.{% endblock %}
 
 {% block page_content %}
-
+<style>
+  .custom-header-1 {
+  background-color: #e5c7ca;
+  color: #000; /* Text color */
+}
+</style>
 <div class="row mt-4">
   <div class="col-lg-8">
     <h2>What should this page contain?</h2>
@@ -37,14 +42,14 @@
 
 <h2 class="mt-4">May</h2>
 
-<div class="accordion" id="Notebook">
+<div class="accordion " id="Notebook">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <button class="accordion-button collapsed custom-header-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         Week 1 (5/29/24 - 5/31/24)
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#Notebook">
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#Notebook">
       <div class="accordion-body">
         <h5><b>Important Dates:</b></h5>
         <ul>
@@ -63,7 +68,7 @@
   <h2 class="mt-4">June</h2>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <button class="accordion-button collapsed custom-header-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         Week 2 (6/3/24-6/7/24)
       </button>
     </h2>
@@ -88,7 +93,7 @@
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <button class="accordion-button collapsed custom-header-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         Week 3 (6/10/24-6/14/24)
       </button>
     </h2>
@@ -101,7 +106,7 @@
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingFour">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+      <button class="accordion-button collapsed custom-header-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
         Week 4 (6/17/24-6/21/24)
       </button>
     </h2>

@@ -1,4 +1,8 @@
-body { padding-top: 56px; }
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+body { padding-top: 56px; font-family: 'Poppins', sans-serif; }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Use the other font here */
+}
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #343a40 !important; }
 .bg-hero { background-color: #45b06cff; }
