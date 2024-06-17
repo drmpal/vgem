@@ -45,9 +45,8 @@ textPath {
 .info-container {
     display: none; /* Initially hide all info containers */
     position: absolute;
-    top: 20px;
-    left: 300px; /* Position the info box next to the SVG */
-    right: 900px;
+    top: 0px;
+    left: 220px; /* Position the info box next to the SVG */
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 10px;
@@ -65,6 +64,9 @@ textPath {
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
+            <!-- Plasmid backbone -->
+            <path id="plasmid-backbone" d="M100,20 A80,80 0 1,1 99,20.006" fill="none" stroke="gray" stroke-wdith="10"/>
+
             <!-- Promoter arc with black border -->
             <path id="promoter-border" d="M43.431,43.431 A80,80 0 0,1 79,22.805" fill="none" stroke="black" stroke-width="8"/>
             <path id="promoter" d="M43.431,43.431 A80,80 0 0,1 79,22.805" fill="none" stroke="green" stroke-width="6"/>
@@ -76,9 +78,6 @@ textPath {
             <!-- Terminator arc with black border -->
             <path id="terminator-border" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="black" stroke-width="8"/>
             <path id="terminator" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="yellow" stroke-width="6"/>
-
-            <!-- Plasmid backbone -->
-            <path id="plasmid-backbone" d="M100,20 A80,80 0 1,1 99,20.006" fill="none" stroke="gray" stroke-wdith="6"/>
 
             <!-- Text along arcs -->
             <text font-family="Poppins" font-size="12" font-weight="500">
