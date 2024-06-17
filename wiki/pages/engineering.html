@@ -24,12 +24,6 @@
     background-color: #f0f0f0;
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
 .plasmid-container {
     position: relative;
 }
@@ -67,16 +61,6 @@ textPath {
     </style>
 </head>
 <body>
-    <div class="controls">
-        <label for="promoter-color">Promoter Color:</label>
-        <input type="color" id="promoter-color" name="promoter-color" value="#008000">
-        
-        <label for="coding-sequence-color">Coding Sequence Color:</label>
-        <input type="color" id="coding-sequence-color" name="coding-sequence-color" value="#0000ff">
-        
-        <label for="terminator-color">Terminator Color:</label>
-        <input type="color" id="terminator-color" name="terminator-color" value="#ff0000">
-    </div>
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
@@ -137,23 +121,6 @@ textPath {
     const promoterColorInput = document.getElementById('promoter-color');
     const codingSequenceColorInput = document.getElementById('coding-sequence-color');
     const terminatorColorInput = document.getElementById('terminator-color');
-
-    const updateColor = () => {
-        promoter.setAttribute('stroke', promoterColorInput.value);
-        promoterText.setAttribute('fill', promoterColorInput.value);
-
-        codingSequence.setAttribute('stroke', codingSequenceColorInput.value);
-        codingSequenceText.setAttribute('fill', codingSequenceColorInput.value);
-
-        terminator.setAttribute('stroke', terminatorColorInput.value);
-        terminatorText.setAttribute('fill', terminatorColorInput.value);
-    };
-
-    promoterColorInput.addEventListener('input', updateColor);
-    codingSequenceColorInput.addEventListener('input', updateColor);
-    terminatorColorInput.addEventListener('input', updateColor);
-
-    updateColor(); // Initialize with default colors
 
     const showInfo = (infoContainer, path) => {
         // Hide all info containers first
