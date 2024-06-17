@@ -13,12 +13,12 @@
       <ul class="navbar-nav ml-auto left-aligned">
 
         <!---- HOME ---->
-        <li class="nav-item">
+        <li class="nav-item bg-offwhite">
           <a class="nav-link" href="{{ url_for('home') }}">Home</a>
         </li>
 
         <!---- TEAM ---->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown bg-offwhite">
           <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Team
           </a>
@@ -29,7 +29,7 @@
         </li>
 
         <!---- PROJECT ---->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown bg-offwhite">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Project
           </a>
@@ -44,17 +44,17 @@
         </li>
 
         <!---- SAFETY ---->
-        <li class="nav-item">
+        <li class="nav-item bg-offwhite">
           <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
         </li>
 
         <!---- HUMAN PRACTICES ---->
-        <li class="nav-item">
+        <li class="nav-item bg-offwhite">
           <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
         </li>
 
         <!---- AWARDS ---->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown bg-offwhite">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"data-bs-toggle="dropdown">
             Awards
           </a>
@@ -108,12 +108,11 @@
 
 .dropdown-menu li {
   display: block;
-  color: #8B555E;
 }
 
 .dropdown-menu li a {
   padding: 10px 20px;
   text-decoration: none;
-  color: #FFFFFD;
+  color: #8B555E;
 }
 </style>
