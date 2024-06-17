@@ -75,17 +75,20 @@ textPath {
 
             <!-- Terminator arc with black border -->
             <path id="terminator-border" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="black" stroke-width="8"/>
-            <path id="terminator" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="red" stroke-width="6"/>
-            
+            <path id="terminator" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="dark-gray" stroke-width="6"/>
+
+            <!-- Plasmid backbone -->
+            <path id="plasmid-backbone" d="M100,20 A80,80 0 1,1 100,20" fill="none" stroke="light-gray" stroke-wdith="6"/>
+
             <!-- Text along arcs -->
             <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#promoter" startOffset="50%" text-anchor="middle" dy="50">pT7lac</textPath>
+                <textPath href="#promoter" startOffset="50%" text-anchor="middle" dy="-500">pT7lac</textPath>
             </text>
             <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" dy="50">PNLIP</textPath>
+                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" dy="-500">PNLIP</textPath>
             </text>
             <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#terminator" startOffset="50%" text-anchor="middle" dy="50">B0015</textPath>
+                <textPath href="#terminator" startOffset="50%" text-anchor="middle" dy="-500">B0015</textPath>
             </text>
         </svg>
         <div class="info-container" id="promoter-info">
