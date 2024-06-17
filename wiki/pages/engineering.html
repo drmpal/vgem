@@ -16,45 +16,50 @@
     <style>
         /* Text box description display */
         body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color: #f0f0f0;
-            }
-            
-            .plasmid-container {
-                position: relative;
-            }
-            
-            #plasmid-svg {
-                width: 400px;
-                height: 400px;
-            }
-            
-            path {
-                transition: opacity 0.3s;
-            }
-            
-            .info-container {
-                display: none; /* Initially hide all info containers */
-                position: absolute;
-                top: 20px;
-                left: 220px; /* Position the info box next to the SVG */
-                background-color: #fff;
-                border: 1px solid #ccc;
-                padding: 10px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                z-index: 10;
-            }
-            
-            .info-container h3 {
-                margin-top: 0;
-            }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.plasmid-container {
+    position: relative;
+}
+
+#plasmid-svg {
+    width: 200px;
+    height: 200px;
+}
+
+path {
+    transition: opacity 0.3s;
+}
+
+textPath {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.info-container {
+    display: none; /* Initially hide all info containers */
+    position: absolute;
+    top: 20px;
+    left: 220px; /* Position the info box next to the SVG */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.info-container h3 {
+    margin-top: 0;
+}
     </style>
 </head>
 <body>
@@ -74,14 +79,14 @@
             <path id="terminator" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="red" stroke-width="6"/>
             
             <!-- Text along arcs -->
-            <text>
-                <textPath href="#promoter" startOffset="50%" text-anchor="middle" fill="green" font-size="12">pT7lac</textPath>
+            <text font-family="Poppins" font-size="12" font-weight="500">
+                <textPath href="#promoter" startOffset="50%" text-anchor="middle" fill="green" dy="-10">pT7lac</textPath>
             </text>
-            <text>
-                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" fill="blue" font-size="12">PNLIP</textPath>
+            <text font-family="Poppins" font-size="12" font-weight="500">
+                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" fill="blue" dy="-10">PNLIP</textPath>
             </text>
-            <text>
-                <textPath href="#terminator" startOffset="50%" text-anchor="middle" fill="red" font-size="12">B0015</textPath>
+            <text font-family="Poppins" font-size="12" font-weight="500">
+                <textPath href="#terminator" startOffset="50%" text-anchor="middle" fill=(color:#4FF00A)  dy="-10">B0015</textPath>
             </text>
         </svg>
         <div class="info-container" id="promoter-info">
