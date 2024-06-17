@@ -1,4 +1,4 @@
-
+{% extends "layout.html" %}
 {% block page_content %}
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .layer {
@@ -29,15 +29,15 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
     color: white;
 }
 
 .layer img {
-    width: 50%;
+    width: 100%;
     height: auto;
     border-radius: 15px;
 }
