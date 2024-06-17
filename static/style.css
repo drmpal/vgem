@@ -1,5 +1,5 @@
 body { padding-top: 56px; }
-.left-aligned { margin-left: auto; }
+.left-aligned { margin-left: 0px; }
 .bg-dark { background-color: #343a40; }
 .bg-hero { background-color: #45b06cff; }
 
