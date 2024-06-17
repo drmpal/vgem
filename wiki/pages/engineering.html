@@ -4,19 +4,17 @@
 {% block lead %}Demonstrate engineering success in a technical aspect of your project by going through at least one iteration of the engineering design cycle. This achievement should be distinct from your Contribution for Bronze.{% endblock %}
 
 {% block page_content %}
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plasmid Construct</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap">
     <style>
         /* Text box description display */
         body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -24,6 +22,12 @@
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .plasmid-container {
@@ -48,7 +52,7 @@ textPath {
     display: none; /* Initially hide all info containers */
     position: absolute;
     top: 20px;
-    left: 220px; /* Position the info box next to the SVG */
+    left: 400px; /* Position the info box next to the SVG */
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 10px;
@@ -63,6 +67,16 @@ textPath {
     </style>
 </head>
 <body>
+    <div class="controls">
+        <label for="promoter-color">Promoter Color:</label>
+        <input type="color" id="promoter-color" name="promoter-color" value="#008000">
+        
+        <label for="coding-sequence-color">Coding Sequence Color:</label>
+        <input type="color" id="coding-sequence-color" name="coding-sequence-color" value="#0000ff">
+        
+        <label for="terminator-color">Terminator Color:</label>
+        <input type="color" id="terminator-color" name="terminator-color" value="#ff0000">
+    </div>
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
@@ -80,13 +94,13 @@ textPath {
             
             <!-- Text along arcs -->
             <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#promoter" startOffset="50%" text-anchor="middle" fill="green" dy="-20">pT7lac</textPath>
+                <textPath href="#promoter" startOffset="50%" text-anchor="middle" dy="-50">pT7lac</textPath>
             </text>
             <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" fill="blue" dy="-20">PNLIP</textPath>
+                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" dy="-50">PNLIP</textPath>
             </text>
             <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#terminator" startOffset="50%" text-anchor="middle" fill="red"  dy="-20">B0015</textPath>
+                <textPath href="#terminator" startOffset="50%" text-anchor="middle" dy="-50">B0015</textPath>
             </text>
         </svg>
         <div class="info-container" id="promoter-info">
@@ -107,14 +121,39 @@ textPath {
 
 <script>
     // Appear & reappear sequence
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     const promoter = document.getElementById('promoter');
     const codingSequence = document.getElementById('coding-sequence');
     const terminator = document.getElementById('terminator');
-    
+
+    const promoterText = document.getElementById('promoter-text');
+    const codingSequenceText = document.getElementById('coding-sequence-text');
+    const terminatorText = document.getElementById('terminator-text');
+
     const promoterInfo = document.getElementById('promoter-info');
     const codingSequenceInfo = document.getElementById('coding-sequence-info');
     const terminatorInfo = document.getElementById('terminator-info');
+
+    const promoterColorInput = document.getElementById('promoter-color');
+    const codingSequenceColorInput = document.getElementById('coding-sequence-color');
+    const terminatorColorInput = document.getElementById('terminator-color');
+
+    const updateColor = () => {
+        promoter.setAttribute('stroke', promoterColorInput.value);
+        promoterText.setAttribute('fill', promoterColorInput.value);
+
+        codingSequence.setAttribute('stroke', codingSequenceColorInput.value);
+        codingSequenceText.setAttribute('fill', codingSequenceColorInput.value);
+
+        terminator.setAttribute('stroke', terminatorColorInput.value);
+        terminatorText.setAttribute('fill', terminatorColorInput.value);
+    };
+
+    promoterColorInput.addEventListener('input', updateColor);
+    codingSequenceColorInput.addEventListener('input', updateColor);
+    terminatorColorInput.addEventListener('input', updateColor);
+
+    updateColor(); // Initialize with default colors
 
     const showInfo = (infoContainer, path) => {
         // Hide all info containers first
