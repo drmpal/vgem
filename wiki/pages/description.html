@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
   
-{% block title %}Why BLISS?{% endblock %}
+{% block title %}BLISS{% endblock %}
 {% block lead %}Bacillus Lipase Integrated Secretion System{% endblock %}
 
 {% block page_content %}
@@ -181,7 +181,7 @@ section {
   padding-bottom: 20px;
 }
 
-#ProgressBar {
+.progress-bar {
   width: 100%;
   height: 30px;
     border: 1px solid #D88993;
@@ -190,32 +190,18 @@ section {
   padding: 4px;
 }
 
-#Progress {
-  width: 80%;
+.progress {
+  /*width: 80%;*/
   background-color: #8B555E;
   height: 100%;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   border-color: #8B555E;
-
-  animation-name: progressBar;
-  animation-iteration-count: 1;
-  animation-duration: 2s;
-}
-#Progress {
-  width: 80%;
-  background-color: #8B555E;
-  height: 100%;
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-  border-color: #8B555E;
-
-  animation-name: progressBar;
   animation-iteration-count: 1;
   animation-duration: 2s;
 }
 
-@keyframes progressBar {
+@keyframes progressBar80 {
   0% {
     width: 10%;
   }
@@ -224,7 +210,24 @@ section {
     width: 80%;
   }
 }
+@keyframes progressBar90 {
+  0% {
+    width: 10%;
+  }
 
+  100% {
+    width: 90%;
+  }
+}
+@keyframes progressBar70 {
+  0% {
+    width: 10%;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
 </style>
 
 <div class="container">
@@ -267,15 +270,22 @@ section {
                     </div>
                 </div>
                 <div class="col">
-                    <div id="ProgressBar">
-                        <div id="Progress"></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width:80%; animation-name: progressBar80"></div>
                     </div>
                     <p>of individuals with chronic pancreatitis develop EPI</p>
+
+                    <div class="progress-bar">
+                        <div class="progress" style="width:90%; animation-name: progressBar90"></div>
+                    </div>
+                    <p>of individuals with cystic fibrosis develop EPI</p>
                 </div>
                 <div class="col">
                     <h3 class="ml-0 mt-0">80%</h3>
+                     <h3 class="ml-0 mt-0">90%</h3>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
