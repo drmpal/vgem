@@ -265,37 +265,8 @@ h3 {
   left: 0;
 
 }
-/*.citation {*/
-/*    position: relative;*/
-/*    cursor: pointer;*/
-/*    color: blue;*/
-/*    text-decoration: underline;*/
-/*}*/
 
-/*.citation::after {*/
-/*    content: attr(data-tooltip);*/
-/*    position: absolute;*/
-/*    bottom: 100%;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*    background-color: black;*/
-/*    color: white;*/
-/*    padding: 5px;*/
-/*    border-radius: 5px;*/
-/*    opacity: 0;*/
-/*    visibility: hidden;*/
-/*    transition: opacity 0.2s, visibility 0.2s;*/
-/*    white-space: nowrap;*/
-/*    font-size: 0.9em;*/
-/*    z-index: 1;*/
-/*}*/
-
-/*.citation:hover::after {*/
-/*    opacity: 1;*/
-/*    visibility: visible;*/
-/*}*/
 </style>
-<body>
 <div class="container">
     <div class="row">
     <div class="col-md-2">
@@ -506,11 +477,3 @@ h3 {
 
 
 {% endblock %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-</script>
-</body>
