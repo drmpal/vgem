@@ -265,8 +265,37 @@ h3 {
   left: 0;
 
 }
-</style>
+/*.citation {*/
+/*    position: relative;*/
+/*    cursor: pointer;*/
+/*    color: blue;*/
+/*    text-decoration: underline;*/
+/*}*/
 
+/*.citation::after {*/
+/*    content: attr(data-tooltip);*/
+/*    position: absolute;*/
+/*    bottom: 100%;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*    background-color: black;*/
+/*    color: white;*/
+/*    padding: 5px;*/
+/*    border-radius: 5px;*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    transition: opacity 0.2s, visibility 0.2s;*/
+/*    white-space: nowrap;*/
+/*    font-size: 0.9em;*/
+/*    z-index: 1;*/
+/*}*/
+
+/*.citation:hover::after {*/
+/*    opacity: 1;*/
+/*    visibility: visible;*/
+/*}*/
+</style>
+<body>
 <div class="container">
     <div class="row">
     <div class="col-md-2">
@@ -277,9 +306,6 @@ h3 {
           <div class="margin-left: 1rem; margin-bottom: 1rem;">
         <li style="margin-bottom: 5px"><a href="#abstract">Abstract</a></li>
         <li style="margin-bottom: 5px"><a href="#what-is-EPI">What is EPI?</a></li>
-          <ul style="list-style: none;">
-            <li style="margin-bottom: 5px"><a href="#symptoms">Symptoms</a></li>
-              </ul>
               <li style="margin-bottom: 5px"><a href="#how-it-works">Role of Enzymes in Digestion</a></li>
         <li style="margin-bottom: 5px"><a href="#current-solutions">Current Solutions</a></li>
         <li style="margin-bottom: 5px"><a href="#our-solution">Our Solution</a></li>
@@ -299,7 +325,8 @@ h3 {
   <h2>What is Exocrine Pancreatic Insufficiency?</h2>
   <div class="row mt-5">
     <div class="col-md-5">
-      <p>Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases1. These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines2. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain3. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children4.  </p>
+      <p>This is some text with a citation.<a href="#" id="cite1" data-bs-toggle="tooltip" title="Full citation for reference 1">[1]</a>
+          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases1. These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines2. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain3. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children4.  </p>
     </div>
     <div class="col-md-7">
       <div class="row">
@@ -346,8 +373,7 @@ h3 {
 
 
 <div class="container mt-5" style="text-align: center; align-items: center">
-<section id="symptoms">
-    </section>
+
 <h2>If left untreated, EPI can cause...</h2><br>
     <div class="row">
         <div class="col-sm">
@@ -463,7 +489,14 @@ h3 {
      <section id = "references">
         <div class="row mt-5">
     <h2>References</h2>
-        <p> description blablablabla</p>
+        <p>
+            <ol>
+            <li id="ref1">[1] Full citation for reference 1.</li>
+            <li id="ref2">[2] Full citation for reference 2.</li>
+                          <li id="description_ref6" data-link="#description_content6">Patel VG, Pinto JM, Tsimring Y, Petrova A (2021). Purulent and Non-Purulent Cellulitis in Hospitalized Children: Risk Factors and Outcomes. <i>Pediatrics</i>, 147(3_MeetingAbstract), 584–585. Available at: <a href = "https://doi.org/10.1542/peds.147.3MA6.584" target = "_blank">https://doi.org/10.1542/peds.147.3MA6.584</a></li>
+
+        </ol>
+            </p>
         </div>
     </section>
     </div>
@@ -473,24 +506,11 @@ h3 {
 
 
 {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const percentages = document.querySelectorAll('.percentage');
-
-  percentages.forEach(percentage => {
-    const target = +percentage.getAttribute('data-target');
-    let count = 1;
-
-    const updatePercentage = () => {
-      percentage.textContent = `${count}%`;
-      if (count < target) {
-        count++;
-        setTimeout(updatePercentage, 1000 / target); // Adjust the speed to match 1 second for target value
-      }
-    };
-
-    setTimeout(updatePercentage, 10);
-  });
-});
-
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 </script>
+</body>
