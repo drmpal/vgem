@@ -2,6 +2,14 @@ body { padding-top: 56px; font-family: 'Poppins', sans-serif;}
 .left-aligned { margin-left: 0px; }
 .bg-dark { background-color: #343a40; }
 .bg-hero { background-color: #45b06cff; }
+.bg-offwhite { background-color: #FFFFFD; }
+.bg-beige { background-color: #EDF0DA; }
+.bg-yellow { background-color: #F0DFAD; }
+.bg-lightpink { background-color: #D88993; }
+.bg-darkpink { background-color: #8B555E; }
+.bg-brown { background-color: #493B2A; }
+.bg-darkblue { background-color: #2D4E62; }
+
 .bold-text {
     font-weight: bold;
 }

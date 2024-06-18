@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
   
-{% block title %}Project Description{% endblock %}
-{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
+{% block title %}Why BLISS?{% endblock %}
+{% block lead %}Bacillus Lipase Integrated Secretion System{% endblock %}
 
 {% block page_content %}
 
@@ -119,18 +119,82 @@
   color: white;
   transform: rotateY(180deg);
 }
+
 .row {
   display: flex;
   justify-content: center; /* Center elements horizontally */
   align-items: center; /* Center elements vertically (optional) */
 }
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Make nav sticky */
+nav {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+/* 3. ScrollSpy active styles (see JS tab for activation) */
+.section-nav li.active > a {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+  padding-left: 0;
+  border-left: 1px solid #efefef;
+}
+
+.section-nav a {
+  text-decoration: none;
+  display: block;
+  padding: .125rem 0;
+  color: #ccc;
+  transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.section-nav a:hover,
+.section-nav a:focus {
+  color: #666;
+}
+* {
+  box-sizing: border-box;
+}
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin-left: 1rem;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+/** page layout **/
+
+
+/** enlarge the sections for this demo, so that we have a long scrollable page **/
+section {
+  padding-bottom: 20rem;
+}
 </style>
 
 <div class="container">
     <div class="row">
+        <div class="col-sm-3 no-left-padding">
+
+      </div>
         <div class="col-md-8">
+            <section id="abstract">
             <h2>What is Exocrine Pancreatic Insufficiency?</h2>
             <p>This is the text column. You can add your text content here.</p>
+                </section>
         </div>
         <div class="col-md-4">
 
@@ -141,29 +205,26 @@
     </div>
 </div>
 <div class="container mt-5" style="text-align: center; align-items: center">
-
+<section id="symptoms">
 <h2>If left untreated, EPI can cause...</h2><br>
     <div class="row">
         <div class="col-sm">
             <div class="heartbeat-on-hover">
-        <img src="static/heart.png" width="200px">
-                </div>
-
-
+                <img src="static/heart.png" width="200px">
             </div>
+        </div>
         <div class="col-sm">
- <div class="dizzy-on-hover">
-        <img src="static/dizzy.png" width="200px">
- </div>
-
+            <div class="dizzy-on-hover">
+                <img src="static/dizzy.png" width="200px">
             </div>
+        </div>
         <div class="col-sm">
             <div class="weak-bones-on-hover">
-        <img src="static/bone.png" width="250px">
-</div>
-
+                <img src="static/bone.png" width="250px">
             </div>
-</div>
+        </div>
+    </div>
+    </section>
     <div class="row">
         <div class="col-sm">
             <h2>Arrhythmia</h2>
@@ -175,10 +236,11 @@
             <h2>Osteoporosis</h2>
         </div>
     </div>
-
+<section id="current-solutions">
 <div class="row mt-5">
     <h2>Why are current solutions not enough?</h2>
    <p> description blablablabla</p>
+
     </div>
 <div class="row" >
 <div class="col-sm">
@@ -222,6 +284,8 @@
 
 
 </div>
+    </section>
+    <section id="our-solution">
     <div class="row mt-5">
     <h2>Our Solution</h2>
         <div class="col-md-8">
@@ -231,65 +295,69 @@
             <img src="static/picture.png" width="200px">
         </div>
     </div>
-
+</section>
+    <section id="how-it-works">
     <div class="row mt-5">
     <h2>The Enzymes</h2>
    <p> description blablablabla</p>
     </div>
-
+</section>
+    <section id = "vision">
     <div class="row mt-5">
     <h2>Our Vision for the Future</h2>
    <p> description blablablabla</p>
     </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Bronze Medal Criterion #3</h4>
-      <p>Describe how and why you chose your iGEM project.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2024 Medals Page</a> for more information.</p>
-    </div>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>What should this page contain?</h2>
-    <hr>
-    <ul>
-      <li>A clear and concise description of your project.</li>
-      <li>A detailed explanation of why your team chose to work on this particular project.</li>
-      <li>References and sources to document your research.</li>
-      <li>Use illustrations and other visual resources to explain your project.</li>
-    </ul>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2022.igem.wiki/dtu-denmark/description">2022 DTU-Denmark</a></li>
-      <li><a href="https://2019.igem.org/Team:ITESO_Guadalajara/Description">2019 ITESO Guadalajara</a></li>
-      <li><a href="https://2020.igem.org/Team:Technion-Israel/Description">2020 Technion Israel</a></li>
-      <li><a href="https://2020.igem.org/Team:Botchan_Lab_Tokyo/Description">2020 Botchan Lab Tokyo</a></li>
-      <li><a href="https://2020.igem.org/Team:St_Andrews/Description">2020 St Andrews</a></li>
-      <li><a href="https://2020.igem.org/Team:MIT/Description">2020 MIT</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Some advice</h2>
-    <hr>
-    <p>We encourage you to put up a lot of information and content on your wiki, but we also encourage you to include summaries as much as possible. If you think of the sections in your project description as the sections in a publication, you should try to be concise, accurate, and unambiguous in your achievements. Your Project Description should include more information than your project abstract.</p>
-  </div>
-  <div class="col-lg-4">
+        </section>
+    <section id = "inspiration">
+        <div class="row mt-5">
+    <h2>Our inspiration</h2>
+        <p> description blablablabla</p>
+        </div>
+    </section>
+     <section id = "references">
+        <div class="row mt-5">
     <h2>References</h2>
-    <hr>
-    <p>iGEM teams are encouraged to record references you use during the course of your research. They should be posted somewhere on your wiki so that judges and other visitors can see how you thought about your project and what works inspired you.</p>
-  </div>
-</div>
+        <p> description blablablabla</p>
+        </div>
+    </section>
+    </div>
+ <nav class="section-nav" >
+      <ul>
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#what-is-EPI">What is EPI?</a></li>
+          <ul>
+            <li><a href="#symptoms">Symptoms</a></li>
+              </ul>
+        <li><a href="#current-solutions">Current Solutions</a></li>
+        <li><a href="#our-solution">Our Solution</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#vision">Our Future Vision</a></li>
+          <li><a href="#inspiration">Inspiration</a></li>
+          <li><a href="#references">References</a></li>
+
+          </ul>
+
+        </nav>
 
 {% endblock %}
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+      } else {
+        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+      }
+    });
+  });
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
+
+});
+</script>
