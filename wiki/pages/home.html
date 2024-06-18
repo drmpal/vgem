@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logo Animation</title>
     <style>
-        body, html {
+body, html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -39,8 +39,30 @@
 
 #main-content {
     display: none;
-    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background: url('https://img-3.journaldesfemmes.fr/7GH8s8R0e9fyfMatmDzSSUZDelU=/1500x/smart/431be162ca8d466fa138dda3e193ba46/ccmcms-jdf/13138234.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    color: rgb(255,255,253); /* Change text color here */
+    font-family: 'Poppins', sans-serif; /* Change font here */
+}
+
+.overlay h1 {
+    font-size: 3em; /* Change font size here */
+    margin: 0;
+}
+
+.overlay p {
+    font-size: 1.5em; /* Change font size here */
 }
 
     </style>
@@ -50,12 +72,14 @@
         <img src="path/to/your/logo.png" alt="Logo" id="logo">
     </div>
     <div id="main-content">
-        <h1>BLISS</h1>
-        <p>Your main content goes here.</p>
+        <div class="overlay">
+            <h1>BLISS</h1>
+            <p>Bacillus Lipase Integrated Secretion System</p>
+        </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     const logoAnimation = document.getElementById('logo-animation');
     const mainContent = document.getElementById('main-content');
 
@@ -66,13 +90,10 @@
             mainContent.style.display = 'block';
             document.body.style.overflow = 'auto';
         });
-    }, 4000); // Timeout duration 4000 ms
+    }, 4000); // Adjusted duration to 4 seconds (4000 ms)
 });
-
     </script>
 </body>
 </html>
-
-
 
 {% endblock %}
