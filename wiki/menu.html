@@ -2,7 +2,10 @@
   <div class="container">
 
     <!---- TEAM NAME ---->
-    <a class="navbar-brand" href="#">Virginia</a>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('home') }}">
+        Virginia</a>
+    </li>
 
     <!---- SMALL SCREEN MENU ICON ---->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,67 +15,76 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto left-aligned">
 
-        <!---- HOME ---->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
-        </li>
-
         <!---- TEAM ---->
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false">
+          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false" data-bs-toggle="dropdown">
             Team
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/announcemnt.png?ref_type=headsAttributions" alt="aIcon">Attributions</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">
+              Team</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/announcemnt.png?ref_type=headsAttributions" alt="aIcon">
+              Attributions</a></li>
           </ul>
         </li>
 
         <!---- PROJECT ---->
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false">
+          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false" data-bs-toggle="dropdown">
             Project
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}"><img src="contributions.jpg" alt="cIcon">Contribution</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}"><img src="description.jpg" alt="dIcon">Description</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}"><img src="engineering.jpg" alt="enIcon">Engineering</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}"><img src="contributions.jpg" alt="cIcon">
+              Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}"><img src="description.jpg" alt="dIcon">
+              Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}"><img src="engineering.jpg" alt="enIcon">
+              Engineering</a></li>
           </ul>
         </li>
 
         <!---- WETLAB ---->
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false">
+          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false" data-bs-toggle="dropdown">
             Wetlab
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}"><img src="wetlab.jpg" alt="wIcon">Wetlab</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}"><img src="experiments.jpg" alt="exIcon">Experiments</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}"><img src="notebook.jpg" alt="nIcon">Notebook</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}"><img src="results.jpg" alt="rIcon">Results</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}"><img src="wetlab.jpg" alt="wIcon">
+              Wetlab</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}"><img src="experiments.jpg" alt="exIcon">
+              Experiments</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}"><img src="notebook.jpg" alt="nIcon">
+              Notebook</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}"><img src="results.jpg" alt="rIcon">
+              Results</a></li>
           </ul>
         </li>
 
         <!---- HUMAN PRACTICES ---->
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false">
+          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false" data-bs-toggle="dropdown">
             Human Practices
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}"><img src="human practices.jpg" alt="hpIcon">Human Practices</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}"><img src="education.jpg" alt="edIcon">Education</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}"><img src="inclusivity.jpg" alt="iIcon">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}"><img src="human practices.jpg" alt="hpIcon">
+              Human Practices</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}"><img src="education.jpg" alt="edIcon">
+              Education</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}"><img src="inclusivity.jpg" alt="iIcon">
+              Inclusivity</a></li>
           </ul>
         </li>
 
         <!---- OTHER ---->
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false">
+          <a class="nav-link" href="#" id="navbarDropdown" aria-expanded="false" data-bs-toggle="dropdown">
             Other
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="nav-link" href="{{ url_for('pages', page='model') }}"><img src="model.jpg" alt="mIcon">Model</a></li>
-            <li><a class="nav-link" href="{{ url_for('pages', page='safety') }}"><img src="safety.jpg" alt="sIcon">Safety</a></li>
+            <li><a class="nav-link" href="{{ url_for('pages', page='model') }}"><img src="model.jpg" alt="mIcon">
+              Model</a></li>
+            <li><a class="nav-link" href="{{ url_for('pages', page='safety') }}"><img src="safety.jpg" alt="sIcon">
+              Safety</a></li>
           </ul>
         </li>
       </ul>
@@ -105,6 +117,8 @@
 
 .nav-item > a {
   display: block;
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
   text-decoration: none;
   color: #8B555E;
@@ -115,6 +129,8 @@
 }
 
 .dropdown-menu li a {
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
   text-decoration: none;
   color: #8B555E;
