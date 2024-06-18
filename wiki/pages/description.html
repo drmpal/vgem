@@ -180,6 +180,39 @@ h1 {
 section {
   padding-bottom: 20px;
 }
+
+#ProgressBar {
+  width: 100%;
+  height: 30px;
+    border: 1px solid #D88993;
+  border-radius: 7px;
+  background: #D88993;
+  padding: 4px;
+}
+
+#Progress {
+  width: 80%;
+  background-color: #8B555E;
+  height: 100%;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-color: #8B555E;
+
+  animation-name: progressBar;
+  animation-iteration-count: 1;
+  animation-duration: 2s;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 10%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
 </style>
 
 <div class="container">
@@ -188,7 +221,7 @@ section {
         <div class="sticky">
  <nav class="section-nav" style="border-left: 1px solid #efefef;">
       <ul style="list-style: none;
-  margin-left: 1px;">
+  margin-left: 0px;">
           <div class="margin-left: 1rem; margin-bottom: 1rem;">
         <li style="margin-bottom: 5px"><a href="#abstract">Abstract</a></li>
         <li style="margin-bottom: 5px"><a href="#what-is-EPI">What is EPI?</a></li>
@@ -218,6 +251,9 @@ section {
         <div class="fade-in-image">
             <img src="static/EPI people graphic dark.png">
         </div>
+        <div id="ProgressBar">
+  <div id="Progress"></div>
+</div>
     </div>
 </div>
         </section>
@@ -320,7 +356,7 @@ section {
 </section>
     <section id="how-it-works">
     <div class="row mt-5">
-    <h2>The Enzymes</h2>
+    <h2>How it Works </h2>
    <p> description blablablabla</p>
     </div>
 </section>
