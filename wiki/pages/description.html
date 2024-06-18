@@ -16,7 +16,10 @@
   animation: heartBeat 0.8s ease-in-out;
 }
 .dizzy-on-hover:hover{
-    animation: dizzy 0.8s ease-in-out;
+    animation: dizzy 0.9s ease-in-out;
+}
+.weak-bones-on-hover:hover{
+    animation: tada 0.8s ease-in-out;
 }
 
 @keyframes heartBeat {
@@ -37,21 +40,50 @@
   }
 }
 @keyframes dizzy {
-    0% {
-transform: rotate(30deg);
-    }
-    50% {
-        transform: rotate(-60deg);
-    }
-    100%
+   0%
     {
-        transform: rotate(30deg);
+       -webkit-transform:translateX(0);
+       transform:translateX(0);
+       -webkit-filter:blur(0px);
+   }
+    6.5%
+    {
+        -webkit-transform:translateX(-6px) rotateY(-9deg);
+        transform:translateX(-6px) rotateY(-9deg);
+        -webkit-filter:blur(1px);
     }
 
+    18.5%
+    {
+        -webkit-transform:translateX(5px) rotateY(7deg);
+        transform:translateX(5px) rotateY(7deg);
+        -webkit-filter:blur(2px);
+    }
+    31.5%
+        {
+        -webkit-transform:translateX(-3px) rotateY(-5deg);
+        transform:translateX(-3px) rotateY(-5deg);
+        -webkit-filter:blur(3px);
+    }
+    43.5%
+    {
+        -webkit-transform:translateX(2px) rotateY(3deg);
+        transform:translateX(2px) rotateY(3deg);
+        -webkit-filter:blur(1px);
+    }
+    50%
+    {
+        -webkit-transform:translateX(0);
+        transform:translateX(0);
+        -webkit-filter:blur(0px);
+        }
 }
 
+
+
+
 .flip-card {
-    width:200px;height:200px;
+    width:300px;height:300px;
   background-color: transparent;
   perspective: 1000px;
 }
@@ -87,7 +119,11 @@ transform: rotate(30deg);
   color: white;
   transform: rotateY(180deg);
 }
-
+.row {
+  display: flex;
+  justify-content: center; /* Center elements horizontally */
+  align-items: center; /* Center elements vertically (optional) */
+}
 </style>
 
 <div class="container">
@@ -104,7 +140,7 @@ transform: rotate(30deg);
         </div>
     </div>
 </div>
-<div class="container mt-5" style="text-align: center">
+<div class="container mt-5" style="text-align: center; align-items: center">
 
 <h2>If left untreated, EPI can cause...</h2><br>
     <div class="row">
@@ -116,14 +152,15 @@ transform: rotate(30deg);
 
             </div>
         <div class="col-sm">
-
+ <div class="dizzy-on-hover">
         <img src="static/dizzy.png" width="200px">
-
+ </div>
 
             </div>
         <div class="col-sm">
+            <div class="weak-bones-on-hover">
         <img src="static/bone.png" width="250px">
-
+</div>
 
             </div>
 </div>
@@ -143,15 +180,15 @@ transform: rotate(30deg);
     <h2>Why are current solutions not enough?</h2>
    <p> description blablablabla</p>
     </div>
-<div class="row">
+<div class="row" >
 <div class="col-sm">
        <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-     <img src="static/dedpig.png" width="250px">
+     <img src="static/dedpig.png" width="300px">
     </div>
     <div class="flip-card-back">
-      <img src="static/dedpig text.png" width="250px">
+      <img src="static/dedpig text.png" width="300px">
     </div>
   </div>
 </div>
@@ -161,10 +198,10 @@ transform: rotate(30deg);
         <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-     <img src="static/yuck.png" width="250px">
+     <img src="static/yuck.png" width="300px">
     </div>
     <div class="flip-card-back">
-      <img src="static/yuck text.png" width="250px">
+      <img src="static/yuck text.png" width="300px">
     </div>
   </div>
 </div>
@@ -174,10 +211,10 @@ transform: rotate(30deg);
         <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-     <img src="static/mask.png" width="250px">
+     <img src="static/mask.png" width="300px">
     </div>
     <div class="flip-card-back">
-      <img src="static/mask text.png" width="250px">
+      <img src="static/mask text.png" width="300px">
     </div>
   </div>
 </div>
@@ -185,6 +222,25 @@ transform: rotate(30deg);
 
 
 </div>
+    <div class="row mt-5">
+    <h2>Our Solution</h2>
+        <div class="col-md-8">
+   <p> description blablablabla</p>
+        </div>
+        <div class="col-md-4">
+            <img src="static/picture.png" width="200px">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+    <h2>The Enzymes</h2>
+   <p> description blablablabla</p>
+    </div>
+
+    <div class="row mt-5">
+    <h2>Our Vision for the Future</h2>
+   <p> description blablablabla</p>
+    </div>
 </div>
 
 <div class="row mt-4">
