@@ -202,6 +202,18 @@ section {
   animation-iteration-count: 1;
   animation-duration: 2s;
 }
+#Progress {
+  width: 80%;
+  background-color: #8B555E;
+  height: 100%;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-color: #8B555E;
+
+  animation-name: progressBar;
+  animation-iteration-count: 1;
+  animation-duration: 2s;
+}
 
 @keyframes progressBar {
   0% {
@@ -240,24 +252,35 @@ section {
     </div>
         </div>
     <div class="col-md-10">
+
+<section id="what-is-EPI">
+    <h2>What is Exocrine Pancreatic Insufficiency?</h2>
     <div class="row">
-        <section id="what-is-EPI">
-        <div class="row">
-    <div class="col-md-8">
-        <h2>What is Exocrine Pancreatic Insufficiency?</h2>
-        <p>This is the text column. You can add your text content here.</p>
-    </div>
-    <div class="col-md-4">
-        <div class="fade-in-image">
-            <img src="static/EPI people graphic dark.png">
+        <div class="col-md-5">
+            <p>This is the text column. You can add your text content here.</p>
         </div>
-        <div id="ProgressBar">
-  <div id="Progress"></div>
-</div>
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col">
+                    <div class="fade-in-image">
+                        <img src="static/EPI people graphic dark.png" width="200px">
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="ProgressBar">
+                        <div id="Progress"></div>
+                    </div>
+                    <p>of individuals with chronic pancreatitis develop EPI</p>
+                </div>
+                <div class="col">
+                    <h3 class="ml-0 mt-0">80%</h3>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-        </section>
-    </div>
+</section>
+
+
 
 <div class="container mt-5" style="text-align: center; align-items: center">
 <section id="symptoms">
