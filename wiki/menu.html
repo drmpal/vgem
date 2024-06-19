@@ -1,77 +1,144 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-darkpink fixed-top">
   <div class="container">
 
     <!---- TEAM NAME ---->
-    <a class="navbar-brand" href="#">Virginia</a>
+    <li class="nav-item">
+      <a class="nav-link navbar-brand" href="{{ url_for('home') }}">
+        Virginia</a>
+    </li>
 
     <!---- SMALL SCREEN MENU ICON ---->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto left-aligned">
 
-        <!---- HOME ---->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
-        </li>
-
         <!---- TEAM ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" aria-expanded="false">
             Team
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/team.png?ref_type=heads" alt="tIcon">
+              Team</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/attributions.png?ref_type=heads" alt="aIcon">
+              Attributions</a></li>
           </ul>
         </li>
 
         <!---- PROJECT ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">
             Project
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/contribution.png?ref_type=heads" alt="cIcon">
+              Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/description.png?ref_type=heads" alt="dIcon">
+              Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/engineering.png?ref_type=heads" alt="enIcon">
+              Engineering</a></li>
           </ul>
         </li>
 
-        <!---- SAFETY ---->
+        <!---- WETLAB ---->
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='wetlab') }}" aria-expanded="false">
+            Wetlab
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/wetlab.png?ref_type=heads" alt="wIcon">
+              Wetlab</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/experiments.png?ref_type=heads" alt="exIcon">
+              Experiments</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/notebook.png?ref_type=heads" alt="nIcon">
+              Notebook</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/results.png?ref_type=heads" alt="rIcon">
+              Results</a></li>
+          </ul>
         </li>
 
         <!---- HUMAN PRACTICES ---->
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
-        </li>
-
-        <!---- AWARDS ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Awards
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='human-practices') }}" aria-expanded="false">
+            Human Practices
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/human%20practices.png?ref_type=heads" alt="hpIcon">
+              Human Practices</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/education.png?ref_type=heads" alt="edIcon">
+              Education</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/inclusivity.png?ref_type=heads" alt="iIcon">
+              Inclusivity</a></li>
           </ul>
         </li>
 
+        <!---- OTHER ---->
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">
+            Other
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/wetlab.png?ref_type=heads" alt="mIcon">
+              Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='safety') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/safety.png?ref_type=heads" alt="sIcon">
+              Safety</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<style>
+  /* Hide dropdown menus by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+/* Style the menu items and links */
+.menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-item > a {
+  display: block;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #EDF0DA;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #8B555E;
+}
+
+.dropdown-menu li a img {
+  margin-right: 10px;
+  height: 20px; /* Adjust the size as needed */
+  width: 20px; /* Adjust the size as needed */
+}
+</style>

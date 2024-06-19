@@ -1,82 +1,132 @@
 {% extends "layout.html" %}
 
-
 {% block page_content %}
+
+<div class="row">
+    <div class="col">
+      <h2>Before you start</h2>
+      <hr>
+      <p>Please read the following pages:</p>
+      <ul>
+        <li><a href="https://competition.igem.org/deliverables/team-wiki" target="_blank">Wiki Requirements page</a></li>
+        <li><a href="https://competition.igem.org/judging/pages-for-awards" target="_blank">Standard URL Pages for Awards</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <h2>Styling your wiki</h2>
+      <hr>
+      <p>Feel free to customize the page styling according to your preferences, or you can simply leave the style as it is. It's wise to focus on a clear content first, and on a clean design later.</p>
+      <p>Be cautious with the size of the assets like images, videos, and more, that you put in your wiki. Large file sizes can hinder the presentation of wikis due to slow internet connections. Remember to compress large files before uploading them to iGEM servers.</p>
+      <p>This default wiki meets the requirements, enhances navigability, and provides a user-friendly experience for visitors. You should not feel obligated to go beyond the provided styling.</p>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-lg-8">
+      <h2>Tips</h2>
+      <hr>
+      <p>This wiki will be your team's first interaction with the rest of the world, so here are a few tips to help you get started:</p>
+      <ul>
+        <li>State your accomplishments! Tell people what you have achieved from the start.</li>
+        <li>Be clear about what you are doing and how you plan to do this.</li>
+        <li>You have a global audience! Consider the different backgrounds that your users come from.</li>
+        <li>Make sure information is easy to find; nothing should be more than 3 clicks away.</li>
+        <li>Avoid using very small fonts and low contrast colors; information should be easy to read.</li>
+        <li>Start documenting your project as early as possible; don't leave anything to the last minute before the Wiki Freeze. For a complete list of deadlines visit the <a href="https://competition.igem.org/calendar" target="_blank">iGEM Competition calendar</a></li>
+        <li>Have lots of fun!</li>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <h2>Inspiration</h2>
+      <hr>
+      <p>You can also view other team wikis for inspiration! Here are some examples:</p>
+      <ul>
+        <li><a href="https://2022.igem.wiki/dtu-denmark">2022 DTU-Denmark</a></li>
+        <li><a href="https://2022.igem.wiki/virginia">2022 Virginia</a></li>
+        <li><a href="https://2022.igem.wiki/crete">2022 Crete</a></li>
+        <li><a href="https://2022.igem.wiki/estonia-tuit">2022 Estonia_TUIT</a></li>
+        <li><a href="https://2022.igem.wiki/ashesighana">2022 AshesiGhana</a></li>
+        <li><a href="https://2021.igem.org/Team:SDU-Denmark">2021 SDU-Denmark</a></li>
+        <li><a href="https://2020.igem.org/Team:XMU-China">2020 XMU China </a></li>
+        <li><a href="https://2020.igem.org/Team:TAS_Taipei">2020 TAS Taipei </a></li>
+      </ul>
+    </div>
+  </div>
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax Effect</title>
+    <title>Logo Animation</title>
     <style>
-      body, html {
+body, html {
     margin: 0;
     padding: 0;
+    width: 100%;
     height: 100%;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-}
-
-.parallax {
-    position: relative;
-    height: 100vh;
     overflow: hidden;
-    perspective: 1px;
 }
 
-.background-layer {
-    position: absolute;
+#logo-animation {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    transform-origin: 0 0;
-    will-change: transform;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out;
 }
 
-.layer1 {
-    background-image: url('https://gitlab.igem.org/2024/virginia/-/raw/main/static/parback.jpg?ref_type=heads');
-    transform: translateZ(-1px) scale(2);
-    z-index: -2;
-}
-
-.layer2 {
-    background-image: url('https://gitlab.igem.org/2024/virginia/-/raw/main/static/parfront.jpg?ref_type=heads');
-    transform: translateZ(-0.5px) scale(1.5);
-    z-index: -1;
-}
-
-.foreground-content {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-    color: white;
-    text-align: center;
-}
-
-.foreground-content h1 {
-    font-size: 3em;
-    margin: 0;
-}
-
-.foreground-content p {
-    font-size: 1.5em;
+#logo {
+    width: 200px;
+    height: auto;
 }
     </style>
 </head>
 <body>
-    <div class="parallax">
-        <div class="background-layer layer1"></div>
-        <div class="background-layer layer2"></div>
-        <div class="foreground-content">
-            <h1>Welcome to My Website</h1>
-            <p>This is a sample text with a parallax background effect.</p>
+    <div id="logo-animation">
+        <img src="https://media.giphy.com/media/3oEjHJgmOnewNLCCw8/giphy.gif" alt="Logo" id="logo">
+    </div>
+    <div id="main-content">
+        <div class="overlay">
+            <h1>BLISS</h1>
+            <p>Bacillus Lipase Integrated Secretion System</p>
         </div>
     </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const logoAnimation = document.getElementById('logo-animation');
+    const mainContent = document.getElementById('main-content');
+    let animationTimeout;
+
+    function endAnimation() {
+        logoAnimation.style.opacity = '0';
+        logoAnimation.addEventListener('transitionend', () => {
+            logoAnimation.style.display = 'none';
+            mainContent.style.display = 'block';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Set timeout for 4 seconds
+    animationTimeout = setTimeout(endAnimation, 4000);
+
+    // Add event listener to skip animation on click
+    logoAnimation.addEventListener('click', () => {
+        clearTimeout(animationTimeout);
+        endAnimation();
+    });
+});
+    </script>
 </body>
 </html>
-
-
+  
 {% endblock %}
