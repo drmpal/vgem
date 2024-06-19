@@ -3,8 +3,9 @@
 
     <!---- TEAM NAME ---->
     <li class="nav-item">
-      <a class="nav-link navbar-brand" href="{{ url_for('home') }}">
-        Virginia</a>
+      <a class="nav-link navbar-brand" href="{{ url_for('home') }}"><img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/logo.png?ref_type=heads" alt="brand">
+        BLISS
+      </a>
     </li>
 
     <!---- SMALL SCREEN MENU ICON ---->
@@ -140,5 +141,12 @@
   margin-right: 10px;
   height: 20px; /* Adjust the size as needed */
   width: 20px; /* Adjust the size as needed */
+}
+
+.nav-item a img {
+  top: 0;
+  margin-right: 20px;
+  height: 50px;
+  width: 50px;
 }
 </style>

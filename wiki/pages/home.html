@@ -2,6 +2,38 @@
 
 {% block page_content %}
 
+<header>
+    <div class="brand-image">
+        <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/logo.png?ref_type=heads" alt="Brand" id="main-title">
+      </div>
+</header>
+<style>
+    header, html {
+        margin: 0;
+        padding: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .brand-image {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: #fffffd;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main-title {
+        width: 200px;
+        height: auto;
+    }
+
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,29 +69,11 @@ body, html {
     height: auto;
 }
 
-#brand-image {
-    padding-top: 60px;
-    padding-bottom: 0;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-#main-title {
-    display: block;
-    width: 200px;
-    height: auto;
-}
-
     </style>
 </head>
 <body>
     <div id="logo-animation">
-        <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/runnin_animation20001-0070.mkv?ref_type=heads" alt="Logo" id="logo">
-    </div>
-    <div id="brand-image">
-      <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/runnin_animation20001-0070.mkv?ref_type=heads" alt="Brand" id="main-title">
+        <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/logo-animation.gif?ref_type=heads" alt="Logo" id="logo">
     </div>
     <script>
 document.addEventListener("DOMContentLoaded", function() {
