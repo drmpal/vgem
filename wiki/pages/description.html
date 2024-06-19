@@ -1,57 +1,508 @@
 {% extends "layout.html" %}
   
-{% block title %}Project Description{% endblock %}
-{% block lead %}Describe how and why you chose your iGEM project.{% endblock %}
+{% block title %}BLISS{% endblock %}
+{% block lead %}Bacillus Lipase Integrated Secretion System{% endblock %}
 
 {% block page_content %}
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Bronze Medal Criterion #3</h4>
-      <p>Describe how and why you chose your iGEM project.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2024 Medals Page</a> for more information.</p>
+
+<style>
+.fade-in-image { animation: fadeIn 3s; }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.heartbeat-on-hover:hover {
+  animation: heartBeat 0.8s ease-in-out;
+}
+.dizzy-on-hover:hover{
+    animation: dizzy 0.9s ease-in-out;
+}
+.weak-bones-on-hover:hover{
+    animation: tada 0.8s ease-in-out;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+    50% {
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes dizzy {
+   0%
+    {
+       -webkit-transform:translateX(0);
+       transform:translateX(0);
+       -webkit-filter:blur(0px);
+   }
+    6.5%
+    {
+        -webkit-transform:translateX(-6px) rotateY(-9deg);
+        transform:translateX(-6px) rotateY(-9deg);
+        -webkit-filter:blur(1px);
+    }
+
+    18.5%
+    {
+        -webkit-transform:translateX(5px) rotateY(7deg);
+        transform:translateX(5px) rotateY(7deg);
+        -webkit-filter:blur(2px);
+    }
+    31.5%
+        {
+        -webkit-transform:translateX(-3px) rotateY(-5deg);
+        transform:translateX(-3px) rotateY(-5deg);
+        -webkit-filter:blur(3px);
+    }
+    43.5%
+    {
+        -webkit-transform:translateX(2px) rotateY(3deg);
+        transform:translateX(2px) rotateY(3deg);
+        -webkit-filter:blur(1px);
+    }
+    50%
+    {
+        -webkit-transform:translateX(0);
+        transform:translateX(0);
+        -webkit-filter:blur(0px);
+        }
+}
+
+
+
+
+.flip-card {
+    width:270px;height:270px;
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Remove any margin */
+}
+
+.flip-card-back {
+
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*.row {*/
+/*  display: flex;*/
+/*  justify-content: center; !* Center elements horizontally *!*/
+/*  align-items: center; !* Center elements vertically (optional) *!*/
+/*}*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Make nav sticky */
+
+/* 3. ScrollSpy active styles (see JS tab for activation) */
+.section-nav li.active > a {
+  color: #333;
+  font-weight: 500;
+}
+
+ Sidebar Navigation
+.section-nav {
+  padding-left: 0;
+  border-left: 1px solid #efefef;
+}
+
+.section-nav a {
+  text-decoration: none;
+  display: block;
+  padding: .125rem 0;
+  color: #ccc;
+  transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.section-nav a:hover,
+.section-nav a:focus {
+  color: #666;
+}
+
+/*ul, ol {*/
+/*  list-style: none;*/
+/*  margin: 0;*/
+/*  padding: 5px;*/
+/*}*/
+/*li {*/
+/*  margin-left: 1rem;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
+
+h1 {
+  font-weight: 300;
+}
+
+/** page layout **/
+
+.sticky {
+  position: sticky;
+  top: 90px;
+}
+/** enlarge the sections for this demo, so that we have a long scrollable page **/
+section {
+  padding-bottom: 20px;
+}
+
+/*.progress-bar {*/
+/*  width: 100%;*/
+/*  height: 30px;*/
+/*    border: 1px solid #D88993;*/
+/*  border-radius: 7px;*/
+/*  background: #D88993;*/
+/*  padding: 4px;*/
+/*}*/
+
+@keyframes progressBar80 {
+  0% {
+    width: 10%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+@keyframes progressBar90 {
+  0% {
+    width: 10%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+@keyframes progressBar77 {
+  0% {
+    width: 10%;
+  }
+
+  100% {
+    width: 77%;
+  }
+}
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  background-color:#D88993;
+  height: 30px;
+    border:5px solid #D88993;
+  border-radius: 15px;
+  margin-right: 10px;
+
+}
+
+.progress {
+  background-color: #8B555E;
+  height: 100%;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-color: #8B555E;
+  animation-iteration-count: 1;
+}
+
+.progress-description {
+  margin-top: 5px;
+}
+
+h3 {
+  margin: 0 0 0 10px; /* Adjust the spacing as needed */
+}
+.image-container {
+  position: relative;
+    width:200px;
+    height:200px;
+ /* Adjust height as needed */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext {
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+</style>
+<div class="container">
+    <div class="row">
+    <div class="col-md-2">
+        <div class="sticky">
+ <nav class="section-nav" style="border-left: 1px solid #efefef;">
+      <ul style="list-style: none;
+  margin-left: 0px;">
+          <div class="margin-left: 1rem; margin-bottom: 1rem;">
+        <li style="margin-bottom: 5px"><a href="#abstract">Abstract</a></li>
+        <li style="margin-bottom: 5px"><a href="#what-is-EPI">What is EPI?</a></li>
+              <li style="margin-bottom: 5px"><a href="#how-it-works">Role of Enzymes in Digestion</a></li>
+        <li style="margin-bottom: 5px"><a href="#current-solutions">Current Solutions</a></li>
+        <li style="margin-bottom: 5px"><a href="#our-solution">Our Solution</a></li>
+          <li style="margin-bottom: 5px"><a href="#vision">Our Future Vision</a></li>
+          <li style="margin-bottom: 5px"><a href="#inspiration">Inspiration</a></li>
+          <li style="margin-bottom: 5px"><a href="#references">References</a></li>
+        </div>
+          </ul>
+        </nav>
+    </div>
+        </div>
+    <div class="col-md-10">
+<section id="abstract">
+    <h2>Abstract</h2>
+    </section>
+<section id="what-is-EPI">
+  <h2>What is Exocrine Pancreatic Insufficiency?</h2>
+  <div class="row mt-5">
+    <div class="col-md-5">
+      <p>
+          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases <a id="1" href="#citation1" class="tooltip">
+          <span class="tooltiptext">floaty tooltip</span>[1]</a>
+          . These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines2. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain3. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children4.  </p>
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="col">
+          <div class="image-container">
+  <img src="static/EPI people graphic dark.png" alt="First Image" width="250px">
+  <img src="static/EPI people graphic light.png" alt="Second Image" width="250px" class="animate__animated animate__fadeOut" style="animation-duration:2s">
+
+</div>
+             <h3 class="animate__animated animate__fadeIn" style="animation-duration:3s">
+                 10-20% of the global population is affected by EPI</h3>
+        </div>
+        <div class="col">
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div class="progress" style="width:0%; animation-name: progressBar80;"></div>
+            </div>
+            <h3>80%</h3>
+          </div>
+          <p class="progress-description">of individuals with chronic pancreatitis develop EPI</p>
+
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div class="progress" style="width:0%; animation-name: progressBar90; animation-delay: 1s"></div>
+            </div>
+            <h3>90%</h3>
+          </div>
+          <p class="progress-description">of individuals with cystic fibrosis develop EPI</p>
+
+            <div class="progress-container">
+            <div class="progress-bar">
+              <div class="progress" style="width:0%; animation-name: progressBar77; animation-delay: 2s"></div>
+            </div>
+            <h3>77%</h3>
+          </div>
+          <p class="progress-description">of individuals with Type 1 Diabetes develop EPI</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="container mt-5" style="text-align: center; align-items: center">
+
+<h2>If left untreated, EPI can cause...</h2><br>
+    <div class="row">
+        <div class="col-sm">
+            <div class="heartbeat-on-hover">
+                <img src="static/heart.png" width="200px">
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="dizzy-on-hover">
+                <img src="static/dizzy.png" width="200px">
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="weak-bones-on-hover">
+                <img src="static/bone.png" width="250px">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <h2>Arrhythmia</h2>
+        </div>
+        <div class="col-sm">
+            <h2>Anemia</h2>
+        </div>
+        <div class="col-sm">
+            <h2>Osteoporosis</h2>
+        </div>
+    </div>
+    </section>
+    <div class="row mt-5">
+
+        <section id="how-it-works">
+    <div class="row mt-5">
+    <h2>The Role of Enzymes in Digestion </h2>
+   <p> description blablablabla</p>
+    </div>
+</section>
+<section id="current-solutions">
+
+    <h2>Why are current solutions not enough?</h2>
+   <p> description blablablabla</p>
+   </section>
+    </div>
+<div class="row" >
+<div class="col-sm">
+       <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+     <img src="static/dedpig.png" width="270px">
+    </div>
+    <div class="flip-card-back">
+      <img src="static/dedpig text.png" width="270px">
     </div>
   </div>
 </div>
+    </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>What should this page contain?</h2>
-    <hr>
-    <ul>
-      <li>A clear and concise description of your project.</li>
-      <li>A detailed explanation of why your team chose to work on this particular project.</li>
-      <li>References and sources to document your research.</li>
-      <li>Use illustrations and other visual resources to explain your project.</li>
-    </ul>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2022.igem.wiki/dtu-denmark/description">2022 DTU-Denmark</a></li>
-      <li><a href="https://2019.igem.org/Team:ITESO_Guadalajara/Description">2019 ITESO Guadalajara</a></li>
-      <li><a href="https://2020.igem.org/Team:Technion-Israel/Description">2020 Technion Israel</a></li>
-      <li><a href="https://2020.igem.org/Team:Botchan_Lab_Tokyo/Description">2020 Botchan Lab Tokyo</a></li>
-      <li><a href="https://2020.igem.org/Team:St_Andrews/Description">2020 St Andrews</a></li>
-      <li><a href="https://2020.igem.org/Team:MIT/Description">2020 MIT</a></li>
-    </ul>
+<div class="col-sm">
+        <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+     <img src="static/yuck.png" width="270px">
+    </div>
+    <div class="flip-card-back">
+      <img src="static/yuck text.png" width="270px">
+    </div>
   </div>
 </div>
+    </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Some advice</h2>
-    <hr>
-    <p>We encourage you to put up a lot of information and content on your wiki, but we also encourage you to include summaries as much as possible. If you think of the sections in your project description as the sections in a publication, you should try to be concise, accurate, and unambiguous in your achievements. Your Project Description should include more information than your project abstract.</p>
+<div class="col-sm">
+        <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+     <img src="static/mask.png" width="270px">
+    </div>
+    <div class="flip-card-back">
+      <img src="static/mask text.png" width="270px">
+    </div>
   </div>
-  <div class="col-lg-4">
+</div>
+      </div>
+
+
+</div>
+
+    <section id="our-solution">
+    <div class="row mt-5">
+    <h2>Our Solution</h2>
+        <div class="col-md-8">
+   <p> description blablablabla</p>
+        </div>
+        <div class="col-md-4">
+            <img src="static/picture.png" width="200px">
+        </div>
+    </div>
+</section>
+
+    <section id = "vision">
+    <div class="row mt-5">
+    <h2>Our Vision for the Future</h2>
+   <p> description blablablabla</p>
+    </div>
+        </section>
+    <section id = "inspiration">
+        <div class="row mt-5">
+    <h2>Our inspiration</h2>
+        <p> description blablablabla</p>
+        </div>
+    </section>
+     <section id = "references">
+        <div class="row mt-5">
     <h2>References</h2>
-    <hr>
-    <p>iGEM teams are encouraged to record references you use during the course of your research. They should be posted somewhere on your wiki so that judges and other visitors can see how you thought about your project and what works inspired you.</p>
-  </div>
-</div>
+        <p><a id="citation1" href="#1">[1] full citation number 1 blah </a> </p>
+          <p> sdkajfhjskda </p>
+
+        </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </div>
+
 
 {% endblock %}
