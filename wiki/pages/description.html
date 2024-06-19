@@ -265,7 +265,39 @@ h3 {
   left: 0;
 
 }
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
 
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext {
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
 </style>
 <div class="container">
     <div class="row">
@@ -297,7 +329,9 @@ h3 {
   <div class="row mt-5">
     <div class="col-md-5">
       <p>
-          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases <a id="1" href="#citation1">[1]</a>. These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines2. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain3. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children4.  </p>
+          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases <a id="1" href="#citation1" class="tooltip">
+          <span class="tooltiptext">floaty tooltip</span>[1]</a>
+          . These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines2. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain3. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children4.  </p>
     </div>
     <div class="col-md-7">
       <div class="row">
