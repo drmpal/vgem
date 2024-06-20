@@ -1,107 +1,13 @@
 {% extends "layout.html" %}
 
-{% block lead %}
-<header>
-    <div class="brand-image">
-        <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/logo.png?ref_type=heads" alt="Brand" id="main-title">
-    </div>
-</header>
-<style>
-header, html {
-    margin: 0;
-    padding: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.brand-image {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #fffffd;
-    justify-content: center;
-    align-items: center;
-}
-
-#main-title {
-    width: 200px;
-    height: auto;
-}</style>
-{% endblock %}
-
 {% block page_content %}
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logo Animation</title>
-    <style>
-
-body, html {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-}
-
-#logo-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fffffd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 1;
-    transition: opacity 1s ease-out;
-}
-
-#logo {
-    width: 1400px;
-    height: auto;
-}
-
-    </style>
+    <title>Sinusoidal Path Feature</title>
 </head>
-<body>
-    <div id="logo-animation">
-        <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/logo-animation.gif?ref_type=heads" alt="Logo" id="logo">
-    </div>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const logoAnimation = document.getElementById('logo-animation');
-    const mainContent = document.getElementById('main-content');
-    let animationTimeout;
-
-    function endAnimation() {
-        logoAnimation.style.opacity = '0';
-        logoAnimation.addEventListener('transitionend', () => {
-            logoAnimation.style.display = 'none';
-            mainContent.style.display = 'block';
-            document.body.style.overflow = 'auto';
-        });
-    }
-
-    // Set timeout for 4 seconds
-    animationTimeout = setTimeout(endAnimation, 2000);
-
-    // Add event listener to skip animation on click
-    logoAnimation.addEventListener('click', () => {
-        clearTimeout(animationTimeout);
-        endAnimation();
-    });
-});
-    </script>
-</body>
-</html>
-
 <html>
     <body>
         <div class="container">
