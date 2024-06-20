@@ -6,35 +6,33 @@
         <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/logo.png?ref_type=heads" alt="Brand" id="main-title">
     </div>
 </header>
+<style>
+header, html {
+    margin: 0;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.brand-image {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fffffd;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-title {
+    width: 200px;
+    height: auto;
+}</style>
 {% endblock %}
 
 {% block page_content %}
 
-<style>
-    header, html {
-        margin: 0;
-        padding: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .brand-image {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: #fffffd;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #main-title {
-        width: 200px;
-        height: auto;
-    }
-
-</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,5 +101,95 @@ document.addEventListener("DOMContentLoaded", function() {
     </script>
 </body>
 </html>
+
+<html>
+    <body>
+        <div class="container">
+            <svg class="curve" width="100%" height="2000" viewBox="0 0 100 2000" preserveAspectRatio="none">
+                <path d="M 0 0 Q 50 100, 0 200 T 0 400 T 0 600 T 0 800 T 0 1000 T 0 1200 T 0 1400 T 0 1600 T 0 1800 T 0 2000" stroke="black" fill="transparent" stroke-width="2"/>
+            </svg>
+    
+            <div class="content">
+                <div class="checkpoint" style="top: 100px;">
+                    <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Matt.jpg?ref_type=heads" alt="Image 1">
+                    <div class="text-box">Text Box 1</div>
+                </div>
+                <div class="checkpoint" style="top: 300px;">
+                    <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Matt.jpg?ref_type=heads" alt="Image 2">
+                    <div class="text-box">Text Box 2</div>
+                </div>
+                <div class="checkpoint" style="top: 500px;">
+                    <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Matt.jpg?ref_type=heads" alt="Image 3">
+                    <div class="text-box">Text Box 3</div>
+                </div>
+                <!-- Add more checkpoints as needed -->
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.curve {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 2000px;
+}
+
+.checkpoint {
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+}
+
+.checkpoint img {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.text-box {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.text-box.visible {
+    opacity: 1;
+}
+
+</style>
+<script>
+    document.addEventListener('scroll', function() {
+    const textBoxes = document.querySelectorAll('.text-box');
+    const windowHeight = window.innerHeight;
+
+    textBoxes.forEach(textBox => {
+        const textBoxPosition = textBox.getBoundingClientRect().top;
+
+        if (textBoxPosition < windowHeight - 100) { // Adjust as needed
+            textBox.classList.add('visible');
+        }
+    });
+});
+</script>
+
   
 {% endblock %}
