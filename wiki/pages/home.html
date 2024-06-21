@@ -7,9 +7,10 @@
 
 <style>
 
+
 .container {
     position: relative;
-    width: 100%; /* Adjust the width of the container as needed */
+    width: 60%; /* Adjust the width of the container as needed */
 }
 
 .curve-container {
@@ -22,6 +23,19 @@
 .curve {
     display: block;
     width: 100%;
+}
+
+.moving-image-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    pointer-events: none; /* Ensure the moving image doesn't interfere with scrolling or other interactions */
+}
+
+.moving-image {
+    position: absolute;
+    width: 50px; /* Adjust the size of the moving image as needed */
+    height: 50px; /* Adjust the size of the moving image as needed */
 }
 
 .content {
@@ -57,13 +71,17 @@
 <div class="container">
     <div class="curve-container">
         <svg class="curve" width="100%" height="1000" viewBox="0 0 500 1000" preserveAspectRatio="none">
-            <path id="sinusoidal-path" d="M 150 0 Q 500 100, 250 200 T 250 400 T 250 600 T 250 800 T 250 1000" stroke="black" fill="transparent" stroke-width="2"/>
+            <path id="sinusoidal-path" d="M 0 0 Q 500 100, 250 200 T 250 400 T 250 600 T 250 800 T 250 1000" stroke="black" fill="transparent" stroke-width="2"/>
             <circle class="marker" cx="500" cy="200" r="3" fill=#D88993/>
             <circle class="marker" cx="0" cy="400" r="3" fill=#D88993/>
             <circle class="marker" cx="500" cy="600" r="3" fill=#D88993/>
             <circle class="marker" cx="0" cy="800" r="3" fill=#D88993/>
             <circle class="marker" cx="500" cy="1000" r="3" fill=#D88993/>
         </svg>
+    </div>
+
+    <div class="moving-image-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/017/415/542/original/virus-and-bacteria-cute-cartoon-character-png.png" alt="Moving Image" class="moving-image">
     </div>
 
     <div class="content">
@@ -93,6 +111,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const svgPath = document.getElementById('sinusoidal-path');
+    const pathLength = svgPath.getTotalLength();
+    const movingImage = document.querySelector('.moving-image');
     const markers = document.querySelectorAll('.marker');
     const checkpoints = document.querySelectorAll('.checkpoint');
     const windowHeight = window.innerHeight;
@@ -105,14 +126,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (index % 2 === 0) {
             // Position on the left side of the path
-            checkpoint.style.left = `calc(50% - 520px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% - 320px)`; // Adjust as needed
         } else {
             // Position on the right side of the path
-            checkpoint.style.left = `calc(50% + 20px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% + 320px)`; // Adjust as needed
         }
     });
 
+    function updateMovingImagePosition() {
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - windowHeight;
+        const fraction = scrollPosition / maxScroll;
+        const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
+
+        movingImage.style.top = `${pointAtLength.y}px`;
+        movingImage.style.left = `calc(50% + ${pointAtLength.x - 25}px)`; // Center the image horizontally
+    }
+
     document.addEventListener('scroll', function() {
+        updateMovingImagePosition();
+
         checkpoints.forEach(checkpoint => {
             const textBox = checkpoint.querySelector('.text-box');
             const textBoxPosition = textBox.getBoundingClientRect().top;
@@ -122,6 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    updateMovingImagePosition(); // Initial position
 });
 
 </script>
