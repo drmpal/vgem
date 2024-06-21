@@ -129,11 +129,11 @@ html {
 
 /* 3. ScrollSpy active styles (see JS tab for activation) */
 .section-nav li.active > a {
-  color: #b26d7a;
+  color:#8B555E;
   font-weight: 500;
 }
 
- Sidebar Navigation
+
 .section-nav {
   padding-left: 0;
   border-left: 1px solid #D88993;;
@@ -144,7 +144,7 @@ html {
   display: block;
   padding: .125rem 0;
   color: #D88993;;
-  transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+  transition: all 400ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
 }
 
 .section-nav a:hover,
@@ -302,7 +302,8 @@ html {
 	background: red;
 }
 </style>
-
+<head></head>
+<html><body>
 <div class="container">
     <div class="row">
     <div class="col-md-2">
@@ -567,5 +568,27 @@ html {
     </div>
     </div>
 </div>
+</body>
+</html>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
 
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			const id = entry.target.getAttribute('id');
+			if (entry.intersectionRatio > 0) {
+				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+			} else {
+				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+			}
+		});
+	});
+
+	// Track all sections that have an `id` applied
+	document.querySelectorAll('section[id]').forEach((section) => {
+		observer.observe(section);
+	});
+
+});
+</script>
 {% endblock %}
