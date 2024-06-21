@@ -12,7 +12,7 @@
     <body>
         <div class="container">
             <svg class="curve" width="100%" height="2000" viewBox="0 0 100 2000" preserveAspectRatio="none">
-                <path d="M 0 0 Q 50 100, 0 200 T 0 400 T 0 600 T 0 800 T 0 1000 T 0 1200 T 0 1400 T 0 1600 T 0 1800 T 0 2000" stroke="black" fill="transparent" stroke-width="2"/>
+                <path d="M 0 0 Q 50 100, 0 200 T 0 400 T 0 600 T 0 800 T 0 1000 T 0 1200 T 0 1400 T 0 1600 T 0 1800 T 0 2000" stroke=#D88993 fill="transparent" stroke-width="2"/>
             </svg>
     
             <div class="content">
@@ -36,7 +36,7 @@
 
 <style>
 
-    body {
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
@@ -61,9 +61,9 @@
 
 .checkpoint {
     position: absolute;
-    left: 10px; /* Adjust as needed */
     display: flex;
     align-items: center;
+    transform: translate(-50%, -50%);
 }
 
 .checkpoint img {
@@ -83,16 +83,35 @@
 
 </style>
 <script>
-    document.addEventListener('scroll', function() {
-    const textBoxes = document.querySelectorAll('.text-box');
+document.addEventListener('DOMContentLoaded', function() {
+    const svgPath = document.getElementById('sinusoidal-path');
+    const pathLength = svgPath.getTotalLength();
+    const checkpoints = document.querySelectorAll('.checkpoint');
     const windowHeight = window.innerHeight;
 
-    textBoxes.forEach(textBox => {
-        const textBoxPosition = textBox.getBoundingClientRect().top;
+    checkpoints.forEach((checkpoint, index) => {
+        const fraction = index / (checkpoints.length - 1);
+        const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
+        checkpoint.style.top = `${pointAtLength.y}px`;
 
-        if (textBoxPosition < windowHeight - 100) { // Adjust as needed
-            textBox.classList.add('visible');
+        if (index % 2 === 0) {
+            // Position on the left side of the path
+            checkpoint.style.left = `${pointAtLength.x + 10}px`; // Adjust for image width
+        } else {
+            // Position on the right side of the path
+            checkpoint.style.left = `${pointAtLength.x - 60}px`; // Adjust for image width
         }
+    });
+
+    document.addEventListener('scroll', function() {
+        checkpoints.forEach(checkpoint => {
+            const textBox = checkpoint.querySelector('.text-box');
+            const textBoxPosition = textBox.getBoundingClientRect().top;
+
+            if (textBoxPosition < windowHeight - 100) { // Adjust as needed
+                textBox.classList.add('visible');
+            }
+        });
     });
 });
 </script>
