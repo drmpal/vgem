@@ -71,7 +71,7 @@
 <div class="container">
     <div class="curve-container">
         <svg class="curve" width="100%" height="1000" viewBox="0 0 500 1000" preserveAspectRatio="none">
-            <path id="sinusoidal-path" d="M 0 0 Q 300 100, 250 200 T 250 400 T 250 600 T 250 800" stroke="yellow" fill="transparent" stroke-width="2"/>
+            <path id="sinusoidal-path" d="M 0 0 Q 1000 100, 250 200 T 250 400 T 250 600 T 250 800" stroke="black" fill="transparent" stroke-width="2"/>
             <circle class="marker" cx="500" cy="200" r="3" fill=#D88993/>
             <circle class="marker" cx="0" cy="400" r="3" fill=#D88993/>
             <circle class="marker" cx="500" cy="600" r="3" fill=#D88993/>
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
 
         movingImage.style.top = `${pointAtLength.y}px`;
-        movingImage.style.left = `calc(50% + ${pointAtLength.x - 25}px)`; // Center the image horizontally
+        movingImage.style.left = `calc(50% + ${pointAtLength.x}px)`; // Center the image horizontally
     }
 
     document.addEventListener('scroll', function() {
