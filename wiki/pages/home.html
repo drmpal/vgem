@@ -2,55 +2,36 @@
 
 {% block page_content %}
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinusoidal Path Feature</title>
-</head>
-<html>
-    <body>
-        <div class="container">
-            <svg class="curve" width="100%" height="2000" viewBox="0 0 100 2000" preserveAspectRatio="none">
-                <path d="M 0 0 Q 50 100, 0 200 T 0 400 T 0 600 T 0 800 T 0 1000 T 0 1200 T 0 1400 T 0 1600 T 0 1800 T 0 2000" stroke=#D88993 fill="transparent" stroke-width="2"/>
-            </svg>
-    
-            <div class="content">
-                <div class="checkpoint" style="top: 100px;">
-                    <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Matt.jpg?ref_type=heads" alt="Image 1">
-                    <div class="text-box">Text Box 1</div>
-                </div>
-                <div class="checkpoint" style="top: 300px;">
-                    <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Matt.jpg?ref_type=heads" alt="Image 2">
-                    <div class="text-box">Text Box 2</div>
-                </div>
-                <div class="checkpoint" style="top: 500px;">
-                    <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Matt.jpg?ref_type=heads" alt="Image 3">
-                    <div class="text-box">Text Box 3</div>
-                </div>
-                <!-- Add more checkpoints as needed -->
-            </div>
-        </div>
-    </body>
-</html>
-
-<style>
-
-body {
+    <style>
+        body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .container {
     position: relative;
+    width: 60%; /* Adjust the width of the container as needed */
+}
+
+.curve-container {
+    position: absolute;
     width: 100%;
+    top: 0;
+    pointer-events: none; /* Ensure the curve doesn't interfere with scrolling or other interactions */
 }
 
 .curve {
-    position: fixed;
-    left: 0;
-    top: 0;
+    display: block;
+    width: 100%;
 }
 
 .content {
@@ -81,8 +62,34 @@ body {
     opacity: 1;
 }
 
-</style>
-<script>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="curve-container">
+            <svg class="curve" width="100%" height="2000" viewBox="0 0 100 2000" preserveAspectRatio="none">
+                <path id="sinusoidal-path" d="M 50 0 Q 100 100, 50 200 T 50 400 T 50 600 T 50 800 T 50 1000 T 50 1200 T 50 1400 T 50 1600 T 50 1800 T 50 2000" stroke="black" fill="transparent" stroke-width="2"/>
+            </svg>
+        </div>
+
+        <div class="content">
+            <div class="checkpoint">
+                <img src="image1.jpg" alt="Image 1" class="image">
+                <div class="text-box">Text Box 1</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image2.jpg" alt="Image 2" class="image">
+                <div class="text-box">Text Box 2</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image3.jpg" alt="Image 3" class="image">
+                <div class="text-box">Text Box 3</div>
+            </div>
+            <!-- Add more checkpoints as needed -->
+        </div>
+    </div>
+
+    <script>
 document.addEventListener('DOMContentLoaded', function() {
     const svgPath = document.getElementById('sinusoidal-path');
     const pathLength = svgPath.getTotalLength();
@@ -96,10 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (index % 2 === 0) {
             // Position on the left side of the path
-            checkpoint.style.left = `${pointAtLength.x + 10}px`; // Adjust for image width
+            checkpoint.style.left = `calc(50% + ${pointAtLength.x - 50}px)`; // Adjust for image width
         } else {
             // Position on the right side of the path
-            checkpoint.style.left = `${pointAtLength.x - 60}px`; // Adjust for image width
+            checkpoint.style.left = `calc(50% - ${pointAtLength.x + 10}px)`; // Adjust for image width
         }
     });
 
@@ -114,7 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-</script>
+
+    </script>
+</body>
+</html>
 
   
 {% endblock %}
