@@ -14,6 +14,31 @@
 }
 .heartbeat-on-hover:hover {
   animation: heartBeat 0.8s ease-in-out;
+}/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 .dizzy-on-hover:hover{
     animation: dizzy 0.9s ease-in-out;
@@ -246,39 +271,47 @@ h3 {
   left: 0;
 
 }
-/* Tooltip container */
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-}
+
 
 /* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
+        .tooltip-text {
+            visibility: hidden;
+            position: absolute;
+            z-index: 2;
+            width: 100px;
+            color: #fad3d8;
+            font-size: 12px;
+            background-color:#8B555E;
+            border-radius: 10px;
+            padding: 10px 15px;
+            text-align: center;
+            top: 125%; /* Position the tooltip below the text */
+            left: 50%;
+            margin-left: -50px; /* Center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
 
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
-}
+        .tooltip-text::before {
+            content: "";
+            position: absolute;
+            transform: rotate(45deg);
+            background-color: #8B555E;
+            padding: 5px;
+            z-index: 1;
+            top: -5px; /* Position the arrow correctly */
+            left: calc(50% - 5px); /* Center the arrow */
+        }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
+        .hover-text:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
 
-.tooltip .tooltiptext {
-  width: 120px;
-  top: 100%;
-  left: 50%;
-  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
-}
+        .hover-text {
+            position: relative;
+            display: inline-block;
+        }
 a{
     color:#D88993;
 }
@@ -313,7 +346,7 @@ html {
       <ul style="list-style: none;
   margin-left: 0px;">
           <div class="margin-left: 1rem; margin-bottom: 1rem;">
-<!--        <li style="margin-bottom: 5px"><a href="#abstract">Abstract</a></li>-->
+        <li style="margin-bottom: 5px"><a href="#abstract">Abstract</a></li>
         <li style="margin-bottom: 5px"><a href="#what-is-EPI">What is EPI?</a></li>
               <li style="margin-bottom: 5px"><a href="#role-of-enzymes-in-digestion">Role of Enzymes in Digestion</a></li>
         <li style="margin-bottom: 5px"><a href="#current-solutions">Current Solutions</a></li>
@@ -327,16 +360,19 @@ html {
     </div>
         </div>
     <div class="col-md-10">
-<section id="abstract">
-<!--    <h2>Abstract</h2>-->
+<section id="abstract" >
+        <br><br>
+    <div class="row mt-3" style="text-align:center"> <h2>Abstract</h2></div>
+    <div class="row-mt-5" style="text-align: center">
+        Exocrine pancreatic insufficiency (EPI) affects an estimated 10-20% of the global population and leads to malnutrition. This chronic condition is closely linked to pancreatitis, cystic fibrosis, cancer, and diabetes. It is commonly treated with pancreatic enzyme replacement therapy (PERT) with an oral drug containing porcine pancreatic enzymes. However, the prohibitive cost of PERT, up to $4,840 for a 30-day supply, places a significant financial burden on patients already struggling with associated medical expenses. PERT is also a barrier for EPI patients who have religious or dietary restrictions that prevent consumption of porcine products. Additionally, ethical concerns have been raised by animal rights activists about the slaughter of pigs for their pancreas and the negative environmental impact of pig farms. To provide a pig-free treatment option, our team presents the Bacillus Lipase Integrated Secretion System (BLISS), a probiotic that releases synthetic pancreatic enzymes suitable for the human body. BLISS is a more accessible, cost-effective, and environmentally friendly solution than PERT. In the end, BLISS will transform EPI treatment, offering patients a solution that aligns with their values and turns symptom management into a truly blissful experience.
+    </div>
     </section>
 <section id="what-is-EPI">
-    <br><br><br><br>
-  <h2>What is Exocrine Pancreatic Insufficiency?</h2>
-  <div class="row mt-5">
+  <div class="row mt-3"><h2>What is Exocrine Pancreatic Insufficiency?</h2></div>
+  <div class="row mt-3">
     <div class="col-md-5">
       <p>
-          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases<a id="1" href="#citation1">[1]</a>. These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines<a id="2" href="#citation2">[2]</a>. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain<a id="3" href="#citation3">[3]</a>. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children<a id="4" href="#citation4">[4]</a>.  </p>
+          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases<a id="1" href="#citation1" class="hover-text">[1]<span class="tooltip-text" id="bottom"> citation test </span></a>. These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines<a id="2" href="#citation2">[2]</a>. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain<a id="3" href="#citation3">[3]</a>. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children<a id="4" href="#citation4">[4]</a>.  </p>
     </div>
     <div class="col-md-7">
       <div class="row">
