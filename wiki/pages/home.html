@@ -56,20 +56,20 @@
 
 <div class="container">
     <div class="curve-container">
-        <svg class="curve" width="100%" height="1000" viewBox="0 0 300 1000" preserveAspectRatio="none">
-            <path id="sinusoidal-path" d="M 150 0 Q 300 100, 150 200 T 150 400 T 150 600 T 150 800 T 150 1000" stroke=#D88993 fill="transparent" stroke-width="2"/>
-            <circle class="marker" cx="300" cy="200" r="5" fill=#D88993/>
-            <circle class="marker" cx="0" cy="400" r="5" fill=#D88993/>
-            <circle class="marker" cx="300" cy="600" r="5" fill=#D88993/>
-            <circle class="marker" cx="0" cy="800" r="5" fill=#D88993/>
-            <circle class="marker" cx="300" cy="1000" r="5" fill=#D88993/>
+        <svg class="curve" width="100%" height="1000" viewBox="0 0 500 1000" preserveAspectRatio="none">
+            <path id="sinusoidal-path" d="M 150 0 Q 500 100, 250 200 T 250 400 T 250 600 T 250 800 T 250 1000" stroke="black" fill="transparent" stroke-width="2"/>
+            <circle class="marker" cx="500" cy="200" r="3" fill=#D88993/>
+            <circle class="marker" cx="0" cy="400" r="3" fill=#D88993/>
+            <circle class="marker" cx="500" cy="600" r="3" fill=#D88993/>
+            <circle class="marker" cx="0" cy="800" r="3" fill=#D88993/>
+            <circle class="marker" cx="500" cy="1000" r="3" fill=#D88993/>
         </svg>
     </div>
 
     <div class="content">
         <div class="checkpoint">
-                <img src="image1.jpg" alt="Image 1" class="image">
-                <div class="text-box">Text Box 1</div>
+            <img src="image1.jpg" alt="Image 1" class="image">
+            <div class="text-box">Text Box 1</div>
         </div>
         <div class="checkpoint">
             <img src="image2.jpg" alt="Image 2" class="image">
@@ -93,7 +93,6 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const svgPath = document.getElementById('sinusoidal-path');
     const markers = document.querySelectorAll('.marker');
     const checkpoints = document.querySelectorAll('.checkpoint');
     const windowHeight = window.innerHeight;
@@ -106,10 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (index % 2 === 0) {
             // Position on the left side of the path
-            checkpoint.style.left = `calc(50% + 20px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% - 520px)`; // Adjust as needed
         } else {
             // Position on the right side of the path
-            checkpoint.style.left = `calc(50% - 120px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% + 20px)`; // Adjust as needed
         }
     });
 
