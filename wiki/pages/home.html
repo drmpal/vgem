@@ -66,48 +66,44 @@
     opacity: 1;
 }
 
+
 </style>
 
-<div class="container">
-    <div class="curve-container">
-        <svg class="curve" width="100%" height="1000" viewBox="0 0 800 1000" preserveAspectRatio="none">
-            <path id="sinusoidal-path" d="M 400 0 Q 800 100, 400 200 T 400 400 T 400 600 T 400 800" stroke="black" fill="transparent" stroke-width="5"/>
-            <circle class="marker" cx="700" cy="200" r="5" fill="red"/>
-            <circle class="marker" cx="200" cy="400" r="5" fill="red"/>
-            <circle class="marker" cx="700" cy="600" r="5" fill="red"/>
-            <circle class="marker" cx="200" cy="800" r="5" fill="red"/>
-            <circle class="marker" cx="700" cy="1000" r="5" fill="red"/>
-        </svg>
-    </div>
+    <div class="container">
+        <div class="curve-container">
+            <svg class="curve" width="100%" height="1000" viewBox="0 0 800 1000" preserveAspectRatio="none">
+                <path id="sinusoidal-path" d="M 400 0 C 800 100, 0 100, 400 200 S 800 300, 400 400 S 0 500, 400 600 S 800 700, 400 800 S 0 900, 400 1000" stroke="black" fill="transparent" stroke-width="2"/>
+                <circle class="marker" cx="400" cy="200" r="5" fill="red"/>
+                <circle class="marker" cx="400" cy="400" r="5" fill="red"/>
+                <circle class="marker" cx="400" cy="600" r="5" fill="red"/>
+                <circle class="marker" cx="400" cy="800" r="5" fill="red"/>
+                <circle class="marker" cx="400" cy="1000" r="5" fill="red"/>
+            </svg>
+        </div>
 
-    <div class="moving-image-container">
-        <img src="https://static.vecteezy.com/system/resources/previews/017/415/542/original/virus-and-bacteria-cute-cartoon-character-png.png" alt="Moving Image" class="moving-image">
-    </div>
+        <div class="moving-image-container">
+            <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Barry_Recolored.png" alt="Moving Image" class="moving-image">
+        </div>
 
-    <div class="content">
-        <div class="checkpoint">
-            <img src="image1.jpg" alt="Image 1" class="image">
-            <div class="text-box">Text Box 1</div>
+        <div class="content">
+            <div class="checkpoint">
+                <img src="image1.jpg" alt="Image 1" class="image">
+                <div class="text-box">Text Box 1</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image2.jpg" alt="Image 2" class="image">
+                <div class="text-box">Text Box 2</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image3.jpg" alt="Image 3" class="image">
+                <div class="text-box">Text Box 3</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image4.jpg" alt="Image 4" class="image">
+                <div class="text-box">Text Box 4</div>
+            </div>
         </div>
-        <div class="checkpoint">
-            <img src="image2.jpg" alt="Image 2" class="image">
-            <div class="text-box">Text Box 2</div>
-        </div>
-        <div class="checkpoint">
-            <img src="image3.jpg" alt="Image 3" class="image">
-            <div class="text-box">Text Box 3</div>
-        </div>
-        <div class="checkpoint">
-            <img src="image4.jpg" alt="Image 4" class="image">
-            <div class="text-box">Text Box 4</div>
-        </div>
-        <div class="checkpoint">
-            <img src="image5.jpg" alt="Image 5" class="image">
-            <div class="text-box">Text Box 5</div>
-        </div>
-        <!-- Add more checkpoints as needed -->
     </div>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -140,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
 
         movingImage.style.top = `${pointAtLength.y}px`;
-        movingImage.style.left = `${pointAtLength.x}px`; // Position the image exactly at the point
+        movingImage.style.left = `calc(${pointAtLength.x / 800 * 100}%)`; // Adjust the x position to the exact trajectory
     }
 
     document.addEventListener('scroll', function() {
@@ -158,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateMovingImagePosition(); // Initial position
 });
+
 
 </script>
 
