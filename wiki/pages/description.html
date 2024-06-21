@@ -145,11 +145,6 @@
   color: white;
   transform: rotateY(180deg);
 }
-/*.row {*/
-/*  display: flex;*/
-/*  justify-content: center; !* Center elements horizontally *!*/
-/*  align-items: center; !* Center elements vertically (optional) *!*/
-/*}*/
 html {
   scroll-behavior: smooth;
 }
@@ -200,33 +195,6 @@ section {
             margin-top: -90px;
 }
 
-/*@keyframes progressBar80 {*/
-/*  0% {*/
-/*    width: 10%;*/
-/*  }*/
-
-/*  100% {*/
-/*    width: 80%;*/
-/*  }*/
-/*}*/
-/*@keyframes progressBar90 {*/
-/*  0% {*/
-/*    width: 10%;*/
-/*  }*/
-
-/*  100% {*/
-/*    width: 90%;*/
-/*  }*/
-/*}*/
-/*@keyframes progressBar77 {*/
-/*  0% {*/
-/*    width: 10%;*/
-/*  }*/
-
-/*  100% {*/
-/*    width: 77%;*/
-/*  }*/
-/*}*/
 .progress-container {
     display: flex;
     align-items: center;
@@ -253,7 +221,7 @@ section {
     transition: width 2s;
 }
 
-/* Animation classes for different progress bars */
+/* Animation classes for different progress bars DON'T DELETE*/
 .progressbaranimation80 {
     width: 80%;
 }
@@ -266,35 +234,7 @@ section {
     width: 77%;
 }
 
-@keyframes progressBar80 {
-    0% {
-        width: 10%;
-    }
 
-    100% {
-        width: 80%;
-    }
-}
-
-/*@keyframes progressBar90 {*/
-/*    0% {*/
-/*        width: 10%;*/
-/*    }*/
-
-/*    100% {*/
-/*        width: 90%;*/
-/*    }*/
-/*}*/
-
-/*@keyframes progressBar77 {*/
-/*    0% {*/
-/*        width: 10%;*/
-/*    }*/
-
-/*    100% {*/
-/*        width: 77%;*/
-/*    }*/
-/*}*/
 .progress-description {
   margin-top: 5px;
 }
@@ -673,12 +613,19 @@ html {
 });
     </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                const progress = entry.target.querySelector('.progress');
+document.addEventListener('DOMContentLoaded', function () {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
 
-                if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(function (entries, observer) {
+        let delay = 0;
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progress = entry.target.querySelector('.progress');
+                setTimeout(() => {
                     if (entry.target.classList.contains('progressbar80')) {
                         progress.classList.add('progressbaranimation80');
                     } else if (entry.target.classList.contains('progressbar90')) {
@@ -686,14 +633,17 @@ html {
                     } else if (entry.target.classList.contains('progressbar77')) {
                         progress.classList.add('progressbaranimation77');
                     }
-                    observer.unobserve(entry.target);
-                }
-            });
+                }, delay * 1000); // Convert delay to milliseconds
+                observer.unobserve(entry.target);
+                delay += 0.8;  // Adjust this value to set the delay between animations
+            }
         });
+    }, options);
 
-        document.querySelectorAll('.progress-container').forEach(container => {
-            observer.observe(container);
-        });
+    document.querySelectorAll('.progress-container').forEach(container => {
+        observer.observe(container);
     });
+});
+
 </script>
 {% endblock %}
