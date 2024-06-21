@@ -1,20 +1,12 @@
 {% extends "layout.html" %}
 
 {% block title %}Virginia iGEM{% endblock %}
-{% block lead %}Currently Under Construction
-
-{% endblock %}
+{% block lead %}Currently Under Construction{% endblock %}
 
 {% block page_content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinusoidal Path Feature</title>
-    <style>
-        body {
+<style>
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
@@ -42,7 +34,7 @@
 .content {
     position: relative;
     width: 100%;
-    height: 2000px;
+    height: 1000px;
 }
 
 .checkpoint {
@@ -67,34 +59,33 @@
     opacity: 1;
 }
 
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="curve-container">
-            <svg class="curve" width="100%" height="2000" viewBox="0 0 100 2000" preserveAspectRatio="none">
-                <path id="sinusoidal-path" d="M 50 0 Q 100 100, 50 200 T 50 400 T 50 600 T 50 800 T 50 1000 T 50 1200 T 50 1400 T 50 1600 T 50 1800 T 50 2000" stroke=#2D4E62 fill="transparent" stroke-width="2"/>
-            </svg>
-        </div>
+</style>
 
-        <div class="content">
+<div class="container">
+    <div class="curve-container">
+        <svg class="curve" width="100%" height="2000" viewBox="0 0 300 1000" preserveAspectRatio="none">
+            <path id="sinusoidal-path" d="M 150 0 Q 200 200, 150 400 T 150 800 T 150 1200 T 150 1600 T 150 1000" stroke="black" fill="transparent" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <div class="content">
             <div class="checkpoint">
                 <img src="image1.jpg" alt="Image 1" class="image">
                 <div class="text-box">Text Box 1</div>
             </div>
-            <div class="checkpoint">
-                <img src="image2.jpg" alt="Image 2" class="image">
-                <div class="text-box">Text Box 2</div>
-            </div>
-            <div class="checkpoint">
-                <img src="image3.jpg" alt="Image 3" class="image">
-                <div class="text-box">Text Box 3</div>
-            </div>
-            <!-- Add more checkpoints as needed -->
+        <div class="checkpoint">
+            <img src="image2.jpg" alt="Image 2" class="image">
+            <div class="text-box">Text Box 2</div>
         </div>
+        <div class="checkpoint">
+            <img src="image3.jpg" alt="Image 3" class="image">
+            <div class="text-box">Text Box 3</div>
+        </div>
+        <!-- Add more checkpoints as needed -->
     </div>
+</div>
 
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     const svgPath = document.getElementById('sinusoidal-path');
     const pathLength = svgPath.getTotalLength();
@@ -127,9 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-    </script>
-</body>
-</html>
+</script>
 
   
 {% endblock %}
