@@ -46,6 +46,10 @@
 .weak-bones-on-hover:hover{
     animation: tada 0.8s ease-in-out;
 }
+.yogurt-on-hover:hover
+{
+    animation: bounce 0.8s ease-in-out;
+}
 
 @keyframes heartBeat {
   0% {
@@ -196,62 +200,101 @@ section {
             margin-top: -90px;
 }
 
-@keyframes progressBar80 {
-  0% {
-    width: 10%;
-  }
+/*@keyframes progressBar80 {*/
+/*  0% {*/
+/*    width: 10%;*/
+/*  }*/
 
-  100% {
-    width: 80%;
-  }
-}
-@keyframes progressBar90 {
-  0% {
-    width: 10%;
-  }
+/*  100% {*/
+/*    width: 80%;*/
+/*  }*/
+/*}*/
+/*@keyframes progressBar90 {*/
+/*  0% {*/
+/*    width: 10%;*/
+/*  }*/
 
-  100% {
-    width: 90%;
-  }
-}
-@keyframes progressBar77 {
-  0% {
-    width: 10%;
-  }
+/*  100% {*/
+/*    width: 90%;*/
+/*  }*/
+/*}*/
+/*@keyframes progressBar77 {*/
+/*  0% {*/
+/*    width: 10%;*/
+/*  }*/
 
-  100% {
-    width: 77%;
-  }
-}
+/*  100% {*/
+/*    width: 77%;*/
+/*  }*/
+/*}*/
 .progress-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .progressbar {
-  position: relative;
-  width: 100%;
-  background-color:#D88993;
-  height: 30px;
-    border:5px solid #D88993;
-  border-radius: 15px;
-  margin-right: 10px;
-
+    position: relative;
+    width: 100%;
+    background-color: #D88993;
+    height: 30px;
+    border: 5px solid #D88993;
+    border-radius: 15px;
+    margin-right: 10px;
 }
 
-.progressbaranimation {
-  background-color: #8B555E;
-  height: 100%;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-  border-color: #8B555E;
-  animation-iteration-count: 1;
-  animation: progressBar77;
+.progress {
+    background-color: #8B555E;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color: #8B555E;
+    width: 0%;
+    transition: width 2s;
 }
 
+/* Animation classes for different progress bars */
+.progressbaranimation80 {
+    width: 80%;
+}
+
+.progressbaranimation90 {
+    width: 90%;
+}
+
+.progressbaranimation77 {
+    width: 77%;
+}
+
+@keyframes progressBar80 {
+    0% {
+        width: 10%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+/*@keyframes progressBar90 {*/
+/*    0% {*/
+/*        width: 10%;*/
+/*    }*/
+
+/*    100% {*/
+/*        width: 90%;*/
+/*    }*/
+/*}*/
+
+/*@keyframes progressBar77 {*/
+/*    0% {*/
+/*        width: 10%;*/
+/*    }*/
+
+/*    100% {*/
+/*        width: 77%;*/
+/*    }*/
+/*}*/
 .progress-description {
   margin-top: 5px;
 }
@@ -387,25 +430,25 @@ html {
                  10-20% of the global population is affected by EPI</h3>
         </div>
         <div class="col">
-          <div class="progress-container">
+          <div class="progress-container progressbar80">
             <div class="progressbar">
-<!--              <div class="progress" style="width:0%; animation-name: progressBar80;"></div>-->
+                    <div class="progress"></div>
             </div>
             <h3>80%</h3>
           </div>
           <p class="progress-description">of individuals with chronic pancreatitis develop EPI</p>
 
-          <div class="progress-container">
+          <div class="progress-container progressbar90">
             <div class="progressbar">
-<!--              <div class="progress" style="width:0%; animation-name: progressBar90; animation-delay: 1s"></div>-->
+                    <div class="progress"></div>
             </div>
             <h3>90%</h3>
           </div>
           <p class="progress-description">of individuals with cystic fibrosis develop EPI</p>
 
-            <div class="progress-container">
+            <div class="progress-container progressbar77">
             <div class="progressbar">
-<!--              <div class="progress" style="width:0%; animation-name: progressBar77; animation-delay: 2s"></div>-->
+                <div class="progress"></div>
             </div>
             <h3>77%</h3>
           </div>
@@ -544,7 +587,7 @@ html {
 </div>
         <div class="col-md-2">
 <!--            <div style="max-width: 30%; height:auto; display: block;margin-left: auto;margin-right: auto;">-->
-            <img src="static/justBLISSyogurt.png" width="130px">
+            <div class="yogurt-on-hover"><img src="static/justBLISSyogurt.png" width="130px"></div>
 <!--</div>-->
         </div>
          </div>
@@ -629,21 +672,28 @@ html {
 
 });
     </script>
-    <script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
         const observer = new IntersectionObserver(entries => {
-  // Loop over the entries
-entries.forEach(entry => {
-    const progress = entry.target.querySelector('.progressbar');
+            entries.forEach(entry => {
+                const progress = entry.target.querySelector('.progress');
 
-    if (entry.isIntersecting) {
-      progress.classList.add('progressbaranimation');
-	  return; // if we added the class, exit the function
-    }
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('progressbar80')) {
+                        progress.classList.add('progressbaranimation80');
+                    } else if (entry.target.classList.contains('progressbar90')) {
+                        progress.classList.add('progressbaranimation90');
+                    } else if (entry.target.classList.contains('progressbar77')) {
+                        progress.classList.add('progressbaranimation77');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
 
-    // We're not intersecting, so remove the class!
-    // progress.classList.remove('progressbaranimation');
-  });
-});
-observer.observe(document.querySelector('progress-container'));
-    </script>
+        document.querySelectorAll('.progress-container').forEach(container => {
+            observer.observe(container);
+        });
+    });
+</script>
 {% endblock %}
