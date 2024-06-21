@@ -9,25 +9,25 @@
 
 .container {
     position: relative;
-    width: 100%; /* Adjust the width of the container as needed */
+    width: 60%; /* Adjust the width of the container as needed */
 }
 
 .curve-container {
     position: absolute;
     width: 100%;
-    top: 60px;
+    top: 0;
     pointer-events: none; /* Ensure the curve doesn't interfere with scrolling or other interactions */
 }
 
 .curve {
     display: block;
-    width: 100vw;
+    width: 100%;
 }
 
 .content {
     position: relative;
     width: 100%;
-    height: 1000px;
+    height: 2000px;
 }
 
 .checkpoint {
@@ -56,16 +56,21 @@
 
 <div class="container">
     <div class="curve-container">
-        <svg class="curve" width="100%" height="2000" viewBox="0 0 300 1000" preserveAspectRatio="none">
-            <path id="sinusoidal-path" d="M 150 0 Q 300 100, 150 200 T 150 400 T 150 600 T 150 800 T 150 1000" stroke="black" fill="transparent" stroke-width="2"/>
+        <svg class="curve" width="100%" height="1000" viewBox="0 0 300 1000" preserveAspectRatio="none">
+            <path id="sinusoidal-path" d="M 150 0 Q 300 100, 150 200 T 150 400 T 150 600 T 150 800 T 150 1000" stroke=#D88993 fill="transparent" stroke-width="2"/>
+            <circle class="marker" cx="150" cy="200" r="5" fill=#D88993/>
+            <circle class="marker" cx="150" cy="400" r="5" fill=#D88993/>
+            <circle class="marker" cx="150" cy="600" r="5" fill=#D88993/>
+            <circle class="marker" cx="150" cy="800" r="5" fill=#D88993/>
+            <circle class="marker" cx="150" cy="1000" r="5" fill=#D88993/>
         </svg>
     </div>
 
     <div class="content">
-            <div class="checkpoint">
+        <div class="checkpoint">
                 <img src="image1.jpg" alt="Image 1" class="image">
                 <div class="text-box">Text Box 1</div>
-            </div>
+        </div>
         <div class="checkpoint">
             <img src="image2.jpg" alt="Image 2" class="image">
             <div class="text-box">Text Box 2</div>
@@ -74,6 +79,14 @@
             <img src="image3.jpg" alt="Image 3" class="image">
             <div class="text-box">Text Box 3</div>
         </div>
+        <div class="checkpoint">
+            <img src="image4.jpg" alt="Image 4" class="image">
+            <div class="text-box">Text Box 4</div>
+        </div>
+        <div class="checkpoint">
+            <img src="image5.jpg" alt="Image 5" class="image">
+            <div class="text-box">Text Box 5</div>
+        </div>
         <!-- Add more checkpoints as needed -->
     </div>
 </div>
@@ -81,21 +94,22 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const svgPath = document.getElementById('sinusoidal-path');
-    const pathLength = svgPath.getTotalLength();
+    const markers = document.querySelectorAll('.marker');
     const checkpoints = document.querySelectorAll('.checkpoint');
     const windowHeight = window.innerHeight;
 
-    checkpoints.forEach((checkpoint, index) => {
-        const fraction = index / (checkpoints.length - 1);
-        const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
-        checkpoint.style.top = `${pointAtLength.y}px`;
+    markers.forEach((marker, index) => {
+        const markerPosition = marker.getBoundingClientRect();
+        const checkpoint = checkpoints[index];
+
+        checkpoint.style.top = `${markerPosition.top + window.scrollY}px`;
 
         if (index % 2 === 0) {
             // Position on the left side of the path
-            checkpoint.style.left = `calc(50% + ${pointAtLength.x - 50}px)`; // Adjust for image width
+            checkpoint.style.left = `calc(50% + 20px)`; // Adjust as needed
         } else {
             // Position on the right side of the path
-            checkpoint.style.left = `calc(50% - ${pointAtLength.x + 10}px)`; // Adjust for image width
+            checkpoint.style.left = `calc(50% - 120px)`; // Adjust as needed
         }
     });
 
