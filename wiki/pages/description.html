@@ -363,10 +363,10 @@ html {
         <div class="col">
           <div class="image-container">
   <img src="static/EPI people graphic dark.png" alt="First Image" width="250px">
-  <img src="static/EPI people graphic light.png" alt="Second Image" width="250px" class="animate__animated animate__fadeOut" style="animation-duration:2s">
+  <img src="static/EPI people graphic light.png" alt="Second Image" width="250px" style="animation-duration:2s" id="fadeOutImage">
 
 </div>
-             <h3 class="animate__animated animate__fadeIn" style="animation-duration:3s">
+             <h3 id="fadeInHeading" style="animation-duration:3s">
                  10-20% of the global population is affected by EPI</h3>
         </div>
         <div class="col">
@@ -630,12 +630,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         progress.classList.add('progressbaranimation80');
                     } else if (entry.target.classList.contains('progressbar90')) {
                         progress.classList.add('progressbaranimation90');
+                        progress.style.add('animation-delay: 2s');
                     } else if (entry.target.classList.contains('progressbar77')) {
                         progress.classList.add('progressbaranimation77');
                     }
-                }, delay * 1000); // Convert delay to milliseconds
-                observer.unobserve(entry.target);
-                delay += 0.8;  // Adjust this value to set the delay between animations
+                }, delay * 2000); // Set delay in milliseconds (2 seconds each)
+                        delay += 1;  // Increment delay for the next bar
+                        observer.unobserve(entry.target);
             }
         });
     }, options);
@@ -643,6 +644,35 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.progress-container').forEach(container => {
         observer.observe(container);
     });
+});
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                if (target.id === 'fadeOutImage') {
+                    target.classList.add('animate__animated', 'animate__fadeOut');
+                }
+                if (target.id === 'fadeInHeading') {
+                    target.classList.add('animate__animated', 'animate__fadeIn');
+                }
+                observer.unobserve(target); // Unobserve after adding the class to avoid re-triggering
+            }
+        });
+    }, options);
+
+    // Observe the image with the id 'fadeOutImage'
+    observer.observe(document.getElementById('fadeOutImage'));
+    observer.observe(document.getElementById('fadeInHeading'));
 });
 
 </script>
