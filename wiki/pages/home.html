@@ -9,7 +9,7 @@
 
 .container {
     position: relative;
-    width: 60%; /* Adjust the width of the container as needed */
+    width: 100%; /* Adjust the width of the container as needed */
 }
 
 .curve-container {
@@ -68,16 +68,17 @@
 </style>
 
 
-    <div class="container">
-        <div class="curve-container">
-            <svg class="curve" width="100%" height="1000" viewBox="0 0 1600 1000" preserveAspectRatio="none">
-                <path id="sinusoidal-path" d="M 800 0 C 1600 250, 0 250, 800 500 S 1600 750, 800 1000" stroke="black" fill="transparent" stroke-width="2"/>
-                <circle class="marker" cx="800" cy="250" r="5" fill="red"/>
-                <circle class="marker" cx="800" cy="500" r="5" fill="red"/>
-                <circle class="marker" cx="800" cy="750" r="5" fill="red"/>
-                <circle class="marker" cx="800" cy="1000" r="5" fill="red"/>
-            </svg>
-        </div>
+<div class="container">
+    <div class="curve-container">
+        <svg class="curve" width="100%" height="1000" viewBox="0 0 3500 1000" preserveAspectRatio="none">
+            <path id="sinusoidal-path" d="M 1750 0 Q 3500 250, 1750 500 T 1750 1000" stroke="black" fill="transparent" stroke-width="24"/>
+            <path id="sinusoidal-path" d="M 1750 0 Q 3500 250, 1750 500 T 1750 1000" stroke="pink" fill="transparent" stroke-width="20"/>
+            <circle class="marker" cx="1750" cy="0" r="5" fill="red"/>
+            <circle class="marker" cx="2627" cy="250" r="5" fill="red"/>
+            <circle class="marker" cx="873" cy="750" r="5" fill="red"/>
+            <circle class="marker" cx="1750" cy="1000" r="5" fill="red"/>
+        </svg>
+    </div>
 
         <div class="moving-image-container">
             <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Barry_Recolored.png" alt="Moving Image" class="moving-image">
@@ -120,10 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (index % 2 === 0) {
             // Position on the left side of the path
-            checkpoint.style.left = `calc(50% - 120px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% - 300px)`;
         } else {
             // Position on the right side of the path
-            checkpoint.style.left = `calc(50% + 20px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% + 300px)`;
         }
     });
 
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
 
         movingImage.style.top = `${pointAtLength.y}px`;
-        movingImage.style.left = `calc(${pointAtLength.x / 1600 * 100}%)`; // Adjust the x position to the exact trajectory
+        movingImage.style.left = `calc(${pointAtLength.x / 3300 * 95}%)`;
     }
 
     document.addEventListener('scroll', function() {
@@ -144,13 +145,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const textBox = checkpoint.querySelector('.text-box');
             const textBoxPosition = textBox.getBoundingClientRect().top;
 
-            if (textBoxPosition < windowHeight - 100) { // Adjust as needed
+            if (textBoxPosition < windowHeight - 100) {
                 textBox.classList.add('visible');
             }
         });
     });
 
-    updateMovingImagePosition(); // Initial position
+    updateMovingImagePosition();
 });
 
 </script>
