@@ -9,7 +9,7 @@
 
 .container {
     position: relative;
-    width: 60%; /* Adjust the width of the container as needed */
+    width: 100%; /* Adjust the width of the container as needed */
 }
 
 .curve-container {
@@ -24,10 +24,23 @@
     width: 100%;
 }
 
+.moving-image-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    pointer-events: none; /* Ensure the moving image doesn't interfere with scrolling or other interactions */
+}
+
+.moving-image {
+    position: absolute;
+    width: 50px; /* Adjust the size of the moving image as needed */
+    height: 70px; /* Adjust the size of the moving image as needed */
+}
+
 .content {
     position: relative;
     width: 100%;
-    height: 2000px;
+    height: 1000px;
 }
 
 .checkpoint {
@@ -54,46 +67,48 @@
 
 </style>
 
+
 <div class="container">
     <div class="curve-container">
-        <svg class="curve" width="100%" height="1000" viewBox="0 0 300 1000" preserveAspectRatio="none">
-            <path id="sinusoidal-path" d="M 150 0 Q 300 100, 150 200 T 150 400 T 150 600 T 150 800 T 150 1000" stroke=#D88993 fill="transparent" stroke-width="2"/>
-            <circle class="marker" cx="150" cy="200" r="5" fill=#D88993/>
-            <circle class="marker" cx="150" cy="400" r="5" fill=#D88993/>
-            <circle class="marker" cx="150" cy="600" r="5" fill=#D88993/>
-            <circle class="marker" cx="150" cy="800" r="5" fill=#D88993/>
-            <circle class="marker" cx="150" cy="1000" r="5" fill=#D88993/>
+        <svg class="curve" width="100%" height="1000" viewBox="0 0 3500 1000" preserveAspectRatio="none">
+            <path id="sinusoidal-path" d="M 1750 0 Q 3500 250, 1750 500 T 1750 1000" stroke="black" fill="transparent" stroke-width="24"/>
+            <path id="sinusoidal-path" d="M 1750 0 Q 3500 250, 1750 500 T 1750 1000" stroke="pink" fill="transparent" stroke-width="20"/>
+            <circle class="marker" cx="1750" cy="0" r="5" fill="red"/>
+            <circle class="marker" cx="2627" cy="250" r="5" fill="red"/>
+            <circle class="marker" cx="873" cy="750" r="5" fill="red"/>
+            <circle class="marker" cx="1750" cy="1000" r="5" fill="red"/>
         </svg>
     </div>
 
-    <div class="content">
-        <div class="checkpoint">
+        <div class="moving-image-container">
+            <img src="https://gitlab.igem.org/2024/virginia/-/raw/main/static/Barry_Recolored.png" alt="Moving Image" class="moving-image">
+        </div>
+
+        <div class="content">
+            <div class="checkpoint">
                 <img src="image1.jpg" alt="Image 1" class="image">
                 <div class="text-box">Text Box 1</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image2.jpg" alt="Image 2" class="image">
+                <div class="text-box">Text Box 2</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image3.jpg" alt="Image 3" class="image">
+                <div class="text-box">Text Box 3</div>
+            </div>
+            <div class="checkpoint">
+                <img src="image4.jpg" alt="Image 4" class="image">
+                <div class="text-box">Text Box 4</div>
+            </div>
         </div>
-        <div class="checkpoint">
-            <img src="image2.jpg" alt="Image 2" class="image">
-            <div class="text-box">Text Box 2</div>
-        </div>
-        <div class="checkpoint">
-            <img src="image3.jpg" alt="Image 3" class="image">
-            <div class="text-box">Text Box 3</div>
-        </div>
-        <div class="checkpoint">
-            <img src="image4.jpg" alt="Image 4" class="image">
-            <div class="text-box">Text Box 4</div>
-        </div>
-        <div class="checkpoint">
-            <img src="image5.jpg" alt="Image 5" class="image">
-            <div class="text-box">Text Box 5</div>
-        </div>
-        <!-- Add more checkpoints as needed -->
     </div>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const svgPath = document.getElementById('sinusoidal-path');
+    const pathLength = svgPath.getTotalLength();
+    const movingImage = document.querySelector('.moving-image');
     const markers = document.querySelectorAll('.marker');
     const checkpoints = document.querySelectorAll('.checkpoint');
     const windowHeight = window.innerHeight;
@@ -106,23 +121,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (index % 2 === 0) {
             // Position on the left side of the path
-            checkpoint.style.left = `calc(50% + 20px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% - 300px)`;
         } else {
             // Position on the right side of the path
-            checkpoint.style.left = `calc(50% - 120px)`; // Adjust as needed
+            checkpoint.style.left = `calc(50% + 300px)`;
         }
     });
 
+    function updateMovingImagePosition() {
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - windowHeight;
+        const fraction = scrollPosition / maxScroll;
+        const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
+
+        movingImage.style.top = `${pointAtLength.y}px`;
+        movingImage.style.left = `calc(${pointAtLength.x / 3300 * 95}%)`;
+    }
+
     document.addEventListener('scroll', function() {
+        updateMovingImagePosition();
+
         checkpoints.forEach(checkpoint => {
             const textBox = checkpoint.querySelector('.text-box');
             const textBoxPosition = textBox.getBoundingClientRect().top;
 
-            if (textBoxPosition < windowHeight - 100) { // Adjust as needed
+            if (textBoxPosition < windowHeight - 100) {
                 textBox.classList.add('visible');
             }
         });
     });
+
+    updateMovingImagePosition();
 });
 
 </script>
