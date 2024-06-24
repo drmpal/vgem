@@ -79,7 +79,7 @@
 
 .moving-image {
     position: absolute;
-    width: 50px;
+    width: 70px;
     height: 50px;
     transition: transform 0.6s;
 }
@@ -169,10 +169,10 @@ document.addEventListener('DOMContentLoaded', function() {
         movingImage.style.top = `${pointAtLength.y}px`;
         movingImage.style.left = `calc(${pointAtLength.x / 3300 * 95}%)`;
 
-        if (scrollPosition >= checkpointPositions[1] && scrollPosition < checkpointPositions[2]) {
+        if (scrollPosition >= checkpointPositions[0] && scrollPosition < checkpointPositions[1]) {
             movingImage.classList.add('flip');
             movingImage.classList.remove('flip-back');
-        } else if (scrollPosition >= checkpointPositions[2]) {
+        } else if (scrollPosition >= checkpointPositions[1] && scrollPosition < checkpointPositions[2]) {
             movingImage.classList.add('flip-back');
             movingImage.classList.remove('flip');
         } else {
