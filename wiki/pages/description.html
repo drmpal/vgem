@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
   
-{% block title %}Project Description{% endblock %}
+{% block title %}<br>Project Description{% endblock %}
 {% block lead %}BLISS (Bacillus Lipase Integrated Secretion System){% endblock %}
 
 {% block page_content %}
@@ -257,45 +257,45 @@ h3 {
 }
 
 
-/* Tooltip text */
-        .tooltip-text {
-            visibility: hidden;
-            position: absolute;
-            z-index: 2;
-            width: 100px;
-            color: #fad3d8;
-            font-size: 12px;
-            background-color:#8B555E;
-            border-radius: 10px;
-            padding: 10px 15px;
-            text-align: center;
-            top: 125%; /* Position the tooltip below the text */
-            left: 50%;
-            margin-left: -50px; /* Center the tooltip */
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
+/*!* Tooltip text *!*/
+/*        .tooltip-text {*/
+/*            visibility: hidden;*/
+/*            position: absolute;*/
+/*            z-index: 2;*/
+/*            width: 100px;*/
+/*            color: #fad3d8;*/
+/*            font-size: 12px;*/
+/*            background-color:#8B555E;*/
+/*            border-radius: 10px;*/
+/*            padding: 10px 15px;*/
+/*            text-align: center;*/
+/*            top: 125%; !* Position the tooltip below the text *!*/
+/*            left: 50%;*/
+/*            margin-left: -50px; !* Center the tooltip *!*/
+/*            opacity: 0;*/
+/*            transition: opacity 0.3s;*/
+/*        }*/
 
-        .tooltip-text::before {
-            content: "";
-            position: absolute;
-            transform: rotate(45deg);
-            background-color: #8B555E;
-            padding: 5px;
-            z-index: 1;
-            top: -5px; /* Position the arrow correctly */
-            left: calc(50% - 5px); /* Center the arrow */
-        }
+/*        .tooltip-text::before {*/
+/*            content: "";*/
+/*            position: absolute;*/
+/*            transform: rotate(45deg);*/
+/*            background-color: #8B555E;*/
+/*            padding: 5px;*/
+/*            z-index: 1;*/
+/*            top: -5px; !* Position the arrow correctly *!*/
+/*            left: calc(50% - 5px); !* Center the arrow *!*/
+/*        }*/
 
-        .hover-text:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-        }
+/*        .hover-text:hover .tooltip-text {*/
+/*            visibility: visible;*/
+/*            opacity: 1;*/
+/*        }*/
 
-        .hover-text {
-            position: relative;
-            display: inline-block;
-        }
+/*        .hover-text {*/
+/*            position: relative;*/
+/*            display: inline-block;*/
+/*        }*/
 a{
     color:#D88993;
 }
@@ -303,21 +303,7 @@ a:hover
 {
     color: #8B555E;
 }
-html {
-	scroll-timeline: --page-scroll block;
-}
 
-@keyframes grow-progress {
-	from { transform: scaleX(0); }
-	to { transform: scaleX(1); }
-}
-
-#progress-scroll {
-	position: fixed;
-	left: 0; top: 0;
-	width: 100%; height: 1em;
-	background: red;
-}
 </style>
 <head></head>
 <html><body>
@@ -356,20 +342,20 @@ html {
   <div class="row mt-3">
     <div class="col-md-5">
       <p>
-          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases<a id="1" href="#citation1" class="hover-text">[1]<span class="tooltip-text" id="bottom"> citation test </span></a>. These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines<a id="2" href="#citation2">[2]</a>. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain<a id="3" href="#citation3">[3]</a>. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children<a id="4" href="#citation4">[4]</a>.  </p>
+          Exocrine pancreatic insufficiency (EPI) is a condition in which the pancreas fails to produce sufficient amounts of functional digestive enzymes, including lipases, proteases, and amylases<a id="1" href="#citation1">[1]</a>. These enzymes hydrolyze food particles, allowing for nutrient absorption by the intestines<a id="2" href="#citation2">[2]</a>. In the absence of these enzymes, food passes through the body undigested, resulting in malnutrition, nausea, and abdominal pain<a id="3" href="#citation3">[3]</a>. If left untreated, the chronic undernutrition caused by EPI eventually leads to osteoporosis and decreased immune function, and severe cases can result in death. Statistically, the two leading causes of EPI are chronic pancreatitis in adults and cystic fibrosis in children<a id="4" href="#citation4">[4]</a>.  </p>
     </div>
     <div class="col-md-7">
       <div class="row">
         <div class="col">
           <div class="image-container">
   <img src="static/EPI people graphic dark.png" alt="First Image" width="250px">
-  <img src="static/EPI people graphic light.png" alt="Second Image" width="250px" class="animate__animated animate__fadeOut" style="animation-duration:2s">
+  <img src="static/EPI people graphic light.png" alt="Second Image" width="250px" style="animation-duration:2s" id="fadeOutImage">
 
 </div>
-             <h3 class="animate__animated animate__fadeIn" style="animation-duration:3s">
-                 10-20% of the global population is affected by EPI</h3>
+        <h3 id="fadeInHeading" style="animation-duration:3s">
+                 10-20% of the global population is affected by EPI<a href="#citation5" id="5" style="font-size: 16px;margin-left: 5px; ">[5]</a></h3>
         </div>
-        <div class="col">
+        <div class="col allprogressbars">
           <div class="progress-container progressbar80">
             <div class="progressbar">
                     <div class="progress"></div>
@@ -392,7 +378,7 @@ html {
             </div>
             <h3>77%</h3>
           </div>
-          <p class="progress-description">of individuals with Type 1 Diabetes develop EPI</p>
+          <p class="progress-description">of individuals with Type 1 Diabetes develop EPI <a href="#citation6" id="6" style="font-size: 16px;margin-left: 2px;">[6]</a></p>
         </div>
       </div>
     </div>
@@ -440,14 +426,14 @@ html {
         <section id="role-of-enzymes-in-digestion">
             <div class="row mt-5"><h2>The Role of Enzymes in Digestion </h2></div>
 
-   <p class="mt-2"> For consumed food to be digested and processed into nutrients by the body, certain digestive enzymes are necessary. Pancreatic enzymes are described in three main categories: lipolytic enzymes (lipase), amylolytic enzymes (amylase), and proteolytic enzymes (protease)<a id="7" href="#citation7">[7]</a>. These different groups of enzymes process different components of food, including fats, starches, and proteins.
+   <p class="mt-2"> Digestive enzymes are necessary the body to digest and process food into nutrients.  Pancreatic enzymes are described in three main categories: lipolytic enzymes (lipase), amylolytic enzymes (amylase), and proteolytic enzymes (protease)<a id="7" href="#citation7">[7]</a>. These different groups of enzymes process different components of food, including fats, starches, and proteins.
 
-    Lipolytic enzymes, such as pancreatic lipase, digest dietary lipids for absorption in the small intestine<a id="8" href="#citation8">[8]</a>. Pancreatic lipase is the most crucial gastrointestinal enzyme involved in the hydrolysis of lipid ester bonds, resulting in the lipids’ breakdown and ease of uptake by absorptive cells in the intestine<a id="9" href="#citation9">[9]</a>.  A lipase deficiency or insufficient lipase activity can prevent the body from absorbing fat and fat-soluble vitamins (A, D, E, and K)<a id="10" href="#citation10">[10]</a>.
-    
-    <br><br>In the presence of amphiphiles such as phosphates and bile salts, lipase requires a cofactor to bind to and catabolize lipid macromolecule structures<a id="11" href="#citation11">[11]</a>. Colipase is a necessary protein cofactor that stabilizes lipase’s attachment to its triglyceride substrate in the presence of bile salts, which are prevalent in the digestive system<a id="12" href="#citation12">[12]</a>. Colipase is initially secreted as its precursor, procolipase, which is then cleaved in the intestine at the Arg5-Gly6 bond by the enzyme trypsin, a serine protease secreted by pancreatic acinar cells<a id="13" href="#citation13">[13</a>,<a id="14" href="#citation14">14]</a>. After procolipase is transformed into colipase, the lipase-colipase enzyme complex is formed and can then digest fats.
-    
-   <br><br> Amylolytic enzymes, such as pancreatic amylase, break down consumed starches (long-chain carbohydrates) into sugar, which is used as an energy source<a id="10a" href="#citation10">[10]</a>. Insufficient amylase in the body can lead to diarrhea from undigested carbohydrates.
-  
+    Lipolytic enzymes, such as pancreatic lipase, digest dietary lipids for absorption in the small intestine<a id="8" href="#citation8">[8]</a>. Pancreatic lipase is the most crucial gastrointestinal enzyme involved in the hydrolysis of lipid ester bonds, resulting in the breakdown of lipids and ease of uptake by absorptive cells in the intestine<a id="9" href="#citation9">[9]</a>. A lipase deficiency or insufficient lipase activity can prevent the body from absorbing fat and fat-soluble vitamins (A, D, E, and K)<a id="10" href="#citation10">[10]</a>.
+
+    <br><br>In the presence of amphiphiles such as phosphates and bile salts (which are prevalent in the digestive system), lipase requires a cofactor to bind to and catabolize lipid macromolecule structures<a id="11" href="#citation11">[11]</a>. Colipase is a necessary protein cofactor that stabilizes the attachment of lipase to its triglyceride substrate in the presence of bile salts<a id="12" href="#citation12">[12]</a>. Colipase is initially secreted as its precursor, procolipase, which is then cleaved in the intestine at the Arg5-Gly6 bond by the enzyme trypsin, a serine protease secreted by pancreatic acinar cells<a id="13" href="#citation13">[13</a>,<a id="14" href="#citation14">14]</a>. After procolipase is transformed into colipase, the lipase-colipase enzyme complex is formed and can then digest fats.
+
+   <br><br> Amylolytic enzymes, such as pancreatic amylase, catalyze the hydrolysis of consumed starches (long-chain carbohydrates) into sugar, which is used as an energy source<a id="10a" href="#citation10">[10]</a>. Insufficient amylase in the body can lead to diarrhea from undigested carbohydrates.
+
    <br><br> Proteolytic enzymes, such as protease, hydrolyze proteins into their constituent parts, including peptides and amino acids, which can be absorbed by cells in the intestine<a id="15" href="#citation15">[15]</a>. Proteases also protect the body from harmful yeast and bacteria in the intestines<a id="16" href="#citation16">[16]</a>. Undigested proteins can lead to allergic reactions or stomach pain in individuals.</p>
 
 </section>
@@ -505,11 +491,11 @@ html {
     <div class="row mt-5">
     <h2>Our Solution</h2>
         <div class="col-md-9">
-   <p class="mt-2"> Our project is a probiotic that produces pancreatic lipases, procolipases, amylases, and proteases using engineered <i>Bacillus subtilis</i>. Probiotics are live microorganisms, such as bacteria or yeast, that have beneficial effects on the body when ingested. The benefits include boosting the immune system, producing nutrients, or preventing pathogens from colonizing the digestive track<a id="21" href="#citation21">[21</a>,<a id="22" href="#citation22">22]</a>.
+   <p class="mt-2"> Our goal is to develop a probiotic that produces pancreatic lipases, procolipases, amylases, and proteases using engineered <i>Bacillus subtilis</i>. Probiotics are live microorganisms, such as bacteria or yeast, that have beneficial effects on the body when ingested. The benefits include boosting the immune system, producing nutrients, or preventing pathogens from colonizing the digestive track<a id="21" href="#citation21">[21</a>,<a id="22" href="#citation22">22]</a>.
 
-    <br><br>Scientists have successfully engineered the <i>P. pastoris</i> GS115 yeast and <i>E. coli</i> DH5α competent cells to produce the necessary digestive enzymes<a id="23" href="#citation23">[23</a>,<a id="24" href="#citation2">24]</a>. While both are considered to be recombinant protein “workhorses”, the implementation of these specific strains into probiotics has yet to be extensively studied<a id="25" href="#citation25">[25</a>,<a id="26" href="#citation26">26]</a>. Disarmed strains of these prokaryotes have already been used for their probiotic properties, including <i>E. coli</i> Nissle 1917 and <i>P. pastoris</i> X-33, but have not been proven in literature to have protective effects against pancreatic inflammation<a id="27" href="#citation27">[27]</a>.</p>
-    Past studies have presented conflicting results on the efficacy and safety of other commonly-used probiotics for patients with acute pancreatitis (AP). One clinical trial from 2008 showed an increased risk of life-threatening complications in AP patients taking probiotics<a id="28" href="#citation28">[28]</a>. However, a 2014 meta-analysis of randomized controlled trials showed that neither beneficial nor adverse effects resulted from probiotic usage in patients with AP and claimed that current data were not sufficient to draw a conclusion<a id="29" href="#citation29">[29]</a>. With these discrepancies in mind, we searched for prokaryotes proven to possess probiotic properties specifically in relation to pancreatitis.
-            <br><br><i>B. subtilis</i> CFR5 is beneficial for reducing pancreatitis-based allergic responses and restoring intestinal barrier integrity; the strain significantly lowers the production of proinflammatory cytokines<a id="30" href="#citation30">[30]</a>. Additionally, <i>B. subtilis</i> naturally produces amylase and protease, making our engineered version that also produces pancreatic lipase and colipase a convenient, all-in-one option that replaces pancrelipase<a id="31" href="#citation31">[31</a>,<a id="32" href="#citation32">32]</a>. Our solution also embeds a glucose-switch mechanism, allowing the enzymes to be synthesized and naturally secreted once food (glucose) is consumed and detected by the device. Due to constraints in ordering <i>B. subtilis</i> CFR5, we have chosen to establish a proof-of-concept in the more easily-obtainable <i>B. subtilis</i> 168.
+    <br><br>Scientists have successfully engineered the <i>P. pastoris</i> GS115 yeast and <i>E. coli</i> DH5α competent cells to produce the necessary digestive enzymes<a id="23" href="#citation23">[23</a>,<a id="24" href="#citation2">24]</a>. While both organisms are considered to be recombinant protein “workhorses”, the implementation of these specific strains into probiotics has yet to be extensively studied<a id="25" href="#citation25">[25</a>,<a id="26" href="#citation26">26]</a>. Disarmed strains of these organisms have already been used for their probiotic properties, including <i>E. coli</i> Nissle 1917 and <i>P. pastoris</i> X-33, but have not been proven in literature to have protective effects against pancreatic inflammation<a id="27" href="#citation27">[27]</a>.</p>
+    Additionally, past studies have not found favorable results regarding the efficacy and safety of other commonly-used probiotics for patients with acute pancreatitis (AP). One clinical trial from 2008 showed an increased risk of life-threatening complications in AP patients taking certain probiotics, and another study also did not find any beneficial effects from probiotic usage in patients with AP<a id="28" href="#citation28">[28]</a>,<a id="29" href="#citation29">[29]</a>. However, B. subtilis has been found to be beneficial for pancreatic complications.
+            <br><br><i>B. subtilis</i> is a probiotic found naturally in the human gut and is often used in fermented  foods such as yogurt. <i>B. subtilis</i> is beneficial for reducing pancreatitis-associated complications, including allergic responses and poor intestinal barrier integrity<a id="30" href="#citation30">[30]</a>. Additionally, <i>B. subtilis</i> naturally produces amylase and protease, making our engineered version that also produces pancreatic lipase and colipase a convenient, all-in-one option that replaces pancrelipase<a id="31" href="#citation31">[31</a>,<a id="32" href="#citation32">32]</a>. Our solution also embeds a glucose-switch mechanism, allowing the enzymes to be synthesized and naturally secreted once food (glucose) is consumed and detected by the device. Though <i>B. subtilis</i> CFR5 has the greatest benefits, we have chosen to establish a proof-of-concept in the more easily-obtainable <i>B. subtilis</i> 168, which posseses the same benefits with lower efficiency.
 
         </div>
         <div class="col-md-3">
@@ -523,7 +509,7 @@ html {
 
     <div class="row mt-3">
         <div class="col-md-10">  <h2 style="margin-left:160px">Our Vision for the Future</h2>
-                       <p class="mt-2"> Looking ahead, we will place our probiotic in xylose-containing yogurt so it can be safely (and deliciously!) consumed as a probiotic. Our device will thus serve as a more accessible option for those who prefer a treatment free from porcine-derived enzymes.</p>
+                       <p class="mt-2"> Looking ahead, we will place our probiotic in yogurt so it can be safely (and deliciously!) consumed as a probiotic. Our device will thus serve as a more accessible option for those who prefer a treatment free from porcine-derived enzymes.</p>
 </div>
         <div class="col-md-2">
 <!--            <div style="max-width: 30%; height:auto; display: block;margin-left: auto;margin-right: auto;">-->
@@ -540,9 +526,9 @@ html {
         <p class="mt-2"> While brainstorming project ideas, our team identified a lack of inclusive treatment options available for EPI patients. Existing FDA-approved medications, derived from porcine pancreas, present challenges for individuals with constraints against consuming pig products. Also, these pancreatic enzyme replacement therapies must be taken with every meal or snack, complicating daily management for the patients.
 
           <br><br>We are also concerned about the ethical and environmental implications associated with the use of porcine enzymes in pharmaceuticals. The inhumane treatment of pigs and environmental impact of pig farming (resource consumption and pollution) prompted us to seek a more sustainable solution.
-          
+
           <br><br>Recognizing these shortcomings, we propose a synthetic alternative to porcine pancreatic enzymes—a solution that still produces the necessary enzymes, is safe to consume, and ameliorates the condition of the human gut biome. This innovation sets a new standard for inclusivity and safety, paving the way for future advancements in healthcare.
-          
+
          <br><br> Ultimately, BLISS will revolutionize EPI treatment, offering patients a solution that aligns with their values and makes managing their symptoms a blissful experience. </p>
         </div>
     </section>
@@ -613,7 +599,39 @@ html {
 });
     </script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('DOMContentLoaded', function () {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBars = entry.target.querySelectorAll('.progress-container');
+                        progressBars.forEach((progressBar, index) => {
+                            const progress = progressBar.querySelector('.progress');
+                            setTimeout(() => {
+                                if (progressBar.classList.contains('progressbar80')) {
+                                    progress.classList.add('progressbaranimation80');
+                                } else if (progressBar.classList.contains('progressbar90')) {
+                                    progress.classList.add('progressbaranimation90');
+                                } else if (progressBar.classList.contains('progressbar77')) {
+                                    progress.classList.add('progressbaranimation77');
+                                }
+                            }, index * 1000); // Delay each animation by 2 seconds
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            observer.observe(document.querySelector('.allprogressbars'));
+        });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
     const options = {
         root: null,
         rootMargin: '0px',
@@ -621,28 +639,23 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const observer = new IntersectionObserver(function (entries, observer) {
-        let delay = 0;
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const progress = entry.target.querySelector('.progress');
-                setTimeout(() => {
-                    if (entry.target.classList.contains('progressbar80')) {
-                        progress.classList.add('progressbaranimation80');
-                    } else if (entry.target.classList.contains('progressbar90')) {
-                        progress.classList.add('progressbaranimation90');
-                    } else if (entry.target.classList.contains('progressbar77')) {
-                        progress.classList.add('progressbaranimation77');
-                    }
-                }, delay * 1000); // Convert delay to milliseconds
-                observer.unobserve(entry.target);
-                delay += 0.8;  // Adjust this value to set the delay between animations
+                const target = entry.target;
+                if (target.id === 'fadeOutImage') {
+                    target.classList.add('animate__animated', 'animate__fadeOut');
+                }
+                if (target.id === 'fadeInHeading') {
+                    target.classList.add('animate__animated', 'animate__fadeIn');
+                }
+                observer.unobserve(target); // Unobserve after adding the class to avoid re-triggering
             }
         });
     }, options);
 
-    document.querySelectorAll('.progress-container').forEach(container => {
-        observer.observe(container);
-    });
+    // Observe the image with the id 'fadeOutImage'
+    observer.observe(document.getElementById('fadeOutImage'));
+    observer.observe(document.getElementById('fadeInHeading'));
 });
 
 </script>
