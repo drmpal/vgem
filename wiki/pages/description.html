@@ -369,7 +369,7 @@ html {
              <h3 id="fadeInHeading" style="animation-duration:3s">
                  10-20% of the global population is affected by EPI</h3>
         </div>
-        <div class="col">
+        <div class="col allprogressbars">
           <div class="progress-container progressbar80">
             <div class="progressbar">
                     <div class="progress"></div>
@@ -613,39 +613,36 @@ html {
 });
     </script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+      document.addEventListener('DOMContentLoaded', function () {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-    const observer = new IntersectionObserver(function (entries, observer) {
-        let delay = 0;
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progress = entry.target.querySelector('.progress');
-                setTimeout(() => {
-                    if (entry.target.classList.contains('progressbar80')) {
-                        progress.classList.add('progressbaranimation80');
-                    } else if (entry.target.classList.contains('progressbar90')) {
-                        progress.classList.add('progressbaranimation90');
-                        progress.style.add('animation-delay: 2s');
-                    } else if (entry.target.classList.contains('progressbar77')) {
-                        progress.classList.add('progressbaranimation77');
-                    }
-                }, delay * 2000); // Set delay in milliseconds (2 seconds each)
-                        delay += 1;  // Increment delay for the next bar
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBars = entry.target.querySelectorAll('.progress-container');
+                        progressBars.forEach((progressBar, index) => {
+                            const progress = progressBar.querySelector('.progress');
+                            setTimeout(() => {
+                                if (progressBar.classList.contains('progressbar80')) {
+                                    progress.classList.add('progressbaranimation80');
+                                } else if (progressBar.classList.contains('progressbar90')) {
+                                    progress.classList.add('progressbaranimation90');
+                                } else if (progressBar.classList.contains('progressbar77')) {
+                                    progress.classList.add('progressbaranimation77');
+                                }
+                            }, index * 1000); // Delay each animation by 2 seconds
+                        });
                         observer.unobserve(entry.target);
-            }
+                    }
+                });
+            }, options);
+
+            observer.observe(document.querySelector('.allprogressbars'));
         });
-    }, options);
-
-    document.querySelectorAll('.progress-container').forEach(container => {
-        observer.observe(container);
-    });
-});
-
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
