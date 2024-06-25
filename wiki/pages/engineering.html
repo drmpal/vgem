@@ -3,13 +3,14 @@
 
 {% block page_content %}
 <style>
+
 .plasmid-container {
     position: relative;
 }
 
 #plasmid-svg {
-    width: 200px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
 }
 
 path {
@@ -27,20 +28,20 @@ text {
 }
 
 #promoter-info {
-    top: -10px;
-    left: 150px;
+    top: 0;
+    left: 350px;
     color: green;
 }
 
 #coding-sequence-info {
-    top: 90px;
-    left: 230px;
+    top: 220px;
+    left: 520px;
     color: blue;
 }
 
 #terminator-info {
-    top: 170px;
-    left: 150px;
+    top: 440px;
+    left: 350px;
     color: red;
 }
 
@@ -53,37 +54,36 @@ text {
 </style>
 
     <div class="plasmid-container">
-        <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <svg id="plasmid-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
-            <!-- Plasmid backbone -->
-            <path id="plasmid-backbone" d="M100,20 A80,80 0 1,1 99,20.006" fill="none" stroke="gray" stroke-wdith="10"/>
+            <path id="promoter-border" d="M250,50 A200,200 0 0,1 450 250" fill="none" stroke="gray" stroke-width="6"/>
 
             <!-- Promoter arc with black border -->
-            <path id="promoter-border" d="M43.431,43.431 A80,80 0 0,1 79,22.805" fill="none" stroke="black" stroke-width="8"/>
-            <path id="promoter" d="M43.431,43.431 A80,80 0 0,1 79,22.805" fill="none" stroke="green" stroke-width="6"/>
+            <path id="promoter-border" d="M250,50 A200,200 0 0,1 450 250" fill="none" stroke="black" stroke-width="8"/>
+            <path id="promoter" d="M250,50 A200,200 0 0,1 450 250" fill="none" stroke="red" stroke-width="6"/>
 
             <!-- Coding sequence arc with black border -->
-            <path id="coding-sequence-border" d="M100,20 A80,80 0 0,1 150,37.55" fill="none" stroke="black" stroke-width="8"/>
-            <path id="coding-sequence" d="M100,20 A80,80 0 0,1 150,37.55" fill="none" stroke="blue" stroke-width="6"/>
+            <path id="coding-sequence-border" d="M450,250 A200,200 0 0,1 250,450" fill="none" stroke="black" stroke-width="8"/>
+            <path id="coding-sequence" d="M450,250 A200,200 0 0,1 250,450" fill="none" stroke="green" stroke-width="6"/>
 
             <!-- Terminator arc with black border -->
-            <path id="terminator-border" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="black" stroke-width="8"/>
-            <path id="terminator" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="yellow" stroke-width="6"/>
+            <path id="terminator-border" d="M250,450 A200,200 0 0,1 50,250" fill="none" stroke="black" stroke-width="8"/>
+            <path id="terminator" d="M250,450 A200,200 0 0,1 50,250" fill="none" stroke="blue" stroke-width="6"/>
 
-            <!-- Text along arcs -->
-            <text x="50" y="15" font-family="Poppins" font-size="12" font-weight="500" fill="green">pT7lac</text>
-            <text x="165" y="110" font-family="Poppins" font-size="12" font-weight="500" fill="blue">PNLIP</text>
-            <text x="60" y="195" font-family="Poppins" font-size="12" font-weight="500" fill="yellow">B0015</text>
+            <!-- Text labels outside the arcs -->
+            <text x="60" y="25" font-family="Poppins" font-size="12" font-weight="500" fill="green">pT7lac</text>
+            <text x="245" y="160" font-family="Poppins" font-size="12" font-weight="500" fill="blue">PNLIP</text>
+            <text x="75" y="290" font-family="Poppins" font-size="12" font-weight="500" fill="red">B0015</text>
 
             <!-- Elbow connectors (initially hidden) -->
-            <line id="promoter-connector1" x1="100" y1="20" x2="110" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
-            <line id="promoter-connector2" x1="110" y1="10" x2="150" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
+            <line id="promoter-connector1" x1="150" y1="30" x2="170" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
+            <line id="promoter-connector2" x1="170" y1="10" x2="230" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
 
-            <line id="coding-sequence-connector1" x1="180" y1="100" x2="190" y2="110" stroke="blue" stroke-width="2" visibility="hidden"/>
-            <line id="coding-sequence-connector2" x1="190" y1="110" x2="230" y2="110" stroke="blue" stroke-width="2" visibility="hidden"/>
+            <line id="coding-sequence-connector1" x1="270" y1="150" x2="290" y2="170" stroke="blue" stroke-width="2" visibility="hidden"/>
+            <line id="coding-sequence-connector2" x1="290" y1="170" x2="340" y2="170" stroke="blue" stroke-width="2" visibility="hidden"/>
 
-            <line id="terminator-connector1" x1="100" y1="180" x2="110" y2="190" stroke="red" stroke-width="2" visibility="hidden"/>
-            <line id="terminator-connector2" x1="110" y1="190" x2="150" y2="190" stroke="red" stroke-width="2" visibility="hidden"/>
+            <line id="terminator-connector1" x1="150" y1="270" x2="170" y2="290" stroke="red" stroke-width="2" visibility="hidden"/>
+            <line id="terminator-connector2" x1="170" y1="290" x2="230" y2="290" stroke="red" stroke-width="2" visibility="hidden"/>
         </svg>
         <div class="info-container" id="promoter-info">
             <h3>Promoter Region (pT7lac)</h3>
