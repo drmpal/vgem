@@ -145,36 +145,6 @@
   color: white;
   transform: rotateY(180deg);
 }
-html {
-  scroll-behavior: smooth;
-}
-
-/* 2. Make nav sticky */
-
-/* 3. ScrollSpy active styles (see JS tab for activation) */
-.section-nav li.active > a {
-  color:#8B555E;
-  font-weight: 500;
-}
-
-
-.section-nav {
-  padding-left: 0;
-  border-left: 1px solid #D88993;;
-}
-
-.section-nav a {
-  text-decoration: none;
-  display: block;
-  padding: .125rem 0;
-  color: #D88993;;
-  transition: all 400ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
-}
-
-.section-nav a:hover,
-.section-nav a:focus {
-  color: #8B555E;
-}
 
 
 h1 {
@@ -183,17 +153,6 @@ h1 {
 
 /** page layout **/
 
-.sticky {
-  position: sticky;
-  top: 90px;
-}
-/** enlarge the sections for this demo, so that we have a long scrollable page **/
-section {
-  padding-bottom: 20px;
-    padding-bottom: 20px;
-     padding-top: 90px; /* Adjust this padding to your needs */
-            margin-top: -90px;
-}
 
 .progress-container {
     display: flex;
@@ -409,7 +368,7 @@ a:hover
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-sm">
             <h2>Arrhythmia</h2>
         </div>
@@ -424,7 +383,7 @@ a:hover
 
 
         <section id="role-of-enzymes-in-digestion">
-            <div class="row mt-5"><h2>The Role of Enzymes in Digestion </h2></div>
+            <div class="row mt-3"><h2>The Role of Enzymes in Digestion </h2></div>
 
    <p class="mt-2"> Digestive enzymes are necessary the body to digest and process food into nutrients.  Pancreatic enzymes are described in three main categories: lipolytic enzymes (lipase), amylolytic enzymes (amylase), and proteolytic enzymes (protease)<a id="7" href="#citation7">[7]</a>. These different groups of enzymes process different components of food, including fats, starches, and proteins.
 
@@ -488,7 +447,7 @@ a:hover
 </div>
 
     <section id="our-solution">
-    <div class="row mt-5">
+    <div class="row mt-3">
     <h2>Our Solution</h2>
         <div class="col-md-9">
    <p class="mt-2"> Our goal is to develop a probiotic that produces pancreatic lipases, procolipases, amylases, and proteases using engineered <i>Bacillus subtilis</i>. Probiotics are live microorganisms, such as bacteria or yeast, that have beneficial effects on the body when ingested. The benefits include boosting the immune system, producing nutrients, or preventing pathogens from colonizing the digestive track<a id="21" href="#citation21">[21</a>,<a id="22" href="#citation22">22]</a>.
@@ -521,7 +480,7 @@ a:hover
 
         </section>
     <section id ="our-inspiration">
-        <div class="row">
+        <div class="row mt-3">
     <h2>Our Inspiration</h2>
         <p class="mt-2"> While brainstorming project ideas, our team identified a lack of inclusive treatment options available for EPI patients. Existing FDA-approved medications, derived from porcine pancreas, present challenges for individuals with constraints against consuming pig products. Also, these pancreatic enzyme replacement therapies must be taken with every meal or snack, complicating daily management for the patients.
 
@@ -533,8 +492,10 @@ a:hover
         </div>
     </section>
      <section id = "references">
-        <div class="row mt-5" style="text-align: left; align-items: flex-start">
+
+         <div class="row mt-3">
     <h2>References</h2>
+         <div class="row mt-2" style="text-align: left; align-items: flex-start">
         <p><a id="citation1" href="#1">[1] </a><cite> Lipase Information | Mount Sinai - New  </cite>. Mount Sinai Health System. <a href="https://www.mountsinai.org/health-library/supplement/lipase">https://www.mountsinai.org/health-library/supplement/lipase </a> (accessed 2024-06-14). </p>
         <p><a id="citation2" href="#2">[2] </a><cite>What Are Digestive Enzymes: Natural Sources and Supplements</cite>. <a href="https://www.webmd.com/diet/what-are-digestive-enzymes">https://www.webmd.com/diet/what-are-digestive-enzymes </a>(accessed 2024-06-14).  </p>
         <p><a id="citation3" href="#3">[3] </a><cite>Exocrine Pancreatic Insufficiency (EPI): Pancreatitis</cite>. Cleveland Clinic. <a href="https://my.clevelandclinic.org/health/diseases/21577-exocrine-pancreatic-insufficiency-epi">https://my.clevelandclinic.org/health/diseases/21577-exocrine-pancreatic-insufficiency-epi </a>(accessed 2024-06-14).</p>
@@ -569,6 +530,7 @@ a:hover
         <p><a id="citation32" href="#32">[32] </a>Solanki, P.; Putatunda, C.; Kumar, A.; Bhatia, R.; Walia, A. Microbial Proteases: Ubiquitous Enzymes with Innumerable Uses. <cite>3 Biotech </cite><b>2021, </b><i>11 </i>(10), 428. <a href="https://doi.org/10.1007/s13205-021-02928-z">https://doi.org/10.1007/s13205-021-02928-z.  </a></p>
             <p><a id="citation33" href="#33">[33]</a> Gupta, A; Premnath, N; Sedhom, R; Beg, M; Khera, R; Laheru, D; Dusetzina, S. Projected 30- day out-of-pocket costs and total spending on pancreatic enzyme <b>2021</b>, <i>21</i>(5), 1009-1010. <a href="https://doi.org/10.1016/j.pan.2021.05.002">https://doi.org/10.1016/j.pan.2021.05.002. </a> </p>
         </div>
+             </div>
     </section>
     </div>
     </div>
