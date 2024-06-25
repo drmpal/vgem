@@ -1,29 +1,186 @@
 {% extends "layout.html" %}
-  
+
 {% block title %}Experiments{% endblock %}
 {% block lead %}Describe the research, experiments, and protocols you used in your iGEM project.{% endblock %}
 
 {% block page_content %}
+<style>
+  .sticky {
+  position: sticky;
+  top: 90px;
+}
+  html {
+  scroll-behavior: smooth;
+}
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>What should this page contain?</h2>
-    <hr>
-    <p>Describe the research, experiments, and protocols you used in your iGEM project. These should be detailed enough for another team to repeat your experiments.</p>
-    <p>If you made Parts this year, please remember to put all information, characterization, and measurement data on the Part's Main Page on the <a href="https://parts.igem.org/Main_Page">Registry</a>.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2019.igem.org/Team:Nantes/Experiments">2019 Nantes</a></li>
-      <li><a href="https://2019.igem.org/Team:TU_Eindhoven/Experiments">2019 TU Eindhoven</a></li>
-      <li><a href="https://2019.igem.org/Team:Mingdao/Demonstrate">2019 Mingdao</a></li>
-      <li><a href="https://2020.igem.org/Team:Amsterdam/Experiments">2020 Amsterdam</a></li>
-      <li><a href="https://2020.igem.org/Team:NCTU_Formosa/Experiments">2020 NCTU Formosa</a></li>
-      <li><a href="https://2020.igem.org/Team:USAFA/Experiments">2020 USAFA</a></li>
-    </ul>
-  </div>
+/* 2. Make nav sticky */
+
+/* 3. ScrollSpy active styles (see JS tab for activation) */
+.section-nav li.active > a {
+  color:#8B555E;
+  font-weight: 500;
+}
+
+
+.section-nav {
+  padding-left: 0;
+  border-left: 1px solid #D88993;;
+}
+
+.section-nav a {
+  text-decoration: none;
+  display: block;
+  padding: .125rem 0;
+  color: #D88993;;
+  transition: all 400ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.section-nav a:hover,
+.section-nav a:focus {
+  color: #8B555E;
+}
+section {
+  padding-bottom: 20px;
+    padding-bottom: 20px;
+     padding-top: 90px; /* Adjust this padding to your needs */
+            margin-top: -90px;
+}
+</style>
+<head></head>
+<html><body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+        <div class="sticky">
+            <br>
+ <nav class="section-nav" style="border-left: 1px solid #efefef;">
+      <ul style="list-style: none;
+  margin-left: 0px;">
+          <div class="margin-left: 1rem; margin-bottom: 1rem;">
+        <li style="margin-bottom: 5px"><a href="#protocol1">Protocol 1</a></li>
+        <li style="margin-bottom: 5px"><a href="#protocol2">Protocol 2</a></li>
+              <li style="margin-bottom: 5px"><a href="#protocol3">Protocol 3</a></li>
+        <li style="margin-bottom: 5px"><a href="#protocol4">Protocol 4</a></li>
+        <li style="margin-bottom: 5px"><a href="#protocol5">Protocol 5</a></li>
+          <li style="margin-bottom: 5px"><a href="#protocol6">Protocol 6</a></li>
+          <li style="margin-bottom: 5px"><a href="#protocol7">Protocol 7</a></li>
+          <li style="margin-bottom: 5px"><a href="#protocol8">Protocol 8</a></li>
+        </div>
+          </ul>
+        </nav>
+        </div>
+    </div>
+
+
+<div class="col-md-10">
+  <section id="protocol1" >
+        <br><br>
+        <div class="row mt-3" style="text-align:center"> <h2>Protocol 1</h2></div>
+        <p>[description] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4 style="text-align:center"><b>Materials</b></h4>
+            <div class="row-mt-5">
+                 <div style="text-align: center;">
+              <ul style="display: inline-block; text-align:left;">
+                <li>Material 1</li>
+                <li>Material 2</li>
+                <li>Material 3</li>
+              </ul>
+                     </div>
+              <h4 style="text-align:center"><b>Protocol</b></h4>
+                    <ol>
+                      <li value="1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                      <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                      <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                      <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                    </ol>
+            <h4 style="text-align:center"><b>Tips and Tricks</b></h4>
+                <div style="text-align: center;">
+                <ul style="display: inline-block; text-align: left;">
+                <li>Tip 1</li>
+                <li>Tip 2</li>
+                <li>Tip 3</li>
+              </ul>
+                    </div>
+            </div>
+    </section>
+    <section id="protocol2" >
+        <br><br>
+        <div class="row mt-3" style="text-align:center"> <h2>Protocol 2</h2></div>
+        <p>[description] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4 style="text-align:center"><b>Materials</b></h4>
+            <div class="row-mt-5">
+                 <div style="text-align: center;">
+              <ul style="display: inline-block; text-align:left;">
+                <li>Material 1</li>
+                <li>Material 2</li>
+                <li>Material 3</li>
+              </ul>
+                     </div>
+              <h4 style="text-align:center"><b>Protocol</b></h4>
+                    <ol>
+                      <li value="1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                      <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                      <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                      <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                    </ol>
+            <h4 style="text-align:center"><b>Tips and Tricks</b></h4>
+                <div style="text-align: center;">
+                <ul style="display: inline-block; text-align: left;">
+                <li>Tip 1</li>
+                <li>Tip 2</li>
+                <li>Tip 3</li>
+              </ul>
+                    </div>
+            </div>
+    </section>
 </div>
+</div>
+  </div>
+
+
+
+</body></html>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			const id = entry.target.getAttribute('id');
+			if (entry.intersectionRatio > 0) {
+				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+			} else {
+				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+			}
+		});
+	});
+
+	// Track all sections that have an `id` applied
+	document.querySelectorAll('section[id]').forEach((section) => {
+		observer.observe(section);
+	});
+
+});
+    </script>
+<!--<div class="row mt-4">-->
+<!--  <div class="col-lg-8">-->
+<!--    <h2>What should this page contain?</h2>-->
+<!--    <hr>-->
+<!--    <p>Describe the research, experiments, and protocols you used in your iGEM project. These should be detailed enough for another team to repeat your experiments.</p>-->
+<!--    <p>If you made Parts this year, please remember to put all information, characterization, and measurement data on the Part's Main Page on the <a href="https://parts.igem.org/Main_Page">Registry</a>.</p>-->
+<!--  </div>-->
+<!--  <div class="col-lg-4">-->
+<!--    <h2>Inspirations</h2>-->
+<!--    <hr>-->
+<!--    <ul>-->
+<!--      <li><a href="https://2019.igem.org/Team:Nantes/Experiments">2019 Nantes</a></li>-->
+<!--      <li><a href="https://2019.igem.org/Team:TU_Eindhoven/Experiments">2019 TU Eindhoven</a></li>-->
+<!--      <li><a href="https://2019.igem.org/Team:Mingdao/Demonstrate">2019 Mingdao</a></li>-->
+<!--      <li><a href="https://2020.igem.org/Team:Amsterdam/Experiments">2020 Amsterdam</a></li>-->
+<!--      <li><a href="https://2020.igem.org/Team:NCTU_Formosa/Experiments">2020 NCTU Formosa</a></li>-->
+<!--      <li><a href="https://2020.igem.org/Team:USAFA/Experiments">2020 USAFA</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
 
 {% endblock %}
