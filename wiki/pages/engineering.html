@@ -2,38 +2,21 @@
 {% block title %}Engineering{% endblock %}
 
 {% block page_content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Plasmid Construct</title>
-    <style>
-        body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
+<style>
 .plasmid-container {
     position: relative;
 }
 
 #plasmid-svg {
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
 }
 
 path {
     transition: opacity 0.3s;
 }
 
-textPath {
+text {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
@@ -41,22 +24,34 @@ textPath {
 .info-container {
     display: none; /* Initially hide all info containers */
     position: absolute;
-    top: 0px;
-    left: 220px; /* Position the info box next to the SVG */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
 }
 
-.info-container h3 {
-    margin-top: 0;
+#promoter-info {
+    top: -10px;
+    left: 150px;
+    color: green;
 }
-    </style>
-</head>
-<body>
+
+#coding-sequence-info {
+    top: 90px;
+    left: 230px;
+    color: blue;
+}
+
+#terminator-info {
+    top: 170px;
+    left: 150px;
+    color: red;
+}
+
+.info-container p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+</style>
+
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
@@ -76,15 +71,19 @@ textPath {
             <path id="terminator" d="M150,37.55 A80,80 0 0,1 162.45,50" fill="none" stroke="yellow" stroke-width="6"/>
 
             <!-- Text along arcs -->
-            <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#promoter" startOffset="50%" text-anchor="middle" transform="translate(70,26)">pT7lac</textPath>
-            </text>
-            <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#coding-sequence" startOffset="50%" text-anchor="middle" transform="translate(130,20)">PNLIP</textPath>
-            </text>
-            <text font-family="Poppins" font-size="12" font-weight="500">
-                <textPath href="#terminator" startOffset="50%" text-anchor="middle" transform="translate(160,35)">B0015</textPath>
-            </text>
+            <text x="50" y="15" font-family="Poppins" font-size="12" font-weight="500" fill="green">pT7lac</text>
+            <text x="165" y="110" font-family="Poppins" font-size="12" font-weight="500" fill="blue">PNLIP</text>
+            <text x="60" y="195" font-family="Poppins" font-size="12" font-weight="500" fill="yellow">B0015</text>
+
+            <!-- Elbow connectors (initially hidden) -->
+            <line id="promoter-connector" x1="100" y1="20" x2="110" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
+            <line x1="110" y1="10" x2="150" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
+
+            <line id="coding-sequence-connector" x1="180" y1="100" x2="190" y2="110" stroke="blue" stroke-width="2" visibility="hidden"/>
+            <line x1="190" y1="110" x2="230" y2="110" stroke="blue" stroke-width="2" visibility="hidden"/>
+
+            <line id="terminator-connector" x1="100" y1="180" x2="110" y2="190" stroke="red" stroke-width="2" visibility="hidden"/>
+            <line x1="110" y1="190" x2="150" y2="190" stroke="red" stroke-width="2" visibility="hidden"/>
         </svg>
         <div class="info-container" id="promoter-info">
             <h3>Promoter Region (pT7lac)</h3>
@@ -99,33 +98,37 @@ textPath {
             <p>Signals the end of transcription.</p>
         </div>
     </div>
-    <script>
+<script>
         // Appear & reappear sequence
-document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
     const promoter = document.getElementById('promoter');
     const codingSequence = document.getElementById('coding-sequence');
     const terminator = document.getElementById('terminator');
-
-    const promoterText = document.getElementById('promoter-text');
-    const codingSequenceText = document.getElementById('coding-sequence-text');
-    const terminatorText = document.getElementById('terminator-text');
 
     const promoterInfo = document.getElementById('promoter-info');
     const codingSequenceInfo = document.getElementById('coding-sequence-info');
     const terminatorInfo = document.getElementById('terminator-info');
 
-    const promoterColorInput = document.getElementById('promoter-color');
-    const codingSequenceColorInput = document.getElementById('coding-sequence-color');
-    const terminatorColorInput = document.getElementById('terminator-color');
+    const promoterConnector = document.querySelectorAll('#promoter-connector1, #promoter-connector2');
+    const codingSequenceConnector = document.querySelectorAll('#coding-sequence-connector1, #coding-sequence-connector2');
+    const terminatorConnector = document.querySelectorAll('#terminator-connector1, #terminator-connector2');
 
-    const showInfo = (infoContainer, path) => {
+    const showInfo = (infoContainer, path, connector) => {
         // Hide all info containers first
         promoterInfo.style.display = 'none';
         codingSequenceInfo.style.display = 'none';
         terminatorInfo.style.display = 'none';
 
+        // Hide all connectors
+        promoterConnector.forEach(line => line.style.visibility = 'hidden');
+        codingSequenceConnector.forEach(line => line.style.visibility = 'hidden');
+        terminatorConnector.forEach(line => line.style.visibility = 'hidden');
+
         // Show the relevant info container
         infoContainer.style.display = 'block';
+
+        // Show the relevant connector
+        connector.forEach(line => line.style.visibility = 'visible');
 
         // Dim all paths first
         document.querySelectorAll('path').forEach(p => p.style.opacity = '0.3');
@@ -141,27 +144,31 @@ document.addEventListener('DOMContentLoaded', () => {
         codingSequenceInfo.style.display = 'none';
         terminatorInfo.style.display = 'none';
 
+        // Hide all connectors
+        promoterConnector.forEach(line => line.style.visibility = 'hidden');
+        codingSequenceConnector.forEach(line => line.style.visibility = 'hidden');
+        terminatorConnector.forEach(line => line.style.visibility = 'hidden');
+
         // Reset all paths to full opacity
         document.querySelectorAll('path').forEach(p => p.style.opacity = '1');
     };
 
     promoter.addEventListener('mouseover', () => {
-        showInfo(promoterInfo, promoter);
+        showInfo(promoterInfo, promoter, promoterConnector);
     });
     promoter.addEventListener('mouseout', hideInfo);
 
     codingSequence.addEventListener('mouseover', () => {
-        showInfo(codingSequenceInfo, codingSequence);
+        showInfo(codingSequenceInfo, codingSequence, codingSequenceConnector);
     });
     codingSequence.addEventListener('mouseout', hideInfo);
 
     terminator.addEventListener('mouseover', () => {
-        showInfo(terminatorInfo, terminator);
+        showInfo(terminatorInfo, terminator, terminatorConnector);
     });
     terminator.addEventListener('mouseout', hideInfo);
 });
-    </script>
-</body>
-</html>
+
+</script>
 
 {% endblock %}
