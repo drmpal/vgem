@@ -4,6 +4,14 @@
 {% block page_content %}
 <style>
 
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 .plasmid-container {
     position: relative;
 }
@@ -27,22 +35,28 @@ text {
     position: absolute;
 }
 
-#promoter-info {
+#p1-info {
     top: 0;
-    left: 350px;
-    color: green;
+    left: 0;
+    color: #5499AA;
 }
 
-#coding-sequence-info {
-    top: 220px;
-    left: 520px;
-    color: blue;
+#p2-info {
+    top: 0;
+    left: 400px;
+    color: #F0DFAD;
 }
 
-#terminator-info {
-    top: 440px;
-    left: 350px;
-    color: red;
+#p3-info {
+    top: 400px;
+    left: 400px;
+    color: #D88993;
+}
+
+#ampr-info {
+    top: 400px;
+    left: 0;
+    color: #8B555E;
 }
 
 .info-container p {
@@ -52,77 +66,95 @@ text {
 }
 
 </style>
-
+<div class="page-container">
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
-            <path id="promoter-border" d="M250,50 A200,200 0 0,1 450 250" fill="none" stroke="gray" stroke-width="6"/>
+            <path id="promoter-border" d="M185,60.857 A200,200 0 0,1 100 117.712" fill="none" stroke=#493B2A stroke-width="4"/>
 
-            <!-- Promoter arc with black border -->
-            <path id="promoter-border" d="M250,50 A200,200 0 0,1 450 250" fill="none" stroke="black" stroke-width="8"/>
-            <path id="promoter" d="M250,50 A200,200 0 0,1 450 250" fill="none" stroke="red" stroke-width="6"/>
+            <!-- P1 arc with black border -->
+            <path id="p1-border" d="M72,158.808 A200,200 0 0,1 200 56.351" fill="none" stroke="black" stroke-width="12"/>
+            <path id="p1" d="M72,158.808 A200,200 0 0,1 200 56.351" fill="none" stroke=#5499AA stroke-width="10"/>
 
-            <!-- Coding sequence arc with black border -->
-            <path id="coding-sequence-border" d="M450,250 A200,200 0 0,1 250,450" fill="none" stroke="black" stroke-width="8"/>
-            <path id="coding-sequence" d="M450,250 A200,200 0 0,1 250,450" fill="none" stroke="green" stroke-width="6"/>
+            <!-- P2 arc with black border -->
+            <path id="p2-border" d="M300,56.351 A200,200 0 0,1 428,158.808" fill="none" stroke="black" stroke-width="12"/>
+            <path id="p2" d="M300,56.351 A200,200 0 0,1 428,158.808" fill="none" stroke=#F0DFAD stroke-width="10"/>
 
-            <!-- Terminator arc with black border -->
-            <path id="terminator-border" d="M250,450 A200,200 0 0,1 50,250" fill="none" stroke="black" stroke-width="8"/>
-            <path id="terminator" d="M250,450 A200,200 0 0,1 50,250" fill="none" stroke="blue" stroke-width="6"/>
+            <!-- P3 arc with black border -->
+            <path id="p3-border" d="M428,341.192 A200,200 0 0,1 300,443.649" fill="none" stroke="black" stroke-width="12"/>
+            <path id="p3" d="M428,341.192 A200,200 0 0,1 300,443.649" fill="none" stroke=#D88993 stroke-width="10"/>
+
+            <!-- ampR arc with black border -->
+            <path id="ampr-border" d="M200,443.649 A200,200 0 0,1 72,341.192" fill="none" stroke="black" stroke-width="12"/>
+            <path id="ampr" d="M200,443.649 A200,200 0 0,1 72,341.192" fill="none" stroke=#8B555E stroke-width="10"/>
 
             <!-- Text labels outside the arcs -->
-            <text x="60" y="25" font-family="Poppins" font-size="12" font-weight="500" fill="green">pT7lac</text>
-            <text x="245" y="160" font-family="Poppins" font-size="12" font-weight="500" fill="blue">PNLIP</text>
-            <text x="75" y="290" font-family="Poppins" font-size="12" font-weight="500" fill="red">B0015</text>
+            <text x="50" y="80" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 1</text>
+            <text x="400" y="80" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 2</text>
+            <text x="400" y="420" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 3 & 4</text>
+            <text x="50" y="420" font-family="Poppins" font-size="12" font-weight="500" fill="black">Amp Resistance</text>
 
             <!-- Elbow connectors (initially hidden) -->
-            <line id="promoter-connector1" x1="150" y1="30" x2="170" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
-            <line id="promoter-connector2" x1="170" y1="10" x2="230" y2="10" stroke="green" stroke-width="2" visibility="hidden"/>
+            <line id="p1-connector1" x1="130" y1="80" x2="100" y2="50" stroke=#5499AA stroke-width="3" visibility="hidden"/>
+            <line id="p1-connector2" x1="100" y1="50" x2="10" y2="50" stroke=#5499AA stroke-width="3" visibility="hidden"/>
 
-            <line id="coding-sequence-connector1" x1="270" y1="150" x2="290" y2="170" stroke="blue" stroke-width="2" visibility="hidden"/>
-            <line id="coding-sequence-connector2" x1="290" y1="170" x2="340" y2="170" stroke="blue" stroke-width="2" visibility="hidden"/>
+            <line id="p2-connector1" x1="370" y1="80" x2="400" y2="50" stroke=#F0DFAD stroke-width="3" visibility="hidden"/>
+            <line id="p2-connector2" x1="400" y1="50" x2="490" y2="50" stroke=#F0DFAD stroke-width="3" visibility="hidden"/>
 
-            <line id="terminator-connector1" x1="150" y1="270" x2="170" y2="290" stroke="red" stroke-width="2" visibility="hidden"/>
-            <line id="terminator-connector2" x1="170" y1="290" x2="230" y2="290" stroke="red" stroke-width="2" visibility="hidden"/>
+            <line id="p3-connector1" x1="370" y1="420" x2="400" y2="390" stroke=#D88993 stroke-width="3" visibility="hidden"/>
+            <line id="p3-connector2" x1="400" y1="390" x2="490" y2="390" stroke=#D88993 stroke-width="3" visibility="hidden"/>
+
+            <line id="ampr-connector1" x1="130" y1="420" x2="100" y2="390" stroke=#8B555E stroke-width="3" visibility="hidden"/>
+            <line id="ampr-connector2" x1="100" y1="390" x2="10" y2="390" stroke=#8B555E stroke-width="3" visibility="hidden"/>
         </svg>
-        <div class="info-container" id="promoter-info">
-            <h3>Promoter Region (pT7lac)</h3>
-            <p>Gene initation point regulated by glucose.</p>
+        <div class="info-container" id="p1-info">
+            <h3>Lipase (PNLIP)</h3>
+            <p>Encodes the human lipase gene.</p>
         </div>
-        <div class="info-container" id="coding-sequence-info">
-            <h3>Coding Sequence (PNLIP)</h3>
-            <p>Encodes the human pancreatic lipase gene.</p>
+        <div class="info-container" id="p2-info">
+            <h3>Procolipase (CLPS)</h3>
+            <p>Encodes the human procolipase gene.</p>
         </div>
-        <div class="info-container" id="terminator-info">
-            <h3>Terminator (B0015)</h3>
-            <p>Signals the end of transcription.</p>
+        <div class="info-container" id="p3-info">
+            <h3>Switch Mechanism</h3>
+            <p>Allows regulation of the device by glucose.</p>
+        </div>
+        <div class="info-container" id="ampr-info">
+            <h3>Ampicillin Resistance</h3>
+            <p>Adds a drug resistance to confirm plasmid transformation.</p>
         </div>
     </div>
+</div>
 <script>
         // Appear & reappear sequence
         document.addEventListener('DOMContentLoaded', () => {
-    const promoter = document.getElementById('promoter');
-    const codingSequence = document.getElementById('coding-sequence');
-    const terminator = document.getElementById('terminator');
+    const p1 = document.getElementById('p1');
+    const p2 = document.getElementById('p2');
+    const p3 = document.getElementById('p3');
+    const ampr = document.getElementById('ampr');
 
-    const promoterInfo = document.getElementById('promoter-info');
-    const codingSequenceInfo = document.getElementById('coding-sequence-info');
-    const terminatorInfo = document.getElementById('terminator-info');
+    const p1Info = document.getElementById('p1-info');
+    const p2Info = document.getElementById('p2-info');
+    const p3Info = document.getElementById('p3-info');
+    const amprInfo = document.getElementById('ampr-info');
 
-    const promoterConnector = document.querySelectorAll('#promoter-connector1, #promoter-connector2');
-    const codingSequenceConnector = document.querySelectorAll('#coding-sequence-connector1, #coding-sequence-connector2');
-    const terminatorConnector = document.querySelectorAll('#terminator-connector1, #terminator-connector2');
+    const p1Connector = document.querySelectorAll('#p1-connector1, #p1-connector2');
+    const p2Connector = document.querySelectorAll('#p2-connector1, #p2-connector2');
+    const p3Connector = document.querySelectorAll('#p3-connector1, #p3-connector2');
+    const amprConnector = document.querySelectorAll('#ampr-connector1, #ampr-connector2');
 
     const showInfo = (infoContainer, path, connector) => {
         // Hide all info containers first
-        promoterInfo.style.display = 'none';
-        codingSequenceInfo.style.display = 'none';
-        terminatorInfo.style.display = 'none';
+        p1Info.style.display = 'none';
+        p2Info.style.display = 'none';
+        p3Info.style.display = 'none';
+        amprInfo.style.display = 'none';
 
         // Hide all connectors
-        promoterConnector.forEach(line => line.style.visibility = 'hidden');
-        codingSequenceConnector.forEach(line => line.style.visibility = 'hidden');
-        terminatorConnector.forEach(line => line.style.visibility = 'hidden');
+        p1Connector.forEach(line => line.style.visibility = 'hidden');
+        p2Connector.forEach(line => line.style.visibility = 'hidden');
+        p3Connector.forEach(line => line.style.visibility = 'hidden');
+        amprConnector.forEach(line => line.style.visibility = 'hidden');
 
         // Show the relevant info container
         infoContainer.style.display = 'block';
@@ -140,33 +172,40 @@ text {
 
     const hideInfo = () => {
         // Hide all info containers
-        promoterInfo.style.display = 'none';
-        codingSequenceInfo.style.display = 'none';
-        terminatorInfo.style.display = 'none';
+        p1Info.style.display = 'none';
+        p2Info.style.display = 'none';
+        p3Info.style.display = 'none';
+        amprInfo.style.display = 'none';
 
         // Hide all connectors
-        promoterConnector.forEach(line => line.style.visibility = 'hidden');
-        codingSequenceConnector.forEach(line => line.style.visibility = 'hidden');
-        terminatorConnector.forEach(line => line.style.visibility = 'hidden');
+        p1Connector.forEach(line => line.style.visibility = 'hidden');
+        p2Connector.forEach(line => line.style.visibility = 'hidden');
+        p3Connector.forEach(line => line.style.visibility = 'hidden');
+        amprConnector.forEach(line => line.style.visibility = 'hidden');
 
         // Reset all paths to full opacity
         document.querySelectorAll('path').forEach(p => p.style.opacity = '1');
     };
 
-    promoter.addEventListener('mouseover', () => {
-        showInfo(promoterInfo, promoter, promoterConnector);
+    p1.addEventListener('mouseover', () => {
+        showInfo(p1Info, p1, p1Connector);
     });
-    promoter.addEventListener('mouseout', hideInfo);
+    p1.addEventListener('mouseout', hideInfo);
 
-    codingSequence.addEventListener('mouseover', () => {
-        showInfo(codingSequenceInfo, codingSequence, codingSequenceConnector);
+    p2.addEventListener('mouseover', () => {
+        showInfo(p2Info, p2, p2Connector);
     });
-    codingSequence.addEventListener('mouseout', hideInfo);
+    p2.addEventListener('mouseout', hideInfo);
 
-    terminator.addEventListener('mouseover', () => {
-        showInfo(terminatorInfo, terminator, terminatorConnector);
+    p3.addEventListener('mouseover', () => {
+        showInfo(p3Info, p3, p3Connector);
     });
-    terminator.addEventListener('mouseout', hideInfo);
+    p3.addEventListener('mouseout', hideInfo);
+
+    ampr.addEventListener('mouseover', () => {
+        showInfo(amprInfo, ampr, amprConnector);
+    });
+    ampr.addEventListener('mouseout', hideInfo);
 });
 
 </script>
