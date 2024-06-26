@@ -6,10 +6,19 @@
 
 .page-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    justify-content: center;
+    height: 100vh;
+}
+
+.design-cycle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.design-step {
+    margin-bottom: 10px;
 }
 
 .plasmid-container {
@@ -67,26 +76,45 @@ text {
 
 </style>
 <div class="page-container">
+    <div class="design-cycle">
+        <h2>Engineering Design Cycle</h2>
+        <div class="design-step">
+            <h3>Problem Identification</h3>
+            <p>We identified the need to develop a plasmid that efficiently expresses a protein of interest in bacterial cells.</p>
+        </div>
+        <div class="design-step">
+            <h3>Research</h3>
+            <p>We conducted extensive research to determine the best promoter, coding sequence, and terminator regions for optimal protein expression.</p>
+        </div>
+        <div class="design-step">
+            <h3>Development of Possible Solutions</h3>
+            <p>We considered multiple combinations of genetic elements and used computational tools to predict the best design.</p>
+        </div>
+        <div class="design-step">
+            <h3>Planning Our Solution</h3>
+            <p>We planned the cloning and expression strategy, including vector choice and verification methods, to ensure successful plasmid construction.</p>
+        </div>
+    </div>
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
-            <circle id="backbone" r="200" cx="400" cy="400" fill="none" stroke=#493B2A stroke-width="4"/>
+            <circle id="backbone" r="200" cx="400" cy="400" fill="none" stroke=#493B2A stroke-width="40"/>
 
             <!-- P1 arc with black border -->
-            <path id="p1-border" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke="black" stroke-width="12"/>
-            <path id="p1" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="10"/>
+            <path id="p1-border" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke="black" stroke-width="45"/>
+            <path id="p1" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="40"/>
 
             <!-- P2 arc with black border -->
-            <path id="p2-border" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke="black" stroke-width="12"/>
-            <path id="p2" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="10"/>
+            <path id="p2-border" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke="black" stroke-width="45"/>
+            <path id="p2" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="40"/>
 
             <!-- P3 arc with black border -->
-            <path id="p3-border" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke="black" stroke-width="12"/>
-            <path id="p3" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="10"/>
+            <path id="p3-border" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke="black" stroke-width="45"/>
+            <path id="p3" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="40"/>
 
             <!-- ampR arc with black border -->
-            <path id="ampr-border" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke="black" stroke-width="12"/>
-            <path id="ampr" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="10"/>
+            <path id="ampr-border" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke="black" stroke-width="45"/>
+            <path id="ampr" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
 
             <!-- Text labels outside the arcs -->
             <text x="200" y="230" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 1</text>
