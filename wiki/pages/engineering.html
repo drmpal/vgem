@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% block title %}Engineering{% endblock %}
+{% block title %}Engineering Design Cycle{% endblock %}
 
 {% block page_content %}
 <style>
@@ -74,27 +74,184 @@ text {
     font-weight: 500;
 }
 
+.progress-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.progressbar {
+    position: relative;
+    width: 100%;
+    background-color: #D88993;
+    height: 30px;
+    border: 5px solid #D88993;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.progress {
+    background-color: #8B555E;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color: #8B555E;
+    width: 0%;
+    transition: width 2s;
+}
+
+/* Animation classes for different progress bars DON'T DELETE*/
+.progressbaranimation80 {
+    width: 80%;
+}
+
+.progressbaranimation90 {
+    width: 90%;
+}
+
+.progressbaranimation77 {
+    width: 77%;
+}
+
+
+.progress-description {
+  margin-top: 5px;
+}
+
+h3 {
+  margin: 0 0 0 10px; /* Adjust the spacing as needed */
+}
+.image-container {
+  position: relative;
+    width:200px;
+    height:200px;
+ /* Adjust height as needed */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+a {
+    color:#D88993;
+}
+
+a:hover {
+    color: #8B555E;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.section-nav li.active > a {
+    color: #8B555E;
+    font-weight: 500;
+}
+
+.section-nav {
+    padding-left: 0;
+    border-left: 1px solid #D88993;
+}
+
+.section-nav a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    color: #D88993;
+    transition: all 400ms ease-in-out;
+}
+
+.section-nav a:hover,
+.section-nav a:focus {
+    color: #8B555E;
+}
+
+section {
+    padding-top: 90px;
+    margin-top: -90px;
+    padding-bottom: 20px;
+}
+.section-title {
+    text-align: center;
+    margin-top: 3rem;
+    color: #4A4A4A;
+    border-bottom: 2px solid #D88993;
+    padding-bottom: 10px;
+      width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 </style>
+<head></head>
+<body>
 <div class="page-container">
-    <div class="design-cycle">
-        <h2>Engineering Design Cycle</h2>
-        <div class="design-step">
-            <h3>Problem Identification</h3>
-            <p>We identified the need to develop a plasmid that efficiently expresses a protein of interest in bacterial cells.</p>
-        </div>
-        <div class="design-step">
-            <h3>Research</h3>
-            <p>We conducted extensive research to determine the best promoter, coding sequence, and terminator regions for optimal protein expression.</p>
-        </div>
-        <div class="design-step">
-            <h3>Development of Possible Solutions</h3>
-            <p>We considered multiple combinations of genetic elements and used computational tools to predict the best design.</p>
-        </div>
-        <div class="design-step">
-            <h3>Planning Our Solution</h3>
-            <p>We planned the cloning and expression strategy, including vector choice and verification methods, to ensure successful plasmid construction.</p>
-        </div>
+    <div class="row">
+    <div class="col-md-2">
+    <div class="sticky">
+    <nav class="section-nav" style="border-left: 1px solid #efefef;">
+        <ul style="list-style: none;
+    margin-left: 0px;">
+          <div class="margin-left: 1rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 5px"><a href="#problem-identification">Problem Identification</a></li>
+            <li style="margin-bottom: 5px"><a href="#research">Research</a></li>
+            <li style="margin-bottom: 5px"><a href="#solution-development">Solution Development</a></li>
+            <li style="margin-bottom: 5px"><a href="#planning">Planning</a></li>
+            <li style="margin-bottom: 5px"><a href="#build">Creation</a></li>
+            <li style="margin-bottom: 5px"><a href="#our-future-vision">Evaluation</a></li>
+          </div>
+        </ul>
+    </nav>
     </div>
+    </div>
+      <div class="col-md-10">
+<section id="problem-identification">
+    <br><br>
+    <div class="row mt-3" style="text-align:center"> <h2>Problem Identification</h2></div>
+    <div class="row-mt-5" style="text-align: center">
+        The first step of the engineering design cycle was recognition of a prominent problem which we could address. We identified a variety of potential problems to tackle, but ultimately decided on the global problem---Exocrine Pancreatic Insufficiency (EPI). Functionally, this causes an inadequate amount of lipolytic enzymes including pancreatic triacylglycerol lipase which is critical for the digestion of dietary fats. This indicated that the problem demanded a device which could be consumed and delivered to the small intestine within a short duration of consumption and release human pancreatic lipase and any necessary cofactors with causing any ill effects to an individual or the gut microbiome.
+    </div>
+</section>
+<section id="research">
+    <br><br>
+    <div class="row mt-3" style="text-align:center"> <h2>Research</h2></div>
+    <div class="row-mt-5" style="text-align: center">
+        
+    </div>
+</section>
+<section id="solution-development">
+    <br><br>
+    <div class="row mt-3" style="text-align:center"> <h2>Solution Development</h2></div>
+    <div class="row-mt-5" style="text-align: center">
+        
+    </div>
+</section>
+<section id="planning">
+    <br><br>
+    <div class="row mt-3" style="text-align:center"> <h2>Planning</h2></div>
+    <div class="row-mt-5" style="text-align: center">
+        
+    </div>
+</section>
+<section id="creation">
+    <br><br>
+    <div class="row mt-3" style="text-align:center"> <h2>Creation</h2></div>
+    <div class="row-mt-5" style="text-align: center">
+        
+    </div>
+</section>
+<section id="Evaluation">
+    <br><br>
+    <div class="row mt-3" style="text-align:center"> <h2>Creation</h2></div>
+    <div class="row-mt-5" style="text-align: center">
+        
+    </div>
+</section>
+</div>
     <div class="plasmid-container">
         <svg id="plasmid-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
             <!-- Define arcs for different plasmid parts -->
@@ -153,6 +310,8 @@ text {
         </div>
     </div>
 </div>
+</body>
+
 <script>
         // Appear & reappear sequence
         document.addEventListener('DOMContentLoaded', () => {
@@ -236,6 +395,39 @@ text {
     ampr.addEventListener('mouseout', hideInfo);
 });
 
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+          const options = {
+              root: null,
+              rootMargin: '0px',
+              threshold: 0.1
+          };
+
+          const observer = new IntersectionObserver(function (entries, observer) {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      const progressBars = entry.target.querySelectorAll('.progress-container');
+                      progressBars.forEach((progressBar, index) => {
+                          const progress = progressBar.querySelector('.progress');
+                          setTimeout(() => {
+                              if (progressBar.classList.contains('progressbar80')) {
+                                  progress.classList.add('progressbaranimation80');
+                              } else if (progressBar.classList.contains('progressbar90')) {
+                                  progress.classList.add('progressbaranimation90');
+                              } else if (progressBar.classList.contains('progressbar77')) {
+                                  progress.classList.add('progressbaranimation77');
+                              }
+                          }, index * 1000); // Delay each animation by 2 seconds
+                      });
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, options);
+
+          observer.observe(document.querySelector('.allprogressbars'));
+      });
 </script>
 
 {% endblock %}
