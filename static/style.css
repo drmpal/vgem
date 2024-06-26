@@ -18,10 +18,7 @@ body { padding-top: 0px; font-family: 'Poppins', sans-serif;}
 .bd-callout-info { border-left-color:#5bc0de }
 .bd-callout-warning { border-left-color:#f0ad4e }
 .bd-callout-danger { border-left-color:#d9534f }
-  .sticky {
-    position: sticky;
-    top: 90px;
-  }
+
 
 
 /* footer */

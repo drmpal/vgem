@@ -5,6 +5,10 @@
 
 {% block page_content %}
 <style>
+   .sticky {
+    position: sticky;
+    top: 90px;
+  }
     section {
     padding-top: 90px;
     margin-top: -90px;
@@ -32,13 +36,63 @@
   height: 100%;
   object-fit: cover;
   }
+      html {
+    scroll-behavior: smooth;
+  }
+
+  .section-nav li.active > a {
+    color: #8B555E;
+    font-weight: 500;
+  }
+
+  .section-nav {
+    padding-left: 0;
+    border-left: 1px solid #D88993;
+  }
+
+  .section-nav a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    color: #D88993;
+    transition: all 400ms ease-in-out;
+  }
+
+  .section-nav a:hover,
+  .section-nav a:focus {
+    color: #8B555E;
+  }
 </style>
 <head></head>
 <html><body>
 <div class="container">
-  <h2 class="section-title text-center">Expert Feedback</h2>
+  <div class="row">
+    <div class="col-md-2">
+        <div class="sticky">
+            <br>
+ <nav class="section-nav" style="border-left: 1px solid #efefef;">
+      <ul style="list-style: none;
+  margin-left: 0px;">
+          <div class="margin-left: 1rem; margin-bottom: 1rem;">
+        <li style="margin-bottom: 5px"><a href="#medical-professionals">Medical Professionals</a></li>
+        <li style="margin-bottom: 5px"><a href="#synthetic-biologists">Synthetic Biologists</a></li>
+              <li style="margin-bottom: 5px"><a href="#ethics-expert">Ethics Expert</a></li>
+        <li style="margin-bottom: 5px"><a href="#homeschooling-expert">Homeschooling Expert</a></li>
+        </div>
+          </ul>
+        </nav>
+    </div>
+        </div>
+    <div class="col-md-10">
+      <row style="text-align: center">
+        <h3 class="section-title">Expert Feedback</h3>
+        <p>It is essential to consult with experts to gain their perspective and feedback. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </row>
+  <section id="medical-professionals">
+  <h3 class="mb-2 section-title">Medical Professionals</h3>
   <div class="row justify-content-center">
     <div class="col-md-4 text-center">
+
       <div class="expert-picture mx-auto">
         <img src="static/picture.png" alt="Expert Picture">
       </div>
@@ -64,13 +118,135 @@
   <div class="row mt-4" style="text-align:center">
           <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
+</section>
+
+
+          <section id="synthetic-biologists">
+  <h3 class="mb-2 section-title">Synthetic Biologists</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+
+      <div class="expert-picture mx-auto">
+        <img src="static/picture.png" alt="Expert Picture">
+      </div>
+      <h3 class="mt-2">Firstname Lastname</h3>
+    </div>
+    <div class="col-md-8 d-flex align-items-center">
+      <p>Firstname Lastname is an expert in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We talked to them because Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-7 d-flex flex-column justify-content-center">
+      <blockquote class="blockquote text-center">
+        <h4><i>"This is an impactful quote from the interview."</i></h4>
+      </blockquote>
+      <blockquote class="blockquote text-center">
+        <h4><i>"This is another impactful quote from the interview if needed."</i></h4>
+      </blockquote>
+    </div>
+    <div class="col-md-5 d-flex align-items-center">
+      <img src="static/picture.png" class="img-fluid" alt="Interview Clip">
+    </div>
+  </div>
+  <div class="row mt-4" style="text-align:center">
+          <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</section>
+
+
+        <section id="ethics-expert">
+  <h3 class="mb-2 section-title">Ethics Expert</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+
+      <div class="expert-picture mx-auto">
+        <img src="static/picture.png" alt="Expert Picture">
+      </div>
+      <h3 class="mt-2">Firstname Lastname</h3>
+    </div>
+    <div class="col-md-8 d-flex align-items-center">
+      <p>Firstname Lastname is an expert in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We talked to them because Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-7 d-flex flex-column justify-content-center">
+      <blockquote class="blockquote text-center">
+        <h4><i>"This is an impactful quote from the interview."</i></h4>
+      </blockquote>
+      <blockquote class="blockquote text-center">
+        <h4><i>"This is another impactful quote from the interview if needed."</i></h4>
+      </blockquote>
+    </div>
+    <div class="col-md-5 d-flex align-items-center">
+      <img src="static/picture.png" class="img-fluid" alt="Interview Clip">
+    </div>
+  </div>
+  <div class="row mt-4" style="text-align:center">
+          <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</section>
+
+
+        <section id="homeschooling-expert">
+  <h3 class="mb-2 section-title">Homeschooling Expert</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+
+      <div class="expert-picture mx-auto">
+        <img src="static/picture.png" alt="Expert Picture">
+      </div>
+      <h3 class="mt-2">Firstname Lastname</h3>
+    </div>
+    <div class="col-md-8 d-flex align-items-center">
+      <p>Firstname Lastname is an expert in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We talked to them because Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-7 d-flex flex-column justify-content-center">
+      <blockquote class="blockquote text-center">
+        <h4><i>"This is an impactful quote from the interview."</i></h4>
+      </blockquote>
+      <blockquote class="blockquote text-center">
+        <h4><i>"This is another impactful quote from the interview if needed."</i></h4>
+      </blockquote>
+    </div>
+    <div class="col-md-5 d-flex align-items-center">
+      <img src="static/picture.png" class="img-fluid" alt="Interview Clip">
+    </div>
+  </div>
+  <div class="row mt-4" style="text-align:center">
+          <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</section>
+
+</div>
+</div>
 </div>
 
 
 
 
 
-
 </body></html>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
 
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			const id = entry.target.getAttribute('id');
+			if (entry.intersectionRatio > 0) {
+				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+			} else {
+				document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+			}
+		});
+	});
+
+	// Track all sections that have an `id` applied
+	document.querySelectorAll('section[id]').forEach((section) => {
+		observer.observe(section);
+	});
+
+});
+    </script>
 {% endblock %}
