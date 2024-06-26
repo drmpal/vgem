@@ -3,8 +3,7 @@
 
     <!---- TEAM NAME ---->
     <li class="nav-item">
-      <a class="nav-link navbar-brand" href="{{ url_for('home') }}"><img src="https://static.igem.wiki/teams/5178/logo.png" alt="brand">
-        BLISS
+      <a class="nav-link navbar-brand" href="{{ url_for('home') }}"><img src="https://static.igem.wiki/teams/5178/animation-final-frame.png" alt="brand">
       </a>
     </li>
 
@@ -46,13 +45,13 @@
 
         <!---- WETLAB ---->
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='wetlab') }}" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">
             Wetlab
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='wetlab') }}"><img src="https://static.igem.wiki/teams/5178/wetlab.png" alt="wIcon">
-              Wetlab</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}"><img src="https://static.igem.wiki/teams/5178/experiments.png" alt="exIcon">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}"><img src="https://static.igem.wiki/teams/5178/parts.jpg" alt="pIcon">
+              </a>Parts</li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}"><img src="https://static.igem.wiki/teams/5178/wetlab.png" alt="exIcon">
               Experiments</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}"><img src="https://static.igem.wiki/teams/5178/notebook.png" alt="nIcon">
               Notebook</a></li>
@@ -145,8 +144,8 @@
 
 .nav-item a img {
   top: 0;
-  margin-right: 20px;
-  height: 60px;
+  margin-right: 80px;
+  height: 40px;
   width: auto;
 }
 </style>
