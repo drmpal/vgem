@@ -5,50 +5,82 @@
 
 {% block page_content %}
 <style>
+   .sticky {
+    position: sticky;
+    top: 90px;
+  }
+       html {
+    scroll-behavior: smooth;
+  }
+
+  .section-nav li.active > a {
+    color: #8B555E;
+    font-weight: 500;
+  }
+
+  .section-nav {
+    padding-left: 0;
+    border-left: 1px solid #D88993;
+  }
+
+  .section-nav a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    color: #D88993;
+    transition: all 400ms ease-in-out;
+  }
+
+  .section-nav a:hover,
+  .section-nav a:focus {
+    color: #8B555E;
+  }
   .accordion-header-style {
   background-color: #F0DFAD;
   color: #2D4E62; /* Text color */
     border: 1px solid #D88993;
 
 }
-  .accordion-item-style {
-    max-width: 500px; /* Darker border color */
+/*  .accordion-item-style {*/
+/*    max-width: 500px; !* Darker border color *!*/
+/*}*/
+  .dropshadow-box
+{
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
 }
+    section {
+    padding-top: 70px;
+    margin-top: -70px;
+    padding-bottom: 20px;
+  }
+
 </style>
-<!--<div class="row mt-4">-->
-<!--  <div class="col-lg-8">-->
-<!--    <h2>What should this page contain?</h2>-->
-<!--    <hr>-->
-<!--    <ul>-->
-<!--      <li>Chronological notes of what your team is doing.</li>-->
-<!--      <li>Brief descriptions of daily important events.</li>-->
-<!--      <li>Pictures of your progress.</li>-->
-<!--      <li>Mention who participated in what task.</li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--  <div class="col-lg-4">-->
-<!--    <h2>Inspirations</h2>-->
-<!--    <hr>-->
-<!--    <ul> -->
-<!--      <li><a href="http://2018.igem.org/Team:Munich/Notebook">2018 Munich</a></li>-->
-<!--      <li><a href="https://2019.igem.org/Team:Georgia_State/Notebook">2019 Georgia State</a></li>-->
-<!--      <li><a href="https://2019.igem.org/Team:Newcastle/Notebook">2019 Newcastle</a></li>-->
-<!--      <li><a href="https://2020.igem.org/Team:IISER-Pune-India/Notebook">2020 IISER Pune India</a></li>-->
-<!--      <li><a href="https://2020.igem.org/Team:Lund/Notebook">2020 Lund</a></li>-->
-<!--      <li><a href="https://2020.igem.org/Team:NOVA_LxPortugal/Notebook">2020 NOVA LxPortugal</a></li>-->
-<!--      <li><a href="https://2020.igem.org/Team:RDFZ-China/NoteBook">2020 RDFZ China</a></li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="container">
+   <div class="row">
+    <div class="col-md-2">
+        <div class="sticky">
 
-<!--<div class="text-center mt-5 bold-text">-->
-<!--  <h1 style="font-weight: 800">Notebook</h1>-->
-<!--  Click on each week to see what we did!-->
-<!--</div>-->
-
-<h2 class="mt-4">May</h2>
-
-<div class="accordion" id="Notebook" style="max-width: 800px">
+ <nav class="section-nav" style="border-left: 1px solid #efefef;">
+      <ul style="list-style: none;
+  margin-left: 0px;">
+          <div class="margin-left: 1rem; margin-bottom: 1rem;">
+        <li style="margin-bottom: 5px"><a href="#may">May</a></li>
+        <li style="margin-bottom: 5px"><a href="#june">June</a></li>
+              <li style="margin-bottom: 5px"><a href="#july">July</a></li>
+        <li style="margin-bottom: 5px"><a href="#august">August</a></li>
+            <li style="margin-bottom: 5px"><a href="#september">September</a></li>
+            <li style="margin-bottom: 5px"><a href="#october">October</a></li>
+        </div>
+          </ul>
+        </nav>
+    </div>
+        </div>
+  <div class="col-md-10 dropshadow-box">
+<div class="accordion" id="Notebook">
+  <section id="may">
+  <h2 class="mt-4 text-center">May</h2>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -70,8 +102,10 @@
       </div>
     </div>
   </div>
+</section>
 
-  <h2 class="mt-4">June</h2>
+  <section id="june">
+  <h2 class="mt-4 text-center">June</h2>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -96,7 +130,9 @@
       </div>
     </div>
   </div>
-<br>
+    </section>
+
+
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -122,6 +158,107 @@
       </div>
     </div>
   </div>
+<br>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        Week 5 (6/24/24-6/28/24)
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#Notebook">
+      <div class="accordion-body">
+        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+      </div>
+    </div>
+  </div>
+    <section id="july">
+    <h2 class="mt-4 text-center">July</h2>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingSix">
+      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        Week 6 (7/1/24-7/5/24)
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#Notebook">
+      <div class="accordion-body">
+        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+      </div>
+    </div>
+  </div>
+<br>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingSeven">
+      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+        Week 7 (7/8/24-7/12/24)
+      </button>
+    </h2>
+    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#Notebook">
+      <div class="accordion-body">
+        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+      </div>
+    </div>
+  </div>
+      <br>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingEight">
+      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+        Week 8 (7/15/24-7/19/24)
+      </button>
+    </h2>
+    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#Notebook">
+      <div class="accordion-body">
+        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+      </div>
+    </div>
+  </div>
+      <br>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingNine">
+      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+        Week 9 (7/22/24-7/26/24)
+      </button>
+    </h2>
+    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#Notebook">
+      <div class="accordion-body">
+        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+      </div>
+    </div>
+  </div>
+      <br>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTen">
+      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseTen">
+        Week 10 (7/29/24-8/2/24)
+      </button>
+    </h2>
+    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#Notebook">
+      <div class="accordion-body">
+        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+      </div>
+    </div>
+  </div>
+    </section>
+  <section id="august">
+  <h2 class="mt-4 text-center">August</h2>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingEleven">
+      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseEleven">
+        Week 11 (8/5/24-8/9/24)
+      </button>
+    </h2>
+    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#Notebook">
+      <div class="accordion-body">
+        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+      </div>
+    </div>
+  </div>
+     </section>
 </div>
 
+</div>
+
+</div>
+</div>
 {% endblock %}

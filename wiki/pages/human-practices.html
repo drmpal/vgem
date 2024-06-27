@@ -5,6 +5,12 @@
 
 {% block page_content %}
 <style>
+    .dropshadow-box
+{
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+}
    .sticky {
     position: sticky;
     top: 90px;
@@ -63,6 +69,24 @@
   .section-nav a:focus {
     color: #8B555E;
   }
+.wrapper {
+  position: relative;
+  background-image: url('https://static.igem.wiki/teams/5178/ihp/wiki-quote.png');
+  background-size: contain; /* Use 'contain' if you want to ensure the entire image is visible */
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.blockquote {
+  position: relative;
+  z-index: 1;
+}
+
 </style>
 <head></head>
 <html><body>
@@ -84,7 +108,7 @@
         </nav>
     </div>
         </div>
-    <div class="col-md-10">
+    <div class="col-md-10 dropshadow-box">
       <row style="text-align: center">
         <h2 class="section-title">‎ ‎ ‎Expert Feedback‎ ‎ ‎</h2>
         <p>It is essential to consult with experts to gain their perspective and feedback. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -104,7 +128,7 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-7 d-flex flex-column justify-content-center">
+    <div class="col-md-7 d-flex flex-column justify-content-center wrapper">
       <blockquote class="blockquote text-center">
         <h4><i>"This is an impactful quote from the interview."</i></h4>
       </blockquote>
