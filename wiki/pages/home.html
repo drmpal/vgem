@@ -39,7 +39,7 @@
 } 
 
 #logo { 
-    width: 1400px; 
+    width: 1600px; 
     height: auto; 
 } 
 
@@ -48,6 +48,7 @@
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .content {
@@ -68,6 +69,7 @@
     padding-bottom: 20px;
     font-size: 36px;
     text-align: left;
+    color: #1E7995
 }
 
 .columns {
@@ -93,6 +95,7 @@
             height: 400px;
         }
         .info-box .number {
+            background-color:#EDF0DA ;
             font-size: 48px;
             margin: 0;
             color: #8B555E;
@@ -132,6 +135,19 @@
         .slam {
             animation: slam 0.5s ease-in-out;
         }
+        .read-more-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.1s ease-in-out;
+        }
+        .read-more-btn:active {
+            transform: scale(0.95);
+        }
 
 </style>
 <!--
@@ -145,13 +161,14 @@
         <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png">
     </div>
 </div>
-<div class="container full-width bg-lightpink read">
+<div class="container full-width bg-yellow read">
     <div class="row h-100 align-items-center">
     <h2>What is BLISS?</h2>
     <p>The Bacillus Lipase Integrated Secretion System (BLISS) is a groundbreaking probiotic developed to address Exocrine Pancreatic Insufficiency (EPI). Through genetic engineering, B. subtilis has been modified to produce human pancreatic lipases, procolipases, amylases, and proteases, functioning as a pancreatic enzyme replacement therapy.</p>
+    <a href="https://example.com" class="read-more-btn">Read More</a>
     </div>
 </div>
-<div class="container full-width bg-yellow">
+<div class="container full-width bg-offwhite">
     <div class="row align-items-center">
         <div class="columns">
             <div class="column">
