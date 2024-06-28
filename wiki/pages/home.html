@@ -88,33 +88,29 @@
     color: #555;
     margin-top: 10px;
 }
+
 .percentage-box {
-    background-color: #007bff;
-    color: white;
+    background-color: #ffeb3b;
+    border-radius: 10px;
     padding: 10px;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
     text-align: center;
-    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
     display: none;
-    animation: slam 0.5s forwards;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease-in-out;
 }
-@keyframes slam {
-    0% {
-        transform: scale(0.1);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+
+.percentage-box.slam {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
 }
+
 </style>
 <!--
-<div class="brand-image"> 
-    <img src="https://static.igem.wiki/teams/5178/animation-final-frame.png" alt="Brand" id="main-title"> 
-</div> 
 <div id="logo-animation"> 
     <img src="https://static.igem.wiki/teams/5178/logo-animation.gif" alt="Logo" id="logo"> 
 </div> 
@@ -136,24 +132,24 @@
     <h2>The Problem</h2>
         <div class="columns">
             <div class="column">
-                <div class="info-box" data-target="3.4" data-format="million">
+                <div class="info-box" data-target="2700000" data-format="plain">
                     <p class="number">0</p>
                     <p class="description">Description 1</p>
-                    <div class="percentage-box" data-percentage="50%">50%</div>
+                    <div class="percentage-box">50%</div>
                 </div>
             </div>
             <div class="column">
                 <div class="info-box" data-target="8794" data-format="plain">
                     <p class="number">0</p>
                     <p class="description">Description 2</p>
-                    <div class="percentage-box" data-percentage="75%">75%</div>
+                    <div class="percentage-box">75%</div>
                 </div>
             </div>
             <div class="column">
                 <div class="info-box" data-target="100000" data-format="plain">
                     <p class="number">0</p>
                     <p class="description">Description 3</p>
-                    <div class="percentage-box" data-percentage="90%">90%</div>
+                    <div class="percentage-box">90%</div>
                 </div>
             </div>
         </div>
