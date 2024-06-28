@@ -30,3 +30,17 @@ body { padding-top: 0px; font-family: 'Be Vietnam Pro', sans-serif;}
 /* footer */
 footer a { color: white; font-weight: bold; text-decoration: none; }
 footer a:hover { color: white; text-decoration: underline; }
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInUp-animation {
+  animation: 1.5s fadeInUp;
+}

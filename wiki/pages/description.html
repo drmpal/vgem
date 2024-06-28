@@ -80,7 +80,20 @@
         -webkit-filter:blur(0px);
         }
 }
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 
+.fadeInUp-animation {
+  animation: 1.5s fadeInUp;
+}
 .flip-card {
     width:270px;height:270px;
   background-color: transparent;
@@ -228,12 +241,28 @@ h3 {
 /*            position: relative;*/
 /*            display: inline-block;*/
 /*        }*/
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInUp-animation {
+  animation: 1.5s fadeInUp;
+}
 .dropshadow-box
 {
     padding: 2rem;
     background-color: #ffffff;
     box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
-}
+    opacity: 0; /* Initially hidden */
+    }
 a{
     color:#D88993;
 }
@@ -346,8 +375,8 @@ a:hover
   <img src="https://static.igem.wiki/teams/5178/epi-people-graphic-light-removebg-preview.png" alt="Second Image" width="250px" style="animation-duration:2s" id="fadeOutImage">
 
 </div>
-        <h3 id="fadeInHeading" style="animation-duration:3s">
-                 10-20% of the global population is affected by EPI<a href="#citation5" id="5" style="font-size: 16px;margin-left: 5px; ">[5]</a></h3>
+        <h4 id="fadeInHeading" style="animation-duration:3s" class="mt-2">
+                 10-20% of the global population is affected by EPI<a href="#citation5" id="5" style="font-size: 16px;margin-left: 5px; ">[5]</a></h4>
         </div>
         <div class="col allprogressbars">
           <div class="progress-container progressbar80">
@@ -434,7 +463,7 @@ a:hover
 <section id="current-solutions">
 
     <div class="row mt-3"><h2 class="section-title">‎ ‎ ‎Why Are Current Solutions Not Enough?‎ ‎ ‎</h2></div>
-<p class="mt-2"> Currently, the standard treatment for EPI is pancreatic enzyme replacement therapy (PERT) with pancrelipase or other oral drugs containing the digestive enzymes pancreatic lipase, amylase, and protease16. These enzymes supplement those deficient in the body naturally, and thus permit the breakdown and digestion of food into nutrients. However, these medications are currently derived from porcine pancreases and are thus unsuitable for those who avoid pork for religious or dietary reasons<a id="17" href="#citation17">[17]</a>. Animal derived pharmaceuticals also have other ethical and environmental dilemmas. The extraction of these enzymes from pigs is often associated with inhumane treatment of pigs (poor feeding/living conditions and eventual slaughter) and large amounts of waste<a id="18" href="#citation18">[18]</a>. Each farmed pig consumes many resources and produces over 10 pounds of manure per day, leading to air and groundwater pollution<a id="19" href="#citation19">[19]</a>. In China, pig production accounts for roughly 42% of the nitrogen and 90% of the phosphorus flowing into the South China Sea. Additionally, while the possibility of harmful disease transmission via animal-derived products is low, porcine pancreatic enzymes are theorized to carry a pig virus, analogous to mad cow disease<a id="20" href="#citation20">[20]</a>. There are currently no FDA-approved, synthetically-produced PERT medications, highlighting the urgent need for a more sustainable and accessible treatment for EPI. </p>
+<p class="mt-2"> Currently, the standard treatment for EPI is pancreatic enzyme replacement therapy (PERT) with pancrelipase or other oral drugs containing the digestive enzymes pancreatic lipase, amylase, and protease. These enzymes supplement those deficient in the body naturally, and thus permit the breakdown and digestion of food into nutrients. However, these medications are currently derived from porcine pancreases and are thus unsuitable for those who avoid pork for religious or dietary reasons<a id="17" href="#citation17">[17]</a>. Animal derived pharmaceuticals also have other ethical and environmental dilemmas. The extraction of these enzymes from pigs is often associated with inhumane treatment of pigs (poor feeding/living conditions and eventual slaughter) and large amounts of waste<a id="18" href="#citation18">[18]</a>. Each farmed pig consumes many resources and produces over 10 pounds of manure per day, leading to air and groundwater pollution<a id="19" href="#citation19">[19]</a>. In China, pig production accounts for roughly 42% of the nitrogen and 90% of the phosphorus flowing into the South China Sea. Additionally, while the possibility of harmful disease transmission via animal-derived products is low, porcine pancreatic enzymes are theorized to carry a pig virus, analogous to mad cow disease<a id="20" href="#citation20">[20]</a>. There are currently no FDA-approved, synthetically-produced PERT medications, highlighting the urgent need for a more sustainable and accessible treatment for EPI. </p>
 
    </section>
 
@@ -632,4 +661,6 @@ a:hover
 });
 
 </script>
+
+
 {% endblock %}
