@@ -14,10 +14,31 @@ body {
     background-color: #f8f9fa;
 }
 
-.container {
-    width: 100%;
-    padding: 50px 0;
-    box-sizing: border-box;
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+}
+
+.column:not(:last-child) {
+    margin-right: 20px;
+}
+
+.container:nth-child(odd) {
+    background-color: #e9ecef;
 }
 
 .brand-image { 
