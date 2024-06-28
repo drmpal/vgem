@@ -79,35 +79,40 @@
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    font-size: 36px;
+    font-size: 72px;
     font-weight: bold;
-}
-
-.small-text {
-    font-size: 14px;
-    color: #555;
-    margin-top: 10px;
 }
 
 .percentage-box {
-    background-color: #ffeb3b;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-    display: none;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.5s ease-in-out;
-}
-
-.percentage-box.slam {
-    display: block;
-    opacity: 1;
-    transform: scale(1);
-}
+            background-color: #ffeb3b;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .percentage-box .slam-text {
+            display: inline-block;
+            animation: none;
+        }
+        @keyframes slam {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .slam {
+            animation: slam 0.5s ease-in-out;
+        }
 
 </style>
 <!--
@@ -134,22 +139,22 @@
             <div class="column">
                 <div class="info-box" data-target="2700000" data-format="plain">
                     <p class="number">0</p>
-                    <p class="description">Description 1</p>
-                    <div class="percentage-box">50%</div>
+                    <p class="description">EPI effects an astounding this many people!!!! NO WAY!!!</p>
+                    <div class="percentage-box"><span class="slam-text">50%</span></div>
                 </div>
             </div>
             <div class="column">
                 <div class="info-box" data-target="8794" data-format="plain">
                     <p class="number">0</p>
-                    <p class="description">Description 2</p>
-                    <div class="percentage-box">75%</div>
+                    <p class="description">The text on this page is entirely place-holders and should not be taken seriously</p>
+                    <div class="percentage-box"><span class="slam-text">75%</span></div>
                 </div>
             </div>
             <div class="column">
                 <div class="info-box" data-target="100000" data-format="plain">
                     <p class="number">0</p>
-                    <p class="description">Description 3</p>
-                    <div class="percentage-box">90%</div>
+                    <p class="description">Matt is a great wiki designer</p>
+                    <div class="percentage-box"><span class="slam-text">90%</span></div>
                 </div>
             </div>
         </div>
@@ -191,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.querySelector('.number').innerText.replace(/,/g, '');
-                    const increment = target / 200; // Adjust the speed of counting here
+                    const increment = target / 100; // Adjust the speed of counting here
 
                     if (count < target) {
                         const newCount = count + increment;
@@ -214,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             function showPercentageBoxes() {
-                const percentageBoxes = document.querySelectorAll('.percentage-box');
+                const percentageBoxes = document.querySelectorAll('.percentage-box .slam-text');
                 percentageBoxes.forEach(box => {
                     setTimeout(() => {
                         box.classList.add('slam');
