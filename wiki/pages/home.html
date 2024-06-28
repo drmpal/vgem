@@ -54,9 +54,33 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+}
+
+.column:not(:last-child) {
+    margin-right: 20px;
+}
+
+.info-box {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 </style>
@@ -71,26 +95,28 @@
 
 <div class="container logo-container full-width bg-offwhite">
     <div class="content">
-        <img src="https://static.igem.wiki/teams/5178/animation-final-frame.png">
+        <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png">
     </div>
 </div>
 <div class="container full-width bg-yellow">
     <div class="row align-items-center">
     <h2>The Problem</h2>
-        <div class="col-md-3">
-            <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-            </svg>
-        </div>
-        <div class="col-md-3">
-            <svg viewBox="0 0 100 100">
-                <rect width="90" height="90" x="5" y="5" stroke="black" stroke-width="3" fill="green" />
-            </svg>
-        </div>
-        <div class="col-md-3">
-            <svg viewBox="0 0 100 100">
-                <polygon points="50,5 95,95 5,95" stroke="black" stroke-width="3" fill="blue" />
-            </svg>
+        <div class="columns">
+            <div class="column">
+                <div class="info-box" data-target="9.8">
+                    0
+                </div>
+            </div>
+            <div class="column">
+                <div class="info-box" data-target="3.4">
+                    0
+                </div>
+            </div>
+            <div class="column">
+                <div class="info-box" data-target="2.1">
+                    0
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -105,6 +131,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const windowHeight = window.innerHeight;
     const logoAnimation = document.getElementById('logo-animation');
+    const counters = document.querySelectorAll('.info-box');
+   
     let animationTimeout; 
 
     function endAnimation() { 
@@ -125,6 +153,24 @@ document.addEventListener('DOMContentLoaded', function() {
     logoAnimation.addEventListener('click', () => { 
         clearTimeout(animationTimeout); 
         endAnimation(); 
+    });
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target') * 1000000;
+        let count = 0;
+
+        const updateCount = () => {
+        const increment = target / 200; // Adjust the speed of counting here
+        if (count < target) {
+                count += increment;
+                    counter.innerText = `${(count / 1000000).toFixed(1)} million`;
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.innerText = `${(target / 1000000).toFixed(1)} million`;
+            }
+        };
+
+        updateCount();
     });
 
 });
