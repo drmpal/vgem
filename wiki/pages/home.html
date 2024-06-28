@@ -75,15 +75,21 @@
 }
 
 .info-box {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    font-size: 72px;
-    font-weight: bold;
-}
-
-.percentage-box {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .info-box .number {
+            font-size: 48px;
+            margin: 0;
+        }
+        .info-box .description {
+            font-size: 16px;
+            color: #666;
+        }
+        .percentage-box {
             background-color: #ffeb3b;
             border-radius: 10px;
             padding: 10px;
@@ -94,7 +100,6 @@
         }
         .percentage-box .slam-text {
             display: inline-block;
-            animation: none;
         }
         @keyframes slam {
             0% {
@@ -196,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.querySelector('.number').innerText.replace(/,/g, '');
-                    const increment = target / 100; // Adjust the speed of counting here
+                    const increment = target / 200; // Adjust the speed of counting here
 
                     if (count < target) {
                         const newCount = count + increment;
