@@ -140,6 +140,11 @@
 .slam {
     animation: slam 0.5s ease-in-out;
 }
+
+.center {
+    align-content: center;
+    align-items: center;
+}
 .read-more-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -152,8 +157,6 @@
     text-decoration: none;
     border-radius: 50px;
     transition: transform 0.1s ease-in-out;
-    align-items: center;
-    align-content: center;
 }
 .read-more-btn:hover {
     color: #EDF0DA; /* Ensure the text color stays white on hover */
@@ -170,6 +173,7 @@
     color:#EDF0DA;
 }
 .image-text-container img {
+    margin-left: 40px;
     max-width: 30%;
     height: auto;
     border-radius: 10px;
@@ -194,10 +198,12 @@
     </div>
 </div>
 <div class="container full-width bg-yellow read">
-    <div class="row h-100 align-items-center">
-    <h2>What is BLISS?</h2>
-    <p>The Bacillus Lipase Integrated Secretion System (BLISS) is a groundbreaking probiotic developed to address Exocrine Pancreatic Insufficiency (EPI). Through genetic engineering, B. subtilis has been modified to produce human pancreatic lipases, procolipases, amylases, and proteases, functioning as a pancreatic enzyme replacement therapy.</p>
-    <a href="https://2024.igem.wiki/virginia/description" class="read-more-btn">Read More</a>
+    <div class="main-card">
+        <h2>What is BLISS?</h2>
+        <p>The Bacillus Lipase Integrated Secretion System (BLISS) is a groundbreaking probiotic developed to address Exocrine Pancreatic Insufficiency (EPI). Through genetic engineering, B. subtilis has been modified to produce human pancreatic lipases, procolipases, amylases, and proteases, functioning as a pancreatic enzyme replacement therapy.</p>
+        <div class="centerer">
+            <a href="https://2024.igem.wiki/virginia/description" class="read-more-btn">Read More</a>
+        </div>
     </div>
 </div>
 <div class="container full-width bg-offwhite stats">
