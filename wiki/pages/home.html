@@ -43,92 +43,6 @@
     height: auto; 
 } 
 
-.container {
-    position: relative;
-    width: 100%; /* Adjust the width of the container as needed */
-}
-
-.curve-container {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    pointer-events: none; /* Ensure the curve doesn't interfere with scrolling or other interactions */
-}
-
-.curve {
-    display: block;
-    width: 100%;
-}
-
-.moving-image-container {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    pointer-events: none; /* Ensure the moving image doesn't interfere with scrolling or other interactions */
-}
-
-.content {
-    position: relative;
-    width: 100%;
-    height: 1000px;
-}
-
-.checkpoint {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    transform: translate(-50%, -50%);
-}
-
-.checkpoint img {
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
-    margin-right: 10px;
-}
-
-.text-box {
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.text-box.visible {
-    opacity: 1;
-}
-
-@keyframes flip {
-    0% {
-        transform: rotateY(0);
-    }
-    100% {
-        transform: rotateY(180deg);
-    }
-}
-
-@keyframes flipBack {
-    0% {
-        transform: rotateY(180deg);
-    }
-    100% {
-        transform: rotateY(0);
-    }
-}
-
-.moving-image {
-    position: absolute;
-    width: 70px;
-    height: 50px;
-    transition: transform 0.6s;
-}
-
-.moving-image.flip {
-    animation: flip 0.6s forwards;
-}
-
-.moving-image.flip-back {
-    animation: flipBack 0.6s forwards;
-}
-
-
 </style>
 
 <div class="brand-image"> 
@@ -138,104 +52,10 @@
     <img src="https://static.igem.wiki/teams/5178/logo-animation.gif" alt="Logo" id="logo"> 
 </div> 
 
-<div class="container">
-    <div class="curve-container">
-        <svg class="curve" width="100%" height="1000" viewBox="0 0 3500 1000" preserveAspectRatio="none">
-            <path id="sinusoidal-path" d="M 1750 0 Q 3500 250, 1750 500 T 1750 1000" stroke="black" fill="transparent" stroke-width="24"/>
-            <path id="sinusoidal-path" d="M 1750 0 Q 3500 250, 1750 500 T 1750 1000" stroke="pink" fill="transparent" stroke-width="20"/>
-            <circle class="marker" cx="1750" cy="0" r="5" fill="red"/>
-            <circle class="marker" cx="2627" cy="250" r="5" fill="red"/>
-            <circle class="marker" cx="873" cy="750" r="5" fill="red"/>
-            <circle class="marker" cx="1750" cy="1000" r="5" fill="red"/>
-        </svg>
-    </div>
-
-        <div class="moving-image-container">
-            <img src="static/Barry_Car_R.png" alt="Moving Image" class="moving-image">
-        </div>
-
-        <div class="content">
-            <div class="checkpoint">
-                <img src="https://static.igem.wiki/teams/5178/gear.png" alt="gear" class="image">
-                <div class="text-box">Text Box 1</div>
-            </div>
-            <div class="checkpoint">
-                <img src="" alt="" class="image">
-                <div class="text-box">Text Box 2</div>
-            </div>
-            <div class="checkpoint">
-                <img src="" alt="" class="image">
-                <div class="text-box">Text Box 3</div>
-            </div>
-            <div class="checkpoint">
-                <img src="" alt="" class="image">
-                <div class="text-box">Text Box 4</div>
-            </div>
-        </div>
-    </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const svgPath = document.getElementById('sinusoidal-path');
-    const pathLength = svgPath.getTotalLength();
-    const movingImage = document.querySelector('.moving-image');
-    const markers = document.querySelectorAll('.marker');
-    const checkpoints = document.querySelectorAll('.checkpoint');
     const windowHeight = window.innerHeight;
-    const logoAnimation = document.getElementById('logo-animation'); 
-    const mainContent = document.getElementById('main-content');
- 
-    const checkpointPositions = [];
-    markers.forEach((marker, index) => {
-        const markerPosition = marker.getBoundingClientRect();
-        checkpointPositions.push(markerPosition.top + window.scrollY);
-
-        const checkpoint = checkpoints[index];
-        checkpoint.style.top = `${markerPosition.top + window.scrollY}px`;
-
-        if (index % 2 === 0) {
-            // Position on the left side of the path
-            checkpoint.style.left = `calc(50% - 120px)`;
-        } else {
-            // Position on the right side of the path
-            checkpoint.style.left = `calc(50% + 20px)`;
-        }
-    });
-
-    function updateMovingImagePosition() {
-        const scrollPosition = window.scrollY;
-        const maxScroll = document.body.scrollHeight - windowHeight;
-        const fraction = scrollPosition / maxScroll;
-        const pointAtLength = svgPath.getPointAtLength(fraction * pathLength);
-
-        movingImage.style.top = `${pointAtLength.y}px`;
-        movingImage.style.left = `calc(${pointAtLength.x / 3300 * 95}%)`;
-
-        if (scrollPosition >= checkpointPositions[0] && scrollPosition < checkpointPositions[1]) {
-            movingImage.classList.add('flip');
-            movingImage.classList.remove('flip-back');
-        } else if (scrollPosition >= checkpointPositions[1] && scrollPosition < checkpointPositions[2]) {
-            movingImage.classList.add('flip-back');
-            movingImage.classList.remove('flip');
-        } else {
-            movingImage.classList.remove('flip');
-            movingImage.classList.remove('flip-back');
-        }
-    } 
-
-    document.addEventListener('scroll', function() {
-        updateMovingImagePosition();
-
-        checkpoints.forEach(checkpoint => {
-            const textBox = checkpoint.querySelector('.text-box');
-            const textBoxPosition = textBox.getBoundingClientRect().top;
-
-            if (textBoxPosition < windowHeight - 100) {
-                textBox.classList.add('visible');
-            }
-        });
-    });
-
+    const logoAnimation = document.getElementById('logo-animation');
     let animationTimeout; 
 
     function endAnimation() { 
@@ -258,9 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         endAnimation(); 
     });
 
-    updateMovingImagePosition();
 });
-
 
 </script>
 
