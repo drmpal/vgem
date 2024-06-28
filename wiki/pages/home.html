@@ -109,17 +109,17 @@
     <h2>The Problem</h2>
         <div class="columns">
             <div class="column">
-                <div class="info-box" data-target="9.8">
+                <div class="info-box" data-target="0.2">
                     0
                 </div>
             </div>
             <div class="column">
-                <div class="info-box" data-target="3.4">
+                <div class="info-box" data-target="100">
                     0
                 </div>
             </div>
             <div class="column">
-                <div class="info-box" data-target="2.1">
+                <div class="info-box" data-target="20">
                     0
                 </div>
             </div>
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const target = +counter.getAttribute('data-target') * 1000000;
                     const count = +counter.innerText.replace(/,/g, '') * 1000000;
 
-                    const increment = target / 200; // Adjust the speed of counting here
+                    const increment = target / 10000; // Adjust the speed of counting here
 
                     if (count < target) {
                         counter.innerText = (count + increment).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") / 1000000 + ' million';
