@@ -132,17 +132,17 @@ document.addEventListener("DOMContentLoaded", function() {
             const counters = document.querySelectorAll('.info-box');
 
             counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target') * 1000000;
-                let count = 0;
-
                 const updateCount = () => {
+                    const target = +counter.getAttribute('data-target') * 1000000;
+                    const count = +counter.innerText.replace(/,/g, '') * 1000000;
+
                     const increment = target / 200; // Adjust the speed of counting here
+
                     if (count < target) {
-                        count += increment;
-                        counter.innerText = `${(count / 1000000).toFixed(1)} million`;
-                        requestAnimationFrame(updateCount);
+                        counter.innerText = (count + increment).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") / 1000000 + ' million';
+                        setTimeout(updateCount, 10); // Adjust the update frequency here
                     } else {
-                        counter.innerText = `${(target / 1000000).toFixed(1)} million`;
+                        counter.innerText = (target / 1000000).toFixed(1) + ' million';
                     }
                 };
 
