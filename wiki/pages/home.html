@@ -79,10 +79,37 @@
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
 }
 
+.small-text {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+.percentage-box {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+    animation: slam 0.5s forwards;
+}
+@keyframes slam {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 </style>
 <!--
 <div class="brand-image"> 
@@ -101,7 +128,7 @@
 <div class="container full-width bg-lightpink">
     <div class="row h-100 align-items-center">
     <h2>What is BLISS?</h2>
-        <p>Blah Blah Blah hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
+    <p>Blah Blah Blah</p>
     </div>
 </div>
 <div class="container full-width bg-yellow">
@@ -109,24 +136,25 @@
     <h2>The Problem</h2>
         <div class="columns">
             <div class="column">
-                <div class="info-box" data-target="0.2">
-                    0
-                </div>
+                <p class="number">0</p>
+                <p class="description">Description 1</p>
+                <div class="percentage-box" data-percentage="50%">50%</div>
             </div>
             <div class="column">
-                <div class="info-box" data-target="10000000">
-                    0
-                </div>
+                <p class="number">0</p>
+                <p class="description">Description 2</p>
+                <div class="percentage-box" data-percentage="75%">75%</div>
             </div>
             <div class="column">
-                <div class="info-box" data-target="20">
-                    0
-                </div>
+                <p class="number">0</p>
+                <p class="description">Description 3</p>
+                <div class="percentage-box" data-percentage="90%">90%</div>
             </div>
         </div>
     </div>
 </div>
 
+<!--
 <script>
 document.addEventListener("DOMContentLoaded", function() {
             const counters = document.querySelectorAll('.info-box');
@@ -148,6 +176,51 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 updateCount();
             });
+        });
+</script>
+-->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+            const counters = document.querySelectorAll('.info-box');
+            let countComplete = 0;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target') * 1000000;
+                    const count = +counter.querySelector('.number').innerText.replace(/,/g, '') * 1000000;
+                    const increment = target / 200; // Adjust the speed of counting here
+
+                    if (count < target) {
+                        const newCount = count + increment;
+                        counter.querySelector('.number').innerText = (newCount / 1000000).toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                        if (counter.getAttribute('data-format') === 'million') {
+                            counter.querySelector('.number').innerText += ' million';
+                        }
+                        setTimeout(updateCount, 10); // Adjust the update frequency here
+                    } else {
+                        counter.querySelector('.number').innerText = (target / 1000000).toFixed(1);
+                        if (counter.getAttribute('data-format') === 'million') {
+                            counter.querySelector('.number').innerText += ' million';
+                        }
+                        countComplete++;
+                        if (countComplete === counters.length) {
+                            showPercentageBoxes();
+                        }
+                    }
+                };
+
+                updateCount();
+            });
+
+            function showPercentageBoxes() {
+                const percentageBoxes = document.querySelectorAll('.percentage-box');
+                percentageBoxes.forEach(box => {
+                    setTimeout(() => {
+                        box.classList.add('slam');
+                    }, 1000); // Adjust the delay after counting animation here
+                });
+            }
         });
 </script>
 
