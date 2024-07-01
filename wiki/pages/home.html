@@ -1,7 +1,4 @@
 {% extends "layout.html" %}
-
-{% block title %}Virginia iGEM
-
 <!--
 
 <div class="logo-container">
@@ -43,13 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
 -->
-
-{% endblock %}
-{% block lead %}Currently Under Construction{% endblock %}
-
-{% block page_content %}
 
 <style>
 
@@ -103,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 1;
 }
 
 .layer {
@@ -305,7 +295,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </style>
 <div class="parallax">
-    <div class="layer" data-speed="0.6" id="layer1">  
+    <div class="layer" data-speed="0.6" id="layer1">
+        {% block title %}Virginia iGEM{% endblock %}
+        {% block lead %}Currently Under Construction{% endblock %}
+
+        {% block page_content %}
     <div class="container full-width bg-yellow read">
     <div class="main-card">
         <div class="coiny">
@@ -355,6 +349,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </div>
 </div>
+    {% endblock %}
     </div>
     <div class="layer" data-speed="0.9" id="layer2">
         <img src="https://static.igem.wiki/teams/5178/barry-engineering.png" alt="Barry1">
@@ -444,6 +439,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }); 
 </script> 
 -->
-
-  
-{% endblock %}
