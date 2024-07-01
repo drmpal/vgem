@@ -250,31 +250,6 @@
     </div>
 </div>
 
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-            const counters = document.querySelectorAll('.info-box');
-
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target') * 1000000;
-                    const count = +counter.innerText.replace(/,/g, '') * 1000000;
-
-                    const increment = target / 10000; // Adjust the speed of counting here
-
-                    if (count < target) {
-                        counter.innerText = (count + increment).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",") / 1000000 + ' million';
-                        setTimeout(updateCount, 2); // Adjust the update frequency here
-                    } else {
-                        counter.innerText = (target / 1000000).toFixed(1) + ' million';
-                    }
-                };
-
-                updateCount();
-            });
-        });
-</script>
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
             const counters = document.querySelectorAll('.info-box');
@@ -316,6 +291,56 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 </script>
+
+<script> 
+
+    document.addEventListener("DOMContentLoaded", function() { 
+    
+        const logoAnimation = document.getElementById('logo-animation'); 
+    
+        const mainContent = document.getElementById('main-content'); 
+    
+        let animationTimeout; 
+    
+     
+    
+        function endAnimation() { 
+    
+            logoAnimation.style.opacity = '0'; 
+    
+            logoAnimation.addEventListener('transitionend', () => { 
+    
+                logoAnimation.style.display = 'none'; 
+    
+                mainContent.style.display = 'block'; 
+    
+                document.body.style.overflow = 'auto'; 
+    
+            }); 
+    
+        } 
+    
+     
+    
+        // Set timeout for 4 seconds 
+    
+        animationTimeout = setTimeout(endAnimation, 2000); 
+    
+     
+    
+        // Add event listener to skip animation on click 
+    
+        logoAnimation.addEventListener('click', () => { 
+    
+            clearTimeout(animationTimeout); 
+    
+            endAnimation(); 
+    
+        }); 
+    
+    }); 
+    
+        </script> 
 
   
 {% endblock %}
