@@ -34,7 +34,7 @@ body { padding-top: 0px; font-family: 'Be Vietnam Pro', sans-serif;}
 }
 
 .layer {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
