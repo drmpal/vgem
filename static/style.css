@@ -27,6 +27,21 @@ body { padding-top: 0px; font-family: 'Be Vietnam Pro', sans-serif;}
     padding-right: 0;
 }
 
+.parallax {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+}
+
 /* footer */
 footer a { color: white; font-weight: bold; text-decoration: none; }
 footer a:hover { color: white; text-decoration: underline; }
