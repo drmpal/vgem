@@ -214,6 +214,12 @@ h3 {
 .fadeInUp-animation {
   animation: 1.5s fadeInUp;
 }
+ #references-dropdown {
+            display: none; /* Initially hidden */
+        }
+        #references-dropdown.show {
+            display: block; /* Show when toggled */
+        }
 .dropshadow-box
 {
     padding: 2rem;
@@ -678,13 +684,35 @@ a:hover
 
     if (referencesDropdown.classList.contains('show')) {
         // Calculate the height of references-dropdown
-        const dropdownHeight = referencesDropdown.scrollHeight;
-        // Adjust the height of dropshadow-box to fit references-dropdown
         dropshadowBox.style.height = `${dropshadowBox.scrollHeight}px`;
     } else {
         // Reset dropshadow-box height to auto when hiding references-dropdown
         dropshadowBox.style.height = 'auto';
     }
 }
+
+    function scrollToReference(referenceId) {
+ const referencesDropdown = document.getElementById('references-dropdown');
+        const referenceElement = document.getElementById(referenceId);
+
+        // If the references section is hidden, open it
+         if (!referencesDropdown.classList.contains('show')) {
+            toggleReferences();
+        }
+
+        // Scroll to the reference
+        setTimeout(() => {
+
+            referenceElement.scrollIntoView({ behavior: 'smooth' });
+        }, 300); // Match the transition duration
+    }
+
+    document.querySelectorAll('a[href^="#citation"]').forEach(anchor => {
+        anchor.addEventListener('click', function (event) {
+            event.preventDefault();
+            const referenceId = this.getAttribute('href').substring(1);
+            scrollToReference(referenceId);
+        });
+    });
 </script>
 {% endblock %}
