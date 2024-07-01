@@ -2,6 +2,8 @@
 
 {% block title %}Virginia iGEM
 
+<!--
+
 <div class="logo-container">
     <video id="logo-animation">
         <source src="https://myuva-my.sharepoint.com/:v:/r/personal/hxg6xt_virginia_edu/Documents/iGEM%202024/Images%20%26%20Files/Social%20Media/BLISS_Animation.mp4?csf=1&web=1&e=jxR6aQ&nav=eyJwbGF5YmFja09wdGlvbnMiOnt9LCJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbE1vZGUiOiJtaXMiLCJyZWZlcnJhbFZpZXciOiJwb3N0cm9sbC1jb3B5bGluayIsInJlZmVycmFsUGxheWJhY2tTZXNzaW9uSWQiOiJhYmJhNmIxNC0wNTgwLTQxYTYtYjIxYS0wZmRmY2UyNjdhYmYifX0%3D" type="video/mp4">
@@ -41,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+
+-->
+
 {% endblock %}
 {% block lead %}Currently Under Construction{% endblock %}
 
@@ -94,6 +99,12 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 */
 
+.parallax {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 .coiny {
     font: 'Coiny', sans-serif;
     font-size: 48px;
@@ -284,6 +295,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </style>
 
+<div class="parallax">
+    <div class="layer" data-speed="0.6" id="layer1">  
 <div class="container full-width bg-yellow read">
     <div class="main-card">
         <div class="coiny">
@@ -333,6 +346,11 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </div>
 </div>
+    </div>
+    <div class="layer" data-speed="0.9" id="layer2">
+        <img src="https://static.igem.wiki/teams/5178/barry-engineering.png" alt="Barry1">
+    </div>
+</div> 
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -374,6 +392,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
         });
+</script>
+
+<script>
+    document.addEventListener('scroll', function() { 
+        const layers = document.querySelectorAll('.layer'); 
+        let scrollPosition = window.pageYOffset; 
+
+    layers.forEach(layer => { 
+        let speed = layer.getAttribute('data-speed'); 
+        let yPos = -(scrollPosition * speed); 
+        layer.style.transform = `translateY(${yPos}px) translateX(-50%)`; 
+    }); 
+}); 
 </script>
 
 <!--
