@@ -1,6 +1,54 @@
 {% extends "layout.html" %}
 
-{% block title %}Virginia iGEM{% endblock %}
+{% block title %}Virginia iGEM
+
+<div class="logo-container">
+    <img src="logo-animation.gif" alt="Logo Animation" id="logo-animation">
+    <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" alt="Logo" id="static-logo">
+</div>
+
+<style>
+    .logo-container {
+    position: relative;
+}
+
+#logo-animation, #static-logo {
+    display: block;
+    margin: 0 auto;
+}
+
+#static-logo {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const logoAnimation = document.getElementById("logo-animation");
+    const staticLogo = document.getElementById("static-logo");
+
+    logoAnimation.addEventListener("load", function() {
+        // Wait for the animation duration to complete
+        setTimeout(function() {
+            logoAnimation.style.display = 'none';
+            staticLogo.style.display = 'block';
+        }, logoAnimation.duration * 1000); // Convert seconds to milliseconds
+    });
+
+    // If the logo animation duration is not available (fallback)
+    logoAnimation.addEventListener("animationend", function() {
+        logoAnimation.style.display = 'none';
+        staticLogo.style.display = 'block';
+    });
+});
+
+</script>
+{% endblock %}
 {% block lead %}Currently Under Construction{% endblock %}
 
 {% block page_content %}
@@ -53,27 +101,9 @@
 }
 */
 
-.logo-container {
-    position: relative;
-}
-
-#logo-animation, #static-logo {
-    display: block;
-    margin: 0 auto;
-}
-
-#static-logo {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
 .coiny {
     font: 'Coiny', sans-serif;
-    font-size: 64px;
+    font-size: 48px;
 }
 .content {
     width: 100%;
@@ -93,7 +123,7 @@
     padding-bottom: 40px;
     width: 100%;
     height: 1000px;
-    font-size: 36px;
+    font-size: 24px;
     text-align: left;
     color: #8B555E
 }
@@ -103,7 +133,34 @@
     top: 50%;
     transform: translateY(-50%);
     left: 100px;
-    width: 700px
+    width: 800px
+}
+
+.center {
+    align-content: center;
+    align-items: center;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 190px;
+    height: auto;
+    font-size: 28px;
+    background-color: #8B555E;
+    color: #EDF0DA;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.read-more-btn:hover {
+    color: #EDF0DA; /* Ensure the text color stays white on hover */
+}
+
+.read-more-btn:active {
+    transform: scale(0.95);
 }
 
 .columns {
@@ -127,6 +184,12 @@
     height: 1000px;
 }
 
+.stats .row {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .info-box {
     background-color: #EDF0DA;
     border-radius: 10px;
@@ -135,17 +198,21 @@
     font-weight: bold;
     color: #8B555E;
     height: 400px;
+    width: 400px;
 }
+
 .info-box .number {
     font-size: 48px;
     margin: 0;
     color: #8B555E;
 }
+
 .info-box .description {
     font-size: 24px;
     color: #8B555E;
     height: 40px;
 }
+
 .percentage-box {
     border-radius: 10px;
     padding: 10px;
@@ -156,9 +223,11 @@
     color: #8B555E;
     height: 140px;
 }
+
 .percentage-box .slam-text {
     display: inline-block;
 }
+
 @keyframes slam {
     0% {
         transform: scale(1);
@@ -173,32 +242,9 @@
         transform: scale(1);
     }
 }
+
 .slam {
     animation: slam 0.5s ease-in-out;
-}
-
-.center {
-    align-content: center;
-    align-items: center;
-}
-.read-more-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    width: 190px;
-    height: auto;
-    font-size: 28px;
-    background-color: #8B555E;
-    color: #EDF0DA;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: transform 0.1s ease-in-out;
-}
-.read-more-btn:hover {
-    color: #EDF0DA; /* Ensure the text color stays white on hover */
-}
-.read-more-btn:active {
-    transform: scale(0.95);
 }
 
 .emaciated {
@@ -244,16 +290,6 @@
 
 </style>
 
-<div class="logo-container">
-    <img src="logo-animation.gif" alt="Logo Animation" id="logo-animation">
-    <img src="logo.png" alt="Logo" id="static-logo">
-</div>
-
-<div class="container logo-container full-width bg-offwhite">
-    <div class="content">
-        <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png">
-    </div>
-</div>
 <div class="container full-width bg-yellow read">
     <div class="main-card">
         <div class="coiny">
