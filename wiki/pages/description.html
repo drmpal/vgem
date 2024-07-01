@@ -684,9 +684,11 @@ a:hover
 
     if (referencesDropdown.classList.contains('show')) {
         // Calculate the height of references-dropdown
+        dropshadowBox.style.transition = 'height 0.3s ease';
         dropshadowBox.style.height = `${dropshadowBox.scrollHeight}px`;
     } else {
         // Reset dropshadow-box height to auto when hiding references-dropdown
+        dropshadowBox.style.transition = 'height 0.3s ease';
         dropshadowBox.style.height = 'auto';
     }
 }

@@ -69,6 +69,22 @@
 .fadeInUp-animation {
   animation: 1.5s fadeInUp;
 }
+
+.image-caption-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the image and caption horizontally */
+    text-align: center; /* Center the caption text */
+    background-color: #F0DFAD; /* Change this to your desired color */
+    padding: 20px 30px; /* Increase padding to make the border larger on all sides */
+    margin-top: 10px; /* Space between the image and the caption box */
+    border-radius: 2%;
+}
+.caption-box
+{
+  display: flex;
+   text-align: center;
+}
 </style>
 <div class="container">
    <div class="row">
@@ -101,7 +117,8 @@
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#Notebook">
-      <div class="accordion-body">
+      <div class="accordion-body row">
+        <div class="col-md-6">
         <ul>
           <li><b>November 27, 2023:</b>
             <ul>
@@ -200,6 +217,14 @@
             </ul>
           </li>
         </ul>
+          </div>
+       <div class="col-md-6">
+    <div class="image-caption-wrapper">
+        <img src="static/picture.png" max-width="380px" class="img-fluid">
+            <h5 style="padding-top: 20px"><i>Brainstorming our project</i></h5>
+
+    </div>
+</div>
       </div>
     </div>
   </div>

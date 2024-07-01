@@ -6,6 +6,14 @@
 </div>
 
 <style>
+    .dropshadow-box
+{
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+    opacity: 0; /* Initially hidden */
+    transition: height 0.3s ease;
+    }
 
     .visual img {
         top: 50%;
@@ -89,6 +97,10 @@ h3 {
   left: 0;
 
 }
+ .sticky {
+    position: sticky;
+    top: 90px;
+  }
 
 a {
     color:#D88993;
@@ -130,15 +142,28 @@ section {
     margin-top: -90px;
     padding-bottom: 20px;
 }
-.section-title {
+     .section-title {
     text-align: center;
     margin-top: 3rem;
-    color: #4A4A4A;
-    border-bottom: 2px solid #D88993;
-    padding-bottom: 10px;
-      width: 30%;
+    text-decoration: underline;
+    text-decoration-color: #D88993;
+        text-underline-offset: 15px;
+    padding-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
+  }
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+        .fadeInUp-animation {
+  animation: 1.5s fadeInUp;
 }
 
 </style>
@@ -163,45 +188,45 @@ section {
     </nav>
     </div>
     </div>
-      <div class="col-md-10">
+      <div class="col-md-10 dropshadow-box">
 <section id="problem-identification">
     <br><br>
-    <div class="row mt-3" style="text-align:center"> <h2>Problem Identification</h2></div>
+    <div class="row mt-3" style="text-align:center"> <h2 class="section-title">Problem Identification</h2></div>
     <div class="row-mt-5" style="text-align: center">
         The first step of the engineering design cycle was recognition of a prominent problem which we could address. We identified a variety of potential problems to tackle, but ultimately decided on the global problem---Exocrine Pancreatic Insufficiency (EPI). Functionally, this causes an inadequate amount of lipolytic enzymes including pancreatic triacylglycerol lipase which is critical for the digestion of dietary fats. This indicated that the problem demanded a device which could be consumed and delivered to the small intestine within a short duration of consumption and release human pancreatic lipase and any necessary cofactors with causing any ill effects to an individual or the gut microbiome.
     </div>
 </section>
 <section id="research">
     <br><br>
-    <div class="row mt-3" style="text-align:center"> <h2>Research</h2></div>
+    <div class="row mt-3" style="text-align:center"> <h2 class="section-title">Research</h2></div>
     <div class="row-mt-5" style="text-align: center">
         
     </div>
 </section>
 <section id="solution-development">
     <br><br>
-    <div class="row mt-3" style="text-align:center"> <h2>Solution Development</h2></div>
+    <div class="row mt-3" style="text-align:center"> <h2 class="section-title">Solution Development</h2></div>
     <div class="row-mt-5" style="text-align: center">
         
     </div>
 </section>
 <section id="planning">
     <br><br>
-    <div class="row mt-3" style="text-align:center"> <h2>Planning</h2></div>
+    <div class="row mt-3" style="text-align:center"> <h2 class="section-title">Planning</h2></div>
     <div class="row-mt-5" style="text-align: center">
         
     </div>
 </section>
 <section id="creation">
     <br><br>
-    <div class="row mt-3" style="text-align:center"> <h2>Creation</h2></div>
+    <div class="row mt-3" style="text-align:center"> <h2 class="section-title">Creation</h2></div>
     <div class="row-mt-5" style="text-align: center">
         
     </div>
 </section>
 <section id="Evaluation">
     <br><br>
-    <div class="row mt-3" style="text-align:center"> <h2>Creation</h2></div>
+    <div class="row mt-3" style="text-align:center"> <h2 class="section-title">Creation</h2></div>
     <div class="row-mt-5" style="text-align: center">
         
     </div>
@@ -264,6 +289,7 @@ section {
             <p>Adds a drug resistance to confirm plasmid transformation.</p>
         </div>
     </div>
+</div>
 </div>
 </body>
 
