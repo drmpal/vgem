@@ -7,6 +7,7 @@
 
 <style>
 
+/*
 .brand-image { 
     position: fixed; 
     width: 100%; 
@@ -49,6 +50,25 @@
     height: auto;
     margin: 0 auto;
     padding: 40px;
+}
+*/
+
+.logo-container {
+    position: relative;
+}
+
+#logo-animation, #static-logo {
+    display: block;
+    margin: 0 auto;
+}
+
+#static-logo {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .coiny {
@@ -224,9 +244,10 @@
 
 </style>
 
-<div id="logo-animation"> 
-    <img src="https://static.igem.wiki/teams/5178/logo-animation.gif" alt="Logo" id="logo"> 
-</div> 
+<div class="logo-container">
+    <img src="logo-animation.gif" alt="Logo Animation" id="logo-animation">
+    <img src="logo.png" alt="Logo" id="static-logo">
+</div>
 
 <div class="container logo-container full-width bg-offwhite">
     <div class="content">
@@ -325,6 +346,7 @@
         });
 </script>
 
+<!--
 <script> 
     document.addEventListener("DOMContentLoaded", function() { 
         const logoAnimation = document.getElementById('logo-animation'); 
@@ -350,6 +372,7 @@
         }); 
     }); 
 </script> 
+-->
 
   
 {% endblock %}
