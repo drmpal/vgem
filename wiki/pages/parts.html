@@ -62,6 +62,7 @@ text {
 h3 {
   margin: 0 0 0 10px; /* Adjust the spacing as needed */
 }
+
 .image-container {
   position: relative;
     width:200px;
@@ -305,5 +306,77 @@ document.addEventListener('DOMContentLoaded', function () {
 
       observer.observe(document.querySelector('.allprogressbars'));
   });
+</script>
+
+
+<svg width="1000" height="200">
+    <!-- Promoter (Red L-shaped Arrow with Rounded Corners) -->
+    <path class="promoter part" d="M 50 100 Q 50 75 75 75 L 75 75" stroke="red" stroke-width="10" fill="none" />
+    <polygon class="promoter part" points="75,85 75,65 95,75" fill="red" />
+    
+    <!-- RiboJ (Green X with squiggle) -->
+    <line class="riboJ part" x1="110" y1="62" x2="136" y2="88" stroke="green" stroke-width="5" />
+    <line class="riboJ part" x1="136" y1="62" x2="110" y2="88" stroke="green" stroke-width="5" />
+    <path class="riboJ part" d="M 123 100 Q 118 85 123 75" stroke="green" stroke-width="5" fill="none" />
+    
+    <!-- Ribosomal Binding Site (Orange Half Circle) -->
+    <path class="ribosome part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
+    
+    <!-- Signal Peptide Sequence (Purple Rectangle) -->
+    <rect class="signal-peptide part" x="210" y="75" width="50" height="50" fill="purple" />
+    
+    <!-- His6 Tag (Yellow Rectangle) -->
+    <rect class="his6-tag part" x="260" y="75" width="50" height="50" fill="yellow" />
+    
+    <!-- Coding Sequence (Blue Arrow) -->
+    <rect class="coding-sequence part" x="310" y="75" width="250" height="50" fill="blue" />
+    <polygon class="coding-sequence part" points="560,75 560,125 610,100" fill="blue" />
+    
+    <!-- Terminator (Black T) -->
+    <rect class="terminator part" x="630" y="65" width="20" height="30" fill="black" />
+    <rect class="terminator part" x="620" y="65" width="40" height="10" fill="black" />
+
+    <!-- Background Line -->
+    <line id="background-line" x1="30" y1="100" x2="790" y2="100" stroke="#708090" stroke-width="20" />
+</svg>
+
+<div id="info-box" class="info-box"></div>
+
+<script>
+    const parts = document.querySelectorAll('.part');
+    const infoBox = document.getElementById('info-box');
+
+    const partInfo = {
+        "promoter": "Promoter: Initiates transcription of the gene.",
+        "riboJ": "RiboJ: Protects RNA from degradation and improves gene expression.",
+        "ribosome": "Ribosomal Binding Site: Facilitates the binding of ribosomes for translation.",
+        "signal-peptide": "Signal Peptide: Directs the transport of the protein.",
+        "his6-tag": "His6 Tag: Used for protein purification.",
+        "coding-sequence": "Coding Sequence: Encodes the protein.",
+        "terminator": "Terminator: Signals the end of transcription."
+    };
+
+    parts.forEach(part => {
+        const className = Array.from(part.classList).find(cls => cls !== 'part');
+
+        part.addEventListener('mouseover', function(event) {
+            parts.forEach(p => {
+                if (!p.classList.contains(className)) {
+                    p.style.opacity = '0.5';
+                }
+            });
+            infoBox.style.display = 'block';
+            infoBox.innerHTML = partInfo[className];
+            infoBox.style.left = (event.pageX + 10) + 'px';
+            infoBox.style.top = (event.pageY + 10) + 'px';
+        });
+
+        part.addEventListener('mouseout', function() {
+            parts.forEach(p => {
+                p.style.opacity = '1';
+            });
+            infoBox.style.display = 'none';
+        });
+    });
 </script>
 {% endblock %}
