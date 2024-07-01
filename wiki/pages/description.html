@@ -200,48 +200,6 @@ h3 {
   left: 0;
 
 }
-
-
-/*!* Tooltip text *!*/
-/*        .tooltip-text {*/
-/*            visibility: hidden;*/
-/*            position: absolute;*/
-/*            z-index: 2;*/
-/*            width: 100px;*/
-/*            color: #fad3d8;*/
-/*            font-size: 12px;*/
-/*            background-color:#8B555E;*/
-/*            border-radius: 10px;*/
-/*            padding: 10px 15px;*/
-/*            text-align: center;*/
-/*            top: 125%; !* Position the tooltip below the text *!*/
-/*            left: 50%;*/
-/*            margin-left: -50px; !* Center the tooltip *!*/
-/*            opacity: 0;*/
-/*            transition: opacity 0.3s;*/
-/*        }*/
-
-/*        .tooltip-text::before {*/
-/*            content: "";*/
-/*            position: absolute;*/
-/*            transform: rotate(45deg);*/
-/*            background-color: #8B555E;*/
-/*            padding: 5px;*/
-/*            z-index: 1;*/
-/*            top: -5px; !* Position the arrow correctly *!*/
-/*            left: calc(50% - 5px); !* Center the arrow *!*/
-/*        }*/
-
-/*        .hover-text:hover .tooltip-text {*/
-/*            visibility: visible;*/
-/*            opacity: 1;*/
-/*        }*/
-
-/*        .hover-text {*/
-/*            position: relative;*/
-/*            display: inline-block;*/
-/*        }*/
-
 @keyframes fadeInUp {
   0% {
     transform: translateY(20%);
@@ -262,6 +220,7 @@ h3 {
     background-color: #ffffff;
     box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
     opacity: 0; /* Initially hidden */
+    transition: height 0.3s ease;
     }
 a{
     color:#D88993;
@@ -328,6 +287,31 @@ a:hover
   height: 100%;
     background-size: cover;
 }
+     .references-container {
+            display: none; /* Hide references initially */
+            opacity: 0; /* Hidden state with no opacity */
+            transition: opacity 0.5s ease; /* Smooth fade-in transition */
+         /* Enable vertical scrolling if content exceeds container height */
+        }
+
+        .references-container.show {
+            display: block; /* Show references when .show class is applied */
+            opacity: 1; /* Fully visible */
+        }
+
+        .triangle-btn {
+              width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    cursor: pointer;
+        }
+
+        .toggle-btn {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
 </style>
 <head></head>
 <html><body>
@@ -541,11 +525,20 @@ a:hover
          <br><br> Ultimately, BLISS will revolutionize EPI treatment, offering patients a solution that aligns with their values and makes managing their symptoms a blissful experience. </p>
         </div>
     </section>
-     <section id = "references">
+
+         <section id = "references">
+
+
 
          <div class="row mt-3">
-    <h2 class="section-title">‎ ‎ ‎References‎ ‎ ‎</h2>
-         <div class="row mt-2" style="text-align: left; align-items: flex-start">
+   <div class="row">
+       <h2 class="section-title">‎ ‎ ‎References‎ ‎ ‎</h2>
+           <div class="toggle-btn" onclick="toggleReferences()">
+                <div class="triangle-btn"></div>
+            </div>
+   </div>
+         <div class="row mt-2">
+             <div class="references-container" id="references-dropdown" style="text-align: left; align-items: flex-start">
         <p><a id="citation1" href="#1">[1] </a><cite> Lipase Information | Mount Sinai - New  </cite>. Mount Sinai Health System. <a href="https://www.mountsinai.org/health-library/supplement/lipase">https://www.mountsinai.org/health-library/supplement/lipase </a> (accessed 2024-06-14). </p>
         <p><a id="citation2" href="#2">[2] </a><cite>What Are Digestive Enzymes: Natural Sources and Supplements</cite>. <a href="https://www.webmd.com/diet/what-are-digestive-enzymes">https://www.webmd.com/diet/what-are-digestive-enzymes </a>(accessed 2024-06-14).  </p>
         <p><a id="citation3" href="#3">[3] </a><cite>Exocrine Pancreatic Insufficiency (EPI): Pancreatitis</cite>. Cleveland Clinic. <a href="https://my.clevelandclinic.org/health/diseases/21577-exocrine-pancreatic-insufficiency-epi">https://my.clevelandclinic.org/health/diseases/21577-exocrine-pancreatic-insufficiency-epi </a>(accessed 2024-06-14).</p>
@@ -581,11 +574,13 @@ a:hover
             <p><a id="citation33" href="#abstract">[33]</a> Gupta, A; Premnath, N; Sedhom, R; Beg, M; Khera, R; Laheru, D; Dusetzina, S. Projected 30- day out-of-pocket costs and total spending on pancreatic enzyme <b>2021</b>, <i>21</i>(5), 1009-1010. <a href="https://doi.org/10.1016/j.pan.2021.05.002">https://doi.org/10.1016/j.pan.2021.05.002. </a> </p>
         </div>
              </div>
+             </div>
     </section>
     </div>
     </div>
     </div>
     </div>
+
 </div>
 <script>
     window.onload = function() {
@@ -661,30 +656,23 @@ a:hover
 });
 
 </script>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0
-        };
+      function toggleReferences() {
+    const referencesDropdown = document.getElementById('references-dropdown');
+    const dropshadowBox = document.querySelector('.dropshadow-box');
 
-        const observer = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    if (target.classList.contains("dropshadow-box")) {
-                        target.style.opacity = 1; // Show the element
-                        target.classList.add('fadeInUp-animation');
+    referencesDropdown.classList.toggle('show');
 
-                    }
-                    observer.unobserve(target); // Unobserve after adding the class to avoid re-triggering
-                }
-            });
-        }, options);
-
-        observer.observe(document.querySelector('.dropshadow-box'));
-    });
+    if (referencesDropdown.classList.contains('show')) {
+        // Calculate the height of references-dropdown
+        const dropdownHeight = referencesDropdown.scrollHeight;
+        // Adjust the height of dropshadow-box to fit references-dropdown
+        dropshadowBox.style.height = `${dropshadowBox.scrollHeight}px`;
+    } else {
+        // Reset dropshadow-box height to auto when hiding references-dropdown
+        dropshadowBox.style.height = 'auto';
+    }
+}
 </script>
-
 {% endblock %}
