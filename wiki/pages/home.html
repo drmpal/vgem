@@ -293,54 +293,30 @@
 </script>
 
 <script> 
-
     document.addEventListener("DOMContentLoaded", function() { 
-    
         const logoAnimation = document.getElementById('logo-animation'); 
-    
         const mainContent = document.getElementById('main-content'); 
-    
         let animationTimeout; 
     
-     
-    
         function endAnimation() { 
-    
             logoAnimation.style.opacity = '0'; 
-    
             logoAnimation.addEventListener('transitionend', () => { 
-    
                 logoAnimation.style.display = 'none'; 
-    
                 mainContent.style.display = 'block'; 
-    
                 document.body.style.overflow = 'auto'; 
-    
             }); 
-    
         } 
     
-     
-    
         // Set timeout for 4 seconds 
-    
         animationTimeout = setTimeout(endAnimation, 2000); 
     
-     
-    
         // Add event listener to skip animation on click 
-    
         logoAnimation.addEventListener('click', () => { 
-    
             clearTimeout(animationTimeout); 
-    
             endAnimation(); 
-    
         }); 
-    
     }); 
-    
-        </script> 
+</script> 
 
   
 {% endblock %}
