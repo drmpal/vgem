@@ -29,8 +29,7 @@
   <!-- Navigation -->
   {% include 'menu.html' %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap">
-  <div class="parallax">
-    <div class="layer" data-speed="1.0" id="layer1">
+
    <!-- Header -->
    <header class="header-image py-5 mb-5">
     <div class="container h-100">
@@ -81,20 +80,5 @@
 
   <!-- Bootstrap Bundle with Popper -->
   <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
-    </div>
-  </div>
-
-<script> 
-document.addEventListener('scroll', function() { 
-  const layers = document.querySelectorAll('.layer'); 
-  let scrollPosition = window.pageYOffset; 
-
-  layers.forEach(layer => {
-    let speed = layer.getAttribute('data-speed');
-    let yPos = -(scrollPosition * speed);
-      layer.style.transform = `translateY(${yPos}px) translateX(-50%)`;
-  }); 
-}); 
-</script>
 </body>
 </html>
