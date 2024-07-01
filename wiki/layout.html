@@ -42,12 +42,12 @@
     </div>
   </header>
 
-  <style>
+<style>
 
-    .h-100 {
-      top: 100px;
-      bottom: 40px;
-    }
+.h-100 {
+  top: 100px;
+  bottom: 40px;
+}
 
 .header-image {
     position: relative;
@@ -56,6 +56,17 @@
     height: 500px; /* Adjust height as needed */
 }
 
+.navbar {
+  z-index: 100;
+}
+
+.header, .header-image {
+  z-index: 99;
+}
+
+.footer {
+  z-index: 98;
+}
   </style>
 
   <!-- Page Content -->
