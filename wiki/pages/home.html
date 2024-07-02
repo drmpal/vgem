@@ -154,6 +154,9 @@ document.addEventListener("DOMContentLoaded", function() {
 .columns {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .column {
@@ -161,9 +164,6 @@ document.addEventListener("DOMContentLoaded", function() {
     padding: 10px;
     align-items: center;
     align-content: center;
-}
-
-.column {
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -240,7 +240,6 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .emaciated {
-    margin-top: 20px;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 40px;
@@ -251,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
     text-align: left;
 }
 
-.emaciated .image-text-container .pig-text-container{
+.emaciated .image-text-container {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -281,6 +280,12 @@ document.addEventListener("DOMContentLoaded", function() {
     color:#EDF0DA;
 }
 
+.emaciated .pig-text-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .pig-text-container {
     display: flex;
     justify-content: space-between;
@@ -302,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
     max-width: 65%;
     margin-left: 40px;
     text-align: left;
-    color:#EDF0DA;
+    color:#8B555E;
 }
 
 
@@ -360,6 +365,14 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="text-content">
             <p>Individuals with EPI suffer from a deficiency in digestive enzymes and are thus unable to hydrolyze and break down food into nutrients for the body. This can lead to severe malnutrition for EPI patients, resulting in long-term complications including arrhythmia, anemia, and osteoporosis.</p>
         </div>
+    </div>
+</div>
+<div class="container full-width bg-yellow emaciated">
+    <div class="pig-text-container">
+        <div class="text-content">
+            <p>Current treatment for EPI involves pancreatic enzyme replacement therapy (PERT) using medications from porcine pancreases. However, this treatment poses challenges for individuals avoiding pork and raises ethical and environmental concerns.</p>
+        </div>
+        <img src="https://static.igem.wiki/teams/5178/sad-pig.png">
     </div>
 </div>
 <div class="container full-width bg-yellow emaciated">
