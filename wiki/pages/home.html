@@ -297,14 +297,21 @@ document.addEventListener("DOMContentLoaded", function() {
 .stackin .text-stack {
     position: relative;
     top: 50%;
-    left: -50%;
+    left: 50%;
     transform: translateY(-50%);
     transform: translateX(-50%);
 }
 
 .text-stack {
+    display: flex;
+    justify-content: center;
     height: auto;
     width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text-stack .stack-text-content {
     font-size: 36px;
     text-align: center;
     color: #8B555E;
@@ -316,7 +323,6 @@ document.addEventListener("DOMContentLoaded", function() {
     align-items: center;
     padding: 20px;
     border-radius: 10px;
-    color: #8B555E;
 }
 
 .pig-text-container img {
@@ -401,7 +407,9 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 <div class="container full-width bg-offwhite stackin">
     <div class="text-stack">
-        <p>The drawbacks of existing PERT medications inspire us to develop a more ethical, affordable, and inclusive EPI treatment by harnessing the potential of synthetic biology to reshape healthcare and society...</p>
+        <div class="stack-text-content">
+            <p>The drawbacks of existing PERT medications inspire us to develop a more ethical, affordable, and inclusive EPI treatment by harnessing the potential of synthetic biology to reshape healthcare and society...</p>
+        </div>
     </div>
 </div>
 <div class="container full-width bg-offwhite">
