@@ -7,19 +7,11 @@
 <style>
 .logo-container {
         position: relative;
-        height: auto;
-        width: auto;
         align-items: center;
     }
     
-#logo-animation, #static-logo {
-        display: block;
-        margin: 0 auto;
-}
-    
 #static-logo {
-    display: block;
-    margin: 0 auto;
+    display: none;
     position: relative;
 }
     
@@ -46,8 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
         staticLogo.style.display = 'block';
     });
 
-    // Hide the static logo initially
-    staticLogo.style.display = 'none';
+    // Ensure the video is loaded and plays automatically
+    videoElement.load();
 });
 </script>
 {% endblock %}
