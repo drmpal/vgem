@@ -322,6 +322,13 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Ribosomal Binding Site (Orange Half Circle) -->
     <path class="ribosome part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
     
+    <!-- Terminator (Black T) -->
+    <rect class="terminator part" x="630" y="65" width="20" height="30" fill="black" />
+    <rect class="terminator part" x="620" y="65" width="40" height="10" fill="black" />
+
+    <!-- Background Line -->
+    <line id="background-line" x1="30" y1="100" x2="790" y2="100" stroke="#708090" stroke-width="20" />
+
     <!-- Signal Peptide Sequence (Purple Rectangle) -->
     <rect class="signal-peptide part" x="210" y="75" width="50" height="50" fill="purple" />
     
@@ -331,13 +338,6 @@ document.addEventListener('DOMContentLoaded', function () {
     <!-- Coding Sequence (Blue Arrow) -->
     <rect class="coding-sequence part" x="310" y="75" width="250" height="50" fill="blue" />
     <polygon class="coding-sequence part" points="560,75 560,125 610,100" fill="blue" />
-    
-    <!-- Terminator (Black T) -->
-    <rect class="terminator part" x="630" y="65" width="20" height="30" fill="black" />
-    <rect class="terminator part" x="620" y="65" width="40" height="10" fill="black" />
-
-    <!-- Background Line -->
-    <line id="background-line" x1="30" y1="100" x2="790" y2="100" stroke="#708090" stroke-width="20" />
 </svg>
 
 <div id="info-box" class="info-box"></div>
