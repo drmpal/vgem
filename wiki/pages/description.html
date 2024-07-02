@@ -6,6 +6,7 @@
 {% block page_content %}
 
 
+
 <style>
 
 .heartbeat-on-hover:hover {
@@ -16,9 +17,7 @@
 .dizzy-on-hover:hover{
     animation: dizzy 0.9s ease-in-out;
 }
-.weak-bones-on-hover:hover{
-    animation: tada 0.8s ease-in-out;
-}
+
 .yogurt-on-hover:hover
 {
     animation: bounce 0.8s ease-in-out;
@@ -80,20 +79,10 @@
         -webkit-filter:blur(0px);
         }
 }
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
 
-.fadeInUp-animation {
-  animation: 1.5s fadeInUp;
-}
+
+
+
 .flip-card {
     width:270px;height:270px;
   background-color: transparent;
@@ -329,9 +318,106 @@ a:hover
             margin-top: 70px;
             cursor: pointer;
         }
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.weak-bones-on-hover:hover{
+
+  -webkit-animation-name: tada;
+  animation-name: tada;
+    animation-duration: 0.8s;
+}
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 </style>
+
 <head></head>
 <html><body>
+
 <div class="container">
     <div class="row">
     <div class="col-md-2">
@@ -372,8 +458,10 @@ a:hover
       <div class="row first-picture">
         <div class="col people-container">
           <div class="image-container">
-  <img src="https://static.igem.wiki/teams/5178/epi-people-graphic-dark-removebg-preview.png" alt="A graphic of 10 light pink people, with 2 of the people in red to represent how 20% of the population has EPI." width="250px">
-  <img src="https://static.igem.wiki/teams/5178/epi-people-graphic-light-removebg-preview.png" width="250px" style="animation-duration:2s" id="fadeOutImage">
+              <img src="https://static.igem.wiki/teams/5178/epi-people-graphic-dark-removebg-preview.png" alt="A graphic of 10 light pink people, with 2 of the people in red to represent how 20% of the population has EPI." width="250px" id="fadeInImage" style="z-index:1">
+              <img src="https://static.igem.wiki/teams/5178/epi-people-graphic-light-removebg-preview.png" width="250px" style="z-index:0" >
+
+
 
 </div>
         <h4 id="fadeInHeading" style="animation-duration:3s" class="mt-2">
@@ -656,11 +744,11 @@ a:hover
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
-                if (target.id === 'fadeOutImage') {
-                    target.classList.add('animate__animated', 'animate__fadeOut');
+                if (target.id === 'fadeInImage') {
+                    target.classList.add('fadeIn');
                 }
                 if (target.id === 'fadeInHeading') {
-                    target.classList.add('animate__animated', 'animate__fadeIn');
+                    target.classList.add('fadeIn');
                 }
                 observer.unobserve(target); // Unobserve after adding the class to avoid re-triggering
             }
@@ -668,7 +756,7 @@ a:hover
     }, options);
 
     // Observe the image with the id 'fadeOutImage'
-    observer.observe(document.getElementById('fadeOutImage'));
+    observer.observe(document.getElementById('fadeInImage'));
     observer.observe(document.getElementById('fadeInHeading'));
 });
 
