@@ -1,21 +1,16 @@
 {% extends "layout.html" %}
 {% block title %}Virginia iGEM{% endblock %}
 {% block lead %}
-<div class="container full-width bg-offwhite logo-container">
+<div class="logo-container">
     <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" alt="Logo" id="static-logo">
 </div>
 <style>
 .logo-container {
         position: relative;
-        height: 1000px;
+        height: auto;
+        width: auto;
         align-items: center;
     }
-
-.logo-container .logo-animation {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-}
     
 #logo-animation, #static-logo {
         display: block;
