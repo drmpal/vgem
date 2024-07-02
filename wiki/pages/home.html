@@ -1,45 +1,48 @@
 {% extends "layout.html" %}
 {% block title %}Virginia iGEM{% endblock %}
-{% block lead %}Currently Under Construction{% endblock %}
+{% block lead %}
+<div class="container full-width bg-offwhite logo-container">
+    <video id="logo-animation" autplay>
+        <source src="https://video.igem.org/videos/embed/90027436-b48c-4ff8-90e7-f1852926d8b7?start=0s" type="video/mp4" >
+    </video>
+    <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" alt="Logo" id="static-logo">
+</div>
+<style>
+    .logo-container {
+        position: relative;
+    }
+    
+    #logo-animation, #static-logo {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    #static-logo {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    </style>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const logoAnimation = document.getElementById("logo-animation");
+        const staticLogo = document.getElementById("static-logo");
+    
+        logoAnimation.addEventListener("ended", function() {
+            logoAnimation.style.display = 'none';
+            staticLogo.style.display = 'block';
+        });
+    });
+    </script>
+{% endblock %}
 
 {% block page_content %}
 
-
-
-
-
-<style>
-.logo-container {
-    position: relative;
-}
-
-#logo-animation, #static-logo {
-    display: block;
-    margin: 0 auto;
-}
-
-#static-logo {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const logoAnimation = document.getElementById("logo-animation");
-    const staticLogo = document.getElementById("static-logo");
-
-    logoAnimation.addEventListener("ended", function() {
-        logoAnimation.style.display = 'none';
-        staticLogo.style.display = 'block';
-    });
-});
-</script>
 
 <style>
 
@@ -334,12 +337,6 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 </style>
-<div class="container full-width bg-offwhite logo-container">
-    <video id="logo-animation" autplay>
-        <source src="https://video.igem.org/videos/embed/90027436-b48c-4ff8-90e7-f1852926d8b7?start=0s" type="video/mp4" >
-    </video>
-    <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" alt="Logo" id="static-logo">
-</div>
 <div class="container full-width bg-yellow read">
     <div class="main-card">
         <div class="coiny">
