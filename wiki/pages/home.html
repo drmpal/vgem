@@ -49,51 +49,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <style>
 
-/*
-.brand-image { 
-    position: fixed; 
-    width: 100%; 
-    height: 100%; 
-    background-color: #fffffd; 
-    justify-content: center; 
-    align-items: center; 
-} 
-
-#main-title { 
-    width: 800px; 
-    height: auto;
-    justify-content: center;
-    align-items: center; 
+.logo-container {
+    margin-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    height: 500px;
 }
 
-#logo-animation { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background-color: #fffffd; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    z-index: 1000; 
-    opacity: 1; 
-    transition: opacity 1s ease-out; 
-} 
-
-#logo { 
-    width: 1600px; 
-    height: auto; 
-} 
-
-.logo-container img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 40px;
+.logo-container .main-card {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+    width: 800px
 }
-*/
+
 .parallax {
     position: absolute;
     height: 100%;
@@ -181,14 +154,16 @@ document.addEventListener("DOMContentLoaded", function() {
 .columns {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
 }
 
 .column {
     flex: 1;
     padding: 10px;
-}
-
-.column:not(:last-child) {
+    align-items: center;
+    align-content: center;
+    margin-left: 20px;
     margin-right: 20px;
 }
 
@@ -203,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    align-content: center;
 }
 
 .info-box {
@@ -263,7 +239,6 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .emaciated {
-    margin-top: 20px;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 40px;
@@ -272,6 +247,16 @@ document.addEventListener("DOMContentLoaded", function() {
     height: 1000px;
     font-size: 36px;
     text-align: left;
+}
+
+.stackin {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100%;
+    height: 1000px;
+    font-size: 36px;
 }
 
 .emaciated .image-text-container {
@@ -304,8 +289,64 @@ document.addEventListener("DOMContentLoaded", function() {
     color:#EDF0DA;
 }
 
-</style>
+.emaciated .pig-text-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
+.stackin .text-stack {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.text-stack {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text-stack .stack-text-content {
+    text-align: center;
+    color: #8B555E;
+}
+
+.pig-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.pig-text-container img {
+    margin-left: 20px;
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pig-text-container .text-content {
+    max-width: 65%;
+    margin-left: 40px;
+    text-align: left;
+    color:#8B555E;
+}
+
+
+</style>
+<div class="container full-width bg-offwhite logo-container">
+    <video id="logo-animation" type="video/mp4">
+        <source src="filler.mp4">
+    </video>
+    <img src="filler.png">
+</div>
 <div class="container full-width bg-yellow read">
     <div class="main-card">
         <div class="coiny">
@@ -319,16 +360,16 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 <div class="container full-width bg-offwhite stats">
     <div class="row align-items-center">
-        <div class="columns">
-            <div class="column">
-                <div class="info-box" data-target="2700000" data-format="plain">
+        <div class="columns center">
+            <div class="column center">
+                <div class="info-box" data-target="12987" data-format="plain">
                     <p class="number">0</p>
                     <p class="description">individuals worldwide suffer from chronic pancreatitis.</p>
                     <div class="percentage-box"><span class="slam-text">50%</span></div>
                     <p class="description">of individuals with chronic pancreatitis develop EPI</p>
                 </div>
             </div>
-            <div class="column">
+            <div class="column center">
                 <div class="info-box" data-target="8794" data-format="plain">
                     <p class="number">0</p>
                     <p class="description">individuals worldwide suffer from cystic fibrosis.</p>
@@ -336,8 +377,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     <p class="description">of cystic fibrosis patients develop EPI</p>
                 </div>
             </div>
-            <div class="column">
-                <div class="info-box" data-target="100000" data-format="plain">
+            <div class="column center">
+                <div class="info-box" data-target="4849" data-format="plain">
                     <p class="number">0</p>
                     <p class="description">individuals worldwide suffer from Type 1 Diabetes.</p>
                     <div class="percentage-box"><span class="slam-text">90%</span></div>
@@ -355,11 +396,36 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </div>
 </div>
+<div class="container full-width bg-yellow emaciated">
+    <div class="pig-text-container">
+        <div class="text-content">
+            <p>Current treatment for EPI involves pancreatic enzyme replacement therapy (PERT) using medications from porcine pancreases. However, this treatment poses challenges for individuals avoiding pork and raises ethical and environmental concerns.</p>
+        </div>
+        <img src="https://static.igem.wiki/teams/5178/sad-pig.png">
+    </div>
+</div>
+<div class="container full-width bg-lightpink stackin">
+    <div class="text-stack">
+        <div class="stack-text-content">
+            <p>The drawbacks of existing PERT medications inspire us to develop a more ethical, affordable, and inclusive EPI treatment by harnessing the potential of synthetic biology to reshape healthcare and society...</p>
+        </div>
+    </div>
+</div>
+<div class="container full-width bg-yellow">
+    <div class="">
+
+        <img src="">
+    </div>
+</div>
+
+
+<!--
 <div class="parallax">
     <div class="layer" data-speed="0.6" id="layer1">
         <img src="https://static.igem.wiki/teams/5178/barry-engineering.png">
     </div>
 </div>
+-->
 
 
 <script>
@@ -404,6 +470,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 </script>
 
+<!--
 <script>
     document.addEventListener('scroll', function() { 
         const layers = document.querySelectorAll('.layer'); 
@@ -416,6 +483,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }); 
 }); 
 </script>
+-->
 
 <!--
 <script> 
