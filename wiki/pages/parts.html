@@ -15,7 +15,7 @@
     height: 800px;
 }
 
-.arc {
+.arc-group {
     transition: opacity 0.3s;
 }
 
@@ -148,21 +148,25 @@ section {
         <circle id="backbone" r="200" cx="400" cy="400" fill="none" stroke=#493B2A stroke-width="20"/>
 
         <!-- P1 arc with black border -->
-        <path class="arc" id="p1-border" d="M221.217,310.353 A200,200 0 0,1 351.679 205.925" fill="none" stroke="black" stroke-width="45"/>
-        <path class="arc" id="p1" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="40"/>
-
+        <g class="arc-group" id="p1-group">
+            <path class="arc-border" d="M221.217,310.353 A200,200 0 0,1 351.679 205.925" fill="none" stroke="black" stroke-width="45"/>
+            <path class="arc" id="p1" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="40"/>
+        </g>
         <!-- P2 arc with black border -->
-        <path class="arc" id="p2-border" d="M448.321,205.925 A200,200 0 0,1 578.783,310.353" fill="none" stroke="black" stroke-width="45"/>
-        <path class="arc" id="p2" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="40"/>
-
+        <g class="arc-group" id="p2-group">
+            <path class="arc-border" d="M448.321,205.925 A200,200 0 0,1 578.783,310.353" fill="none" stroke="black" stroke-width="45"/>
+            <path class="arc" id="p2" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="40"/>
+        </g>
         <!-- P3 arc with black border -->
-        <path class="arc" id="p3-border" d="M578.783,489.647 A200,200 0 0,1 448.321,594.075" fill="none" stroke="black" stroke-width="45"/>
-        <path class="arc" id="p3" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="40"/>
-
+        <g class="arc-group" id="p3-group">
+            <path class="arc-border" d="M578.783,489.647 A200,200 0 0,1 448.321,594.075" fill="none" stroke="black" stroke-width="45"/>
+            <path class="arc" id="p3" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="40"/>
+        </g>
         <!-- ampR arc with black border -->
-        <path class="arc" id="ampr-border" d="M351.679,594.075 A200,200 0 0,1 221.217,489.647" fill="none" stroke="black" stroke-width="45"/>
-        <path class="arc" id="ampr" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
-
+        <g class="arc-group" id="ampr-group">
+            <path class="arc-border" d="M351.679,594.075 A200,200 0 0,1 221.217,489.647" fill="none" stroke="black" stroke-width="45"/>
+            <path class="arc" id="ampr" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
+        </g>
         <!-- Text labels outside the arcs -->
         <text x="200" y="230" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 1</text>
         <text x="550" y="230" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 2</text>
@@ -204,30 +208,32 @@ section {
 
 <script>
     // Appear & reappear sequence
-    document.addEventListener("DOMContentLoaded", function() {
-    const arcs = document.querySelectorAll(".arc");
+document.addEventListener("DOMContentLoaded", function() {
+    const arcGroups = document.querySelectorAll(".arc-group");
 
-    arcs.forEach(arc => {
-        arc.addEventListener("mouseenter", function() {
-            arcs.forEach(a => {
-                if (a !== arc) a.style.opacity = "0.3";
+    arcGroups.forEach(group => {
+        group.addEventListener("mouseenter", function() {
+            arcGroups.forEach(g => {
+                if (g !== group) g.style.opacity = "0.3";
             });
 
-            const infoId = `${arc.id.split("-")[0]}-info`;
-            const connector1Id = `${arc.id.split("-")[0]}-connector1`;
-            const connector2Id = `${arc.id.split("-")[0]}-connector2`;
+            const partId = group.id.split("-group")[0];
+            const infoId = `${partId}-info`;
+            const connector1Id = `${partId}-connector1`;
+            const connector2Id = `${partId}-connector2`;
 
             document.getElementById(infoId).style.display = "block";
             document.getElementById(connector1Id).setAttribute("visibility", "visible");
             document.getElementById(connector2Id).setAttribute("visibility", "visible");
         });
 
-        arc.addEventListener("mouseleave", function() {
-            arcs.forEach(a => a.style.opacity = "1");
+        group.addEventListener("mouseleave", function() {
+            arcGroups.forEach(g => g.style.opacity = "1");
 
-            const infoId = `${arc.id.split("-")[0]}-info`;
-            const connector1Id = `${arc.id.split("-")[0]}-connector1`;
-            const connector2Id = `${arc.id.split("-")[0]}-connector2`;
+            const partId = group.id.split("-group")[0];
+            const infoId = `${partId}-info`;
+            const connector1Id = `${partId}-connector1`;
+            const connector2Id = `${partId}-connector2`;
 
             document.getElementById(infoId).style.display = "none";
             document.getElementById(connector1Id).setAttribute("visibility", "hidden");
@@ -235,7 +241,6 @@ section {
         });
     });
 });
-
 </script>
 
 
