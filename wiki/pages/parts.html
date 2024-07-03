@@ -204,7 +204,7 @@ section {
 
 <script>
     // Appear & reappear sequence
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 const p1 = document.getElementById('p1');
 const p2 = document.getElementById('p2');
 const p3 = document.getElementById('p3');
@@ -220,7 +220,7 @@ const p2Connector = document.querySelectorAll('#p2-connector1, #p2-connector2');
 const p3Connector = document.querySelectorAll('#p3-connector1, #p3-connector2');
 const amprConnector = document.querySelectorAll('#ampr-connector1, #ampr-connector2');
 
-const showInfo = (infoContainer, path, connector) => {
+const showInfo = (infoContainer, arc, connector) => {
     // Hide all info containers first
     p1Info.style.display = 'none';
     p2Info.style.display = 'none';
@@ -240,7 +240,7 @@ const showInfo = (infoContainer, path, connector) => {
     connector.forEach(line => line.style.visibility = 'visible');
 
     // Dim all paths first
-    document.querySelectorAll('arc').forEach(p => p.style.opacity = '0.3');
+    document.querySelectorAll('path').forEach(p => p.style.opacity = '0.3');
 
     // Highlight the relevant path and its border
     path.style.opacity = '1';
@@ -261,7 +261,7 @@ const hideInfo = () => {
     amprConnector.forEach(line => line.style.visibility = 'hidden');
 
     // Reset all paths to full opacity
-    document.querySelectorAll('arc').forEach(p => p.style.opacity = '1');
+    document.querySelectorAll('path').forEach(p => p.style.opacity = '1');
 };
 
 p1.addEventListener('mouseover', () => {
@@ -290,16 +290,16 @@ ampr.addEventListener('mouseout', hideInfo);
 
 <svg width="1000" height="200">
     <!-- Promoter (Red L-shaped Arrow with Rounded Corners) -->
-    <path class="promoter part" d="M 50 100 Q 50 75 75 75 L 75 75" stroke="red" stroke-width="10" fill="none" />
+    <line class="promoter part" d="M 50 100 Q 50 75 75 75 L 75 75" stroke="red" stroke-width="10" fill="none" />
     <polygon class="promoter part" points="75,85 75,65 95,75" fill="red" />
     
     <!-- RiboJ (Green X with squiggle) -->
     <line class="riboJ part" x1="110" y1="62" x2="136" y2="88" stroke="green" stroke-width="5" />
     <line class="riboJ part" x1="136" y1="62" x2="110" y2="88" stroke="green" stroke-width="5" />
-    <path class="riboJ part" d="M 123 100 Q 118 85 123 75" stroke="green" stroke-width="5" fill="none" />
+    <line class="riboJ part" d="M 123 100 Q 118 85 123 75" stroke="green" stroke-width="5" fill="none" />
     
     <!-- Ribosomal Binding Site (Orange Half Circle) -->
-    <path class="ribosome part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
+    <line class="ribosome part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
     
     <!-- Terminator (Black T) -->
     <rect class="terminator part" x="630" y="65" width="20" height="30" fill="black" />
