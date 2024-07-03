@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 .read-more-btn:hover {
     color: #EDF0DA; /* Ensure the text color stays white on hover */
+    background-color: #D88993
 }
 
 .read-more-btn:active {
@@ -153,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
     height: 1000px;
 }
 
-.stats .row {
+.stats .columns {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -331,7 +332,6 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 </div>
 <div class="container full-width bg-offwhite stats">
-    <div class="row align-items-center">
         <div class="columns center">
             <div class="column center">
                 <div class="info-box" data-target="12987" data-format="plain">
@@ -392,19 +392,35 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="cards-container">
     <div class="card" id="card1">
         <img src="image1.jpg" alt="Image 1">
-        <p>Text for card 1</p>
+        <h2>Project Description</h2>
+        <p>View an in depth summary of our solution.</p>
+        <div class="centerer">
+            <a href="https://2024.igem.wiki/virginia/description" class="read-more-btn-sm">Read More</a>
+        </div>
     </div>
     <div class="card" id="card2">
         <img src="image2.jpg" alt="Image 2">
-        <p>Text for card 2</p>
+        <h2>Engineering</h2>
+        <p>Learn how we designed our project and its mechanism of action.</p>
+        <div class="centerer">
+            <a href="https://2024.igem.wiki/virginia/engineering" class="read-more-btn-sm">Read More</a>
+        </div>
     </div>
     <div class="card" id="card3">
         <img src="image3.jpg" alt="Image 3">
-        <p>Text for card 3</p>
+        <h2>Modeling</h2>
+        <p>Explore systems designed to represent real-world functioning.</p>
+        <div class="centerer">
+            <a href="https://2024.igem.wiki/virginia/model" class="read-more-btn-sm">Read More</a>
+        </div>
     </div>
     <div class="card" id="card4">
         <img src="image4.jpg" alt="Image 4">
-        <p>Text for card 4</p>
+        <h2>Human Practices</h2>
+        <p>Discover who we communicated with to inform and develop our project.</p>
+        <div class="centerer">
+            <a href="https://2024.igem.wiki/virginia/human-practices" class="read-more-btn-sm">Read More</a>
+        </div>
     </div>
 </div>
 
@@ -519,6 +535,7 @@ document.addEventListener("DOMContentLoaded", function() {
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 200px;
+    text-align: center;
 }
 
 .card img {
@@ -533,6 +550,30 @@ document.addEventListener("DOMContentLoaded", function() {
     padding: 0;
     font-size: 16px;
 }
+
+.read-more-btn-sm {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 80px;
+    height: auto;
+    font-size: 18px;
+    background-color: #8B555E;
+    color: #EDF0DA;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.read-more-btn-sm:hover {
+    color: #EDF0DA; /* Ensure the text color stays white on hover */
+    background-color: #D88993
+}
+
+.read-more-btn-sm:active {
+    transform: scale(0.95);
+}
+
 </style>
 
 
