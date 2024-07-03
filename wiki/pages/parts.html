@@ -287,39 +287,6 @@ ampr.addEventListener('mouseout', hideInfo);
 
 </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-      const options = {
-          root: null,
-          rootMargin: '0px',
-          threshold: 0.1
-      };
-
-      const observer = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  const progressBars = entry.target.querySelectorAll('.progress-container');
-                  progressBars.forEach((progressBar, index) => {
-                      const progress = progressBar.querySelector('.progress');
-                      setTimeout(() => {
-                          if (progressBar.classList.contains('progressbar80')) {
-                              progress.classList.add('progressbaranimation80');
-                          } else if (progressBar.classList.contains('progressbar90')) {
-                              progress.classList.add('progressbaranimation90');
-                          } else if (progressBar.classList.contains('progressbar77')) {
-                              progress.classList.add('progressbaranimation77');
-                          }
-                      }, index * 1000); // Delay each animation by 2 seconds
-                  });
-                  observer.unobserve(entry.target);
-              }
-          });
-      }, options);
-
-      observer.observe(document.querySelector('.allprogressbars'));
-  });
-</script>
-
 
 <svg width="1000" height="200">
     <!-- Promoter (Red L-shaped Arrow with Rounded Corners) -->
