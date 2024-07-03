@@ -389,6 +389,24 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="">
     </div>
 </div>
+<div class="cards-container">
+    <div class="card" id="card1">
+        <img src="image1.jpg" alt="Image 1">
+        <p>Text for card 1</p>
+    </div>
+    <div class="card" id="card2">
+        <img src="image2.jpg" alt="Image 2">
+        <p>Text for card 2</p>
+    </div>
+    <div class="card" id="card3">
+        <img src="image3.jpg" alt="Image 3">
+        <p>Text for card 3</p>
+    </div>
+    <div class="card" id="card4">
+        <img src="image4.jpg" alt="Image 4">
+        <p>Text for card 4</p>
+    </div>
+</div>
 
 
 <!--
@@ -484,5 +502,51 @@ document.addEventListener("DOMContentLoaded", function() {
     }); 
 </script> 
 -->
+<style>
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 1s ease, opacity 1s ease;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+</style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = 1;
+            card.style.transform = "translateY(0)";
+        }, index * 200); // Stagger the animation by 200ms for each card
+    });
+});
+</script>
 
 {% endblock %}
