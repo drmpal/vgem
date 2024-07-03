@@ -148,20 +148,20 @@ section {
         <circle id="backbone" r="200" cx="400" cy="400" fill="none" stroke=#493B2A stroke-width="20"/>
 
         <!-- P1 arc with black border -->
-        <path id="p1-border" d="M221.217,310.353 A200,200 0 0,1 351.679 205.925" fill="none" stroke="black" stroke-width="45"/>
-        <path id="p1" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="40"/>
+        <path id="p1-border arc" d="M221.217,310.353 A200,200 0 0,1 351.679 205.925" fill="none" stroke="black" stroke-width="45"/>
+        <path id="p1 arc" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="40"/>
 
         <!-- P2 arc with black border -->
-        <path id="p2-border" d="M448.321,205.925 A200,200 0 0,1 578.783,310.353" fill="none" stroke="black" stroke-width="45"/>
-        <path id="p2" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="40"/>
+        <path id="p2-border arc" d="M448.321,205.925 A200,200 0 0,1 578.783,310.353" fill="none" stroke="black" stroke-width="45"/>
+        <path id="p2 arc" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="40"/>
 
         <!-- P3 arc with black border -->
-        <path id="p3-border" d="M578.783,489.647 A200,200 0 0,1 448.321,594.075" fill="none" stroke="black" stroke-width="45"/>
-        <path id="p3" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="40"/>
+        <path id="p3-border arc" d="M578.783,489.647 A200,200 0 0,1 448.321,594.075" fill="none" stroke="black" stroke-width="45"/>
+        <path id="p3 arc" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="40"/>
 
         <!-- ampR arc with black border -->
-        <path id="ampr-border" d="M351.679,594.075 A200,200 0 0,1 221.217,489.647" fill="none" stroke="black" stroke-width="45"/>
-        <path id="ampr" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
+        <path id="ampr-border arc" d="M351.679,594.075 A200,200 0 0,1 221.217,489.647" fill="none" stroke="black" stroke-width="45"/>
+        <path id="ampr arc" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
 
         <!-- Text labels outside the arcs -->
         <text x="200" y="230" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 1</text>
@@ -240,7 +240,7 @@ const showInfo = (infoContainer, path, connector) => {
     connector.forEach(line => line.style.visibility = 'visible');
 
     // Dim all paths first
-    document.querySelectorAll('path').forEach(p => p.style.opacity = '0.3');
+    document.querySelectorAll('arc').forEach(p => p.style.opacity = '0.3');
 
     // Highlight the relevant path and its border
     path.style.opacity = '1';
@@ -261,7 +261,7 @@ const hideInfo = () => {
     amprConnector.forEach(line => line.style.visibility = 'hidden');
 
     // Reset all paths to full opacity
-    document.querySelectorAll('path').forEach(p => p.style.opacity = '1');
+    document.querySelectorAll('arc').forEach(p => p.style.opacity = '1');
 };
 
 p1.addEventListener('mouseover', () => {
