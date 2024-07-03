@@ -557,9 +557,9 @@ document.addEventListener("DOMContentLoaded", function() {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
-    width: 100px;
-    height: auto;
-    font-size: 18px;
+    width: 120px;
+    height: 200px;
+    font-size: 14px;
     background-color: #8B555E;
     color: #EDF0DA;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -584,13 +584,31 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".card");
 
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
     cards.forEach((card, index) => {
         setTimeout(() => {
-            card.style.opacity = 1;
-            card.style.transform = "translateY(0)";
-        }, index * 200); // Stagger the animation by 200ms for each card
+            observer.observe(card);
+        }, index * 200); // Stagger the observation by 200ms for each card
     });
 });
+
 </script>
 
 {% endblock %}
