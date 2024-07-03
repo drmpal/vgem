@@ -15,7 +15,7 @@
     height: 800px;
 }
 
-path {
+.arc {
     transition: opacity 0.3s;
 }
 
@@ -148,20 +148,20 @@ section {
         <circle id="backbone" r="200" cx="400" cy="400" fill="none" stroke=#493B2A stroke-width="20"/>
 
         <!-- P1 arc with black border -->
-        <path id="p1-border arc" d="M221.217,310.353 A200,200 0 0,1 351.679 205.925" fill="none" stroke="black" stroke-width="45"/>
-        <path id="p1 arc" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="40"/>
+        <path class="arc" id="p1-border" d="M221.217,310.353 A200,200 0 0,1 351.679 205.925" fill="none" stroke="black" stroke-width="45"/>
+        <path class="arc" id="p1" d="M222,308.808 A200,200 0 0,1 350 206.351" fill="none" stroke=#5499AA stroke-width="40"/>
 
         <!-- P2 arc with black border -->
-        <path id="p2-border arc" d="M448.321,205.925 A200,200 0 0,1 578.783,310.353" fill="none" stroke="black" stroke-width="45"/>
-        <path id="p2 arc" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="40"/>
+        <path class="arc" id="p2-border arc" d="M448.321,205.925 A200,200 0 0,1 578.783,310.353" fill="none" stroke="black" stroke-width="45"/>
+        <path class="arc" id="p2 arc" d="M450,206.351 A200,200 0 0,1 578,308.808" fill="none" stroke=#F0DFAD stroke-width="40"/>
 
         <!-- P3 arc with black border -->
-        <path id="p3-border arc" d="M578.783,489.647 A200,200 0 0,1 448.321,594.075" fill="none" stroke="black" stroke-width="45"/>
-        <path id="p3 arc" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="40"/>
+        <path class="arc" id="p3-border arc" d="M578.783,489.647 A200,200 0 0,1 448.321,594.075" fill="none" stroke="black" stroke-width="45"/>
+        <path class="arc" id="p3 arc" d="M578,491.192 A200,200 0 0,1 450,593.649" fill="none" stroke=#D88993 stroke-width="40"/>
 
         <!-- ampR arc with black border -->
-        <path id="ampr-border arc" d="M351.679,594.075 A200,200 0 0,1 221.217,489.647" fill="none" stroke="black" stroke-width="45"/>
-        <path id="ampr arc" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
+        <path class="arc" id="ampr-border arc" d="M351.679,594.075 A200,200 0 0,1 221.217,489.647" fill="none" stroke="black" stroke-width="45"/>
+        <path class="arc" id="ampr arc" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
 
         <!-- Text labels outside the arcs -->
         <text x="200" y="230" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 1</text>
@@ -204,85 +204,36 @@ section {
 
 <script>
     // Appear & reappear sequence
-document.addEventListener('DOMContentLoaded', () => {
-const p1 = document.getElementById('p1');
-const p2 = document.getElementById('p2');
-const p3 = document.getElementById('p3');
-const ampr = document.getElementById('ampr');
+    document.addEventListener("DOMContentLoaded", function() {
+    const arcs = document.querySelectorAll(".arc");
 
-const p1Info = document.getElementById('p1-info');
-const p2Info = document.getElementById('p2-info');
-const p3Info = document.getElementById('p3-info');
-const amprInfo = document.getElementById('ampr-info');
+    arcs.forEach(arc => {
+        arc.addEventListener("mouseenter", function() {
+            arcs.forEach(a => {
+                if (a !== arc) a.style.opacity = "0.3";
+            });
 
-const p1Connector = document.querySelectorAll('#p1-connector1, #p1-connector2');
-const p2Connector = document.querySelectorAll('#p2-connector1, #p2-connector2');
-const p3Connector = document.querySelectorAll('#p3-connector1, #p3-connector2');
-const amprConnector = document.querySelectorAll('#ampr-connector1, #ampr-connector2');
+            const infoId = `${arc.id.split("-")[0]}-info`;
+            const connector1Id = `${arc.id.split("-")[0]}-connector1`;
+            const connector2Id = `${arc.id.split("-")[0]}-connector2`;
 
-const showInfo = (infoContainer, arc, connector) => {
-    // Hide all info containers first
-    p1Info.style.display = 'none';
-    p2Info.style.display = 'none';
-    p3Info.style.display = 'none';
-    amprInfo.style.display = 'none';
+            document.getElementById(infoId).style.display = "block";
+            document.getElementById(connector1Id).setAttribute("visibility", "visible");
+            document.getElementById(connector2Id).setAttribute("visibility", "visible");
+        });
 
-    // Hide all connectors
-    p1Connector.forEach(line => line.style.visibility = 'hidden');
-    p2Connector.forEach(line => line.style.visibility = 'hidden');
-    p3Connector.forEach(line => line.style.visibility = 'hidden');
-    amprConnector.forEach(line => line.style.visibility = 'hidden');
+        arc.addEventListener("mouseleave", function() {
+            arcs.forEach(a => a.style.opacity = "1");
 
-    // Show the relevant info container
-    infoContainer.style.display = 'block';
+            const infoId = `${arc.id.split("-")[0]}-info`;
+            const connector1Id = `${arc.id.split("-")[0]}-connector1`;
+            const connector2Id = `${arc.id.split("-")[0]}-connector2`;
 
-    // Show the relevant connector
-    connector.forEach(line => line.style.visibility = 'visible');
-
-    // Dim all paths first
-    document.querySelectorAll('path').forEach(p => p.style.opacity = '0.3');
-
-    // Highlight the relevant path and its border
-    path.style.opacity = '1';
-    document.getElementById(`${path.id}-border`).style.opacity = '1';
-};
-
-const hideInfo = () => {
-    // Hide all info containers
-    p1Info.style.display = 'none';
-    p2Info.style.display = 'none';
-    p3Info.style.display = 'none';
-    amprInfo.style.display = 'none';
-
-    // Hide all connectors
-    p1Connector.forEach(line => line.style.visibility = 'hidden');
-    p2Connector.forEach(line => line.style.visibility = 'hidden');
-    p3Connector.forEach(line => line.style.visibility = 'hidden');
-    amprConnector.forEach(line => line.style.visibility = 'hidden');
-
-    // Reset all paths to full opacity
-    document.querySelectorAll('path').forEach(p => p.style.opacity = '1');
-};
-
-p1.addEventListener('mouseover', () => {
-    showInfo(p1Info, p1, p1Connector);
-});
-p1.addEventListener('mouseout', hideInfo);
-
-p2.addEventListener('mouseover', () => {
-    showInfo(p2Info, p2, p2Connector);
-});
-p2.addEventListener('mouseout', hideInfo);
-
-p3.addEventListener('mouseover', () => {
-    showInfo(p3Info, p3, p3Connector);
-});
-p3.addEventListener('mouseout', hideInfo);
-
-ampr.addEventListener('mouseover', () => {
-    showInfo(amprInfo, ampr, amprConnector);
-});
-ampr.addEventListener('mouseout', hideInfo);
+            document.getElementById(infoId).style.display = "none";
+            document.getElementById(connector1Id).setAttribute("visibility", "hidden");
+            document.getElementById(connector2Id).setAttribute("visibility", "hidden");
+        });
+    });
 });
 
 </script>
@@ -290,16 +241,16 @@ ampr.addEventListener('mouseout', hideInfo);
 
 <svg width="1000" height="200">
     <!-- Promoter (Red L-shaped Arrow with Rounded Corners) -->
-    <line class="promoter part" d="M 50 100 Q 50 75 75 75 L 75 75" stroke="red" stroke-width="10" fill="none" />
+    <path class="promoter part" d="M 50 100 Q 50 75 75 75 L 75 75" stroke="red" stroke-width="10" fill="none" />
     <polygon class="promoter part" points="75,85 75,65 95,75" fill="red" />
     
     <!-- RiboJ (Green X with squiggle) -->
     <line class="riboJ part" x1="110" y1="62" x2="136" y2="88" stroke="green" stroke-width="5" />
     <line class="riboJ part" x1="136" y1="62" x2="110" y2="88" stroke="green" stroke-width="5" />
-    <line class="riboJ part" d="M 123 100 Q 118 85 123 75" stroke="green" stroke-width="5" fill="none" />
+    <path class="riboJ part" d="M 123 100 Q 118 85 123 75" stroke="green" stroke-width="5" fill="none" />
     
     <!-- Ribosomal Binding Site (Orange Half Circle) -->
-    <line class="ribosome part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
+    <path class="ribosome part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
     
     <!-- Terminator (Black T) -->
     <rect class="terminator part" x="630" y="65" width="20" height="30" fill="black" />
