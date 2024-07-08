@@ -2,34 +2,6 @@
 
 
 {% block page_content %}
-    
-</style>
-    
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const logoContainer = document.querySelector('.logo-container');
-    const staticLogo = document.getElementById("static-logo");
-
-    // Create a video element dynamically
-    const videoElement = document.createElement('video');
-    videoElement.src = 'gemoo.com/tools/upload-video/share/666860599325769728?codeId=vzaxwVolx9Ry5&card=666860596888879104&origin=videolinkgenerator';
-    videoElement.autoplay = true;
-    videoElement.style.display = 'block';
-    videoElement.style.margin = '0 auto';
-
-    // Insert the video element before the static logo
-    logoContainer.insertBefore(videoElement, staticLogo);
-
-    // Listen for the video to end
-    videoElement.addEventListener('ended', function() {
-        videoElement.style.display = 'none';
-        staticLogo.style.display = 'block';
-    });
-
-    // Ensure the video is loaded and plays automatically
-    videoElement.load();
-});
-</script>
 
 <style>
 /*
@@ -293,19 +265,42 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .logo-container {
-        position: relative;
-        align-items: center;
-    }
+    position: relative;
+    align-items: center;
+    margin-top: 40px;
+}
     
 #logo-animation {
     position: relative;
     display: block;
+    width: 100%;
+    height: auto;
+}
+
+#logo-image {
+    display: none;
+    width: 100%;
+    height: auto;
 }
 
 </style>
+
+<script>
+    const iframe = document.getElementById('logo-animation');
+    const image = document.getElementById('logo-image');
+
+    // Replace with the actual duration of your iframe video in milliseconds
+    const animationDuration = 5000;
+
+    setTimeout(() => {
+        iframe.style.display = 'none';
+        image.style.display = 'block';
+    }, animationDuration);
+</script>
+
 <div class="container logo-container bg-offwhite">
-    <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" id="logo-animation" alt="Logo">
-    <iframe title="Virginia: Logo Splash (2024)" width="560" height="315" src="https://video.igem.org/videos/embed/48c38549-d08b-473e-bc2b-85b88f10a028?start=0s" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+    <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" id="logo-image" alt="Logo">
+    <iframe title="Virginia: Logo Splash (2024)" width="560" height="315" src="https://video.igem.org/videos/embed/48c38549-d08b-473e-bc2b-85b88f10a028?start=0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="logo-animation"></iframe>
 </div>
 <div class="container full-width bg-yellow read">
     <div class="main-card">
