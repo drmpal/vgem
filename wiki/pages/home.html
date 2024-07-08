@@ -126,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .stats {
-    transform: translateY(50px);
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -135,14 +134,14 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .stat-card {
-    transform: translateY(50px);
+    transform: translateY(50%);
     width: 25%;
     height: 50%;
     text-align: center;
 }
 
 .info-box {
-    transform: translateY(50px);
+    transform: translateY(50%);
     background-color: #EDF0DA;
     border-radius: 10px;
     padding: 20px;
@@ -512,7 +511,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 .card {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(50%);
     transition: transform 1s ease, opacity 1s ease;
     margin: 20px;
     padding: 20px;
@@ -543,6 +542,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .read-more-btn-sm {
+    position: relative;
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
