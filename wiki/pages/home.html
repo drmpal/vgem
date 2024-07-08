@@ -100,7 +100,6 @@
 }
 
 .info-box {
-    transform: translateY(50%);
     background-color: #EDF0DA;
     border-radius: 10px;
     padding: 20px;
@@ -292,10 +291,19 @@
     // Replace with the actual duration of your iframe video in milliseconds
     const animationDuration = 5000;
 
-    setTimeout(() => {
-        iframe.style.display = 'none';
-        image.style.display = 'block';
-    }, animationDuration);
+    // Check if iframe has loaded
+    iframe.onload = function() {
+            setTimeout(() => {
+                iframe.style.display = 'none';
+                image.style.display = 'block';
+            }, animationDuration);
+        };
+
+        // Handle case where iframe fails to load
+        iframe.onerror = function() {
+            console.error('Failed to load iframe content');
+            image.style.display = 'block';
+        };
 </script>
 
 <div class="container logo-container bg-offwhite">
