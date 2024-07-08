@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="image1.jpg" alt="Image 1">
         <h2>Project Description</h2>
         <p>View an in depth summary of our solution.</p>
-        <div class="centerer">
+        <div class="low-align">
             <a href="https://2024.igem.wiki/virginia/description" class="read-more-btn-sm">Read More</a>
         </div>
     </div>
@@ -386,19 +386,25 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="image2.jpg" alt="Image 2">
         <h2>Engineering</h2>
         <p>Learn how we designed our project and its mechanism of action.</p>
-        <a href="https://2024.igem.wiki/virginia/engineering" class="read-more-btn-sm">Read More</a>
+        <div class="low-align">
+            <a href="https://2024.igem.wiki/virginia/engineering" class="read-more-btn-sm">Read More</a>
+        </div>
     </div>
     <div class="card" id="card3" href="https://2024.igem.wiki/virginia/model">
         <img src="image3.jpg" alt="Image 3">
         <h2>Modeling</h2>
         <p>Explore systems designed to represent real-world functioning.</p>
-        <a href="https://2024.igem.wiki/virginia/model" class="read-more-btn-sm">Read More</a>
+        <div class="low-align">
+            <a href="https://2024.igem.wiki/virginia/model" class="read-more-btn-sm">Read More</a>
+        </div>
     </div>
     <div class="card" id="card4" href="https://2024.igem.wiki/virginia/human-practices">
         <img src="image4.jpg" alt="Image 4">
         <h2>Human Practices</h2>
         <p>Discover who we communicated with to inform and develop our project.</p>
-        <a href="https://2024.igem.wiki/virginia/human-practices" class="read-more-btn-sm">Read More</a>
+        <div class="low-align">
+            <a href="https://2024.igem.wiki/virginia/human-practices" class="read-more-btn-sm">Read More</a>
+        </div>
     </div>
 </div>
 
@@ -531,6 +537,12 @@ document.addEventListener("DOMContentLoaded", function() {
     font-size: 16px;
 }
 
+.low-align {
+    transform: translateY(80%);
+    align-content: center;
+    align-items: center;
+}
+
 .read-more-btn-sm {
     display: inline-block;
     padding: 10px 20px;
@@ -544,7 +556,6 @@ document.addEventListener("DOMContentLoaded", function() {
     text-decoration: none;
     border-radius: 50px;
     transition: transform 0.1s ease-in-out;
-    top: 80%;
 }
 
 .read-more-btn-sm:hover {
