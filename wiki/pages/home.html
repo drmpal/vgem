@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
     color: #EDF0DA;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-decoration: none;
+    text-align: center;
     border-radius: 50px;
     transition: transform 0.1s ease-in-out;
 }
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 .stats {
+    transform: translateY(50px);
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -194,6 +196,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 .slam {
     animation: slam 0.5s ease-in-out;
+}
+
+.centerer {
+    text-align: center;
+    align-content: center;
+    align-items: center;
 }
 
 .emaciated {
@@ -378,25 +386,19 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="image2.jpg" alt="Image 2">
         <h2>Engineering</h2>
         <p>Learn how we designed our project and its mechanism of action.</p>
-        <div class="centerer">
-            <a href="https://2024.igem.wiki/virginia/engineering" class="read-more-btn-sm">Read More</a>
-        </div>
+        <a href="https://2024.igem.wiki/virginia/engineering" class="read-more-btn-sm">Read More</a>
     </div>
     <div class="card" id="card3" href="https://2024.igem.wiki/virginia/model">
         <img src="image3.jpg" alt="Image 3">
         <h2>Modeling</h2>
         <p>Explore systems designed to represent real-world functioning.</p>
-        <div class="centerer">
-            <a href="https://2024.igem.wiki/virginia/model" class="read-more-btn-sm">Read More</a>
-        </div>
+        <a href="https://2024.igem.wiki/virginia/model" class="read-more-btn-sm">Read More</a>
     </div>
     <div class="card" id="card4" href="https://2024.igem.wiki/virginia/human-practices">
         <img src="image4.jpg" alt="Image 4">
         <h2>Human Practices</h2>
         <p>Discover who we communicated with to inform and develop our project.</p>
-        <div class="centerer">
-            <a href="https://2024.igem.wiki/virginia/human-practices" class="read-more-btn-sm">Read More</a>
-        </div>
+        <a href="https://2024.igem.wiki/virginia/human-practices" class="read-more-btn-sm">Read More</a>
     </div>
 </div>
 
@@ -542,6 +544,7 @@ document.addEventListener("DOMContentLoaded", function() {
     text-decoration: none;
     border-radius: 50px;
     transition: transform 0.1s ease-in-out;
+    top: 80%;
 }
 
 .read-more-btn-sm:hover {
