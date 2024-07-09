@@ -17,10 +17,10 @@
 
         <!---- TEAM ---->
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="teamDropdown" aria-expanded="false">
             Team
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="teamDropdown">
             <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}"><img src="https://static.igem.wiki/teams/5178/team.png" alt="tIcon">
               Team</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}"><img src="https://static.igem.wiki/teams/5178/attributions.png" alt="aIcon">
@@ -30,10 +30,10 @@
 
         <!---- PROJECT ---->
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="projectDropdown" aria-expanded="false">
             Project
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="projectDropdown">
             <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}"><img src="https://static.igem.wiki/teams/5178/gift.png" alt="cIcon">
               Contribution</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}"><img src="https://static.igem.wiki/teams/5178/description.png" alt="dIcon">
@@ -47,10 +47,10 @@
 
         <!---- WETLAB ---->
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="wetlabDropdown" aria-expanded="false">
             Wetlab
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="wetlabDropdown">
             <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}"><img src="https://static.igem.wiki/teams/5178/wetlab.png" alt="exIcon">
               Experiments</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}"><img src="https://static.igem.wiki/teams/5178/notebook.png" alt="nIcon">
@@ -62,10 +62,10 @@
 
         <!---- HUMAN PRACTICES ---->
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='human-practices') }}" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='human-practices') }}" id="humanPracticesDropdown" aria-expanded="false">
             Human Practices
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="humanPracticesDropdown">
             <li><a class="dropdown-item" href="{{ url_for('pages', page='human-practices') }}"><img src="https://static.igem.wiki/teams/5178/contribution.png" alt="hpIcon">
               Human Practices</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}"><img src="https://static.igem.wiki/teams/5178/education.png" alt="edIcon">
@@ -77,10 +77,10 @@
 
         <!---- OTHER ---->
         <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="otherDropdown" aria-expanded="false">
             Other
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="otherDropdown">
             <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}"><img src="https://static.igem.wiki/teams/5178/model.png" alt="mIcon">
               Model</a></li>
             <li><a class="dropdown-item" href="{{ url_for('pages', page='safety') }}"><img src="https://static.igem.wiki/teams/5178/safety.png" alt="sIcon">
@@ -102,9 +102,10 @@
   z-index: 0;
 }
 
-.nav-item:hover .dropdown-menu {
-  display: block;
-}
+  .nav-item:hover .dropdown-menu,
+  .nav-item:focus-within .dropdown-menu {
+    display: block;
+  }
 
 /* Style the menu items and links */
 .menu {

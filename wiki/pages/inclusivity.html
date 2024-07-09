@@ -36,14 +36,14 @@
     scroll-behavior: smooth;
   }
 
-  .section-nav li.active > a {
+   .section-nav li.active > a {
     color: #8B555E;
     font-weight: 500;
   }
 
   .section-nav {
-    padding-left: 0;
-    border-left: 1px solid #D88993;
+
+    border-left: 1px solid #e7c7c9;
   }
 
   .section-nav a {
@@ -52,12 +52,14 @@
     padding: .125rem 0;
     color: #D88993;
     transition: all 400ms ease-in-out;
+
   }
 
   .section-nav a:hover,
   .section-nav a:focus {
     color: #8B555E;
   }
+
   @keyframes fadeInUp {
   0% {
     transform: translateY(100%);
@@ -77,6 +79,7 @@
      text-align: justify;
     align-items: center;
     font-size: 110%;
+    line-height: 160%;
 }
 .read-more-btn-sm {
     display: inline-block;
@@ -126,7 +129,7 @@ table {
     <div class="col-md-2">
         <div class="sticky">
             <br>
- <nav class="section-nav" style="border-left: 1px solid #efefef;">
+ <nav class="section-nav" role="navigation">
       <ul style="list-style: none; margin-left: 0px;">
           <div class="margin-left: 1rem; margin-bottom: 1rem;">
             <li style="margin-bottom: 5px"><a href="#our-goals">Our Goals</a></li>
@@ -143,9 +146,9 @@ table {
           <section id="our-goals">
         <h2 class="section-title">Our Goals</h2>
         <p class="paragraph-text">Our team recognizes the importance of inclusivity in all facets of our project. It’s important to make our work as available as possible to as many people as possible to further our positive impact within our community. We achieved our inclusivity goals through three avenues: providing medication alternatives, increasing accessibility in our website and handbook, and improving resources for underprivileged communities. </p>
-              <div style="text-align: center"><img src="https://static.igem.wiki/teams/5178/ihp/wiki-infographics-3.png" width="50%"></div>
+              <div style="text-align: center"><img src="https://static.igem.wiki/teams/5178/ihp/wiki-infographics-3.png" width="50%" alt="triangle that says 'inclusivity' on the inside, and 'accessibility', 'underprivileged communities', and 'expanding healthcare' on the outside"></div>
           </section>
-
+<div class="paragraph-text">
       <section id="expanding-healthcare">
     <div class="row"> <h2 class="section-title">Expanding Healthcare</h2></div>
     <div class="row">
@@ -170,7 +173,7 @@ The table below illustrates the design principles we followed.
     <th style="text-align: center">Users with dyslexia</th>
     <th style="text-align: center">Users with screen readers </th>
   </tr>
-  <tr>
+  <tr style="text-align: left">
     <td>
         <ul>
             <li>
@@ -204,6 +207,9 @@ The table below illustrates the design principles we followed.
             <li>
                 images and diagrams to support content
             </li>
+            <li>
+                increased font size and line spacing
+            </li>
         </ul>
     </td>
     <td>
@@ -234,6 +240,7 @@ The table below illustrates the design principles we followed.
 
     </div>
     </section>
+    </div>
   </div>
 </div>
     </div>

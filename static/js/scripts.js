@@ -41,3 +41,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	observer.observe(document.querySelector('.dropshadow-box'));
 });
+
+	 document.querySelectorAll('.nav-item .dropdown-toggle').forEach(item => {
+    item.addEventListener('focus', function() {
+      this.parentElement.querySelector('.dropdown-menu').style.display = 'block';
+    });
+
+    item.addEventListener('blur', function() {
+      const dropdown = this.parentElement.querySelector('.dropdown-menu');
+      setTimeout(() => {
+        if (!dropdown.contains(document.activeElement)) {
+          dropdown.style.display = 'none';
+        }
+      }, 200);
+    });
+  });
+
+  // Keep dropdown visible while tabbing through its items
+  document.querySelectorAll('.dropdown-menu').forEach(menu => {
+    menu.addEventListener('blur', function() {
+      setTimeout(() => {
+        if (!this.contains(document.activeElement)) {
+          this.style.display = 'none';
+        }
+      }, 200);
+    }, true);
+  });
