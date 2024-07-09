@@ -358,25 +358,27 @@
 </style>
 
 <script>
-    const iframe = document.getElementById('logo-animation');
-    const image = document.getElementById('logo-image');
+    document.addEventListener('DOMContentLoaded', (event) => {
+            const iframe = document.getElementById('logo-iframe');
+            const image = document.getElementById('logo-image');
 
-    // Replace with the actual duration of your iframe video in milliseconds
-    const animationDuration = 5000;
+            // Replace with the actual duration of your iframe video in milliseconds
+            const animationDuration = 5000;
 
-    // Check if iframe has loaded
-    iframe.onload = function() {
-            setTimeout(() => {
-                iframe.style.display = 'none';
+            // Check if iframe has loaded
+            iframe.onload = function() {
+                setTimeout(() => {
+                    iframe.style.display = 'none';
+                    image.style.display = 'block';
+                }, animationDuration);
+            };
+
+            // Handle case where iframe fails to load
+            iframe.onerror = function() {
+                console.error('Failed to load iframe content');
                 image.style.display = 'block';
-            }, animationDuration);
-        };
-
-        // Handle case where iframe fails to load
-        iframe.onerror = function() {
-            console.error('Failed to load iframe content');
-            image.style.display = 'block';
-        };
+            };
+        });
 </script>
 
 <script>
