@@ -201,7 +201,7 @@
 .image-text-container img {
     margin-left: 40px;
     max-width: 100%;
-    width: 500px;
+    width: 250px;
     height: auto;
     border-radius: 10px;
 }
@@ -251,7 +251,7 @@
 .pig-text-container img {
     margin-left: 20px;
     max-width: 100%;
-    width: 500px;
+    width: 250px;
     height: auto;
     border-radius: 10px;
 }
@@ -267,16 +267,19 @@
     position: relative;
     align-items: center;
     margin-top: 40px;
+    height: 800px;
 }
     
 #logo-animation {
     position: relative;
+    transform: translateY(50%);
     display: block;
     width: 100%;
     height: auto;
 }
 
 #logo-image {
+    transform: translateY(50%);
     display: none;
     width: 100%;
     height: auto;
@@ -359,7 +362,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-            const iframe = document.getElementById('logo-iframe');
+            const iframe = document.getElementById('logo-animation');
             const image = document.getElementById('logo-image');
 
             // Replace with the actual duration of your iframe video in milliseconds
@@ -394,7 +397,7 @@
 
 <div class="container logo-container bg-offwhite">
     <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" id="logo-image" alt="Logo">
-    <iframe title="Virginia: Logo Splash (2024)" width="560" height="315" src="https://video.igem.org/videos/embed/48c38549-d08b-473e-bc2b-85b88f10a028?start=0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="logo-animation"></iframe>
+    <iframe title="Virginia: Logo Splash (2024)" width="1000" height="562" src="https://video.igem.org/videos/embed/48c38549-d08b-473e-bc2b-85b88f10a028?start=0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="logo-animation"></iframe>
 </div>
 <div class="container full-width bg-yellow read">
     <div class="main-card">
@@ -434,7 +437,7 @@
 </div>
 <div class="container full-width bg-lightpink emaciated">
     <div class="image-text-container">
-        <img src="https://static.igem.wiki/teams/5178/malnourished.png">
+        <img src="https://static.igem.wiki/teams/5178/malnourished.png" alt="Malnourished Woman">
         <div class="text-content">
             <p>Individuals with EPI suffer from a deficiency in digestive enzymes and are thus unable to hydrolyze and break down food into nutrients for the body. This can lead to severe malnutrition for EPI patients, resulting in long-term complications including arrhythmia, anemia, and osteoporosis.</p>
         </div>
@@ -445,7 +448,7 @@
         <div class="text-content">
             <p>Current treatment for EPI involves pancreatic enzyme replacement therapy (PERT) using medications from porcine pancreases. However, this treatment poses challenges for individuals avoiding pork and raises ethical and environmental concerns.</p>
         </div>
-        <img src="https://static.igem.wiki/teams/5178/sad-pig.png">
+        <img src="https://static.igem.wiki/teams/5178/sad-pig.png" alt="Sad Pig">
     </div>
 </div>
 <div class="container full-width bg-offwhite stackin">
