@@ -5,34 +5,246 @@
 
 {% block page_content %}
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Inclusivity Award</h4>
-      <p>The Inclusivity Award recognizes exceptional efforts to include people with diverse identities in scientific research. Who is allowed to have a voice in iGEM, synthetic biology, and science more broadly? How have you developed new opportunities to eliminate barriers and allow more people to contribute to, participate in, and/or be represented by these communities? To compete for this prize, activities do not have to be directly related to your team’s project. Document your approach, how you improved inclusivity, and what was learned.</p>
-      <p>To compete for the Inclusivity award, select the prize on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a> and describe your work on this page.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2024 Awards Page</a> for more information.</p>
+  <style>
+    .dropshadow-box
+{
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+}
+   .sticky {
+    position: sticky;
+    top: 90px;
+  }
+    section {
+    padding-top: 90px;
+    margin-top: -90px;
+    padding-bottom: 20px;
+  }
+     .section-title {
+    text-align: center;
+    margin-top: 3rem;
+    text-decoration: underline;
+    text-decoration-color: #D88993;
+       text-underline-offset: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+   html
+   {
+    scroll-behavior: smooth;
+  }
+
+   .section-nav li.active > a {
+    color: #8B555E;
+    font-weight: 500;
+  }
+
+  .section-nav {
+
+    border-left: 1px solid #e7c7c9;
+  }
+
+  .section-nav a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    color: #D88993;
+    transition: all 400ms ease-in-out;
+
+  }
+
+  .section-nav a:hover,
+  .section-nav a:focus {
+    color: #8B555E;
+  }
+
+  @keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInUp-animation {
+  animation: 1.5s fadeInUp;
+}
+.paragraph-text
+{
+     text-align: justify;
+    align-items: center;
+    font-size: 110%;
+    line-height: 160%;
+}
+.read-more-btn-sm {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    height: auto;
+    font-size: 14px;
+    background-color: #8B555E;
+    color: #EDF0DA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.1s ease-in-out;
+}
+.read-more-btn-sm:hover {
+    color: #EDF0DA; /* Ensure the text color stays white on hover */
+    background-color: #D88993
+}
+
+.read-more-btn-sm:active {
+    transform: scale(0.95);
+}
+table, td, th {
+    border: 4px solid #ab7c83;
+}
+
+tr:nth-child(1)
+{
+  background-color: #d9b6bb;
+    height: 3rem;
+}
+tr:nth-child(2)
+{
+  background-color: #F0DFAD;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+</style>
+<head></head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+        <div class="sticky">
+            <br>
+ <nav class="section-nav" role="navigation">
+      <ul style="list-style: none; margin-left: 0px;">
+          <div class="margin-left: 1rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 5px"><a href="#our-goals">Our Goals</a></li>
+            <li style="margin-bottom: 5px"><a href="#expanding-healthcare">Expanding Healthcare</a></li>
+            <li style="margin-bottom: 5px"><a href="#accessibility">Accessibility</a></li>
+            <li style="margin-bottom: 5px"><a href="#underprivileged-communities">Underprivileged Communities</a></li>
+        </div>
+      </ul>
+ </nav>
+        </div>
+    </div>
+  <div class="col-md-10 dropshadow-box">
+      <div class="container mt-3" >
+          <section id="our-goals">
+        <h2 class="section-title">Our Goals</h2>
+        <p class="paragraph-text">Our team recognizes the importance of inclusivity in all facets of our project. It’s important to make our work as available as possible to as many people as possible to further our positive impact within our community. We achieved our inclusivity goals through three avenues: providing medication alternatives, increasing accessibility in our website and handbook, and improving resources for underprivileged communities. </p>
+              <div style="text-align: center"><img src="https://static.igem.wiki/teams/5178/ihp/wiki-infographics-3.png" width="50%" alt="triangle that says 'inclusivity' on the inside, and 'accessibility', 'underprivileged communities', and 'expanding healthcare' on the outside"></div>
+          </section>
+<div class="paragraph-text">
+      <section id="expanding-healthcare">
+    <div class="row"> <h2 class="section-title">Expanding Healthcare</h2></div>
+    <div class="row">
+        <p>Our project was formulated to increase inclusivity and accessibility to patients with EPI who have religious or ethical concerns or dietary restrictions on consumption of porcine-derived products. Because no synthetic alternative to the standard treatment currently exists, patients are often forced to choose between compromising their ethics and compromising their health. Our medication increases the number of options for patients, allowing them more autonomy.
+
+Beyond just the medication itself, the medium we put it in will be dairy-free, further increasing accessibility. </p>    </div>
+</section>
+       <section id="accessibility">
+    <div class="row mt-3"> <h2 class="section-title">Accessibility</h2></div>
+    <div class="row">
+
+        <p>We wanted our handbook to be user-friendly and easy to read for any interested students. With this in mind, we adhered to design guidelines for people with autism and dyslexia so that the layout of our handbook was not a barrier to accessibility. Our handbook has a high contrast ratio between the text and background, a minimum of 14 point font, sans-serif text, and large spacing between lines to increase legibility. Additionally, we formatted each page in a logical, consistent manner with relevant flowcharts and diagrams in soothing colors to increase understanding. The content itself is clear and concise.</p>
+
+<p>Our website also follows accessibility guidelines. We followed standard HTML formatting and gave each image alt-text to make screen-reader navigation easier. The website is also easy to navigate, with descriptive links and multiple ways to reach each page. Each page is formatted logically and broken up into sub-sections with sub-headings to prevent from overwhelming the reader.
+The table below illustrates the design principles we followed.
+</p>
+    </div>
+<h4 style="text-align: center">Designing for...</h4>
+           <table>
+  <tr>
+    <th style="text-align: center">Users on the autism spectrum</th>
+    <th style="text-align: center">Users with dyslexia</th>
+    <th style="text-align: center">Users with screen readers </th>
+  </tr>
+  <tr style="text-align: left">
+    <td>
+        <ul>
+            <li>
+                logical and consistent layout
+            </li>
+            <li>
+                clear, plain language
+            </li>
+            <li>
+                muted colors
+            </li>
+            <li>
+                descriptive links and headings
+            </li>
+        </ul>
+    </td>
+    <td>
+        <ul>
+            <li>
+                sans-serif text
+            </li>
+            <li>
+                minimal italics
+            </li>
+            <li>
+                high contrast between text and background
+            </li>
+            <li>
+                audio and video recordings
+            </li>
+            <li>
+                images and diagrams to support content
+            </li>
+            <li>
+                increased font size and line spacing
+            </li>
+        </ul>
+    </td>
+    <td>
+        <ul>
+            <li>
+                formatted in HTML5
+            </li>
+            <li>
+                alt-text for images
+            </li>
+            <li>
+                descriptive links and headings
+            </li>
+        </ul>
+    </td>
+  </tr>
+</table>
+
+    </section>
+
+      <section id="underprivileged-communities">
+    <div class="row mt-3"> <h2 class="section-title">Underprivileged Communities</h2></div>
+    <div class="row">
+        <p>Our goal with education was to create a synthetic biology resource for homeschooled communities since previously there were no readily available synthetic biology resources and cost is a barrier to performing at home experiments. Our handbook which we distributed to free online resource pages increases inclusivity since previously under-served communities will be able to learn synthetic biology and perform experiments. This increases the opportunities for homeschooled students to get involved in STEM.</p>
+
+      <p>  Our slideshow that we presented is under the education tab: <a href="https://2024.igem.wiki/virginia/education" class="read-more-btn-sm">View slideshow</a> </p>
+
+
+    </div>
+    </section>
     </div>
   </div>
 </div>
-
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>We should all recognize the importance of building an open and welcoming scientific community. A more diverse community involved in creating knowledge and technology is more likely to produce a more equitable and representative system. Every individual, regardless of background or experience, should have an equal opportunity to engage with scientific knowledge and technological development. Everyone should be able to share their opinions on the societal implications of research.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2020.igem.org/Team:Fudan/Inclusion">2020 Fudan</a></li>
-      <li><a href="https://2020.igem.org/Team:CCU_Taiwan/Inclusion">2020 CCU Taiwan</a></li>
-      <li><a href="https://2020.igem.org/Team:Concordia-Montreal/Inclusion">2020 Concordia Montreal</a></li>
-      <li><a href="https://2020.igem.org/Team:CLS_CLSG_UK/Inclusione">2020 CLS CLSG UK</a></li>
-    </ul>
-  </div>
+    </div>
 </div>
 
+</body>
 {% endblock %}

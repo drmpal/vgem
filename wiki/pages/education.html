@@ -15,7 +15,7 @@
     justify-content: space-around;
     align-items: flex-start;
   }
-  
+
   .long-holder {
     transform: translateY(50%);
     height: 80%;
@@ -27,7 +27,7 @@
     height: auto;
     width: 80%;
   }
-  
+
   .short-holder {
     transform: translateY(50%);
     height: 80%;
@@ -42,7 +42,7 @@
 
 
 </style>
-  
+
 <div class="container big-boy full-width">
 <div class="long-holder">
   <img src="https://static.igem.wiki/teams/5178/headers/education-head.png" alt="Education Head">
@@ -75,7 +75,102 @@
       <li><a href="https://2020.igem.org/Team:Fudan/Education">2020 Fudan</a></li>
       <li><a href="https://2020.igem.org/Team:Toulouse_INSA-UPS/Education">2020 Toulouse INSA UPS</a></li>
     </ul>
+<  <style>
+    .dropshadow-box
+{
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+}
+   .sticky {
+    position: sticky;
+    top: 90px;
+  }
+    section {
+    padding-top: 90px;
+    margin-top: -90px;
+    padding-bottom: 20px;
+  }
+     .section-title {
+    text-align: center;
+    margin-top: 3rem;
+    text-decoration: underline;
+    text-decoration-color: #D88993;
+       text-underline-offset: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+   html
+   {
+    scroll-behavior: smooth;
+  }
+
+  .section-nav li.active > a {
+    color: #8B555E;
+    font-weight: 500;
+  }
+
+  .section-nav {
+    padding-left: 0;
+    border-left: 1px solid #D88993;
+  }
+
+  .section-nav a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    color: #D88993;
+    transition: all 400ms ease-in-out;
+  }
+
+  .section-nav a:hover,
+  .section-nav a:focus {
+    color: #8B555E;
+  }
+  @keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.fadeInUp-animation {
+  animation: 1.5s fadeInUp;
+}
+</style>
+<head></head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+        <div class="sticky">
+            <br>
+ <nav class="section-nav" style="border-left: 1px solid #efefef;">
+      <ul style="list-style: none; margin-left: 0px;">
+          <div class="margin-left: 1rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 5px"><a href="#medical-professionals">Medical Professionals</a></li>
+            <li style="margin-bottom: 5px"><a href="#synthetic-biologists">Synthetic Biologists</a></li>
+            <li style="margin-bottom: 5px"><a href="#ethics-expert">Ethics Expert</a></li>
+            <li style="margin-bottom: 5px"><a href="#homeschooling-expert">Homeschooling Expert</a></li>
+        </div>
+      </ul>
+ </nav>
+        </div>
+    </div>
+  <div class="col-md-10 dropshadow-box">
+      <div style="text-align: center">
+        <h2 class="section-title">Introduction</h2>
+        <p>It is essential to consult with experts to gain their perspective and feedback. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
   </div>
+
+    </div>
 </div>
 
+</body>
 {% endblock %}
