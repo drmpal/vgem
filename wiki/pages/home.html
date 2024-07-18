@@ -30,7 +30,6 @@
 .coiny {
     font-family: 'Coiny', sans-serif;
     font-size: 48px;
-    
 }
 
 .read {
@@ -263,24 +262,15 @@
     color:#8B555E;
 }
 
-.logo-container {
-    position: relative;
+#logo-container {
+    width: auto; /* Adjust the width as per your logo size */
+    height: 800px; /* Adjust the height as per your logo size */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 40px;
-    height: 800px;
-}
-    
-#logo-animation {
-    position: relative;
-    transform: translateY(50%);
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
-#logo-image {
-    transform: translateY(50%);
-    display: none;
+#logo {
     width: 100%;
     height: auto;
 }
@@ -361,27 +351,11 @@
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-            const iframe = document.getElementById('logo-animation');
-            const image = document.getElementById('logo-image');
-
-            // Replace with the actual duration of your iframe video in milliseconds
-            const animationDuration = 5000;
-
-            // Check if iframe has loaded
-            iframe.onload = function() {
-                setTimeout(() => {
-                    iframe.style.display = 'none';
-                    image.style.display = 'block';
-                }, animationDuration);
-            };
-
-            // Handle case where iframe fails to load
-            iframe.onerror = function() {
-                console.error('Failed to load iframe content');
-                image.style.display = 'block';
-            };
-        });
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            document.getElementById('logo').src = 'https://static.igem.wiki/teams/5178/animation-final-frame.png';
+        }, 5000); // 5000 milliseconds = 5 seconds
+    });
 </script>
 
 <script>
@@ -395,9 +369,8 @@
 
 </script>
 
-<div class="container logo-container bg-offwhite">
-    <img src="https://static.igem.wiki/teams/5178/temporary-final-animation-frame.png" id="logo-image" alt="Logo">
-    <iframe title="Virginia: Logo Splash (2024)" width="1000" height="562" src="https://video.igem.org/videos/embed/48c38549-d08b-473e-bc2b-85b88f10a028?start=0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="logo-animation"></iframe>
+<div class="container logo-container bg-offwhite" id="logo-container">
+    <img id="logo" src="https://static.igem.wiki/teams/5178/logo-animation.gif" alt="Logo Animation">
 </div>
 <div class="container full-width bg-yellow read">
     <div class="main-card">
