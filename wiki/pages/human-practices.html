@@ -36,12 +36,15 @@
   border-radius: 50%;
   overflow: hidden;
   display: inline-block;
+        border: 0.3rem solid #8B555E;
+
 }
-    .expert-picture img {
+ .expert-picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  }
+   /* This centers the image within the container */
+}
       html {
     scroll-behavior: smooth;
   }
@@ -105,6 +108,20 @@
     align-items: center;
     font-size: 110%;
 }
+.background-color
+{
+    background-color: #f6f2e8; /* Change this to your desired color */
+    padding: 40px 40px; /* Increase padding to make the border larger on all sides */
+    margin-top: 20px; /* Space between the image and the caption box */
+    border-radius: 2%;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 </style>
 <head></head>
 <html><body>
@@ -125,22 +142,28 @@
  </nav>
     </div>
         </div>
-    <div class="col-md-10 dropshadow-box">
-        <div class="paragraph-text container mt-3">
+    <div class="col-md-10 paragraph-text">
+        <div class="dropshadow-box">
+
         <h2 class="section-title">Expert Feedback</h2>
         <p>It is essential to consult with experts to gain their perspective and feedback. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+       </div>
+
+      <div class="dropshadow-box mt-5">
   <section id="medical-professionals">
   <h2 class="mb-2 section-title">Medical Professionals</h2>
+      <div class="background-color">
   <div class="row justify-content-center">
     <div class="col-md-4 text-center">
 
       <div class="expert-picture mx-auto">
-        <img src="https://media.istockphoto.com/id/1075374570/vector/coming-soon.jpg?s=612x612&w=0&k=20&c=6W1rSRAoJnxtMSi98mGD7LjiXA3xQMotLn8hJnmXjzI=" alt="Expert Picture">
+        <img style="object-position: center 5%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/wadlow-ray-5166-pp-2-3-1.jpg" alt="Expert Picture">
       </div>
-      <h3 class="mt-2" style="color: #8B555E">Firstname Lastname</h3>
+
     </div>
-    <div class="col-md-8 d-flex align-items-center">
-      <p>Firstname Lastname is an expert in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We talked to them because Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="col-md-8">
+        <div class="row"><h3 class="mt-2" style="color: #8B555E; text-align: center">Raymond Wadlow, MD</h3></div>
+        <div class="row"><p>Dr. Wadlow is an INOVA board-certified doctor in Medical Oncology and Internal Medicine. His clinical interests include Gastrointestinal (GI) cancer, Pancreatic Cancer, Colorectal Cancer, Esophageal Cancer, and Liver Cancer. Dr. Wadlow helps run the PRECEDE study at INOVA, which is a clinical trial that tries to improve early detection of pancreatic cancer for those with elevated risk, since it’s hard to diagnose early on.</p></div>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -159,9 +182,10 @@
   <div class="row mt-4">
           <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
+      </div>
 </section>
-
-
+</div>
+<div class="dropshadow-box mt-5">
           <section id="synthetic-biologists">
   <h2 class="mb-2 section-title">Synthetic Biologists</h2>
   <div class="row justify-content-center">
@@ -193,20 +217,24 @@
           <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 </section>
+</div>
 
-
+        <div class="dropshadow-box mt-5">
         <section id="ethics-expert">
   <h2 class="mb-2 section-title">Ethics Expert</h2>
+            <div class="background-color" style="background-color: #e8b7b7">
   <div class="row justify-content-center">
     <div class="col-md-4 text-center">
 
       <div class="expert-picture mx-auto">
-        <img src="https://media.istockphoto.com/id/1075374570/vector/coming-soon.jpg?s=612x612&w=0&k=20&c=6W1rSRAoJnxtMSi98mGD7LjiXA3xQMotLn8hJnmXjzI=" alt="Expert Picture">
+        <img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/dr-barnes-picture.jpeg" alt="Headshot of Dr. Elizabeth Barnes ">
       </div>
-      <h3 class="mt-2" style="color: #8B555E">Firstname Lastname</h3>
     </div>
-    <div class="col-md-8 d-flex align-items-center">
-      <p>Firstname Lastname is an expert in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We talked to them because Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="col-md-8">
+        <div class="row"><h3 class="mt-2" style="color: #8B555E; text-align: center">Elizabeth Barnes, PhD</h3></div>
+        <div class="row">
+        <p>Dr. Barnes is a professor and director of diversity, equity, and inclusion at the University of Virginia with a PhD in philosophy. She teaches philosophy of health and healthcare, current issues in healthcare ethics, and health and well-being courses at UVA. She also works on metaphysics, social philosophy, and feminist philosophy.</p>
+        </div>
     </div>
   </div>
   <div class="row justify-content-center">
@@ -225,18 +253,20 @@
   <div class="row mt-4">
           <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
+                </div>
 </section>
+            </div>
 
-
+<div class="dropshadow-box mt-5">
         <section id="homeschooling-expert">
   <h2 class="mb-2 section-title">Homeschooling Expert</h2>
   <div class="row justify-content-center">
     <div class="col-md-4 text-center">
 
       <div class="expert-picture mx-auto">
-        <img src="https://media.istockphoto.com/id/1075374570/vector/coming-soon.jpg?s=612x612&w=0&k=20&c=6W1rSRAoJnxtMSi98mGD7LjiXA3xQMotLn8hJnmXjzI=" alt="Expert Picture">
+        <img style="object-position: center 0.2%;"src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/eleanornicholson.png" alt="Expert Picture">
       </div>
-      <h3 class="mt-2" style="color: #8B555E">Firstname Lastname</h3>
+      <h3 class="mt-2" style="color: #8B555E">Eleanor Nicholson</h3>
     </div>
     <div class="col-md-8 d-flex align-items-center">
       <p>Firstname Lastname is an expert in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We talked to them because Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -259,7 +289,8 @@
           <p>Above is a video clip of the interview. Our key takeaways were that Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 </section>
-</div>
+    </div>
+
 </div>
 </div>
 </div>

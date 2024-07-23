@@ -1,3 +1,4 @@
+//links for references
 window.addEventListener('DOMContentLoaded', () => {
 
 	const observer = new IntersectionObserver(entries => {
@@ -17,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 });
-
+//fade in dropshadow box
 	document.addEventListener('DOMContentLoaded', function () {
 	const options = {
 	root: null,
@@ -39,9 +40,13 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 }, options);
 
-	observer.observe(document.querySelector('.dropshadow-box'));
-});
-
+const boxes = document.querySelectorAll('.dropshadow-box');
+    boxes.forEach(box => {
+        box.style.opacity = 0; // Hide the element initially
+        observer.observe(box);
+    });
+	});
+//references dropdown
 	 document.querySelectorAll('.nav-item .dropdown-toggle').forEach(item => {
     item.addEventListener('focus', function() {
       this.parentElement.querySelector('.dropdown-menu').style.display = 'block';

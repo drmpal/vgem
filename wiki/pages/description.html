@@ -9,21 +9,16 @@
 
 <style>
 
-.heartbeat-on-hover:hover {
+.heartbeat-on-hover:hover { /*animate heartbeat when hovered over*/
   animation: heartBeat 0.8s ease-in-out;
-}/* Tooltip container */
+}
 
 
-.dizzy-on-hover:hover{
+.dizzy-on-hover:hover{ /*animate anemia dizzy head when hovered over*/
     animation: dizzy 0.9s ease-in-out;
 }
 
-.yogurt-on-hover:hover
-{
-    animation: bounce 0.8s ease-in-out;
-}
-
-@keyframes heartBeat {
+@keyframes heartBeat { /*keyframes for heartbeat animation*/
   0% {
     transform: scale(1);
   }
@@ -40,7 +35,7 @@
     transform: scale(1);
   }
 }
-@keyframes dizzy {
+@keyframes dizzy { /*keyframes from shaking head animation, from animate.style*/
    0%
     {
        -webkit-transform:translateX(0);
@@ -82,7 +77,7 @@
 
 
 
-
+/*flip card animation*/
 .flip-card {
     width:270px;height:270px;
   background-color: transparent;
@@ -155,7 +150,7 @@ h1 {
     transition: width 2s;
 }
 
-/* Animation classes for different progress bars DON'T DELETE*/
+/* Animation classes for different progress bars DON'T DELETE it's grayed out because only used in JS*/
 .progressbaranimation80 {
     width: 80%;
 }
@@ -189,6 +184,15 @@ h3 {
   left: 0;
 
 }
+/*dropshadow box animation*/
+.dropshadow-box
+{
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+    opacity: 0; /* Initially hidden */
+    transition: height 0.3s ease;
+    }
 @keyframes fadeInUp {
   0% {
     transform: translateY(20%);
@@ -203,20 +207,9 @@ h3 {
 .fadeInUp-animation {
   animation: 1.5s fadeInUp;
 }
- #references-dropdown {
-            display: none; /* Initially hidden */
-        }
-        #references-dropdown.show {
-            display: block; /* Show when toggled */
-        }
-.dropshadow-box
-{
-    padding: 2rem;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
-    opacity: 0; /* Initially hidden */
-    transition: height 0.3s ease;
-    }
+/*end of dropshadow box animation*/
+
+/*color links and change color when hovered over*/
 a{
     color:#D88993;
 }
@@ -224,8 +217,8 @@ a:hover
 {
     color: #8B555E;
 }
-
-  html {
+/*nav bar below*/
+  html { /*scrolls smoothly to reference or page when link clicked*/
     scroll-behavior: smooth;
   }
 
@@ -247,12 +240,17 @@ a:hover
     transition: all 400ms ease-in-out;
 
   }
+      .sticky { /*nav bar sticks to top of page*/
+    position: sticky;
+    top: 90px; /*margin*/
+  }
 
   .section-nav a:hover,
   .section-nav a:focus {
     color: #8B555E;
   }
-
+  /*end nav bar*/
+/*for each section and each section's title*/
   section {
     padding-top: 90px;
     margin-top: -90px;
@@ -264,16 +262,12 @@ a:hover
     text-decoration: underline;
     text-decoration-color: #D88993;
         text-underline-offset: 15px;
-        text-underline-width: 1px;
     padding-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
   }
-     .sticky {
-    position: sticky;
-    top: 90px;
-  }
-.first-picture
+
+.first-picture /*container for 2/10 people graphic*/
 {
      border-radius: 25px;
   background: #f6eecf;
@@ -284,6 +278,13 @@ a:hover
     background-size: cover;
 
 }
+/*references dropdown */
+ #references-dropdown {
+            display: none; /* Initially hidden */
+        }
+        #references-dropdown.show {
+            display: block; /* Show when toggled */
+        }
      .references-container {
             display: none; /* Hide references initially */
             opacity: 0; /* Hidden state with no opacity */
@@ -321,6 +322,7 @@ a:hover
             margin-top: 70px;
             cursor: pointer;
         }
+        /*animate bones shaking. from animate.style*/
 @-webkit-keyframes tada {
   from {
     -webkit-transform: scale3d(1, 1, 1);
@@ -391,6 +393,7 @@ a:hover
   animation-name: tada;
     animation-duration: 0.8s;
 }
+/*animate 2/10 people fading in*/
 .fadeIn {
     -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
@@ -416,6 +419,7 @@ a:hover
         opacity: 1;
     }
 }
+/*formatting for text, making font and spacing bigger*/
 .paragraph-text
 {
      text-align: justify;
