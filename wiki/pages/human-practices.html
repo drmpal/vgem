@@ -34,8 +34,8 @@
     }
 
     .expert-picture {
-        width: 300px; /* Set the width you want for the circular image */
-        height: 300px; /* Set the height you want for the circular image */
+        width: 16rem;
+        height: 16rem;/* Set the width you want for the circular image */ /* Set the height you want for the circular image */
         border-radius: 50%;
         overflow: hidden;
         display: inline-block;
@@ -78,24 +78,6 @@
         color: #8B555E;
     }
 
-    .wrapper {
-        position: relative;
-        background-image: url('https://static.igem.wiki/teams/5178/ihp/wiki-quote.png');
-        background-size: contain; /* Use 'contain' if you want to ensure the entire image is visible */
-        background-position: center;
-        background-repeat: no-repeat;
-        padding: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .blockquote {
-        position: relative;
-        z-index: 1;
-    }
-
     @keyframes fadeInUp {
         0% {
             transform: translateY(100%);
@@ -118,10 +100,17 @@
     }
 
     .background-color-medical {
+        padding: 2rem 2rem; /* Increase padding to make the border larger on all sides */
+        margin-top: 3rem; /* Space between the image and the caption box */
+        border-radius: 2%;
+        background-color: rgba(240,223,173,0.25);
+    }
+    .background-color-biologist
+    {
         padding: 40px 40px; /* Increase padding to make the border larger on all sides */
         margin-top: 20px; /* Space between the image and the caption box */
         border-radius: 2%;
-        background-color: rgba(240,223,173,0.25);
+        background-color: rgba(155, 102, 111, 0.25);
     }
 
     .name-title {
@@ -129,8 +118,8 @@
         text-align: center;
     }
 
-    .credentials-box {
-        margin-left: 3%;
+    .margin-left {
+        margin-left: 1%;
     }
 
     .margin-top {
@@ -140,9 +129,12 @@
     .question-box {
         text-align: center;
         margin-top: 3%;
-
-
     }
+/*    .vertical-container {*/
+/*        position: relative;*/
+/*    top: 50%;*/
+/*    transform: translateY(50%);*/
+/*}*/
 </style>
 <head></head>
 <html>
@@ -185,34 +177,23 @@
                                 patients? </h4>
                             <div class="row margin-top">
                                 <div class="col-md-4 text-center">
-                                    <div class="expert-picture mx-auto">
-                                        <img style="object-position: center 5%;"
-                                             src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/wadlow-ray-5166-pp-2-3-1.jpg" alt="Expert Picture">
+                                    <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                                        <img style="object-position: center 5%;" img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/wadlow-ray-5166-pp-2-3-1.jpg" alt="Expert Picture">
                                     </div>
                                 </div>
-                                <div class="col-md-8 mt-4">
-                                    <div class="row"><h3 class="mt-2" style="color: #8B555E; text-align: center">Dr.
-                                        Raymond Wadlow, MD</h3></div>
-                                    <div class="row credentials-box"><p><i>Credentials:</i> Dr. Wadlow is an Inova
+                                <div class="col-md-8">
+                                    <div class="row"><h3 class="mt-2 name-title">Dr. Raymond Wadlow, MD</h3></div>
+                                    <div class="row"><p><i>Credentials:</i> Dr. Wadlow is an Inova
                                         board-certified doctor in Medical Oncology and Internal Medicine. His clinical
                                         interests include Gastrointestinal (GI) Cancer, Pancreatic Cancer, Colorectal
                                         Cancer, Esophageal Cancer, and Liver Cancer. Dr. Wadlow helps run the PRECEDE
-                                        study at INOVA, which is a clinical trial that tries to improve early detection
+                                        study at Inova, which is a clinical trial that tries to improve early detection
                                         of pancreatic cancer for those with elevated risk, since it’s hard to diagnose
                                         early on.</p></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row margin-top">
-                            <div class="col-md-5">
-                                <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
-                                     class="img-fluid">
-                            </div>
-                            <div class="col-md-7 d-flex align-items-center">
-                                <img src="https://static.igem.wiki/teams/5178/ihp/screenshot-2024-07-23-at-1-38-27-pm.png"
-                                     class="img-fluid" alt="Interview Clip">
-                            </div>
-                        </div>
+
                         <div class="row margin-top">
                             <p><i>What we learned:</i> Two-thirds of pancreatic tumors are in the pancreas's head and
                                 body, where surgery often leads to EPI which worsens malnutrition in cancer patients.
@@ -222,6 +203,16 @@
                                 desired timescale. Additionally, noting that chemotherapy patients should avoid
                                 probiotics due to infection risks, we plan to develop a cell-free treatment as a future
                                 iteration of our project. </p>
+                        </div>
+                         <div class="row margin-top">
+                            <div class="col-md-5">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
+                                     class="img-fluid">
+                            </div>
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/screenshot-2024-07-23-at-1-38-27-pm.png"
+                                     class="img-fluid" alt="Interview Clip">
+                            </div>
                         </div>
                     </div>
                     <!-- Dr. Froh, Dr. Lonabaugh, and Ms. Wilburn content-->
@@ -239,7 +230,7 @@
 <!--                                change the margin of this column to change spacing of words-->
                                 <div class="col-md-8 mt-2">
                                     <div class="row"><h3 class="mt-2" style="color: #8B555E; text-align: center">Dr. Deborah Froh, MD</h3></div>
-                                    <div class="row credentials-box"><p><i>Credentials:</i> Dr. Froh is a
+                                    <div class="row margin-left"><p><i>Credentials:</i> Dr. Froh is a
                                         board-certified doctor in Pediatric Medicine and Pediatric Pulmonology at the
                                         University of Virginia (UVA). She specializes in cystic fibrosis and other
                                         respiratory issues in children. She is the director of the UVA Cystic Fibrosis
@@ -252,7 +243,7 @@
                         <div class="row"style="margin-top: 2%">
                             <div class="col-md-8 mt-5">
                                 <div class="row"><h3 class="mt-2" style="color: #8B555E; text-align: center">Dr. Kevin Lonabaugh, PharmD, BCACP, BCPPS, AE-C</h3></div>
-                                <div class="row" style="margin-right: 3%"><p><i>Credentials:</i> Dr. Lonabaugh
+                                <div class="row"><p><i>Credentials:</i> Dr. Lonabaugh
                                         is an Ambulatory Clinical Pharmacist in the Pediatric and Adult Cystic Fibrosis
                                         Center at the University of Virginia (UVA). He is dual board-certified in
                                         pediatrics and ambulatory care. </p></div>
@@ -272,22 +263,13 @@
                             </div>
                             <div class="col-md-8 mt-5">
                                 <div class="row"><h3 class="mt-2" style="color: #8B555E; text-align: center">Kasey Wilburn, RD</h3></div>
-                                <div class="row credentials-box"><p><i>Credentials:</i> Ms. Wilburn is a Registered
+                                <div class="row margin-left"><p><i>Credentials:</i> Ms. Wilburn is a Registered
                                     Dietitian at the University of Virginia (UVA) who specializes in genetic and
                                     metabolic disorders, including adult cystic fibrosis. </p></div>
                             </div>
                         </div>
 <!--                        Video and quote-->
-                        <div class="row margin-top">
-                            <div class="col-md-5">
-                                <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
-                                     class="img-fluid">
-                            </div>
-                            <div class="col-md-7 d-flex align-items-center">
-                                <img src="https://static.igem.wiki/teams/5178/ihp/screenshot-2024-07-23-at-1-38-27-pm.png"
-                                     class="img-fluid" alt="Interview Clip">
-                            </div>
-                        </div>
+
                         <div class="row margin-top">
                             <p><i>What we learned:</i> Two-thirds of pancreatic tumors are in the pancreas's head and
                                 body, where surgery often leads to EPI which worsens malnutrition in cancer patients.
@@ -298,60 +280,63 @@
                                 probiotics due to infection risks, we plan to develop a cell-free treatment as a future
                                 iteration of our project. </p>
                         </div>
+                        <div class="row margin-top">
+                            <div class="col-md-5">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
+                                     class="img-fluid">
+                            </div>
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/screenshot-2024-07-23-at-1-38-27-pm.png"
+                                     class="img-fluid" alt="Interview Clip">
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
             <div class="dropshadow-box mt-5">
                 <section id="synthetic-biologists">
                     <h2 class="mb-2 section-title">Synthetic Biologists</h2>
-                    <div class="background-color-medical">
-                        <div class="row justify-content-center">
-
-                            <h4>Are there any flaws in our current design in terms of efficacy and safety and what
-                                changes would be necessary for clinical implementation?</h4>
+                    <div class="background-color-biologist">
+                        <div class="row">
+                            <h4 class="question-box">Are there any flaws in our current design in terms of efficacy and safety and what changes would be necessary for clinical implementation?</h4>
+                            <div class="row margin-top">
                             <div class="col-md-4 text-center">
-
                                 <div class="expert-picture">
-                                    <img style="object-position: center 20%;"
-                                         src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/nnair01.jpeg"
-                                         alt="Headshot of Dr. Nikhil Nair">
+                                    <img style="object-position: center 20%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/nnair01.jpeg" alt="Headshot of Dr. Nikhil Nair">
                                 </div>
-
                             </div>
                             <div class="col-md-8">
-                                <div class="credentials-box">
+                                <div class="margin-left">
                                     <h3 class="mt-2 name-title">Dr. Nikhil Nair, PhD</h3>
-
-                                    <p><i>Credentials:</i> Dr. Nair is an Associate Professor of Chemical and Biological
+                                    <div class="row margin-left"><p><i>Credentials:</i> Dr. Nair is an Associate Professor of Chemical and Biological
                                         Engineering at Tufts University with interests in synthetic biology and systems
                                         bioengineering. He has experience teaching classes and conducting research in
                                         these areas, previously having engineered probiotics for therapeutic purposes.
-                                        Additionally, Dr. Nair served as a past iGEM advisor for Tufts University. </p>
+                                        Additionally, Dr. Nair served as a past iGEM advisor for Tufts University. </p></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-md-7 d-flex flex-column justify-content-center">
-                                <blockquote class="blockquote text-center">
-                                    <h4><i>"This is an impactful quote from the interview."</i></h4>
-                                </blockquote>
-                                <blockquote class="blockquote text-center">
-                                    <h4><i>"This is another impactful quote from the interview if needed."</i></h4>
-                                </blockquote>
+                        </div>
+
+          <div class="row margin-top">
+                            <p><i>What we learned:</i> Two-thirds of pancreatic tumors are in the pancreas's head and
+                                body, where surgery often leads to EPI which worsens malnutrition in cancer patients.
+                                Dr. Wadlow also expressed concerns about the current medication's affordability, side
+                                effects, and limited effectiveness. Using his feedback, we aimed to develop
+                                computational models to ensure our treatment delivered the required dosages within a
+                                desired timescale. Additionally, noting that chemotherapy patients should avoid
+                                probiotics due to infection risks, we plan to develop a cell-free treatment as a future
+                                iteration of our project. </p>
+                        </div>
+                         <div class="row margin-top">
+                            <div class="col-md-5">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
+                                     class="img-fluid">
                             </div>
-                            <div class="col-md-5 d-flex align-items-center">
-                                <img src="https://media.istockphoto.com/id/1075374570/vector/coming-soon.jpg?s=612x612&w=0&k=20&c=6W1rSRAoJnxtMSi98mGD7LjiXA3xQMotLn8hJnmXjzI="
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/screenshot-2024-07-23-at-1-38-27-pm.png"
                                      class="img-fluid" alt="Interview Clip">
                             </div>
-                        </div>
-                        <div class="row mt-4">
-                            <p>We learned that for clinical applications of our project, we would need to make changes
-                                to our design to make the probiotic more viable to survive in the stomach and optimally
-                                produce therapeutics. We decided to dedicate a page on our website that outlines
-                                potential design modifications for clinical applications of our device. Dr. Nair
-                                indicated the most important thing for our team to focus on is producing lipase and
-                                colipase in vitro. Additionally, Dr. Nair believes our kill-switch is suitable for our
-                                device and biocontainment. </p>
                         </div>
                     </div>
                 </section>
