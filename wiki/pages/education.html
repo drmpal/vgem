@@ -1,117 +1,121 @@
 {% extends "layout.html" %}
-  
+
 {% block title %}Education{% endblock %}
 {% block lead %}Innovative educational tools and outreach activities have the ability to establish a two-way dialogue with new communities by discussing public values and the science behind synthetic biology.{% endblock %}
 
 {% block page_content %}
 <style>
 
-  .big-boy {
-    margin-top: 20px;
-    padding: 20px;
-    height: 600px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
+    .big-boy {
+        margin-top: 20px;
+        padding: 20px;
+        height: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
 
-  .long-holder {
-    transform: translateY(50%);
-    height: 80%;
-    width: 70%;
-  }
+    .long-holder {
+        transform: translateY(50%);
+        height: 80%;
+        width: 70%;
+    }
 
-  .long-holder img {
-    transform: translateY(50%);
-    height: auto;
-    width: 80%;
-  }
+    .long-holder img {
+        transform: translateY(50%);
+        height: auto;
+        width: 80%;
+    }
 
-  .short-holder {
-    transform: translateY(50%);
-    height: 80%;
-    width: 30%;
-  }
+    .short-holder {
+        transform: translateY(50%);
+        height: 80%;
+        width: 30%;
+    }
 
-  .short-holder img {
-    transform: translateY(50%);
-    height: auto;
-    width: 80%;
-  }
-.dropshadow-box
-{
-    padding: 2rem;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
-}
-   .sticky {
-    position: sticky;
-    top: 90px;
-  }
+    .short-holder img {
+        transform: translateY(50%);
+        height: auto;
+        width: 80%;
+    }
+
+    .dropshadow-box {
+        padding: 2rem;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+    }
+
+    .sticky {
+        position: sticky;
+        top: 90px;
+    }
+
     section {
-    padding-top: 90px;
-    margin-top: -90px;
-    padding-bottom: 20px;
-  }
-     .section-title {
-    text-align: center;
-    margin-top: 3rem;
-    text-decoration: underline;
-    text-decoration-color: #D88993;
-       text-underline-offset: 15px;
-    padding-bottom: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-   html
-   {
-    scroll-behavior: smooth;
-  }
+        padding-top: 90px;
+        margin-top: -90px;
+        padding-bottom: 20px;
+    }
 
-  .section-nav li.active > a {
-    color: #8B555E;
-    font-weight: 500;
-  }
+    .section-title {
+        text-align: center;
+        margin-top: 3rem;
+        text-decoration: underline;
+        text-decoration-color: #D88993;
+        text-underline-offset: 15px;
+        padding-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .section-nav {
-    padding-left: 0;
-    border-left: 1px solid #D88993;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
 
-  .section-nav a {
-    text-decoration: none;
-    display: block;
-    padding: .125rem 0;
-    color: #D88993;
-    transition: all 400ms ease-in-out;
-  }
+    .section-nav li.active > a {
+        color: #8B555E;
+        font-weight: 500;
+    }
 
-  .section-nav a:hover,
-  .section-nav a:focus {
-    color: #8B555E;
-  }
-  @keyframes fadeInUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
+    .section-nav {
+        padding-left: 0;
+        border-left: 1px solid #D88993;
+    }
 
-.fadeInUp-animation {
-  animation: 1.5s fadeInUp;
-}
-.paragraph-text
-{
-     text-align: justify;
-    align-items: center;
-    font-size: 110%;
-    line-height: 160%;
-}
+    .section-nav a {
+        text-decoration: none;
+        display: block;
+        padding: .125rem 0;
+        color: #D88993;
+        transition: all 400ms ease-in-out;
+    }
+
+    .section-nav a:hover,
+    .section-nav a:focus {
+        color: #8B555E;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+
+    .fadeInUp-animation {
+        animation: 1.5s fadeInUp;
+    }
+
+    .paragraph-text {
+        text-align: justify;
+        align-items: center;
+        font-size: 110%;
+        line-height: 160%;
+    }
 
 </style>
 
@@ -122,48 +126,55 @@
         <div class="long-holder">
             <img src="https://static.igem.wiki/teams/5178/headers/education-head.png" alt="Education Head">
         </div>
-    <div class="short-holder">
-        <img src="https://static.igem.wiki/teams/5178/barry-graduate.png" alt="Education Barry">
-    </div>
+        <div class="short-holder">
+            <img src="https://static.igem.wiki/teams/5178/barry-graduate.png" alt="Education Barry">
+        </div>
     </div>
 </div>
 
 <div class="row mt-4">
-  <div class="col">
-<div class="container">
-  <div class="row">
-    <div class="col-md-2">
-        <div class="sticky">
-            <br>
- <nav class="section-nav" style="border-left: 1px solid #efefef;">
-      <ul style="list-style: none; margin-left: 0px;">
-          <div class="margin-left: 1rem; margin-bottom: 1rem;">
-            <li style="margin-bottom: 5px"><a href="#handbook">Synthetic Biology Handbook</a></li>
-            <li style="margin-bottom: 5px"><a href="#bridge-presentation">Bridge Presentation</a></li>
-        </div>
-      </ul>
- </nav>
+    <div class="col">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="sticky">
+                        <br>
+                        <nav class="section-nav" style="border-left: 1px solid #efefef;">
+                            <ul style="list-style: none; margin-left: 0px;">
+                                <div class="margin-left: 1rem; margin-bottom: 1rem;">
+                                    <li style="margin-bottom: 5px"><a href="#handbook">Synthetic Biology Handbook</a>
+                                    </li>
+                                    <li style="margin-bottom: 5px"><a href="#bridge-presentation">Bridge
+                                        Presentation</a></li>
+                                </div>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-10 dropshadow-box">
+                    <h2 class="section-title">Introduction</h2>
+                    <div class="row mt-3 paragraph-text">
+                        <p>It is essential to consult with experts to gain their perspective and feedback. Lorem ipsum
+                            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua.</p>
+                    </div>
+                    <section id="handbook">
+                        <h2 class="section-title">Synthetic Biology Handbook</h2>
+                    </section>
+                    <section id="bridge-presentation">
+                        <h2 class="section-title">Bridge Scholars Presentation</h2>
+                        <div class="row mt-3 paragraph-text">
+                            <p>We presented to lorem ipsum</p>
+                        </div>
+                        <p style="text-align: center">
+                            <iframe src="https://static.igem.wiki/teams/5178/ihp/igem.pdf" width="600px"
+                                    height="400px"></iframe>
+                        </p>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
-  <div class="col-md-10 dropshadow-box">
-        <h2 class="section-title">Introduction</h2>
-      <div class="row mt-3 paragraph-text">
-        <p >It is essential to consult with experts to gain their perspective and feedback. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-      <section id="handbook">
-      <h2 class="section-title">Synthetic Biology Handbook</h2>
-      </section>
-      <section id="bridge-presentation">
-          <h2 class="section-title">Bridge Scholars Presentation</h2>
-          <div class="row mt-3 paragraph-text">
-                <p>We presented to lorem ipsum</p>
-              </div>
-          <p style="text-align: center"><iframe src="https://static.igem.wiki/teams/5178/ihp/igem.pdf" width="600px" height="400px"></iframe></p>
-      </section>
-  </div>
-  </div>
-</div>
-  </div>
 </div>
 
 </body>
