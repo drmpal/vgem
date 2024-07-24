@@ -99,18 +99,11 @@
         font-size: 110%;
     }
 
-    .background-color-medical {
+    .background-color-box {
         padding: 2rem 2rem; /* Increase padding to make the border larger on all sides */
         margin-top: 3rem; /* Space between the image and the caption box */
         border-radius: 2%;
         background-color: rgba(240,223,173,0.25);
-    }
-    .background-color-biologist
-    {
-        padding: 40px 40px; /* Increase padding to make the border larger on all sides */
-        margin-top: 20px; /* Space between the image and the caption box */
-        border-radius: 2%;
-        background-color: rgba(155, 102, 111, 0.25);
     }
 
     .name-title {
@@ -135,6 +128,9 @@
 /*    top: 50%;*/
 /*    transform: translateY(50%);*/
 /*}*/
+    .image-container {
+    text-align: center; /* Center text under images */
+}
 </style>
 <head></head>
 <html>
@@ -170,15 +166,14 @@
                 <section id="medical-professionals">
                     <h2 class="mb-2 section-title">Medical Professionals</h2>
                     <!-- Dr. Wadlow content-->
-                    <div class="background-color-medical">
+                    <div class="background-color-box">
                         <div class="row">
-
                             <h4 class="question-box">How does EPI complicate daily living for pancreatic cancer
                                 patients? </h4>
                             <div class="row margin-top">
                                 <div class="col-md-4 text-center">
                                     <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
-                                        <img style="object-position: center 5%;" img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/wadlow-ray-5166-pp-2-3-1.jpg" alt="Expert Picture">
+                                        <img style="object-position: center 5%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/wadlow-ray-5166-pp-2-3-1.jpg" alt="Expert Picture">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -216,14 +211,14 @@
                         </div>
                     </div>
                     <!-- Dr. Froh, Dr. Lonabaugh, and Ms. Wilburn content-->
-                    <div class="background-color-medical">
+                    <div class="background-color-box">
                         <div class="row">
                             <h4 class="question-box">How does EPI complicate daily living for cystic fibrosis patients?</h4>
                         </div>
                         <!-- Picture and credentials for Dr. Froh -->
                             <div class="row margin-top">
                                 <div class="col-md-4 text-center">
-                                    <div class="expert-picture mx-auto">
+                                    <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
                                         <img style="object-position: center 5%;"src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/dr-froh.jpg" alt="Expert Picture">
                                     </div>
                                 </div>
@@ -249,7 +244,7 @@
                                         pediatrics and ambulatory care. </p></div>
                             </div>
                             <div class="col-md-4 text-center">
-                                <div class="expert-picture mx-auto">
+                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
                                     <img style="object-position: center 5%;"src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/klonabaugh-headshot-9-2023.png" alt="Expert Picture">
                                 </div>
                             </div>
@@ -257,7 +252,7 @@
 <!--                        Picture and credentials for Ms. Wilburn-->
                         <div class="row" style="margin-top: 2%">
                             <div class="col-md-4 text-center">
-                                <div class="expert-picture mx-auto">
+                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
                                     <img style="object-position: center 5%;"src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/kaseywilburn.jpg" alt="Expert Picture">
                                 </div>
                             </div>
@@ -291,17 +286,119 @@
                             </div>
                         </div>
                     </div>
+                    <!--                    9 dietitians-->
+                    <div class="background-color-box">
+                        <div class="row">
+<h4 class="question-box">How can dietitians' insights inform EPI treatment considerations and our project design?</h4>
+</div>
+                        <div class="row margin-top">
+
+    <!-- First Row -->
+    <div class="row">
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 1" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 2" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 3" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row -->
+    <div class="row margin-top">
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 4" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 5" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 6" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+          </div>
+                         <!-- Third Row -->
+                        <div class="row margin-top">
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 7" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 8" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="placeholder.png" alt="Image 9" class="expert-picture">
+                <h3 class="name-title">Firstname Lastname, CR, CR, CR</h3>
+            </div>
+        </div>
+                            </div>
+                            </div>
+
+
+
+
+                        <div class="row margin-top">
+                            <p><i>Credentials:</i> Emily Collins, Lauren Fay, Amanda Barber, Molly Seys, Sara Negron, Marion
+                                Irvin, Caitlin Benda, Kelsey Coulter, and Carrie Desai are all registered dietitians who
+                                are board-certified in oncology nutrition or nutrition support at Inova Schar Cancer
+                                Institute.</p>
+                            <p><i>What we learned:</i> dietitians have more hands-on involvement in EPI treatment than other
+                                medical professionals. The dietitians emphasized the importance of probiotic variety in
+                                diets, and thus encouraged us to consider a yogurt formulation that contains many types
+                                of probiotic bacteria. Additionally, they informed us that an enteric coating for our
+                                bacteria is not necessary as our bacteria will continuously produce enzymes and will be
+                                stable in the digestive tract. Most importantly, as dietitians have active involvement
+                                in EPI patientcare, they highlighted the importance of our device and indicated that
+                                they had many patients who are uncomfortable with current porcine-derived enzymes.</p>
+                        </div>
+                         <div class="row margin-top">
+                            <div class="col-md-5">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
+                                     class="img-fluid">
+                            </div>
+                            <div class="col-md-7 d-flex align-items-center">
+                                <img src="https://static.igem.wiki/teams/5178/ihp/screenshot-2024-07-23-at-1-38-27-pm.png"
+                                     class="img-fluid" alt="Interview Clip">
+                            </div>
+                        </div>
+                    </div>
+<!--                    end dietitians-->
                 </section>
             </div>
             <div class="dropshadow-box mt-5">
                 <section id="synthetic-biologists">
                     <h2 class="mb-2 section-title">Synthetic Biologists</h2>
-                    <div class="background-color-biologist">
+                    <div class="background-color-box" style="background-color: rgba(194, 145, 152, 0.25);">
                         <div class="row">
                             <h4 class="question-box">Are there any flaws in our current design in terms of efficacy and safety and what changes would be necessary for clinical implementation?</h4>
                             <div class="row margin-top">
                             <div class="col-md-4 text-center">
-                                <div class="expert-picture">
+                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
                                     <img style="object-position: center 20%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/nnair01.jpeg" alt="Headshot of Dr. Nikhil Nair">
                                 </div>
                             </div>
@@ -339,17 +436,18 @@
                             </div>
                         </div>
                     </div>
+
                 </section>
             </div>
 
             <div class="dropshadow-box mt-5">
                 <section id="ethics-expert">
                     <h2 class="mb-2 section-title">Ethics Expert</h2>
-                    <div class="background-color-medical" style="background-color: #e8b7b7">
+                    <div class="background-color-box" style="background-color: #e8b7b7">
                         <div class="row justify-content-center">
                             <div class="col-md-4 text-center">
 
-                                <div class="expert-picture mx-auto">
+                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
                                     <img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/dr-barnes-picture.jpeg"
                                          alt="Headshot of Dr. Elizabeth Barnes ">
                                 </div>
@@ -404,7 +502,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-4 text-center">
 
-                            <div class="expert-picture mx-auto">
+                            <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
                                 <img style="object-position: center 0.2%;"
                                      src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/eleanornicholson.png"
                                      alt="Expert Picture">
