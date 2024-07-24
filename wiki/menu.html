@@ -61,7 +61,18 @@
               Safety</a></li>
           </ul>
         </li>
-
+<!---- DRYLAB ---->
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle" href="#" id="otherDropdown" aria-expanded="false">
+            Drylab
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="otherDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}"><img src="https://static.igem.wiki/teams/5178/model.png" alt="modeling Icon">
+              Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}"><img src="https://static.igem.wiki/teams/5178/software.png" alt="software Icon">
+              Software</a></li>
+          </ul>
+        </li>
         <!---- HUMAN PRACTICES ---->
         <li class="nav-item">
           <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='human-practices') }}" id="humanPracticesDropdown" aria-expanded="false">
@@ -77,18 +88,7 @@
           </ul>
         </li>
 
-        <!---- DRYLAB ---->
-        <li class="nav-item">
-          <a class="nav-link dropdown-toggle" href="#" id="otherDropdown" aria-expanded="false">
-            Drylab
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="otherDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}"><img src="https://static.igem.wiki/teams/5178/model.png" alt="modeling Icon">
-              Model</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}"><img src="https://static.igem.wiki/teams/5178/software.png" alt="software Icon">
-              Software</a></li>
-          </ul>
-        </li>
+
       </ul>
     </div>
   </div>
