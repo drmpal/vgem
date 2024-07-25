@@ -46,9 +46,10 @@
     color: #8B555E
 }
 
-.read .main-card {
+.main-card {
     position: absolute;
     top: 50%;
+    padding: 20px;
     transform: translateY(-50%);
     left: 100px;
     width: 40%;
@@ -59,11 +60,11 @@
 }
 
 .read .shadow {
+    position: absolute;
     width: 40%;
     height: 80%;
     border-radius: 10px;
     background-color: #1e7995ff;
-    position: absolute;
     top: 55%;
     transform: translateY(-55%);
     left: 95px;
@@ -118,13 +119,11 @@
     position: absolute;
     top: 5px;
     left: -5px;
-    background-color: #8B555E;
+    background-color: #F0DFAD;
     border-radius: 10px;
     padding: 20px;
-    color: #8B555E;
     height: 80%;
     width: 100%;
-    z-index: 2;
 }
 
 .info-box {
@@ -388,6 +387,7 @@
             <div class="percentage-box"><span class="slam-text">Not</span></div>
             <p class="description">of individuals with chronic pancreatitis develop EPI</p>
         </div>
+        <div class="shadow-info"></div>
     </div>
     <div class="stat-card">
         <div class="info-box" data-target="NaN" data-format="plain">
@@ -405,6 +405,7 @@
             <div class="percentage-box"><span class="slam-text">Finished</span></div>
             <p class="description">of Type 1 Diabetes patients develop EPI</p>
         </div>
+        <div class="shadow-info"></div>
     </div>
 </div>
 <div class="container full-width bg-lightpink emaciated">
