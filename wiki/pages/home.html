@@ -51,7 +51,22 @@
     top: 50%;
     transform: translateY(-50%);
     left: 100px;
-    width: 40%
+    width: 40%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #5499aaff;
+    z-index: 2;
+}
+
+.read .shadow {
+    width: 40%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #1e7995ff;
+    position: relative;
+    top: 55%;
+    transform: translateY(-55%);
+    left: 95px;
 }
 
 .center {
@@ -99,6 +114,18 @@
     text-align: center;
 }
 
+.shadow-info {
+    top: 5px;
+    left: -5px;
+    background-color: #8B555E;
+    border-radius: 10px;
+    padding: 20px;
+    color: #8B555E;
+    height: 80%;
+    width: 100%;
+    z-index: 2;
+}
+
 .info-box {
     background-color: #EDF0DA;
     border-radius: 10px;
@@ -106,8 +133,9 @@
     text-align: center;
     font-weight: bold;
     color: #8B555E;
-    height: auto;
+    height: 80%;
     width: 100%;
+    z-index: 2;
 }
 
 .info-box .number {
@@ -309,31 +337,8 @@
     box-sizing: border-box;
 }
 
-.image-box .click-arrow {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    font-size: 72px;
-    color: black;
-    transition: transform 0.3s;
-}
-
 .arrow {
     font-size: 48px;
-}
-
-.flipped img {
-    opacity: 0.5;
-}
-
-.flipped .overlay {
-    opacity: 1;
-}
-
-.flipped .click-arrow {
-    transform: translateX(-50%) rotate(180deg);
 }
 
 .solutions {
@@ -359,17 +364,6 @@
     });
 </script>
 
-<script>
-    document.querySelectorAll('.click-arrow').forEach(arrow => {
-    arrow.addEventListener('click', function() {
-        const imageBox = this.parentElement;
-        imageBox.classList.toggle('flipped');
-        console.log(`Flipping ${imageBox.id}`); // Debugging log
-    });
-});
-
-</script>
-
 <div class="container logo-container bg-offwhite" id="logo-container">
     <img id="logo" src="https://static.igem.wiki/teams/5178/logo-animation.gif" alt="Logo Animation">
 </div>
@@ -382,6 +376,7 @@
         <p>The Bacillus Lipase Integrated Secretion System (BLISS) is a groundbreaking probiotic developed to address Exocrine Pancreatic Insufficiency (EPI). Through genetic engineering, <i>B. subtilis</i> has been modified to produce human pancreatic lipases, procolipases, amylases, and proteases, functioning as a pancreatic enzyme replacement therapy.</p>
         <a href="https://2024.igem.wiki/virginia/description" class="read-more-btn">Read More</a>
     </div>
+    <div class="shadow"></div>
 </div>
 <div class="container full-width bg-offwhite stats">
     <div class="stat-card">
@@ -399,6 +394,7 @@
             <div class="percentage-box"><span class="slam-text">Yet</span></div>
             <p class="description">of cystic fibrosis patients develop EPI</p>
         </div>
+        <div class="shadow-info"></div>
     </div>
     <div class="stat-card">
         <div class="info-box" data-target="NaN" data-format="plain">
@@ -445,7 +441,6 @@
         <div class="overlay" id="overlay1">
             <div class="description">Our solution begins with a plasmid construct which produces lipolytic enzymes in <i>B. subtilis</i>.</div>
         </div>
-        <div class="click-arrow">&#x1F893;</div>
     </div>
     <div class="arrow">&#x2B9E;</div>
     <div class="image-box" id="box2">
@@ -453,7 +448,6 @@
         <div class="overlay" id="overlay2">
             <div class="description">Our device will be placed into yogurt for storage and as a delicious treat.</div>
         </div>
-        <div class="click-arrow">&#x1F893;</div>
     </div>
     <div class="arrow">&#x2B9E;</div>
     <div class="image-box" id="box3">
@@ -461,7 +455,6 @@
         <div class="overlay" id="overlay3">
             <div class="description">This yogurt concoction, BLISS, is then consumed by patients with EPI.</div>
         </div>
-        <div class="click-arrow">&#x1F893;</div>
     </div>
     <div class="arrow">&#x2B9E;</div>
     <div class="image-box" id="box4">
@@ -469,7 +462,6 @@
         <div class="overlay" id="overlay4">
             <div class="description">The necessary enzymes are secreted when triggered by target molecules to enable normal functioning in the small intestine.</div>
         </div>
-        <div class="click-arrow">&#x1F893;</div>
     </div>
         </div>
 </div>
