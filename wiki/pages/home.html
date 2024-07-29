@@ -38,6 +38,7 @@
             visibility: hidden;
             opacity: 0;
             transition: visibility 0s, opacity 0.5s linear;
+            z-index: 5;
         }
         #team-container.visible {
             visibility: visible;
@@ -65,15 +66,7 @@
             left: -2px;
             top: 2px;
             color: #8B555E; /* Adjust the shadow color */
-            z-index: -1;
-        }
-        .shadow-text::after {
-            content: '2024';
-            position: absolute;
-            left: 2px;
-            top: -2px;
-            color: #EDF0DA; /* Adjust the shadow color */
-            z-index: -1;
+            z-index: 4;
         }
         .info-image {
             width: 80px; /* Adjust the image size */
