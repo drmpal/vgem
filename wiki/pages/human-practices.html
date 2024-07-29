@@ -33,23 +33,24 @@
         margin-right: auto;
     }
 
-    .expert-picture {
-        width: 16rem;
-        height: 16rem;/* Set the width you want for the circular image */ /* Set the height you want for the circular image */
-        border-radius: 50%;
-        overflow: hidden;
-        display: inline-block;
-        border: 0.3rem solid #8B555E;
+.expert-picture {
+    width: 16rem; /* Set the width you want for the circular image */
+    height: 16rem; /* Set the height you want for the circular image */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.3rem solid #8B555E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    }
+.expert-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .expert-picture img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
 
-        /* This centers the image within the container */
-    }
 
     html {
         scroll-behavior: smooth;
@@ -123,6 +124,17 @@
         text-align: center;
         margin-top: 3%;
     }
+    .quote-box{
+        display: flex;
+  justify-content: center;
+  align-items: center;
+    }
+    .name-credentials
+    {
+         display: flex;
+  flex-direction: column;
+
+    }
 /*    .vertical-container {*/
 /*        position: relative;*/
 /*    top: 50%;*/
@@ -172,37 +184,37 @@
                         <div class="row">
                             <h4 class="question-box">How does EPI complicate daily living for pancreatic cancer
                                 patients? </h4>
-                            <div class="row margin-top">
-                                <div class="col-md-4 text-center">
-                                    <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                            <div class="row d-flex align-items-center margin-top">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <div class="expert-picture">
                                         <img style="object-position: center 5%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/wadlow-ray-5166-pp-2-3-1.jpg" alt="Expert Picture">
                                     </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="row"><h3 class="mt-2 name-title">Dr. Raymond Wadlow, MD</h3></div>
-                                    <div class="row"><p><i>Credentials:</i> Dr. Wadlow is an Inova
+                                <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Dr. Raymond Wadlow, MD</h3>
+                                    <p><i>Credentials:</i> Dr. Wadlow is an Inova
                                         board-certified doctor in Medical Oncology and Internal Medicine. His clinical
                                         interests include Gastrointestinal (GI) Cancer, Pancreatic Cancer, Colorectal
                                         Cancer, Esophageal Cancer, and Liver Cancer. Dr. Wadlow helps run the PRECEDE
                                         study at Inova, which is a clinical trial that tries to improve early detection
                                         of pancreatic cancer for those with elevated risk, since it’s hard to diagnose
-                                        early on.</p></div>
+                                        early on.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row margin-top">
-                            <p><i>What we learned:</i> Two-thirds of pancreatic tumors are in the pancreas's head and
+                            <p>Two-thirds of pancreatic tumors are in the pancreas's head and
                                 body, where surgery often leads to EPI which worsens malnutrition in cancer patients.
                                 Dr. Wadlow also expressed concerns about the current medication's affordability, side
                                 effects, and limited effectiveness. Using his feedback, we aimed to develop
                                 computational models to ensure our treatment delivered the required dosages within a
                                 desired timescale. Additionally, noting that chemotherapy patients should avoid
                                 probiotics due to infection risks, we plan to develop a cell-free treatment as a future
-                                iteration of our project. </p>
+                                iteration of our project.</p>
                         </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
                                      class="img-fluid" alt="A quote from Dr. Wadlow reading, 'if [patients on chemotherapy] have uncontrolled exocrine insufficiency resulting in steatorrhea, it's further compromising their ability to maintain adequate nutritional stores and deal with the toxicities of chemotherapy.' ">
                             </div>
@@ -218,67 +230,68 @@
                             <h4 class="question-box">How does EPI complicate daily living for cystic fibrosis patients?</h4>
                         </div>
                         <!-- Picture and credentials for Dr. Froh -->
-                            <div class="row margin-top">
-                                <div class="col-md-4 text-center">
-                                    <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                            <div class="row d-flex align-items-center margin-top">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <div class="expert-picture">
                                         <img style="object-position: left 5%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/dr-froh-pic.png" alt="Expert Picture">
                                     </div>
                                 </div>
 <!--                                change the margin of this column to change spacing of words-->
-                                <div class="col-md-8 mt-2">
-                                    <div class="row"><h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Dr. Deborah Froh, MD</h3></div>
-                                    <div class="row"><p><i>Credentials:</i> Dr. Froh is a
+                                <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Dr. Deborah Froh, MD</h3>
+                                    <p><i>Credentials:</i> Dr. Froh is a
                                         board-certified doctor in Pediatric Medicine and Pediatric Pulmonology at the
                                         University of Virginia (UVA). She specializes in cystic fibrosis and other
                                         respiratory issues in children. She is the director of the UVA Cystic Fibrosis
                                         Center and leader of its clinical trials program, and serves as the Cystic
                                         Fibrosis Foundation’s state representative for newborn screening for cystic
-                                        fibrosis.</p></div>
+                                        fibrosis.</p>
                                 </div>
                             </div>
 <!--                        Picture and credentials for Dr. Lonabaugh-->
-                        <div class="row">
-                            <div class="col-md-8 mt-5">
-                                <div class="row"><h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Dr. Kevin Lonabaugh, PharmD, BCACP, BCPPS, AE-C</h3></div>
-                                <div class="row"><p><i>Credentials:</i> Dr. Lonabaugh
-                                        is an Ambulatory Clinical Pharmacist in the Pediatric and Adult Cystic Fibrosis
-                                        Center at the University of Virginia (UVA). He is dual board-certified in
-                                        pediatrics and ambulatory care. </p></div>
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-8 flex-column">
+                                <h3 class="name-title">Dr. Kevin Lonabaugh, PharmD, BCACP, BCPPS, AE-C</h3>
+                                <p class="text-center"><i>Credentials:</i> Dr. Lonabaugh is an Ambulatory Clinical
+                                    Pharmacist in the Pediatric and Adult Cystic Fibrosis Center at the University of
+                                    Virginia (UVA). He is dual board-certified in pediatrics and ambulatory care.</p>
                             </div>
-                            <div class="col-md-4 text-center">
-                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
-                                    <img style="object-position: center 5%;"src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/klonabaugh-headshot-9-2023.png" alt="Expert Picture">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="expert-picture">
+                                    <img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/klonabaugh-headshot-9-2023.png"
+                                         alt="Headshot of Kasey Lonabaugh">
                                 </div>
                             </div>
                         </div>
+
 <!--                        Picture and credentials for Ms. Wilburn-->
-                        <div class="row">
-                            <div class="col-md-4 text-center">
-                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
-                                    <img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/screenshot-2024-07-24-at-4-16-12-pm.png" alt="Expert Picture">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="expert-picture">
+                                    <img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/screenshot-2024-07-24-at-4-16-12-pm.png" alt="Headshot of Kasey Wilburn">
                                 </div>
                             </div>
-                            <div class="col-md-8 mt-5">
-                                <div class="row"><h3 class="mx-auto d-flex  align-items-center name-title">Kasey Wilburn, RD</h3></div>
-                                <div class="row"><p><i>Credentials:</i> Ms. Wilburn is a Registered
+                            <div class="col-md-8 flex-column">
+                                <h3 class="name-title text-center">Kasey Wilburn, RD</h3>
+                                <p><i>Credentials:</i> Ms. Wilburn is a Registered
                                     Dietitian at the University of Virginia (UVA) who specializes in genetic and
-                                    metabolic disorders, including adult cystic fibrosis. </p></div>
+                                    metabolic disorders, including adult cystic fibrosis. </p>
                             </div>
                         </div>
 <!--                        Video and quote-->
 
                         <div class="row margin-top">
-                            <p><i>What we learned:</i> Two-thirds of pancreatic tumors are in the pancreas's head and
-                                body, where surgery often leads to EPI which worsens malnutrition in cancer patients.
-                                Dr. Wadlow also expressed concerns about the current medication's affordability, side
-                                effects, and limited effectiveness. Using his feedback, we aimed to develop
-                                computational models to ensure our treatment delivered the required dosages within a
-                                desired timescale. Additionally, noting that chemotherapy patients should avoid
-                                probiotics due to infection risks, we plan to develop a cell-free treatment as a future
-                                iteration of our project. </p>
+                            <p>We learned that nearly all cystic fibrosis patients suffer from
+                                EPI, leading to early prescriptions of PERT medications to prevent malnutrition and lung
+                                weakness. Current PERT medication is burdensome, requiring up to 30 capsules daily.
+                                Thus, our solution should aim to minimize pill burden on patients, potentially through
+                                implementation of a switch/inducible mechanism. Additionally, it is crucial to ensure
+                                that our enzymes are protected from degradation in the stomach, similar to the
+                                protective coating on PERT capsules. Lastly, we aim to develop a dairy-free yogurt, as
+                                they highlighted our oversight that yogurt is not always vegan. </p>
                         </div>
                         <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
                                      class="img-fluid">
                             </div>
@@ -349,7 +362,7 @@
         </div>
         <div class="col">
             <div class="expert-picture">
-                <img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/irvin-marion.jpg" alt="Headshot of Marion Irvin"style="object-position: center 5%;">
+                <img src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/negron-sara.png" alt="Headshot of Sara Negron"style="object-position: center 5%;">
                  </div>
             <h3 class="name-title">Sara Negron, MS, RD, CSO</h3>
 
@@ -371,7 +384,7 @@
                                 Irvin, Caitlin Benda, Kelsey Coulter, and Carrie Desai are all registered dietitians who
                                 are board-certified in oncology nutrition or nutrition support at Inova Schar Cancer
                                 Institute.</p>
-                            <p><i>What we learned:</i> dietitians have more hands-on involvement in EPI treatment than other
+                            <p>Dietitians have more hands-on involvement in EPI treatment than other
                                 medical professionals. The dietitians emphasized the importance of probiotic variety in
                                 diets, and thus encouraged us to consider a yogurt formulation that contains many types
                                 of probiotic bacteria. Additionally, they informed us that an enteric coating for our
@@ -381,7 +394,7 @@
                                 they had many patients who are uncomfortable with current porcine-derived enzymes.</p>
                         </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
                                      class="img-fluid">
                             </div>
@@ -396,15 +409,14 @@
                      <div class="background-color-box">
                         <div class="row">
                             <h4 class="question-box">What is important to consider when developing a medication for EPI patients? </h4>
-                            <div class="row margin-top">
-                                <div class="col-md-4 text-center" style="display: flex; align-items: center;">
+                            <div class="row d-flex align-items-center margin-top">
+                                <div class="col-md-4 d-flex justify-content-center" style="display: flex; align-items: center;">
                                     <div class="expert-picture">
                                         <img style="object-position: center 5%;" src="picture.png" alt="Headshot of Dr. Ali">
                                     </div>
                                 </div>
-                                <div class="col-md-8" style="display: flex; align-items: center;">
-                                    <h3 class="name-title">Dr. Shahid Ali, MD</h3>
-
+                                <div class="col-md-8 flex-column" style="display: flex; align-items: center;">
+                                    <h3 class="name-title text-center">Dr. Shahid Ali, MD</h3>
                                     <p><i>Credentials:</i> Dr. Ali is a board-certified doctor in
                                         internal medicine and gastroenterology and currently works as a
                                         gastroenterologist at Memorial Herman hospital in Houston, Texas. He has
@@ -425,7 +437,7 @@
                                 not pose health risks. </p>
                         </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
                                      class="img-fluid" alt="A quote from Dr. Wadlow reading, 'if [patients on chemotherapy] have uncontrolled exocrine insufficiency resulting in steatorrhea, it's further compromising their ability to maintain adequate nutritional stores and deal with the toxicities of chemotherapy.' ">
                             </div>
@@ -440,19 +452,19 @@
                     <div class="background-color-box">
                         <div class="row">
                             <h4 class="question-box">What is important to consider when developing a medication for EPI patients? </h4>
-                            <div class="row margin-top">
-                                <div class="col-md-4 text-center">
-                                    <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                            <div class="row d-flex align-items-center margin-top">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <div class="expert-picture">
                                         <img style="object-position: center 5%;" src="picture.png" alt="Headshot of Dr. Strand">
                                     </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="row"><h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Dr. Strand, MD</h3></div>
-                                    <div class="row"><p><i>Credentials:</i> Dr. Strand is a board-certified
+                                <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Dr. Strand, MD</h3>
+                                    <p><i>Credentials:</i> Dr. Strand is a board-certified
                                         gastroenterologist and director of pancreatobiliary endoscopy at the University
                                         of Virginia. He serves as the director of the UVA National Pancreas Foundation
                                         (NPF) Chapter, and he has clinical interests relevant to our project in acute
-                                        and chronic pancreatitis and pancreatic cancer. </p></div>
+                                        and chronic pancreatitis and pancreatic cancer. </p>
                                 </div>
                             </div>
                         </div>
@@ -469,7 +481,7 @@
                                 patients. </p>
                         </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-wadlow-quote1.png"
                                      class="img-fluid" alt="A quote from Dr. Wadlow reading, 'if [patients on chemotherapy] have uncontrolled exocrine insufficiency resulting in steatorrhea, it's further compromising their ability to maintain adequate nutritional stores and deal with the toxicities of chemotherapy.' ">
                             </div>
@@ -487,20 +499,19 @@
                     <div class="background-color-box" style="background-color: rgba(194, 145, 152, 0.25);">
                         <div class="row">
                             <h4 class="question-box">Are there any flaws in our current design in terms of efficacy and safety and what changes would be necessary for clinical implementation?</h4>
-                            <div class="row margin-top">
-                            <div class="col-md-4 text-center">
-                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                            <div class="d-flex align-items-center margin-top">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="expert-picture">
                                     <img style="object-position: center 20%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/nnair01.jpeg" alt="Headshot of Dr. Nikhil Nair">
                                 </div>
                             </div>
-                            <div class="col-md-8">
-
-                                    <h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Dr. Nikhil Nair, PhD</h3>
-                                    <div class="row"><p><i>Credentials:</i> Dr. Nair is an Associate Professor of Chemical and Biological
+                            <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Dr. Nikhil Nair, PhD</h3>
+                                    <p><i>Credentials:</i> Dr. Nair is an Associate Professor of Chemical and Biological
                                         Engineering at Tufts University with interests in synthetic biology and systems
                                         bioengineering. He has experience teaching classes and conducting research in
                                         these areas, previously having engineered probiotics for therapeutic purposes.
-                                        Additionally, Dr. Nair served as a past iGEM advisor for Tufts University. </p></div>
+                                        Additionally, Dr. Nair served as a past iGEM advisor for Tufts University. </p>
 
                             </div>
                         </div>
@@ -517,7 +528,7 @@
                                 iteration of our project. </p>
                         </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-nair-quote.png"
                                      class="img-fluid">
                             </div>
@@ -537,18 +548,18 @@
                     <div class="background-color-box">
                         <div class="row">
                             <h4 class="question-box">Is there a lack of science resources in the homeschool community and how can we best develop a resource for this demographic?</h4>
-                            <div class="row margin-top">
-                                <div class="col-md-4 text-center">
-                                    <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                            <div class="row d-flex align-items-center margin-top">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <div class="expert-picture">
                                         <img style="object-position: center 5%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/eleanornicholson.png" alt="headshot of Mrs. Nicholson">
                                     </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="row"><h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Eleanor Nicholson, MA</h3></div>
-                                    <div class="row"><p><i>Credentials:</i> Mrs. Nicholson has a Master of Arts from UVA
+                                <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Eleanor Nicholson, MA</h3>
+                                    <p><i>Credentials:</i> Mrs. Nicholson has a Master of Arts from UVA
                                         in English. She is a homeschooling mother of 5, an award-winning novelist, and a
                                         Catholic literary scholar. Mrs. Nicholson also teaches high school literature
-                                        for a company called Homeschool Connections. </p></div>
+                                        for a company called Homeschool Connections. </p>
                                 </div>
                             </div>
                         </div>
@@ -566,7 +577,7 @@
                                 improvement.</p>
                         </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/mrs-nicholson-quote.png"
                                      class="img-fluid" alt="A quote from Mrs. Nicholson reading, 'If you take [...] something as specific as synthetic biology and really teach them - not only feed their interest but teach them how to go deep into a subject - they get really excited and then the subject becomes student driven which is amazing, which is always our goal.' ">
                             </div>
@@ -580,15 +591,15 @@
                       <div class="background-color-box">
                         <div class="row">
                             <h4 class="question-box">How can we improve our handbook and make it more accessible for homeschool education? </h4>
-                            <div class="row margin-top">
-                                <div class="col-md-4 text-center">
-                                    <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                            <div class="row d-flex align-items-center margin-top">
+                                <div class="col-md-4 d-flex justify-content-center">
+                                    <div class="expert-picture">
                                         <img style="object-position: center 5%;" src="picture.png" alt="headshot of Mrs. Nicholson">
                                     </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="row"><h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Sudhita Kasturi</h3></div>
-                                    <div class="row"><p><i>Credentials:</i>  </p></div>
+                                <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Sudhita Kasturi</h3>
+                                    <p><i>Credentials:</i>  </p>
                                 </div>
                             </div>
                         </div>
@@ -606,7 +617,7 @@
                                 improvement.</p>
                         </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/mrs-nicholson-quote.png"
                                      class="img-fluid" alt="A quote from Mrs. Nicholson reading, 'If you take [...] something as specific as synthetic biology and really teach them - not only feed their interest but teach them how to go deep into a subject - they get really excited and then the subject becomes student driven which is amazing, which is always our goal.' ">
                             </div>
@@ -625,21 +636,19 @@
                      <div class="background-color-box" style="background-color: rgba(194, 145, 152, 0.25);">
                         <div class="row">
                             <h4 class="question-box">Are there any flaws in our current design in terms of efficacy and safety and what changes would be necessary for clinical implementation?</h4>
-                            <div class="row margin-top">
-                            <div class="col-md-4 text-center">
-                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
+                            <div class="row d-flex align-items-center margin-top">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="expert-picture">
                                     <img style="object-position: center 20%;" src="https://static.igem.wiki/teams/5178/ihp/ihp-headshots/dr-barnes-picture.jpeg" alt="Headshot of Dr. Elizabeth Barnes">
                                 </div>
                             </div>
-                            <div class="col-md-8">
-
-                                    <h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Dr. Elizabeth Barnes, PhD </h3>
-                                    <div class="row"><p><i>Credentials:</i> Dr. Barnes is a professor and
+                            <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Dr. Elizabeth Barnes, PhD </h3>
+                                        <p><i>Credentials:</i> Dr. Barnes is a professor and
                                         director of diversity, equity, and inclusion at the University of Virginia with
                                         a PhD in philosophy. She teaches philosophy of health and healthcare, current
                                         issues in healthcare ethics, and health and well-being courses at UVA. She also
-                                        works on metaphysics, social philosophy, and feminist philosophy. </p></div>
-
+                                        works on metaphysics, social philosophy, and feminist philosophy. </p>
                             </div>
                         </div>
                         </div>
@@ -654,7 +663,7 @@
                   dairy-free or allergen free yogurt is our goal.</p>
           </div>
                          <div class="row margin-top">
-                            <div class="col-md-5">
+                            <div class="col-md-5 quote-box">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-barnes-quote.png" class="img-fluid" alt="A quote from Dr. Barnes reading 'If there was an alternative out there, you would allow people to sidestep that dilemma. That increases their autonomy because the more range of options we have, the more choices we have, the more we’re able to exercise our power of choice.' ">
                             </div>
                             <div class="col-md-7 d-flex align-items-center">
@@ -672,22 +681,37 @@
                      <div class="background-color-box">
                         <div class="row">
                             <h4 class="question-box">Modeling question 1</h4>
-                            <div class="row margin-top">
-                            <div class="col-md-4 text-center">
-                                <div class="expert-picture mx-auto d-flex justify-content-center align-items-center">
-                                    <img style="object-position: center 20%;" src="picture 1" alt="Headshot of Dr. Elizabeth Barnes">
+                            <div class="row d-flex align-items-center margin-top">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="expert-picture">
+                                    <img style="object-position: center 20%;" src="picture 1" alt="Headshot of Dr. Anders Nelson">
                                 </div>
                             </div>
-                            <div class="col-md-8">
-
-                                    <h3 class="mx-auto d-flex justify-content-center align-items-center name-title">Dr. Anders Nelson, PhD </h3>
-                                <div class="row"><p><i>Credentials:</i> Dr. Nelson is a Computational Biologist at
+                            <div class="col-md-8 flex-column">
+                                    <h3 class="name-title text-center">Dr. Anders Nelson, PhD </h3>
+                                    <p><i>Credentials:</i> Dr. Nelson is a Computational Biologist at
                                     AstraZeneca who received his doctorate in pharmacology from the UVA School of
                                     Medicine. He was on the Virginia iGEM team in 2016 where he spearheaded public
-                                    education and outreach. </p></div>
-
+                                    education and outreach. </p>
+                            </div>
+<!--                                -->
+                                <div class="col-md-8 flex-column">
+                                <h3 class="name-title text-center">Austin Rivera, Master's Student</h3>
+                                    <p><i>Credentials:</i> Austin Rivera is Senior Specialist in
+                                        Data Strategy & Innovation at Merck; he is also a current master’s student in
+                                        Data Science at UVA. He received his master's degree in management from the
+                                        Stephen M. Ross School of Business at the University of Michigan. A member of
+                                        the 2016 Virginia iGEM team, he was involved in wetlab research and created
+                                        educational synthetic biology videos. </p>
+                                </div>
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div class="expert-picture">
+                                    <img src=""
+                                         alt="Headshot of Austin Rivera">
+                                </div>
                             </div>
                         </div>
+
                         </div>
 
           <div class="row margin-top">
@@ -700,12 +724,14 @@
                   dairy-free or allergen free yogurt is our goal.</p>
           </div>
                          <div class="row margin-top">
+                             <div class="quote-box">
                             <div class="col-md-5">
                                 <img src="https://static.igem.wiki/teams/5178/ihp/quotes/dr-barnes-quote.png" class="img-fluid" alt="A quote from Dr. Barnes reading 'If there was an alternative out there, you would allow people to sidestep that dilemma. That increases their autonomy because the more range of options we have, the more choices we have, the more we’re able to exercise our power of choice.' ">
                             </div>
-                            <div class="col-md-7 d-flex align-items-center">
+                            <div class="col-md-7">
                                 <iframe title="Virginia: Dr. Barnes Interview Clip (2024) [English]" width="560" height="315" src="https://video.igem.org/videos/embed/77529128-61c9-473e-98f2-dfc1991f6dfa?warningTitle=0" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>                            </div>
                         </div>
+                             </div>
                     </div>
 
                 </section>

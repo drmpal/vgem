@@ -62,17 +62,41 @@
 
     .cell{
         position: relative;
-         max-width: 35rem;
-        width: 100%;
         height: auto;
-}
-    .cell img {
-     position: absolute;
 
-        width: 100%; /* Ensures the image scales with the cell */
-    height: auto;
+
+}
+    .cell img
+    {
+width:70rem;
+  margin: auto;
+  display: block;
+    }
+    .cell-stuff
+    {
+        text-align: center;
+    }
+
+    .cell-stuff img {
+        top:0;
+        left:0;
+        width: 70rem; /* Ensures the image scales with the cell */
+        height: auto;
+        /*opacity: 1;*/
+        /*transition-duration: 0.5s;*/
+        position:absolute;
+
+  margin: auto;
+  display: block;
+
 
     }
+    /*.cell img:hover*/
+    /*{*/
+    /*    opacity: 0.5;*/
+    /*    transition-duration: 0.5s;*/
+    /*}*/
+
 </style>
 <head></head>
 <html lang="en">
@@ -102,23 +126,45 @@
         <div class="col-md-10 paragraph-text">
             <!--            intro-->
             <div class="dropshadow-box">
-<h2 class="section-title">Dynamic Model with Glucose</h2>
-    <div class="cell" >
-        <img id="blank-cell" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-cell.png"style="z-index:0"/>
-        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/1.png" style="z-index:1"/>
-        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/2.png" style="z-index:2"/>
-        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/3.png" style="z-index:3"/>
-        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/4.png" style="z-index:4"/>
-        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/5.png" style="z-index:5"/>
-        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/6.png" style="z-index:6"/>
-        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/7.png" style="z-index:7"/>
-        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/8.png" style="z-index:8"/>
-        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/9.png" style="z-index:9"/>
-        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/10.png" style="z-index:10"/>
-        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/11.png" style="z-index:11"/>
-        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/12.png" style="z-index:12"/>
-        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/13.png" style="z-index:13"/>
-    </div>
+                <h2 class="section-title">Dynamic Model with Glucose</h2>
+
+                    <div class="cell">
+                        <img id="blank-cell"
+                             src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-cell.png"
+                             style="z-index:0; width:70rem"/>
+                        <div class="cell-stuff">
+                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/1.png"
+                             style="z-index:1"/>
+                        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/2.png"
+                             style="z-index:2"/>
+                        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/3.png"
+                             style="z-index:3"/>
+                        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/4.png"
+                             style="z-index:4"/>
+                        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/5.png"
+                             style="z-index:5"/>
+                        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/6.png"
+                             style="z-index:6"/>
+                        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/7.png"
+                             style="z-index:7"/>
+                        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/8.png"
+                             style="z-index:8"/>
+                        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/9.png"
+                             style="z-index:9"/>
+                        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/10.png"
+                             style="z-index:10"/>
+                        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/11.png"
+                             style="z-index:11"/>
+                        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/12.png"
+                             style="z-index:12"/>
+                        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/13.png"
+                             style="z-index:13"/>
+
+                   </div>
+                    </div>
+
+
+                <p>random text random text random text</p>
             </div>
         </div>
     </div>
@@ -126,4 +172,7 @@
 
 </body>
 </html>
+<script>
+
+</script>
 {% endblock %}
