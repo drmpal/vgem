@@ -52,7 +52,7 @@
         }
         .shadow-text {
             position: relative;
-            font-size: 20px;
+            font-size: 48px;
             color: #D88993;
             font-weight: bold;
         }
@@ -412,6 +412,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             document.getElementById('logo').src = 'https://static.igem.wiki/teams/5178/animation-final-frame.png';
+            document.getElementById('team-container').style.visibility = 'visible';
+            document.getElementById('team-container').classList.add('visible');
         }, 5000); // 5000 milliseconds = 5 seconds
     });
 </script>
