@@ -28,6 +28,56 @@
 }
 */
 
+#team-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            transform: rotate(-15deg);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        #team-container.visible .info-image {
+            animation: slam 0.5s forwards;
+        }
+        @keyframes slam {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .shadow-text {
+            position: relative;
+            font-size: 20px;
+            color: #D88993;
+            font-weight: bold;
+        }
+        .shadow-text::before {
+            content: '2024';
+            position: absolute;
+            left: -2px;
+            top: 2px;
+            color: #8B555E; /* Adjust the shadow color */
+            z-index: -1;
+        }
+        .shadow-text::after {
+            content: '2024';
+            position: absolute;
+            left: 2px;
+            top: -2px;
+            color: #EDF0DA; /* Adjust the shadow color */
+            z-index: -1;
+        }
+        .info-image {
+            width: 50px; /* Adjust the image size */
+            height: auto;
+            margin-right: 10px;
+        }
+
 .coiny {
     font-family: 'Coiny', sans-serif;
     font-size: 48px;
@@ -368,6 +418,10 @@
 
 <div class="container logo-container bg-offwhite" id="logo-container">
     <img id="logo" src="https://static.igem.wiki/teams/5178/logo-animation.gif" alt="Logo Animation">
+    <div id="team-container">
+        <img class="info-image" src="https://static.igem.wiki/teams/5178/vgem-logo1.png" alt="Info Image">
+        <div class="shadow-text">2024</div>
+    </div>
 </div>
 <div class="container full-width bg-yellow read">
     <div class="main-card">
