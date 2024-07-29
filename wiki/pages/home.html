@@ -39,16 +39,19 @@
             opacity: 0;
             transition: visibility 0s, opacity 0.5s linear;
         }
-        #team-container.visible .info-image {
-            animation: slam 0.5s forwards;
+        #team-container.visible {
+            visibility: visible;
+            opacity: 1;
         }
-        @keyframes slam {
-            0% {
-                transform: scale(0);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .info-image {
+            width: 80px; /* Adjust the image size */
+            height: auto;
+            margin-right: 10px;
+            transform: scale(0);
+            transition: transform 0.5s;
+        }
+        #team-container.visible .info-image {
+            transform: scale(1);
         }
         .shadow-text {
             position: relative;
@@ -412,8 +415,10 @@
     document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             document.getElementById('logo').src = 'https://static.igem.wiki/teams/5178/animation-final-frame.png';
-            document.getElementById('team-container').style.visibility = 'visible';
-            document.getElementById('team-container').classList.add('visible');
+            var teamContainer = document.getElementById('team-container');
+            teamContainer.style.visibility = 'visible';
+            teamContainer.style.opacity = '1';
+            teamContainer.classList.add('visible');
         }, 5000); // 5000 milliseconds = 5 seconds
     });
 </script>
