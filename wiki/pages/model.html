@@ -10,6 +10,7 @@
         padding: 2rem;
         background-color: #ffffff;
         box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+
     }
 
     .sticky {
@@ -60,43 +61,118 @@
         color: #8B555E;
     }
 
-    .cell{
-        position: relative;
-        height: auto;
 
+ .cell {
+            text-align: center;
+            width: 100%;
+            max-width: 70rem;
+            margin: 0 auto; /* Centers the cell container */
+            position: relative;
+        }
 
+        .cell img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cell-stuff img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: auto;
+        }
+ .overlay-box {
+            position: absolute;
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+            /*background-color: transparent;*/
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for testing */
+            border: 2px solid #fff; /* White border to make it visible */
+            /*above two for testing*/
+            cursor: pointer;
+        }
+
+        .overlay-box:hover {
+            background-color: rgba(0, 0, 0, 0.2); /* Optional for visibility */
+        }
+         .overlay-box:hover + .hover-text {
+        display: block;
+    }
+
+        .hover-text {
+            display: none;
+            margin-top: 20px;
+            color: #8B555E;
+            font-weight: bold;
+        }
+
+        .overlay-box:hover + .hover-text {
+            display: block;
+        }
+
+        /* Specific box positioning */
+        .box1 {
+            top: 100px;
+            left: 100px;
+             background-color: rgba(255, 0, 0, 0.5); /* Red color */
+            z-index: 20;
+        }
+
+        .box2 {
+            top: 200px;
+            left: 250px;
+             background-color: rgba(125, 187, 57, 0.5); /* Red color */
+            z-index: 21;
+        }
+
+        .box3 {
+            top: 300px;
+            left: 400px;
+             background-color: rgba(0, 157, 255, 0.5); /* Red color */
+            z-index: 22;
+        }
+        .box4 {
+            top: 500px;
+            left: 400px;
+             background-color: rgba(183, 0, 255, 0.5); /* Red color */
+            z-index: 22;
+        }
+
+        /* Specific text for each box */
+        .box1-text {
+            display: none;
+        }
+
+        .box2-text {
+            display: none;
+        }
+
+        .box3-text {
+            display: none;
+        }
+        .box4-text
+        {
+            display: none;
+        }
+
+       .box1:hover ~ .box1-text {
+    display: block;
 }
-    .cell img
-    {
-width:70rem;
-  margin: auto;
-  display: block;
-    }
-    .cell-stuff
-    {
-        text-align: center;
-    }
 
-    .cell-stuff img {
-        top:0;
-        left:0;
-        width: 70rem; /* Ensures the image scales with the cell */
-        height: auto;
-        /*opacity: 1;*/
-        /*transition-duration: 0.5s;*/
-        position:absolute;
+.box2:hover ~ .box2-text {
+    display: block;
+}
 
-  margin: auto;
-  display: block;
+.box3:hover ~ .box3-text {
+    display: block;
+}
 
-
-    }
-    /*.cell img:hover*/
-    /*{*/
-    /*    opacity: 0.5;*/
-    /*    transition-duration: 0.5s;*/
-    /*}*/
-
+.box4:hover ~ .box4-text {
+    display: block;
+}
 </style>
 <head></head>
 <html lang="en">
@@ -127,42 +203,66 @@ width:70rem;
             <!--            intro-->
             <div class="dropshadow-box">
                 <h2 class="section-title">Dynamic Model with Glucose</h2>
-
+            <div class="row" style="text-align: center">
                     <div class="cell">
                         <img id="blank-cell"
-                             src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-cell.png"
-                             style="z-index:0; width:70rem"/>
+                             src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-cell.png"
+                             style="z-index:0;"/>
                         <div class="cell-stuff">
-                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/1.png"
+                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
                              style="z-index:1"/>
-                        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/2.png"
+                        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"
                              style="z-index:2"/>
-                        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/3.png"
+                        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"
                              style="z-index:3"/>
-                        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/4.png"
+                        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"
                              style="z-index:4"/>
-                        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/5.png"
+                        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"
                              style="z-index:5"/>
-                        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/6.png"
+                        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"
                              style="z-index:6"/>
-                        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/7.png"
+                        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"
                              style="z-index:7"/>
-                        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/8.png"
+                        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png"
                              style="z-index:8"/>
-                        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/9.png"
+                        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png"
                              style="z-index:9"/>
-                        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/10.png"
+                        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png"
                              style="z-index:10"/>
-                        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/11.png"
+                        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png"
                              style="z-index:11"/>
-                        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/12.png"
+                        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png"
                              style="z-index:12"/>
-                        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/13.png"
+                        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png"
                              style="z-index:13"/>
 
                    </div>
                     </div>
+ <!-- Overlay Boxes -->
+        <div class="overlay-box box1" onmouseover="document.getElementById('step-1').style.opacity = '0.5';" onmouseout="document.getElementById('step-1').style.opacity = '1';"></div>
+        <div class="overlay-box box2" onmouseover="document.getElementById('step-2').style.opacity = '0.5';" onmouseout="document.getElementById('step-2').style.opacity = '1';"></div>
+        <div class="overlay-box box3" onmouseover="document.getElementById('step-3').style.opacity = '0.5';" onmouseout="document.getElementById('step-3').style.opacity = '1';"></div>
+                <div class="overlay-box box4" onmouseover="document.getElementById('step-4').style.opacity = '0.5';" onmouseout="document.getElementById('step-4').style.opacity = '1';"></div>
 
+
+ <!-- Overlay Boxes and Hover Texts -->
+                    <div>
+                        <div class="overlay-box box1"></div>
+                        <div class="hover-text box1-text">Text for Box 1</div>
+                    </div>
+                    <div>
+                        <div class="overlay-box box2"></div>
+                        <div class="hover-text box2-text">Text for Box 2</div>
+                    </div>
+                    <div>
+                        <div class="overlay-box box3"></div>
+                        <div class="hover-text box3-text">Text for Box 3</div>
+                    </div>
+                    <div>
+                        <div class="overlay-box box4"></div>
+                        <div class="hover-text box4-text">Text for Box 4</div>
+                    </div>
+            </div>
 
                 <p>random text random text random text</p>
             </div>
