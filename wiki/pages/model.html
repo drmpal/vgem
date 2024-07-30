@@ -110,10 +110,6 @@
             font-weight: bold;
         }
 
-        .overlay-box:hover + .hover-text {
-            display: block;
-        }
-
         /* Specific box positioning */
         .box1 {
             top: 100px;
@@ -142,49 +138,22 @@
             z-index: 22;
         }
 
-        /* Specific text for each box */
-        /*.box1-text {*/
-        /*    display: none;*/
-        /*}*/
-
-        /*.box2-text {*/
-        /*    display: none;*/
-        /*}*/
-
-        /*.box3-text {*/
-        /*    display: none;*/
-        /*}*/
-        /*.box4-text*/
-        /*{*/
-        /*    display: none;*/
-        /*}*/
-
-/*       .box1:hover ~ .box1-text {*/
-/*    display: block;*/
-/*}*/
-
-/*.box2:hover ~ .box2-text {*/
-/*    display: block;*/
-/*}*/
-
-/*.box3:hover ~ .box3-text {*/
-/*    display: block;*/
-/*}*/
-
-/*.box4:hover ~ .box4-text {*/
-/*    display: block;*/
-/*}*/
  .overlay-image {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+     width: auto; /* Maintain aspect ratio */
+    height: auto; /
+    max-width: 100%; /* Prevent stretching */
+    max-height: 100%; /* Prevent stretching */
+    object-fit: contain; /* Maintain aspect ratio */
+
             display: none; /* Hide by default */
             z-index: 15;
             filter: brightness(1.2) saturate(0.5); /* Increase brightness by 50% */
         }
-</style>saturate(0.5);
+</style>
 <head></head>
 <html lang="en">
 <body>
@@ -219,10 +188,12 @@
                         <img id="full-image"
                              src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-min.png"
                              style="z-index:0;"/>
+
                         <img id="overlay-image"
                                  class="overlay-image"
                                  src=""
                                  alt="Overlay"/>
+
 <!--                        <div class="cell-stuff">-->
 <!--                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"-->
 <!--                             style="z-index:1"/>-->
