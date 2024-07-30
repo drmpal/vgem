@@ -83,6 +83,7 @@
             transform: translateX(-50%);
             width: 100%;
             height: auto;
+            transition: opacity 0.5s ease-in-out;
         }
  .overlay-box {
             position: absolute;
@@ -142,38 +143,48 @@
         }
 
         /* Specific text for each box */
-        .box1-text {
-            display: none;
+        /*.box1-text {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*.box2-text {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*.box3-text {*/
+        /*    display: none;*/
+        /*}*/
+        /*.box4-text*/
+        /*{*/
+        /*    display: none;*/
+        /*}*/
+
+/*       .box1:hover ~ .box1-text {*/
+/*    display: block;*/
+/*}*/
+
+/*.box2:hover ~ .box2-text {*/
+/*    display: block;*/
+/*}*/
+
+/*.box3:hover ~ .box3-text {*/
+/*    display: block;*/
+/*}*/
+
+/*.box4:hover ~ .box4-text {*/
+/*    display: block;*/
+/*}*/
+ .overlay-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            display: none; /* Hide by default */
+            z-index: 15;
+            filter: brightness(1.2) saturate(0.5); /* Increase brightness by 50% */
         }
-
-        .box2-text {
-            display: none;
-        }
-
-        .box3-text {
-            display: none;
-        }
-        .box4-text
-        {
-            display: none;
-        }
-
-       .box1:hover ~ .box1-text {
-    display: block;
-}
-
-.box2:hover ~ .box2-text {
-    display: block;
-}
-
-.box3:hover ~ .box3-text {
-    display: block;
-}
-
-.box4:hover ~ .box4-text {
-    display: block;
-}
-</style>
+</style>saturate(0.5);
 <head></head>
 <html lang="en">
 <body>
@@ -205,63 +216,62 @@
                 <h2 class="section-title">Dynamic Model with Glucose</h2>
             <div class="row" style="text-align: center">
                     <div class="cell">
-                        <img id="blank-cell"
-                             src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-cell.png"
+                        <img id="full-image"
+                             src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-min.png"
                              style="z-index:0;"/>
-                        <div class="cell-stuff">
-                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
-                             style="z-index:1"/>
-                        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"
-                             style="z-index:2"/>
-                        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"
-                             style="z-index:3"/>
-                        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"
-                             style="z-index:4"/>
-                        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"
-                             style="z-index:5"/>
-                        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"
-                             style="z-index:6"/>
-                        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"
-                             style="z-index:7"/>
-                        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png"
-                             style="z-index:8"/>
-                        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png"
-                             style="z-index:9"/>
-                        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png"
-                             style="z-index:10"/>
-                        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png"
-                             style="z-index:11"/>
-                        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png"
-                             style="z-index:12"/>
-                        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png"
-                             style="z-index:13"/>
+                        <img id="overlay-image"
+                                 class="overlay-image"
+                                 src=""
+                                 alt="Overlay"/>
+<!--                        <div class="cell-stuff">-->
+<!--                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"-->
+<!--                             style="z-index:1"/>-->
+<!--                        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"-->
+<!--                             style="z-index:2"/>-->
+<!--                        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"-->
+<!--                             style="z-index:3"/>-->
+<!--                        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"-->
+<!--                             style="z-index:4"/>-->
+<!--                        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"-->
+<!--                             style="z-index:5"/>-->
+<!--                        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"-->
+<!--                             style="z-index:6"/>-->
+<!--                        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"-->
+<!--                             style="z-index:7"/>-->
+<!--                        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png"-->
+<!--                             style="z-index:8"/>-->
+<!--                        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png"-->
+<!--                             style="z-index:9"/>-->
+<!--                        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png"-->
+<!--                             style="z-index:10"/>-->
+<!--                        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png"-->
+<!--                             style="z-index:11"/>-->
+<!--                        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png"-->
+<!--                             style="z-index:12"/>-->
+<!--                        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png"-->
+<!--                             style="z-index:13"/>-->
 
-                   </div>
+<!--                   </div>-->
                     </div>
  <!-- Overlay Boxes -->
-        <div class="overlay-box box1" onmouseover="document.getElementById('step-1').style.opacity = '0.5';" onmouseout="document.getElementById('step-1').style.opacity = '1';"></div>
-        <div class="overlay-box box2" onmouseover="document.getElementById('step-2').style.opacity = '0.5';" onmouseout="document.getElementById('step-2').style.opacity = '1';"></div>
-        <div class="overlay-box box3" onmouseover="document.getElementById('step-3').style.opacity = '0.5';" onmouseout="document.getElementById('step-3').style.opacity = '1';"></div>
-                <div class="overlay-box box4" onmouseover="document.getElementById('step-4').style.opacity = '0.5';" onmouseout="document.getElementById('step-4').style.opacity = '1';"></div>
+<!--        <div class="overlay-box box1" onmouseover="document.getElementById('step-1').style.opacity = '0.5';" onmouseout="document.getElementById('step-1').style.opacity = '1';"></div>-->
+<!--        <div class="overlay-box box2" onmouseover="document.getElementById('step-2').style.opacity = '0.5';" onmouseout="document.getElementById('step-2').style.opacity = '1';"></div>-->
+<!--        <div class="overlay-box box3" onmouseover="document.getElementById('step-3').style.opacity = '0.5';" onmouseout="document.getElementById('step-3').style.opacity = '1';"></div>-->
+<!--                <div class="overlay-box box4" onmouseover="document.getElementById('step-4').style.opacity = '0.5';" onmouseout="document.getElementById('step-4').style.opacity = '1';"></div>-->
 
 
  <!-- Overlay Boxes and Hover Texts -->
-                    <div>
-                        <div class="overlay-box box1"></div>
+                     <div class="overlay-box box1" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"></div>
                         <div class="hover-text box1-text">Text for Box 1</div>
-                    </div>
-                    <div>
-                        <div class="overlay-box box2"></div>
+
+                        <div class="overlay-box box2" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"></div>
                         <div class="hover-text box2-text">Text for Box 2</div>
-                    </div>
-                    <div>
-                        <div class="overlay-box box3"></div>
+
+                        <div class="overlay-box box3" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"></div>
                         <div class="hover-text box3-text">Text for Box 3</div>
-                    </div>
-                    <div>
-                        <div class="overlay-box box4"></div>
+
+                        <div class="overlay-box box4" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"></div>
                         <div class="hover-text box4-text">Text for Box 4</div>
-                    </div>
             </div>
 
                 <p>random text random text random text</p>
@@ -271,8 +281,20 @@
 </div>
 
 </body>
-</html>
-<script>
 
-</script>
+</html>
+ <script>
+        document.querySelectorAll('.overlay-box').forEach(box => {
+            box.addEventListener('mouseover', function() {
+                const overlayImage = document.getElementById('overlay-image');
+                overlayImage.src = this.getAttribute('data-overlay-src');
+                overlayImage.style.display = 'block';
+            });
+
+            box.addEventListener('mouseout', function() {
+                const overlayImage = document.getElementById('overlay-image');
+                overlayImage.style.display = 'none';
+            });
+        });
+    </script>
 {% endblock %}
