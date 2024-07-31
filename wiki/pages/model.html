@@ -11,6 +11,7 @@
         background-color: #ffffff;
         box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
 
+
     }
 
     .sticky {
@@ -34,7 +35,8 @@
         margin-left: auto;
         margin-right: auto;
     }
-        html {
+
+    html {
         scroll-behavior: smooth;
     }
 
@@ -62,244 +64,277 @@
     }
 
 
- .cell {
-            text-align: center;
-            width: 100%;
-            max-width: 70rem;
-            margin: 0 auto; /* Centers the cell container */
-            position: relative;
-        }
+    .cell {
+        text-align: center;
+        width: 100%;
+        max-width: 70rem;
+        margin: 0 auto; /* Centers the cell container */
+        position: relative;
+    }
 
-        .cell img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .cell img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-        .cell-stuff img {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: auto;
-            transition: opacity 0.5s ease-in-out;
-        }
+    .cell-stuff img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto;
+        transition: opacity 0.5s ease-in-out;
+    }
 
-.overlay-box {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5); /* Default background color */
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
-    /* Default size */
+    .overlay-box {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5); /* Default background color */
+        transition: background-color 0.3s ease; /* Smooth transition for background color change */
+        /* Default size */
 
-    /* Adjust as needed */
-}
+        /* Adjust as needed */
+    }
 
-        /*.overlay-box:hover {*/
-        /*    background-color: rgba(0, 0, 0, 0.2); !* Optional for visibility *!*/
-        /*}*/
-/*       .overlay-box.box1:hover + .box1-text,*/
-/*.overlay-box.box2:hover + .box2-text,*/
-/*.overlay-box.box3:hover + .box3-text,*/
-/*.overlay-box.box4:hover + .box4-text {*/
-/*    display: block; !* Show the corresponding text when its overlay box is hovered *!*/
-/*}*/
+    /*.overlay-box:hover {*/
+    /*    background-color: rgba(0, 0, 0, 0.2); !* Optional for visibility *!*/
+    /*}*/
+    /*       .overlay-box.box1:hover + .box1-text,*/
+    /*.overlay-box.box2:hover + .box2-text,*/
+    /*.overlay-box.box3:hover + .box3-text,*/
+    /*.overlay-box.box4:hover + .box4-text {*/
+    /*    display: block; !* Show the corresponding text when its overlay box is hovered *!*/
+    /*}*/
 
-        .hover-text {
-          display: none;
-    font-size: 16px;
-    color: #333;
-        }
+    .hover-text {
+        display: none;
+        font-size: 16px;
+        color: #333;
+    }
 
-        /* Specific box positioning */
-.box1 {
-    position: absolute;
-    top: 0; /* 20% from the top of the .cell container */
-    left: 12%; /* 30% from the left of the .cell container */
-    width: 35%;
-    height: 20%;
-background-color: rgba(255, 255, 255, 0);    z-index: 20;
-}
-.box1a {
-    position: absolute;
-    top: 20%; /* 20% from the top of the .cell container */
-    left: 30%; /* 30% from the left of the .cell container */
-    width: 8%;
-    height: 10%;
-background-color: rgba(255, 255, 255, 0);    z-index: 20;
-}
+    /* Specific box positioning */
+    .box1 {
+        position: absolute;
+        top: 0; /* 20% from the top of the .cell container */
+        left: 12%; /* 30% from the left of the .cell container */
+        width: 35%;
+        height: 20%;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 20;
+    }
 
-.box2 {
-    position: absolute;
-    top: 20%; /* 20% from the top of the .cell container */
-    left: 15%; /* 30% from the left of the .cell container */
-    width: 15%;
-    height: 24%;
-background-color: rgba(255, 255, 255, 0);    z-index: 21;
-}
+    .box1a {
+        position: absolute;
+        top: 20%; /* 20% from the top of the .cell container */
+        left: 30%; /* 30% from the left of the .cell container */
+        width: 8%;
+        height: 10%;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 20;
+    }
 
-.box3 {
-    position: absolute;
-    top: 20%; /* 20% from the top of the .cell container */
-    left: 38%; /* 30% from the left of the .cell container */
-    width: 12%;
-    height: 18%;
-background-color: rgba(255, 255, 255, 0);    z-index: 22;
-}
+    .box2 {
+        position: absolute;
+        top: 20%; /* 20% from the top of the .cell container */
+        left: 15%; /* 30% from the left of the .cell container */
+        width: 15%;
+        height: 24%;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 21;
+    }
 
-.box4 {
-    position: absolute;
-    top: 38%; /* 20% from the top of the .cell container */
-    left: 33%; /* 30% from the left of the .cell container */
-    width: 11%;
-    height: 7%;
-background-color: rgba(255, 255, 255, 0);    z-index: 23;
-}
-.box5 {
-    position: absolute;
-    top: 45%; /* 20% from the top of the .cell container */
-    left: 31%; /* 30% from the left of the .cell container */
-    width: 11%;
-    height: 6%;
-background-color: rgba(255, 255, 255, 0);    z-index: 23;
-}
-.box5a
-{
-    position: absolute;
-    top: 30%; /* 20% from the top of the .cell container */
-    left: 30%; /* 30% from the left of the .cell container */
-    width: 3%;
-    height: 21%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box6
-{
-    position: absolute;
-    top: 44%; /* 20% from the top of the .cell container */
-    left: 25%; /* 30% from the left of the .cell container */
-    width: 5%;
-    height: 9%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box6a
-{
-    position: absolute;
-    top: 51%; /* 20% from the top of the .cell container */
-    left: 30%; /* 30% from the left of the .cell container */
-    width: 11%;
-    height: 2%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box7
-{
-    position: absolute;
-    top: 45%; /* 20% from the top of the .cell container */
-    left: 42%; /* 30% from the left of the .cell container */
-    width: 3%;
-    height: 11%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box7a
-{
-    position: absolute;
-    top: 54%; /* 20% from the top of the .cell container */
-    left: 15%; /* 30% from the left of the .cell container */
-    width: 30%;
-    height: 5%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box8
-{
-    position: absolute;
-    top: 59%; /* 20% from the top of the .cell container */
-    left: 15%; /* 30% from the left of the .cell container */
-    width: 33%;
-    height: 15%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box9
-{
-    position: absolute;
-    top: 18%; /* 20% from the top of the .cell container */
-    left: 52%; /* 30% from the left of the .cell container */
-    width: 33%;
-    height: 20%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box10
-{
-    position: absolute;
-    top: 38%; /* 20% from the top of the .cell container */
-    left: 52%; /* 30% from the left of the .cell container */
-    width: 22%;
-    height: 14%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box11
-{
-    position: absolute;
-    top: 38%; /* 20% from the top of the .cell container */
-    left: 74%; /* 30% from the left of the .cell container */
-    width: 10%;
-    height: 21.5%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box12
-{
-    position: absolute;
-    top: 59.5%; /* 20% from the top of the .cell container */
-    left: 70%; /* 30% from the left of the .cell container */
-    width: 14%;
-    height: 17%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
-.box13
-{
-    position: absolute;
-    top: 52%; /* 20% from the top of the .cell container */
-    left: 48%; /* 30% from the left of the .cell container */
-    width: 22%;
-    height: 47%;
-    background-color: rgba(130, 189, 181, 0); /* Purple color */
-    z-index: 23;
-}
+    .box3 {
+        position: absolute;
+        top: 20%; /* 20% from the top of the .cell container */
+        left: 38%; /* 30% from the left of the .cell container */
+        width: 12%;
+        height: 18%;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 22;
+    }
+
+    .box4 {
+        position: absolute;
+        top: 38%; /* 20% from the top of the .cell container */
+        left: 33%; /* 30% from the left of the .cell container */
+        width: 11%;
+        height: 7%;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 23;
+    }
+
+    .box5 {
+        position: absolute;
+        top: 45%; /* 20% from the top of the .cell container */
+        left: 31%; /* 30% from the left of the .cell container */
+        width: 11%;
+        height: 6%;
+        background-color: rgba(255, 255, 255, 0);
+        z-index: 23;
+    }
+
+    .box5a {
+        position: absolute;
+        top: 30%; /* 20% from the top of the .cell container */
+        left: 30%; /* 30% from the left of the .cell container */
+        width: 3%;
+        height: 21%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box6 {
+        position: absolute;
+        top: 44%; /* 20% from the top of the .cell container */
+        left: 25%; /* 30% from the left of the .cell container */
+        width: 5%;
+        height: 9%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box6a {
+        position: absolute;
+        top: 51%; /* 20% from the top of the .cell container */
+        left: 30%; /* 30% from the left of the .cell container */
+        width: 11%;
+        height: 2%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box7 {
+        position: absolute;
+        top: 45%; /* 20% from the top of the .cell container */
+        left: 42%; /* 30% from the left of the .cell container */
+        width: 3%;
+        height: 11%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box7a {
+        position: absolute;
+        top: 54%; /* 20% from the top of the .cell container */
+        left: 15%; /* 30% from the left of the .cell container */
+        width: 30%;
+        height: 5%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box8 {
+        position: absolute;
+        top: 59%; /* 20% from the top of the .cell container */
+        left: 15%; /* 30% from the left of the .cell container */
+        width: 33%;
+        height: 15%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box9 {
+        position: absolute;
+        top: 18%; /* 20% from the top of the .cell container */
+        left: 52%; /* 30% from the left of the .cell container */
+        width: 33%;
+        height: 20%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box10 {
+        position: absolute;
+        top: 38%; /* 20% from the top of the .cell container */
+        left: 52%; /* 30% from the left of the .cell container */
+        width: 22%;
+        height: 14%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box11 {
+        position: absolute;
+        top: 38%; /* 20% from the top of the .cell container */
+        left: 74%; /* 30% from the left of the .cell container */
+        width: 10%;
+        height: 21.5%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box12 {
+        position: absolute;
+        top: 59.5%; /* 20% from the top of the .cell container */
+        left: 70%; /* 30% from the left of the .cell container */
+        width: 14%;
+        height: 17%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
+
+    .box13 {
+        position: absolute;
+        top: 52%; /* 20% from the top of the .cell container */
+        left: 48%; /* 30% from the left of the .cell container */
+        width: 22%;
+        height: 47%;
+        background-color: rgba(130, 189, 181, 0); /* Purple color */
+        z-index: 23;
+    }
 
 
+    /* Overlay effect on hover */
 
-/* Overlay effect on hover */
 
+    .overlay-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto; /* Maintain aspect ratio */
+        height: auto;
+    / max-width: 100 %; /* Prevent stretching */
+        max-height: 100%; /* Prevent stretching */
+        object-fit: contain; /* Maintain aspect ratio */
 
- .overlay-image {
-            position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-     width: auto; /* Maintain aspect ratio */
-    height: auto; /
-    max-width: 100%; /* Prevent stretching */
-    max-height: 100%; /* Prevent stretching */
-    object-fit: contain; /* Maintain aspect ratio */
+        display: none; /* Hide by default */
+        z-index: 15;
+        /*filter: brightness(1.2) saturate(0.5); !* Increase brightness by 50% *!*/
+    }
 
-            display: none; /* Hide by default */
-            z-index: 15;
-            /*filter: brightness(1.2) saturate(0.5); !* Increase brightness by 50% *!*/
-        }
- .hover-info {
-    font-size: 16px;
-    color: #333;
-    text-align: center;
-    margin-bottom: 10px;
-}
+    .hover-info {
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #interactive-section,
+    #full-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: none; /* Hide both sections by default */
+    }
+
+    .diagram-container {
+        position: relative;
+    }
+
+    #interactive-section.active,
+    #full-section.active {
+        display: block; /* Show only the active section */
+    }
+
+    #interactive-section img,
+    #full-section img {
+        width: 100%; /* Ensure images scale with the container */
+        height: auto; /* Maintain aspect ratio */
+    }
 </style>
 <head></head>
 <html lang="en">
@@ -327,129 +362,138 @@ background-color: rgba(255, 255, 255, 0);    z-index: 23;
             <div class="dropshadow-box">
                 <h2 class="section-title">Dynamic Model with Glucose</h2>
 
-            <div class="row" style="text-align: center">
-                <div class="hover-info">Hover over each step to learn more!</div>
+                <div class="row" style="text-align: center">
 
-<!--<div class="hover-text-container">-->
-<!--        <div id="box1-text" class="hover-text">Text for Box 1</div>-->
-<!--            <div id="box1a-text" class="hover-text">Text for Box 1</div>-->
+                        <div id="interactive-section" class="active">
+                            <div class="hover-info">Hover over each step to learn more!</div>
 
-<!--        <div id="box2-text" class="hover-text">Text for Box 2</div>-->
-<!--        <div id="box3-text" class="hover-text">Text for Box 3</div>-->
-<!--        <div id="box4-text" class="hover-text">Text for Box 4</div>-->
-<!--        <div id="box5-text" class="hover-text">Text for Box 5</div>-->
-<!--    <div id="box6-text" class="hover-text">Text for Box 6</div>-->
-<!--        <div id="box6a-text" class="hover-text">Text for Box 6</div>-->
+                            <div class="cell">
 
-<!--    <div id="box7-text" class="hover-text">Text for Box 7</div>-->
-<!--        <div id="box7a-text" class="hover-text">Text for Box 7</div>-->
+                                <img id="full-image"
+                                     src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-more-transparent-min.png"
+                                     style="z-index:0;"/>
 
-<!--    <div id="box8-text" class="hover-text">Text for Box 8</div>-->
-<!--    <div id="box9-text" class="hover-text">Text for Box 9</div>-->
-<!--    <div id="box10-text" class="hover-text">Text for Box 10</div>-->
-<!--    <div id="box11-text" class="hover-text">Text for Box 11</div>-->
-<!--    <div id="box12-text" class="hover-text">Text for Box 12</div>-->
-<!--    <div id="box13-text" class="hover-text">Text for Box 13</div>-->
+                                <img id="overlay-image"
+                                     class="overlay-image"
+                                     src=""
+                                     alt=""/>
+                                <!--                hover boxes-->
+                                <div class="overlay-box box1"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
+                                     data-hover-text="1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). "></div>
 
-<!--    </div>-->
-                        <div class="row">
-                    <div class="cell">
+                                <div class="overlay-box box1a"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
+                                     data-hover-text="1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). "></div>
 
-                        <img id="full-image"
-                             src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-more-transparent-min.png"
-                             style="z-index:0;"/>
+                                <div class="overlay-box box2"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"
+                                     data-hover-text="2, Through a simplification of two enzyme-catalyzed reactions of the glycolysis pathway, G6P becomes fructose 1,6-bisphosphate (FBP). The downstream processes of metabolism are not pictured."></div>
+                                <div class="overlay-box box3"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"
+                                     data-hover-text="3, HPr becomes phosphorylated at Ser46 (HPrSerP) by HPrK/P through the donation of a phosphate group from ATP (when ATP levels are high)."></div>
+                                <div class="overlay-box box4"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"
+                                     data-hover-text="4, HPrSerP binds to carbon catabolite protein A (CcpA)."></div>
+                                <div class="overlay-box box5"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"
+                                     data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
+                                <div class="overlay-box box5a"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"
+                                     data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
 
-                        <img id="overlay-image"
-                                 class="overlay-image"
-                                 src=""
-                                 alt=""/>
-                       <!--                hover boxes-->
-                        <div class="overlay-box box1"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
-                             data-hover-text="1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). "></div>
+                                <div class="overlay-box box6"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"
+                                     data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
+                                <div class="overlay-box box6a"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"
+                                     data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
+                                <div class="overlay-box box7"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"
+                                     data-hover-text="7, The HPrSerP-CcpA complexes bind at catabolite repression elements (cre sites) located in the promoter regions of DNA to inhibit transcription. "></div>
+                                <div class="overlay-box box7a"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"
+                                     data-hover-text="7, The HPrSerP-CcpA complexes bind at catabolite repression elements (cre sites) located in the promoter regions of DNA to inhibit transcription. "></div>
+                                <div class="overlay-box box8"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png"
+                                     data-hover-text="8, In BLISS, the binding of cre sites prevents the lacI gene from being transcribed."></div>
+                                <div class="overlay-box box9"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png"
+                                     data-hover-text="9, GlcT is activated and binds in dimers at the ptsG RAT sequence of the transcript of the T7RNAP gene, unfolding the terminator hairpin and allowing for translation of the mRNA. "></div>
+                                <div class="overlay-box box10"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png"
+                                     data-hover-text="10, The T7RNAP mRNA is translated into T7 RNA polymerase."></div>
+                                <div class="overlay-box box11"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png"
+                                     data-hover-text="11, T7 RNA polymerase binds at the promoter regions of CLPS and PNLIP and transcribes the two genes."></div>
+                                <div class="overlay-box box12"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png"
+                                     data-hover-text="12, The two transcripts are translated into colipase and lipase."></div>
+                                <div class="overlay-box box13"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png"
+                                     data-hover-text="13, The signal recognition particles (SRP) attached to colipase and lipase target the two proteins for extracellular secretion by B. subtilis. These SRPs will be cleaved from the final exported protein. "></div>
 
-                        <div class="overlay-box box1a"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png" data-hover-text="1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). "></div>
+                            </div>
 
-                        <div class="overlay-box box2"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png" data-hover-text="2, Through a simplification of two enzyme-catalyzed reactions of the glycolysis pathway, G6P becomes fructose 1,6-bisphosphate (FBP). The downstream processes of metabolism are not pictured."></div>
-                        <div class="overlay-box box3"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png" data-hover-text="3, HPr becomes phosphorylated at Ser46 (HPrSerP) by HPrK/P through the donation of a phosphate group from ATP (when ATP levels are high)."></div>
-                        <div class="overlay-box box4"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png" data-hover-text="4, HPrSerP binds to carbon catabolite protein A (CcpA)."></div>
-                        <div class="overlay-box box5"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png" data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
-                        <div class="overlay-box box5a"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png" data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
+                        </div>
+                        <div id="full-section">
+                            <img src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-min.png"
+                                 alt="Full Diagram"/>
+                            <p>Your detailed explanation paragraph goes here. This section is visible when toggled.</p>
+                        </div>
 
-                        <div class="overlay-box box6"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png" data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
-                        <div class="overlay-box box6a"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png" data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
-                        <div class="overlay-box box7"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png" data-hover-text="7, The HPrSerP-CcpA complexes bind at catabolite repression elements (cre sites) located in the promoter regions of DNA to inhibit transcription. "></div>
-                        <div class="overlay-box box7a"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png" data-hover-text="7, The HPrSerP-CcpA complexes bind at catabolite repression elements (cre sites) located in the promoter regions of DNA to inhibit transcription. "></div>
-                        <div class="overlay-box box8"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png" data-hover-text="8, In BLISS, the binding of cre sites prevents the lacI gene from being transcribed."></div>
-                        <div class="overlay-box box9"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png" data-hover-text="9, GlcT is activated and binds in dimers at the ptsG RAT sequence of the transcript of the T7RNAP gene, unfolding the terminator hairpin and allowing for translation of the mRNA. "></div>
-                        <div class="overlay-box box10"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png" data-hover-text="10, The T7RNAP mRNA is translated into T7 RNA polymerase."></div>
-                        <div class="overlay-box box11"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png" data-hover-text="11, T7 RNA polymerase binds at the promoter regions of CLPS and PNLIP and transcribes the two genes."></div>
-                        <div class="overlay-box box12"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png" data-hover-text="12, The two transcripts are translated into colipase and lipase."></div>
-                        <div class="overlay-box box13"
-                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png" data-hover-text="13, The signal recognition particles (SRP) attached to colipase and lipase target the two proteins for extracellular secretion by B. subtilis. These SRPs will be cleaved from the final exported protein. "></div>
-
-
-
-
-
-
-
-
-
-</div>
-                    </div>
-
-                    </div>
-
-                <p>random text random text random text</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+
 </body>
 
 </html>
- <script>
-document.querySelectorAll('.overlay-box').forEach(box => {
-    box.addEventListener('mouseover', function() {
-        const overlayImage = document.getElementById('overlay-image');
-        const hoverInfo = document.querySelector('.hover-info');
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.getElementById('toggle-button');
+        const interactiveSection = document.getElementById('interactive-section');
+        const fullSection = document.getElementById('full-section');
 
-        overlayImage.src = this.getAttribute('data-overlay-src');
-        overlayImage.style.display = 'block';
-        overlayImage.style.opacity = 1;
+        toggleButton.addEventListener('click', () => {
+            if (interactiveSection.classList.contains('active')) {
+                interactiveSection.classList.remove('active');
+                fullSection.classList.add('active');
+                toggleButton.textContent = 'Show Interactive';
+            } else {
+                fullSection.classList.remove('active');
+                interactiveSection.classList.add('active');
+                toggleButton.textContent = 'Show full diagram';
+            }
+        });
 
-        // Change the text to the specific hover text
-        hoverInfo.textContent = this.getAttribute('data-hover-text');
+        document.querySelectorAll('.overlay-box').forEach(box => {
+            box.addEventListener('mouseover', function () {
+                const overlayImage = document.getElementById('overlay-image');
+                const hoverInfo = document.querySelector('.hover-info');
+
+                overlayImage.src = this.getAttribute('data-overlay-src');
+                overlayImage.style.display = 'block';
+                overlayImage.style.opacity = 1;
+
+                // Change the text to the specific hover text
+                hoverInfo.textContent = this.getAttribute('data-hover-text');
+            });
+
+            box.addEventListener('mouseout', function () {
+                const overlayImage = document.getElementById('overlay-image');
+                const hoverInfo = document.querySelector('.hover-info');
+
+                overlayImage.style.opacity = 0;
+
+                // Revert the text back to the default
+                hoverInfo.textContent = "Hover over each step to learn more!";
+            });
+        });
     });
 
-    box.addEventListener('mouseout', function() {
-        const overlayImage = document.getElementById('overlay-image');
-        const hoverInfo = document.querySelector('.hover-info');
-
-        overlayImage.style.opacity = 0;
-
-        // Revert the text back to the default
-        hoverInfo.textContent = "Hover over each step to learn more!";
-    });
-});
-
-
-    </script>
+</script>
 {% endblock %}
