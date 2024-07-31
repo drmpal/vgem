@@ -295,7 +295,7 @@
         transform: translate(-50%, -50%);
         width: auto; /* Maintain aspect ratio */
         height: auto;
-    / max-width: 100 %; /* Prevent stretching */
+     max-width: 100%; /* Prevent stretching */
         max-height: 100%; /* Prevent stretching */
         object-fit: contain; /* Maintain aspect ratio */
 
@@ -313,11 +313,7 @@
 
     #interactive-section,
     #full-section {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
+
         display: none; /* Hide both sections by default */
     }
 
@@ -335,6 +331,29 @@
         width: 100%; /* Ensure images scale with the container */
         height: auto; /* Maintain aspect ratio */
     }
+    .read-more-btn-sm {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    height: auto;
+    font-size: 14px;
+    background-color: #8B555E;
+    color: #EDF0DA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.1s ease-in-out;
+}
+.read-more-btn-sm:hover {
+    color: #EDF0DA; /* Ensure the text color stays white on hover */
+    background-color: #D88993
+}
+
+.read-more-btn-sm:active {
+    transform: scale(0.95);
+}
+
 </style>
 <head></head>
 <html lang="en">
@@ -361,11 +380,10 @@
             <!--            intro-->
             <div class="dropshadow-box">
                 <h2 class="section-title">Dynamic Model with Glucose</h2>
+                                        <button id="toggle-button" class="read-more-btn-sm" >Show full diagram</button>
 
                 <div class="row" style="text-align: center">
-
                         <div id="interactive-section" class="active">
-                            <div class="hover-info">Hover over each step to learn more!</div>
 
                             <div class="cell">
 
@@ -434,12 +452,36 @@
                                      data-hover-text="13, The signal recognition particles (SRP) attached to colipase and lipase target the two proteins for extracellular secretion by B. subtilis. These SRPs will be cleaved from the final exported protein. "></div>
 
                             </div>
+                                                        <div class="hover-info">Hover over each step to learn more!</div>
+
 
                         </div>
+
                         <div id="full-section">
+
                             <img src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-min.png"
                                  alt="Full Diagram"/>
-                            <p>Your detailed explanation paragraph goes here. This section is visible when toggled.</p>
+                            <p>Figure 1. Complete dynamic diagram of BLISS when glucose is present. 1, Glucose enters
+                                the cell via the EIIGlc transmembrane protein and becomes phosphorylated into
+                                glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier
+                                protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). 2, Through a
+                                simplification of two enzyme-catalyzed reactions of the glycolysis pathway, G6P becomes
+                                fructose 1,6-bisphosphate (FBP). The downstream processes of metabolism are not
+                                pictured. 3, HPr becomes phosphorylated at Ser46 (HPrSerP) by HPrK/P through the
+                                donation of a phosphate group from ATP (when ATP levels are high). 4, HPrSerP binds to
+                                carbon catabolite protein A (CcpA). 5–6, Two intermediate metabolites of glycolysis, G6P
+                                and FBP, increase the binding affinity of HPrSerP to CcpA. 7, The HPrSerP-CcpA complexes
+                                bind at catabolite repression elements (cre sites) located in the promoter regions of
+                                DNA to inhibit transcription. 8, In BLISS, the binding of cre sites prevents the lacI
+                                gene from being transcribed. 9, GlcT is activated and binds in dimers at the ptsG RAT
+                                sequence of the transcript of the T7RNAP gene, unfolding the terminator hairpin and
+                                allowing for translation of the mRNA. 10, The T7RNAP mRNA is translated into T7 RNA
+                                polymerase. 11, T7 RNA polymerase binds at the promoter regions of CLPS and PNLIP and
+                                transcribes the two genes. 12, The two transcripts are translated into colipase and
+                                lipase. 13, The signal recognition particles (SRP) attached to colipase and lipase
+                                target the two proteins for extracellular secretion by B. subtilis. These SRPs will be
+                                cleaved from the final exported protein. This figure was created with
+                                BioRender.com. </p>
                         </div>
 
                 </div>
@@ -462,7 +504,7 @@
             if (interactiveSection.classList.contains('active')) {
                 interactiveSection.classList.remove('active');
                 fullSection.classList.add('active');
-                toggleButton.textContent = 'Show Interactive';
+                toggleButton.textContent = 'Show interactive diagram';
             } else {
                 fullSection.classList.remove('active');
                 interactiveSection.classList.add('active');
