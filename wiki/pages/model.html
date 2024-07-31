@@ -1,41 +1,178 @@
 {% extends "layout.html" %}
-  
+
 {% block title %}Model{% endblock %}
 {% block lead %}Explain your model's assumptions, data, parameters, and results in a way that anyone could understand.{% endblock %}
 
 {% block page_content %}
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Model</h4>
-      <p>Models and computer simulations can help us understand the function and operation of BioBrick Parts and Devices. Simulation and modeling are critical engineering skills that can contribute to project design or provide a better understanding of the modeled process. These processes are even more useful and/or informative when real world data are included in the model. This award is for teams who build a model of their system and use it to inform system design or simulate expected behavior before, or in conjunction with, experiments in the wetlab.</p>
-      <p>To compete for the Best Model prize, select the prize on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a> and describe your work on this page.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2024 Awards Page</a> for more information.</p>
+<style>
+    .dropshadow-box {
+        padding: 2rem;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
+    }
+
+    .sticky {
+        position: sticky;
+        top: 90px;
+    }
+
+    section {
+        padding-top: 90px;
+        margin-top: -90px;
+        padding-bottom: 20px;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-top: 3rem;
+        text-decoration: underline;
+        text-decoration-color: #D88993;
+        text-underline-offset: 15px;
+        padding-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+        html {
+        scroll-behavior: smooth;
+    }
+
+    .section-nav li.active > a {
+        color: #8B555E;
+        font-weight: 500;
+    }
+
+    .section-nav {
+        padding-left: 0;
+        border-left: 1px solid #D88993;
+    }
+
+    .section-nav a {
+        text-decoration: none;
+        display: block;
+        padding: .125rem 0;
+        color: #D88993;
+        transition: all 400ms ease-in-out;
+    }
+
+    .section-nav a:hover,
+    .section-nav a:focus {
+        color: #8B555E;
+    }
+
+    .cell{
+        position: relative;
+        height: auto;
+
+
+}
+    .cell img
+    {
+width:70rem;
+  margin: auto;
+  display: block;
+    }
+    .cell-stuff
+    {
+        text-align: center;
+    }
+
+    .cell-stuff img {
+        top:0;
+        left:0;
+        width: 70rem; /* Ensures the image scales with the cell */
+        height: auto;
+        /*opacity: 1;*/
+        /*transition-duration: 0.5s;*/
+        position:absolute;
+
+  margin: auto;
+  display: block;
+
+
+    }
+    /*.cell img:hover*/
+    /*{*/
+    /*    opacity: 0.5;*/
+    /*    transition-duration: 0.5s;*/
+    /*}*/
+
+</style>
+<head></head>
+<html lang="en">
+<body>
+<div class="container">
+    <div class="row">
+        <!--        nav bar-->
+        <div class="col-md-2">
+            <div class="sticky">
+                <br>
+                <nav class="section-nav" role="navigation">
+                    <ul style="list-style: none; margin-left: 0px;">
+                        <div class="margin-left: 1rem; margin-bottom: 1rem;">
+                            <li style="margin-bottom: 5px"><a href="#medical-professionals">Medical Professionals</a>
+                            </li>
+                            <li style="margin-bottom: 5px"><a href="#synthetic-biologists">Synthetic Biologists</a></li>
+                            <li style="margin-bottom: 5px"><a href="#homeschooling-experts">Homeschooling Experts</a>
+                            </li>
+                            <li style="margin-bottom: 5px"><a href="#ethics-expert">Ethics Expert</a></li>
+                            <li style="margin-bottom: 5px"><a href="#modeling-experts">Modeling Experts</a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--        content starts here-->
+        <div class="col-md-10 paragraph-text">
+            <!--            intro-->
+            <div class="dropshadow-box">
+                <h2 class="section-title">Dynamic Model with Glucose</h2>
+
+                    <div class="cell">
+                        <img id="blank-cell"
+                             src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-cell.png"
+                             style="z-index:0; width:70rem"/>
+                        <div class="cell-stuff">
+                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/1.png"
+                             style="z-index:1"/>
+                        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/2.png"
+                             style="z-index:2"/>
+                        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/3.png"
+                             style="z-index:3"/>
+                        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/4.png"
+                             style="z-index:4"/>
+                        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/5.png"
+                             style="z-index:5"/>
+                        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/6.png"
+                             style="z-index:6"/>
+                        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/7.png"
+                             style="z-index:7"/>
+                        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/8.png"
+                             style="z-index:8"/>
+                        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/9.png"
+                             style="z-index:9"/>
+                        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/10.png"
+                             style="z-index:10"/>
+                        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/11.png"
+                             style="z-index:11"/>
+                        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/12.png"
+                             style="z-index:12"/>
+                        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/13.png"
+                             style="z-index:13"/>
+
+                   </div>
+                    </div>
+
+
+                <p>random text random text random text</p>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>Mathematical models and computer simulations provide a great way to describe the function and operation of Parts and Devices. Synthetic Biology is an engineering discipline, and part of engineering is simulation and modeling to determine the behavior of your design before you build it. Designing and simulating can be iterated many times in a computer before moving to the lab.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="http://2018.igem.org/Team:GreatBay_China/Model">2018 GreatBay China</a></li>
-      <li><a href="http://2018.igem.org/Team:Leiden/Model">2018 Leiden</a></li>
-      <li><a href="https://2019.igem.org/Team:IISER_Kolkata/Model">2019 IISER Kolkata</a></li>
-      <li><a href="https://2019.igem.org/Team:Exeter/Model">2019 Exeter</a></li>
-      <li><a href="https://2019.igem.org/Team:Mingdao/Model">2019 Mingdao</a></li>
-      <li><a href="https://2020.igem.org/Team:Harvard/Model">2020 Harvard</a></li>
-      <li><a href="https://2020.igem.org/Team:Leiden/Model">2020 Leiden</a></li>
-    </ul>
-  </div>
-</div>
+</body>
+</html>
+<script>
 
+</script>
 {% endblock %}
