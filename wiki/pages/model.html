@@ -98,19 +98,17 @@
         /*.overlay-box:hover {*/
         /*    background-color: rgba(0, 0, 0, 0.2); !* Optional for visibility *!*/
         /*}*/
-         .overlay-box:hover + .hover-text {
-        display: block;
-    }
+/*       .overlay-box.box1:hover + .box1-text,*/
+/*.overlay-box.box2:hover + .box2-text,*/
+/*.overlay-box.box3:hover + .box3-text,*/
+/*.overlay-box.box4:hover + .box4-text {*/
+/*    display: block; !* Show the corresponding text when its overlay box is hovered *!*/
+/*}*/
 
         .hover-text {
-             position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    background-color: rgba(255, 255, 255, 0); /* Optional for visibility */
-    padding: 5px;
-    z-index: 30;
+          display: none;
+    font-size: 16px;
+    color: #333;
         }
 
         /* Specific box positioning */
@@ -296,6 +294,12 @@ background-color: rgba(255, 255, 255, 0);    z-index: 23;
             z-index: 15;
             /*filter: brightness(1.2) saturate(0.5); !* Increase brightness by 50% *!*/
         }
+ .hover-info {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
 </style>
 <head></head>
 <html lang="en">
@@ -326,12 +330,35 @@ background-color: rgba(255, 255, 255, 0);    z-index: 23;
             <!--            intro-->
             <div class="dropshadow-box">
                 <h2 class="section-title">Dynamic Model with Glucose</h2>
+
             <div class="row" style="text-align: center">
+                <div class="hover-info">Hover on the image</div>
+
+<!--<div class="hover-text-container">-->
+<!--        <div id="box1-text" class="hover-text">Text for Box 1</div>-->
+<!--            <div id="box1a-text" class="hover-text">Text for Box 1</div>-->
+
+<!--        <div id="box2-text" class="hover-text">Text for Box 2</div>-->
+<!--        <div id="box3-text" class="hover-text">Text for Box 3</div>-->
+<!--        <div id="box4-text" class="hover-text">Text for Box 4</div>-->
+<!--        <div id="box5-text" class="hover-text">Text for Box 5</div>-->
+<!--    <div id="box6-text" class="hover-text">Text for Box 6</div>-->
+<!--        <div id="box6a-text" class="hover-text">Text for Box 6</div>-->
+
+<!--    <div id="box7-text" class="hover-text">Text for Box 7</div>-->
+<!--        <div id="box7a-text" class="hover-text">Text for Box 7</div>-->
+
+<!--    <div id="box8-text" class="hover-text">Text for Box 8</div>-->
+<!--    <div id="box9-text" class="hover-text">Text for Box 9</div>-->
+<!--    <div id="box10-text" class="hover-text">Text for Box 10</div>-->
+<!--    <div id="box11-text" class="hover-text">Text for Box 11</div>-->
+<!--    <div id="box12-text" class="hover-text">Text for Box 12</div>-->
+<!--    <div id="box13-text" class="hover-text">Text for Box 13</div>-->
+
+<!--    </div>-->
+                        <div class="row">
                     <div class="cell">
-                         <div class="hover-text box1-text">Text for Box 1</div>
-            <div class="hover-text box2-text">Text for Box 2</div>
-            <div class="hover-text box3-text">Text for Box 3</div>
-            <div class="hover-text box4-text">Text for Box 4</div>
+
                         <img id="full-image"
                              src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-more-transparent-min.png"
                              style="z-index:0;"/>
@@ -341,25 +368,43 @@ background-color: rgba(255, 255, 255, 0);    z-index: 23;
                                  src=""
                                  alt=""/>
                        <!--                hover boxes-->
-                        <div class="overlay-box box1" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"></div>
-                                                <div class="overlay-box box1a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"></div>
+                        <div class="overlay-box box1"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png" data-hover-text="Text for step 1"></div>
 
-            <div class="overlay-box box2" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"></div>
-            <div class="overlay-box box3" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"></div>
-            <div class="overlay-box box4" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"></div>
-                                    <div class="overlay-box box5" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"></div>
-                                                            <div class="overlay-box box5a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"></div>
+                        <div class="overlay-box box1a"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png" data-hover-text="Text for step 1"></div>
 
-                                    <div class="overlay-box box6" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"></div>
-                                                            <div class="overlay-box box6a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"></div>
-                        <div class="overlay-box box7" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"></div>
-                                                <div class="overlay-box box7a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"></div>
-                        <div class="overlay-box box8" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png"></div>
-                        <div class="overlay-box box9" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png"></div>
-                        <div class="overlay-box box10" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png"></div>
-                        <div class="overlay-box box11" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png"></div>
-                        <div class="overlay-box box12" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png"></div>
-                        <div class="overlay-box box13" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png"></div>
+                        <div class="overlay-box box2"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png" data-hover-text="Text for step 2"></div>
+                        <div class="overlay-box box3"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png" data-hover-text="Text for step 3"></div>
+                        <div class="overlay-box box4"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png" data-hover-text="Text for step 4"></div>
+                        <div class="overlay-box box5"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png" data-hover-text="Text for step 5"></div>
+                        <div class="overlay-box box5a"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png" data-hover-text="Text for step 5"></div>
+
+                        <div class="overlay-box box6"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png" data-hover-text="Text for step 6"></div>
+                        <div class="overlay-box box6a"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png" data-hover-text="Text for step 6"></div>
+                        <div class="overlay-box box7"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png" data-hover-text="Text for step 7"></div>
+                        <div class="overlay-box box7a"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png" data-hover-text="Text for step 7"></div>
+                        <div class="overlay-box box8"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png" data-hover-text="Text for step 8"></div>
+                        <div class="overlay-box box9"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png" data-hover-text="Text for step 9"></div>
+                        <div class="overlay-box box10"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png" data-hover-text="Text for step 10"></div>
+                        <div class="overlay-box box11"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png" data-hover-text="Text for step 11"></div>
+                        <div class="overlay-box box12"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png" data-hover-text="Text for step 12"></div>
+                        <div class="overlay-box box13"
+                             data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png" data-hover-text="Text for step 13"></div>
 
 
 
@@ -369,7 +414,7 @@ background-color: rgba(255, 255, 255, 0);    z-index: 23;
 
 
 
-
+</div>
                     </div>
 
                     </div>
@@ -384,17 +429,30 @@ background-color: rgba(255, 255, 255, 0);    z-index: 23;
 
 </html>
  <script>
-        document.querySelectorAll('.overlay-box').forEach(box => {
-            box.addEventListener('mouseover', function() {
-                const overlayImage = document.getElementById('overlay-image');
-                overlayImage.src = this.getAttribute('data-overlay-src');
-                overlayImage.style.display = 'block';
-            });
+document.querySelectorAll('.overlay-box').forEach(box => {
+    box.addEventListener('mouseover', function() {
+        const overlayImage = document.getElementById('overlay-image');
+        const hoverInfo = document.querySelector('.hover-info');
 
-            box.addEventListener('mouseout', function() {
-                const overlayImage = document.getElementById('overlay-image');
-                overlayImage.style.display = 'none';
-            });
-        });
+        overlayImage.src = this.getAttribute('data-overlay-src');
+        overlayImage.style.display = 'block';
+        overlayImage.style.opacity = 1;
+
+        // Change the text to the specific hover text
+        hoverInfo.textContent = this.getAttribute('data-hover-text');
+    });
+
+    box.addEventListener('mouseout', function() {
+        const overlayImage = document.getElementById('overlay-image');
+        const hoverInfo = document.querySelector('.hover-info');
+
+        overlayImage.style.opacity = 0;
+
+        // Revert the text back to the default
+        hoverInfo.textContent = "Hover over each step to learn more!";
+    });
+});
+
+
     </script>
 {% endblock %}
