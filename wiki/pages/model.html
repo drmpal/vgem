@@ -85,58 +85,201 @@
             height: auto;
             transition: opacity 0.5s ease-in-out;
         }
- .overlay-box {
-            position: absolute;
-            width: 50px; /* Adjust size as needed */
-            height: 50px; /* Adjust size as needed */
-            /*background-color: transparent;*/
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for testing */
-            border: 2px solid #fff; /* White border to make it visible */
-            /*above two for testing*/
-            cursor: pointer;
-        }
 
-        .overlay-box:hover {
-            background-color: rgba(0, 0, 0, 0.2); /* Optional for visibility */
-        }
+.overlay-box {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); /* Default background color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    /* Default size */
+
+    /* Adjust as needed */
+}
+
+        /*.overlay-box:hover {*/
+        /*    background-color: rgba(0, 0, 0, 0.2); !* Optional for visibility *!*/
+        /*}*/
          .overlay-box:hover + .hover-text {
         display: block;
     }
 
         .hover-text {
-            display: none;
-            margin-top: 20px;
-            color: #8B555E;
-            font-weight: bold;
+             position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background-color: rgba(255, 255, 255, 0); /* Optional for visibility */
+    padding: 5px;
+    z-index: 30;
         }
 
         /* Specific box positioning */
-        .box1 {
-            top: 100px;
-            left: 100px;
-             background-color: rgba(255, 0, 0, 0.5); /* Red color */
-            z-index: 20;
-        }
+.box1 {
+    position: absolute;
+    top: 0; /* 20% from the top of the .cell container */
+    left: 12%; /* 30% from the left of the .cell container */
+    width: 35%;
+    height: 20%;
+background-color: rgba(255, 255, 255, 0);    z-index: 20;
+}
+.box1a {
+    position: absolute;
+    top: 20%; /* 20% from the top of the .cell container */
+    left: 30%; /* 30% from the left of the .cell container */
+    width: 8%;
+    height: 10%;
+background-color: rgba(255, 255, 255, 0);    z-index: 20;
+}
 
-        .box2 {
-            top: 200px;
-            left: 250px;
-             background-color: rgba(125, 187, 57, 0.5); /* Red color */
-            z-index: 21;
-        }
+.box2 {
+    position: absolute;
+    top: 20%; /* 20% from the top of the .cell container */
+    left: 15%; /* 30% from the left of the .cell container */
+    width: 15%;
+    height: 24%;
+background-color: rgba(255, 255, 255, 0);    z-index: 21;
+}
 
-        .box3 {
-            top: 300px;
-            left: 400px;
-             background-color: rgba(0, 157, 255, 0.5); /* Red color */
-            z-index: 22;
-        }
-        .box4 {
-            top: 500px;
-            left: 400px;
-             background-color: rgba(183, 0, 255, 0.5); /* Red color */
-            z-index: 22;
-        }
+.box3 {
+    position: absolute;
+    top: 20%; /* 20% from the top of the .cell container */
+    left: 38%; /* 30% from the left of the .cell container */
+    width: 12%;
+    height: 18%;
+background-color: rgba(255, 255, 255, 0);    z-index: 22;
+}
+
+.box4 {
+    position: absolute;
+    top: 38%; /* 20% from the top of the .cell container */
+    left: 33%; /* 30% from the left of the .cell container */
+    width: 11%;
+    height: 7%;
+background-color: rgba(255, 255, 255, 0);    z-index: 23;
+}
+.box5 {
+    position: absolute;
+    top: 45%; /* 20% from the top of the .cell container */
+    left: 31%; /* 30% from the left of the .cell container */
+    width: 11%;
+    height: 6%;
+background-color: rgba(255, 255, 255, 0);    z-index: 23;
+}
+.box5a
+{
+    position: absolute;
+    top: 30%; /* 20% from the top of the .cell container */
+    left: 30%; /* 30% from the left of the .cell container */
+    width: 3%;
+    height: 21%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box6
+{
+    position: absolute;
+    top: 44%; /* 20% from the top of the .cell container */
+    left: 25%; /* 30% from the left of the .cell container */
+    width: 5%;
+    height: 9%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box6a
+{
+    position: absolute;
+    top: 51%; /* 20% from the top of the .cell container */
+    left: 30%; /* 30% from the left of the .cell container */
+    width: 11%;
+    height: 2%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box7
+{
+    position: absolute;
+    top: 45%; /* 20% from the top of the .cell container */
+    left: 42%; /* 30% from the left of the .cell container */
+    width: 3%;
+    height: 11%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box7a
+{
+    position: absolute;
+    top: 54%; /* 20% from the top of the .cell container */
+    left: 15%; /* 30% from the left of the .cell container */
+    width: 30%;
+    height: 5%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box8
+{
+    position: absolute;
+    top: 59%; /* 20% from the top of the .cell container */
+    left: 15%; /* 30% from the left of the .cell container */
+    width: 33%;
+    height: 15%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box9
+{
+    position: absolute;
+    top: 18%; /* 20% from the top of the .cell container */
+    left: 52%; /* 30% from the left of the .cell container */
+    width: 33%;
+    height: 20%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box10
+{
+    position: absolute;
+    top: 38%; /* 20% from the top of the .cell container */
+    left: 52%; /* 30% from the left of the .cell container */
+    width: 22%;
+    height: 14%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box11
+{
+    position: absolute;
+    top: 38%; /* 20% from the top of the .cell container */
+    left: 74%; /* 30% from the left of the .cell container */
+    width: 10%;
+    height: 21.5%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box12
+{
+    position: absolute;
+    top: 59.5%; /* 20% from the top of the .cell container */
+    left: 70%; /* 30% from the left of the .cell container */
+    width: 14%;
+    height: 17%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+.box13
+{
+    position: absolute;
+    top: 52%; /* 20% from the top of the .cell container */
+    left: 48%; /* 30% from the left of the .cell container */
+    width: 22%;
+    height: 47%;
+    background-color: rgba(130, 189, 181, 0); /* Purple color */
+    z-index: 23;
+}
+
+
+
+/* Overlay effect on hover */
+
 
  .overlay-image {
             position: absolute;
@@ -185,6 +328,10 @@
                 <h2 class="section-title">Dynamic Model with Glucose</h2>
             <div class="row" style="text-align: center">
                     <div class="cell">
+                         <div class="hover-text box1-text">Text for Box 1</div>
+            <div class="hover-text box2-text">Text for Box 2</div>
+            <div class="hover-text box3-text">Text for Box 3</div>
+            <div class="hover-text box4-text">Text for Box 4</div>
                         <img id="full-image"
                              src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-more-transparent-min.png"
                              style="z-index:0;"/>
@@ -192,58 +339,40 @@
                         <img id="overlay-image"
                                  class="overlay-image"
                                  src=""
-                                 alt="Overlay"/>
+                                 alt=""/>
+                       <!--                hover boxes-->
+                        <div class="overlay-box box1" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"></div>
+                                                <div class="overlay-box box1a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"></div>
 
-<!--                        <div class="cell-stuff">-->
-<!--                        <img id="step-1" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"-->
-<!--                             style="z-index:1"/>-->
-<!--                        <img id="step-2" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"-->
-<!--                             style="z-index:2"/>-->
-<!--                        <img id="step-3" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"-->
-<!--                             style="z-index:3"/>-->
-<!--                        <img id="step-4" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"-->
-<!--                             style="z-index:4"/>-->
-<!--                        <img id="step-5" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"-->
-<!--                             style="z-index:5"/>-->
-<!--                        <img id="step-6" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"-->
-<!--                             style="z-index:6"/>-->
-<!--                        <img id="step-7" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"-->
-<!--                             style="z-index:7"/>-->
-<!--                        <img id="step-8" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png"-->
-<!--                             style="z-index:8"/>-->
-<!--                        <img id="step-9" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png"-->
-<!--                             style="z-index:9"/>-->
-<!--                        <img id="step-10" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png"-->
-<!--                             style="z-index:10"/>-->
-<!--                        <img id="step-11" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png"-->
-<!--                             style="z-index:11"/>-->
-<!--                        <img id="step-12" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png"-->
-<!--                             style="z-index:12"/>-->
-<!--                        <img id="step-13" src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png"-->
-<!--                             style="z-index:13"/>-->
+            <div class="overlay-box box2" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"></div>
+            <div class="overlay-box box3" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"></div>
+            <div class="overlay-box box4" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"></div>
+                                    <div class="overlay-box box5" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"></div>
+                                                            <div class="overlay-box box5a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"></div>
 
-<!--                   </div>-->
+                                    <div class="overlay-box box6" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"></div>
+                                                            <div class="overlay-box box6a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"></div>
+                        <div class="overlay-box box7" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"></div>
+                                                <div class="overlay-box box7a" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/7.png"></div>
+                        <div class="overlay-box box8" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/8.png"></div>
+                        <div class="overlay-box box9" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/9.png"></div>
+                        <div class="overlay-box box10" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/10.png"></div>
+                        <div class="overlay-box box11" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/11.png"></div>
+                        <div class="overlay-box box12" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/12.png"></div>
+                        <div class="overlay-box box13" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/13.png"></div>
+
+
+
+
+
+
+
+
+
+
                     </div>
- <!-- Overlay Boxes -->
-<!--        <div class="overlay-box box1" onmouseover="document.getElementById('step-1').style.opacity = '0.5';" onmouseout="document.getElementById('step-1').style.opacity = '1';"></div>-->
-<!--        <div class="overlay-box box2" onmouseover="document.getElementById('step-2').style.opacity = '0.5';" onmouseout="document.getElementById('step-2').style.opacity = '1';"></div>-->
-<!--        <div class="overlay-box box3" onmouseover="document.getElementById('step-3').style.opacity = '0.5';" onmouseout="document.getElementById('step-3').style.opacity = '1';"></div>-->
-<!--                <div class="overlay-box box4" onmouseover="document.getElementById('step-4').style.opacity = '0.5';" onmouseout="document.getElementById('step-4').style.opacity = '1';"></div>-->
 
-
- <!-- Overlay Boxes and Hover Texts -->
-                     <div class="overlay-box box1" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"></div>
-                        <div class="hover-text box1-text">Text for Box 1</div>
-
-                        <div class="overlay-box box2" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"></div>
-                        <div class="hover-text box2-text">Text for Box 2</div>
-
-                        <div class="overlay-box box3" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/3.png"></div>
-                        <div class="hover-text box3-text">Text for Box 3</div>
-
-                        <div class="overlay-box box4" data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/4.png"></div>
-                        <div class="hover-text box4-text">Text for Box 4</div>
-            </div>
+                    </div>
 
                 <p>random text random text random text</p>
             </div>
