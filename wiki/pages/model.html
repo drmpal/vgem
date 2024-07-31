@@ -283,6 +283,15 @@
         background-color: rgba(130, 189, 181, 0); /* Purple color */
         z-index: 23;
     }
+    .box14 {
+        position: absolute;
+        top: 52%; /* 20% from the top of the .cell container */
+        left: 48%; /* 30% from the left of the .cell container */
+        width: 22%;
+        height: 47%;
+        background-color: rgba(28, 175, 155, 0.6); /* Purple color */
+        z-index: 23;
+    }
 
 
     /* Overlay effect on hover */
@@ -295,7 +304,7 @@
         transform: translate(-50%, -50%);
         width: auto; /* Maintain aspect ratio */
         height: auto;
-     max-width: 100%; /* Prevent stretching */
+        max-width: 100%; /* Prevent stretching */
         max-height: 100%; /* Prevent stretching */
         object-fit: contain; /* Maintain aspect ratio */
 
@@ -312,7 +321,7 @@
     }
 
     #interactive-section,
-    #full-section {
+    #full-section, #full-section2 {
 
         display: none; /* Hide both sections by default */
     }
@@ -322,48 +331,51 @@
     }
 
     #interactive-section.active,
-    #full-section.active {
+    #full-section.active, #full-section2.active {
         display: block; /* Show only the active section */
     }
 
     #interactive-section img,
-    #full-section img {
+    #full-section img, #full-section2 img {
         width: 100%; /* Ensure images scale with the container */
         height: auto; /* Maintain aspect ratio */
     }
+
     .read-more-btn-sm {
         position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    height: auto;
-    font-size: 14px;
-    background-color: #8B555E;
-    color: #EDF0DA;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    border-radius: 50px;
-    transition: transform 0.1s ease-in-out;
+        display: inline-block;
+        padding: 10px 20px;
+        height: auto;
+        font-size: 14px;
+        background-color: #8B555E;
+        color: #EDF0DA;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        border-radius: 50px;
+        transition: transform 0.1s ease-in-out;
         border: none;
-}
-.read-more-btn-sm:hover {
-    color: #EDF0DA; /* Ensure the text color stays white on hover */
-    background-color: #D88993
-}
+    }
 
-.read-more-btn-sm:active {
-    transform: scale(0.95);
-}
-.header-container {
-    display: flex;
-    align-items: center;   /* Align items vertically in the center */
-    justify-content: center; /* Center items horizontally within the container */
-    gap: 0.5rem;             /* Space between the elements */
-    flex-wrap: wrap;
-}
+    .read-more-btn-sm:hover {
+        color: #EDF0DA; /* Ensure the text color stays white on hover */
+        background-color: #D88993
+    }
 
-.header-container h4 {
-    margin: 0; /* Remove default margin */
-}
+    .read-more-btn-sm:active {
+        transform: scale(0.95);
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center; /* Align items vertically in the center */
+        justify-content: center; /* Center items horizontally within the container */
+        gap: 0.5rem; /* Space between the elements */
+        flex-wrap: wrap;
+    }
+
+    .header-container h4 {
+        margin: 0; /* Remove default margin */
+    }
 
 
 </style>
@@ -393,23 +405,40 @@
             <!--            intro-->
             <div class="dropshadow-box">
                 <div class="filler">
-                    <p>Figure 1. Complete dynamic diagram of BLISS when glucose is present. 1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). 2, Through a simplification of two enzyme-catalyzed reactions of the glycolysis pathway, G6P becomes fructose 1,6-bisphosphate (FBP). The downstream processes of metabolism are not pictured. 3, HPr becomes phosphorylated at Ser46 (HPrSerP) by HPrK/P through the donation of a phosphate group from ATP (when ATP levels are high). 4, HPrSerP binds to carbon catabolite protein A (CcpA). 5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA. 7, The HPrSerP-CcpA complexes bind at catabolite repression elements (cre sites) located in the promoter regions of DNA to inhibit transcription. 8, In BLISS, the binding of cre sites prevents the lacI gene from being transcribed. 9, GlcT is activated and binds in dimers at the ptsG RAT sequence of the transcript of the T7RNAP gene, unfolding the terminator hairpin and allowing for translation of the mRNA. 10, The T7RNAP mRNA is translated into T7 RNA polymerase. 11, T7 RNA polymerase binds at the promoter regions of CLPS and PNLIP and transcribes the two genes. 12, The two transcripts are translated into colipase and lipase. 13, The signal recognition particles (SRP) attached to colipase and lipase target the two proteins for extracellular secretion by B. subtilis. These SRPs will be cleaved from the final exported protein. This figure was created with BioRender.com.</p>
+                    <p>Figure 1. Complete dynamic diagram of BLISS when glucose is present. 1, Glucose enters the cell
+                        via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P).
+                        The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its
+                        respective His15 residue (HPrHisP). 2, Through a simplification of two enzyme-catalyzed
+                        reactions of the glycolysis pathway, G6P becomes fructose 1,6-bisphosphate (FBP). The downstream
+                        processes of metabolism are not pictured. 3, HPr becomes phosphorylated at Ser46 (HPrSerP) by
+                        HPrK/P through the donation of a phosphate group from ATP (when ATP levels are high). 4, HPrSerP
+                        binds to carbon catabolite protein A (CcpA). 5–6, Two intermediate metabolites of glycolysis,
+                        G6P and FBP, increase the binding affinity of HPrSerP to CcpA. 7, The HPrSerP-CcpA complexes
+                        bind at catabolite repression elements (cre sites) located in the promoter regions of DNA to
+                        inhibit transcription. 8, In BLISS, the binding of cre sites prevents the lacI gene from being
+                        transcribed. 9, GlcT is activated and binds in dimers at the ptsG RAT sequence of the transcript
+                        of the T7RNAP gene, unfolding the terminator hairpin and allowing for translation of the mRNA.
+                        10, The T7RNAP mRNA is translated into T7 RNA polymerase. 11, T7 RNA polymerase binds at the
+                        promoter regions of CLPS and PNLIP and transcribes the two genes. 12, The two transcripts are
+                        translated into colipase and lipase. 13, The signal recognition particles (SRP) attached to
+                        colipase and lipase target the two proteins for extracellular secretion by B. subtilis. These
+                        SRPs will be cleaved from the final exported protein. This figure was created with
+                        BioRender.com.</p>
                 </div>
                 <h2 class="section-title">Full BLISS Model</h2>
-                <div class="row"></div>
-
-                <div class="diagram-container">
-                                                 <div class="header-container mt-3">
-    <h4>Glucose Present:</h4>
-    <button id="toggle-button" class="read-more-btn-sm">Show full diagram</button>
-</div>
-                <div class="row" style="text-align: center">
+<!--                model with glucose-->
+                <div class="diagram-container" id="diagram1">
+                    <div class="header-container mt-3">
+                        <h4>Glucose Present:</h4>
+                        <button id="toggle-button2" class="read-more-btn-sm">Show full diagram</button>
+                    </div>
+                    <div class="row" style="text-align: center">
                         <div id="interactive-section" class="active">
-                        <p class="mt-4">Hover over each step to read about it below the diagram!</p>
+                            <p class="mt-4">Hover over each step to read about it below the diagram!</p>
                             <div class="cell">
 
                                 <img id="full-image"
-                                     src="https://static.igem.wiki/teams/5178/modeling/dynamic-model/glucose-more-transparent-min.png"
+                                     src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucosetrnsprt-min.png"
                                      style="z-index:0;"/>
 
                                 <img id="overlay-image"
@@ -424,7 +453,6 @@
                                 <div class="overlay-box box1a"
                                      data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
                                      data-hover-text="1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). "></div>
-
                                 <div class="overlay-box box2"
                                      data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/2.png"
                                      data-hover-text="2, Through a simplification of two enzyme-catalyzed reactions of the glycolysis pathway, G6P becomes fructose 1,6-bisphosphate (FBP). The downstream processes of metabolism are not pictured."></div>
@@ -440,7 +468,6 @@
                                 <div class="overlay-box box5a"
                                      data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/5.png"
                                      data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
-
                                 <div class="overlay-box box6"
                                      data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/6.png"
                                      data-hover-text="5–6, Two intermediate metabolites of glycolysis, G6P and FBP, increase the binding affinity of HPrSerP to CcpA."></div>
@@ -473,16 +500,10 @@
                                      data-hover-text="13, The signal recognition particles (SRP) attached to colipase and lipase target the two proteins for extracellular secretion by B. subtilis. These SRPs will be cleaved from the final exported protein. "></div>
 
                             </div>
-
-                                                        <div class="hover-info"></div>
-
-
+                            <div class="hover-info" id="hover-info1"></div>
                         </div>
-
-
                         <div id="full-section">
-                        <p class="mt-4">Read the full description below the diagram!</p>
-
+                            <p class="mt-4">Read the full description below the diagram!</p>
                             <img src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-min.png"
                                  alt="Full Diagram"/>
                             <p>Figure 1. Complete dynamic diagram of BLISS when glucose is present. 1, Glucose enters
@@ -507,8 +528,62 @@
                                 cleaved from the final exported protein. This figure was created with
                                 BioRender.com. </p>
                         </div>
-</div>
+                    </div>
                 </div>
+<!--model without glucose-->
+                                <div class="diagram-container">
+                    <div class="header-container mt-3">
+                        <h4>Glucose Absent:</h4>
+                        <button id="toggle-button" class="read-more-btn-sm">Show full diagram</button>
+                    </div>
+                    <div class="row" style="text-align: center">
+                        <div id="interactive-section2" class="active">
+                            <p class="mt-4">Hover over each step to read about it below the diagram!</p>
+                            <div class="cell" style="max-width: 47REM; width:100%">
+                                <img id="full-image2"
+                                     src="https://static.igem.wiki/teams/5178/modeling/no-glucose-model/nogluctrnsprt-min.png"
+                                     style="z-index:0;"/>
+                                <img id="overlay-image2"
+                                     class="overlay-image"
+                                     src=""
+                                     alt=""/>
+                                <!--                hover boxes-->
+                                <div class="overlay-box box14"
+                                     data-overlay-src="https://static.igem.wiki/teams/5178/modeling/no-glucose-model/14-min.png"
+                                     data-hover-text="text for 14"></div>
+
+                            </div>
+                            <div class="hover-info" id="hover-info2"></div>
+                        </div>
+                        <div id="full-section2">
+                            <p class="mt-4">Read the full description below the diagram!</p>
+                            <img src="https://static.igem.wiki/teams/5178/modeling/no-glucose-model/nogluc-min.png"
+                                 alt="Full Diagram" style="max-width: 47REM; width:100%"/>
+                            <p>Figure 1. Complete dynamic diagram of BLISS when glucose is present. 1, Glucose enters
+                                the cell via the EIIGlc transmembrane protein and becomes phosphorylated into
+                                glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier
+                                protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). 2, Through a
+                                simplification of two enzyme-catalyzed reactions of the glycolysis pathway, G6P becomes
+                                fructose 1,6-bisphosphate (FBP). The downstream processes of metabolism are not
+                                pictured. 3, HPr becomes phosphorylated at Ser46 (HPrSerP) by HPrK/P through the
+                                donation of a phosphate group from ATP (when ATP levels are high). 4, HPrSerP binds to
+                                carbon catabolite protein A (CcpA). 5–6, Two intermediate metabolites of glycolysis, G6P
+                                and FBP, increase the binding affinity of HPrSerP to CcpA. 7, The HPrSerP-CcpA complexes
+                                bind at catabolite repression elements (cre sites) located in the promoter regions of
+                                DNA to inhibit transcription. 8, In BLISS, the binding of cre sites prevents the lacI
+                                gene from being transcribed. 9, GlcT is activated and binds in dimers at the ptsG RAT
+                                sequence of the transcript of the T7RNAP gene, unfolding the terminator hairpin and
+                                allowing for translation of the mRNA. 10, The T7RNAP mRNA is translated into T7 RNA
+                                polymerase. 11, T7 RNA polymerase binds at the promoter regions of CLPS and PNLIP and
+                                transcribes the two genes. 12, The two transcripts are translated into colipase and
+                                lipase. 13, The signal recognition particles (SRP) attached to colipase and lipase
+                                target the two proteins for extracellular secretion by B. subtilis. These SRPs will be
+                                cleaved from the final exported protein. This figure was created with
+                                BioRender.com. </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -519,47 +594,42 @@
 
 </html>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toggleButton = document.getElementById('toggle-button');
-        const interactiveSection = document.getElementById('interactive-section');
-        const fullSection = document.getElementById('full-section');
 
-        toggleButton.addEventListener('click', () => {
-            if (interactiveSection.classList.contains('active')) {
-                interactiveSection.classList.remove('active');
-                fullSection.classList.add('active');
-                toggleButton.textContent = 'Show interactive diagram';
-            } else {
-                fullSection.classList.remove('active');
-                interactiveSection.classList.add('active');
-                toggleButton.textContent = 'Show full diagram';
-            }
+document.querySelectorAll('.diagram-container').forEach(container => {
+    const overlayImage = container.querySelector('.overlay-image');
+    const hoverInfo = container.querySelector('.hover-info');
+    const fullSection = container.querySelector('[id^="full-section"]');
+    const interactiveSection = container.querySelector('[id^="interactive-section"]');
+    const toggleButton = container.querySelector('.read-more-btn-sm');
+
+    // Update hover info based on the specific diagram
+    container.querySelectorAll('.overlay-box').forEach(box => {
+        box.addEventListener('mouseover', function() {
+            overlayImage.src = this.getAttribute('data-overlay-src');
+            overlayImage.style.display = 'block';
+            hoverInfo.textContent = this.getAttribute('data-hover-text');
         });
 
-        document.querySelectorAll('.overlay-box').forEach(box => {
-            box.addEventListener('mouseover', function () {
-                const overlayImage = document.getElementById('overlay-image');
-                const hoverInfo = document.querySelector('.hover-info');
-
-                overlayImage.src = this.getAttribute('data-overlay-src');
-                overlayImage.style.display = 'block';
-                overlayImage.style.opacity = 1;
-
-                // Change the text to the specific hover text
-                hoverInfo.textContent = this.getAttribute('data-hover-text');
-            });
-
-            box.addEventListener('mouseout', function () {
-                const overlayImage = document.getElementById('overlay-image');
-                const hoverInfo = document.querySelector('.hover-info');
-
-                overlayImage.style.opacity = 0;
-
-                // Revert the text back to the default
-                hoverInfo.textContent = "";
-            });
+        box.addEventListener('mouseout', function() {
+            overlayImage.style.display = 'none';
+            hoverInfo.textContent = '';
         });
     });
+
+    toggleButton.addEventListener('click', function() {
+        if (interactiveSection.classList.contains('active')) {
+            interactiveSection.style.display = 'none';
+            fullSection.style.display = 'block';
+            interactiveSection.classList.remove('active');
+            toggleButton.textContent = 'Show interactive diagram';
+        } else {
+            interactiveSection.style.display = 'block';
+            fullSection.style.display = 'none';
+            interactiveSection.classList.add('active');
+            toggleButton.textContent = 'Show full diagram';
+        }
+    });
+});
 
 </script>
 {% endblock %}
