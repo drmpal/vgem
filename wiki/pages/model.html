@@ -78,15 +78,6 @@
         display: block;
     }
 
-    .cell-stuff img {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        /*height: auto;*/
-        transition: opacity 0.5s ease-in-out;
-    }
 
     .overlay-box {
         position: absolute;
@@ -587,11 +578,9 @@
                         <div id="interactive-section" class="active">
                             <p class="mt-4">Hover over each step to read about it below the diagram!</p>
                             <div class="cell">
-
                                 <img id="full-image"
                                      src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-transparent-aligned-min.png"
                                      style="z-index:0;"/>
-
                                 <img id="overlay-image"
                                      class="overlay-image"
                                      src=""
@@ -600,7 +589,6 @@
                                 <div class="overlay-box box1"
                                      data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
                                      data-hover-text="1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). "></div>
-
                                 <div class="overlay-box box1a"
                                      data-overlay-src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/1.png"
                                      data-hover-text="1, Glucose enters the cell via the EIIGlc transmembrane protein and becomes phosphorylated into glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier protein (HPr), phosphorylated on its respective His15 residue (HPrHisP). "></div>
@@ -655,8 +643,9 @@
                         </div>
                         <div id="full-section">
                             <p class="mt-4">Read the full description below the diagram!</p>
-                            <img src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-min.png"
-                                 alt="Full Diagram"/>
+                            <div class="cell">
+                            <img src="https://static.igem.wiki/teams/5178/modeling/dynamic-model-compressed/glucose-not-transparent-right-size-min.png"
+                                 alt="Full Diagram"/></div>
                             <p>Figure 1. Complete dynamic diagram of BLISS when glucose is present. 1, Glucose enters
                                 the cell via the EIIGlc transmembrane protein and becomes phosphorylated into
                                 glucose-6-phosphate (G6P). The phosphate group is donated by histidine phosphocarrier
