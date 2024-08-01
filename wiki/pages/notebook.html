@@ -1,676 +1,676 @@
-{% extends "layout.html" %}
-  
-{% block title %}Notebook{% endblock %}
-{% block lead %}Click on each week to see what we did!{% endblock %}
+<!--{% extends "layout.html" %}-->
+<!--  -->
+<!--{% block title %}Notebook{% endblock %}-->
+<!--{% block lead %}Click on each week to see what we did!{% endblock %}-->
 
-{% block page_content %}
-<style>
-   .sticky {
-    position: sticky;
-    top: 90px;
-  }
-       html {
-    scroll-behavior: smooth;
-  }
+<!--{% block page_content %}-->
+<!--<style>-->
+<!--   .sticky {-->
+<!--    position: sticky;-->
+<!--    top: 90px;-->
+<!--  }-->
+<!--       html {-->
+<!--    scroll-behavior: smooth;-->
+<!--  }-->
 
-  .section-nav li.active > a {
-    color: #284858;
-    font-weight: 500;
-  }
+<!--  .section-nav li.active > a {-->
+<!--    color: #284858;-->
+<!--    font-weight: 500;-->
+<!--  }-->
 
-  .section-nav {
-    padding-left: 0;
-    border-left: 1px solid #D88993;
-  }
+<!--  .section-nav {-->
+<!--    padding-left: 0;-->
+<!--    border-left: 1px solid #D88993;-->
+<!--  }-->
 
-  .section-nav a {
-    text-decoration: none;
-    display: block;
-    padding: .125rem 0;
-    color: #C44F5F;
-    transition: all 400ms ease-in-out;
-  }
+<!--  .section-nav a {-->
+<!--    text-decoration: none;-->
+<!--    display: block;-->
+<!--    padding: .125rem 0;-->
+<!--    color: #C44F5F;-->
+<!--    transition: all 400ms ease-in-out;-->
+<!--  }-->
 
-  .section-nav a:hover,
-  .section-nav a:focus {
-    color: #284858;
-  }
-  .accordion-header-style {
-  background-color: #F0DFAD;
-  color: #2D4E62; /* Text color */
-    border: 1px solid #D88993;
+<!--  .section-nav a:hover,-->
+<!--  .section-nav a:focus {-->
+<!--    color: #284858;-->
+<!--  }-->
+<!--  .accordion-header-style {-->
+<!--  background-color: #F0DFAD;-->
+<!--  color: #2D4E62; /* Text color */-->
+<!--    border: 1px solid #D88993;-->
 
-}
-/*  .accordion-item-style {*/
-/*    max-width: 500px; !* Darker border color *!*/
-/*}*/
-  .dropshadow-box
-{
-    padding: 2rem;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);
-}
-    section {
-    padding-top: 70px;
-    margin-top: -70px;
-    padding-bottom: 20px;
-  }
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
+<!--}-->
+<!--/*  .accordion-item-style {*/-->
+<!--/*    max-width: 500px; !* Darker border color *!*/-->
+<!--/*}*/-->
+<!--  .dropshadow-box-->
+<!--{-->
+<!--    padding: 2rem;-->
+<!--    background-color: #ffffff;-->
+<!--    box-shadow: 0px 0px 10px 5px rgba(234, 220, 220, 0.76);-->
+<!--}-->
+<!--    section {-->
+<!--    padding-top: 70px;-->
+<!--    margin-top: -70px;-->
+<!--    padding-bottom: 20px;-->
+<!--  }-->
+<!--@keyframes fadeInUp {-->
+<!--  0% {-->
+<!--    transform: translateY(100%);-->
+<!--    opacity: 0;-->
+<!--  }-->
+<!--  100% {-->
+<!--    transform: translateY(0%);-->
+<!--    opacity: 1;-->
+<!--  }-->
+<!--}-->
 
-.fadeInUp-animation {
-  animation: 1.5s fadeInUp;
-}
+<!--.fadeInUp-animation {-->
+<!--  animation: 1.5s fadeInUp;-->
+<!--}-->
 
-.image-caption-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the image and caption horizontally */
-    text-align: center; /* Center the caption text */
-    background-color: #F0DFAD; /* Change this to your desired color */
-    padding: 20px 30px; /* Increase padding to make the border larger on all sides */
-    margin-top: 20px; /* Space between the image and the caption box */
-    border-radius: 2%;
-}
-.caption-box
-{
-  display: flex;
-   text-align: center;
-}
-</style>
-<div class="container">
-   <div class="row">
-    <div class="col-md-2">
-        <div class="sticky">
+<!--.image-caption-wrapper {-->
+<!--    display: flex;-->
+<!--    flex-direction: column;-->
+<!--    align-items: center; /* Center the image and caption horizontally */-->
+<!--    text-align: center; /* Center the caption text */-->
+<!--    background-color: #F0DFAD; /* Change this to your desired color */-->
+<!--    padding: 20px 30px; /* Increase padding to make the border larger on all sides */-->
+<!--    margin-top: 20px; /* Space between the image and the caption box */-->
+<!--    border-radius: 2%;-->
+<!--}-->
+<!--.caption-box-->
+<!--{-->
+<!--  display: flex;-->
+<!--   text-align: center;-->
+<!--}-->
+<!--</style>-->
+<!--<div class="container">-->
+<!--   <div class="row">-->
+<!--    <div class="col-md-2">-->
+<!--        <div class="sticky">-->
 
- <nav class="section-nav" style="border-left: 1px solid #efefef;">
-      <ul style="list-style: none;
-  margin-left: 0px;">
-          <div class="margin-left: 1rem; margin-bottom: 1rem;">
-        <li style="margin-bottom: 5px"><a href="#preparation">Preparation</a></li>
-        <li style="margin-bottom: 5px"><a href="#june">June</a></li>
-              <li style="margin-bottom: 5px"><a href="#july">July</a></li>
-        <li style="margin-bottom: 5px"><a href="#august">August</a></li>
-            <li style="margin-bottom: 5px"><a href="#september">September</a></li>
-            <li style="margin-bottom: 5px"><a href="#october">October</a></li>
-        </div>
-          </ul>
-        </nav>
-    </div>
-        </div>
-  <div class="col-md-10 dropshadow-box">
-<div class="accordion" id="Notebook">
-  <section id="preparation">
-  <h2 class="mt-4 text-center">Preparation</h2>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        11/27/23 - 5/31/24
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#Notebook">
-      <div class="accordion-body row">
-        <div class="col-md-6">
+<!-- <nav class="section-nav" style="border-left: 1px solid #efefef;">-->
+<!--      <ul style="list-style: none;-->
+<!--  margin-left: 0px;">-->
+<!--          <div class="margin-left: 1rem; margin-bottom: 1rem;">-->
+<!--        <li style="margin-bottom: 5px"><a href="#preparation">Preparation</a></li>-->
+<!--        <li style="margin-bottom: 5px"><a href="#june">June</a></li>-->
+<!--              <li style="margin-bottom: 5px"><a href="#july">July</a></li>-->
+<!--        <li style="margin-bottom: 5px"><a href="#august">August</a></li>-->
+<!--            <li style="margin-bottom: 5px"><a href="#september">September</a></li>-->
+<!--            <li style="margin-bottom: 5px"><a href="#october">October</a></li>-->
+<!--        </div>-->
+<!--          </ul>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--        </div>-->
+<!--  <div class="col-md-10 dropshadow-box">-->
+<!--<div class="accordion" id="Notebook">-->
+<!--  <section id="preparation">-->
+<!--  <h2 class="mt-4 text-center">Preparation</h2>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingOne">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--        11/27/23 - 5/31/24-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body row">-->
+<!--        <div class="col-md-6">-->
 
-          <b>November 27, 2023:</b>
-            <ul>
-            <li>Applications for iGEM 2024 due</li>
-              </ul>
+<!--          <b>November 27, 2023:</b>-->
+<!--            <ul>-->
+<!--            <li>Applications for iGEM 2024 due</li>-->
+<!--              </ul>-->
 
-          <b>December 3-8, 2023:</b>
-            <ul>
-              <li>
-                Interviews for iGEM
-              </li>
-            </ul>
+<!--          <b>December 3-8, 2023:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                Interviews for iGEM-->
+<!--              </li>-->
+<!--            </ul>-->
 
-          <b>December 13, 2023:  </b>
-            <ul>
-              <li>
-                  iGEM acceptances sent
-              </li>
-            </ul>
+<!--          <b>December 13, 2023:  </b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  iGEM acceptances sent-->
+<!--              </li>-->
+<!--            </ul>-->
 
-          <b>January 18, 2024:</b>
-          <ul>
-            <li>
-              First time meeting everyone!
-            </li>
-            <li>
-              First day of Synthetic Biology class (BIOL 4770)
-            </li>
-          </ul>
+<!--          <b>January 18, 2024:</b>-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--              First time meeting everyone!-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              First day of Synthetic Biology class (BIOL 4770)-->
+<!--            </li>-->
+<!--          </ul>-->
 
-         <b>April 11, 2024:</b>
-            <ul>
-              <li>
-                  Group chat formed!
-              </li>
-            </ul>
+<!--         <b>April 11, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  Group chat formed!-->
+<!--              </li>-->
+<!--            </ul>-->
 
-          <b>April 26, 2024:</b>
-            <ul>
-              <li>
-                  Team voted on leadership positions
-              </li>
-            </ul>
-          </li>
-          <li><b>April 29, 2024:</b>
-            <ul>
-              <li>
-                First official team meeting online
-              </li>
-              <li>
-                Discussed summer schedule
-              </li>
-            </ul>
+<!--          <b>April 26, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  Team voted on leadership positions-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </li>-->
+<!--          <li><b>April 29, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                First official team meeting online-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                Discussed summer schedule-->
+<!--              </li>-->
+<!--            </ul>-->
 
-          <b>May 8, 2024:</b>
-            <ul>
-              <li>
-                Met online to discuss project ideas
-              </li>
-              <li>Read through proposals from class </li>
-            </ul>
+<!--          <b>May 8, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                Met online to discuss project ideas-->
+<!--              </li>-->
+<!--              <li>Read through proposals from class </li>-->
+<!--            </ul>-->
 
-         <b>May 10, 2024:</b>
-            <ul>
-              <li>
-                  Established OneDrive
-              </li>
-            </ul>
+<!--         <b>May 10, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  Established OneDrive-->
+<!--              </li>-->
+<!--            </ul>-->
 
-         <b>May 15, 2024:</b>
-            <ul>
-              <li>
-                  Discussed feedback on existing project proposals
-              </li>
-            </ul>
+<!--         <b>May 15, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  Discussed feedback on existing project proposals-->
+<!--              </li>-->
+<!--            </ul>-->
 
-         <b>May 24, 2024:</b>
-            <ul>
-              <li>
-                  Brainstormed new project ideas
-              </li>
-            </ul>
+<!--         <b>May 24, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  Brainstormed new project ideas-->
+<!--              </li>-->
+<!--            </ul>-->
 
-          <b>May 30, 2024: </b>
+<!--          <b>May 30, 2024: </b>-->
 
-            <ul>
-              <li>
-                  First in-person meeting in lab
-              </li>
-            </ul>
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  First in-person meeting in lab-->
+<!--              </li>-->
+<!--            </ul>-->
 
-            <b>May 31, 2024:</b>
-            <ul>
-              <li>
-                  Finalized project idea
-              </li>
-            </ul>
-
-
-          </div>
-       <div class="col-md-6">
-    <div class="image-caption-wrapper">
-        <img src="https://static.igem.wiki/teams/5178/notebook/img-6974.jpeg" max-width="380px" class="img-fluid" alt="A preliminary whiteboard diagram of our project. The left reads: 'PEI causes no lipase. PEI + Pancreatic cancer.' A vertical flowchart is in the middle and the first item is: 'Treatment = Pancrelipase (from pigs, bad).' An arrow points from here to the next item: 'lipase from yeast which makes amylase and protease (p. Pastoris). And lipase from e. coli (doesn't need glycosylation).' A bracket surrounding these says: 'Bad/not good for pancreatitis, low levels of lipase.' The next arrow points to: 'human pancreatic lipase from B. subtilis (common probiotic and good for pancreatitis). Makes amylase and protease.' The last arrow points to: 'Plus switch? Lac operon (ex)?'.">
-            <h5 style="padding-top: 20px"><i>Brainstorming our project</i></h5>
-
-    </div>
-</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section id="june">
-  <h2 class="mt-4 text-center">June</h2>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Week 1 (6/3/24-6/7/24)
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#Notebook">
-      <div class="accordion-body">
-
-          <b>June 3:</b>
-          <ul>
-            <li>Decided on our project topic</li>
-            <li>Toured our lab spaces for the summer</li>
-          </ul>
-          <b>June 4-June 7:</b>
-          <ul>
-            <li>Started biobricking our constructs</li>
-            <li>Figured out glucose switch and read literature on transformation of human pancreatic lipase into bacteria</li>
-            <li>First lab meeting on June 6</li>
-          </ul>
-        </ul>
-      </div>
-    </div>
-  </div>
-    </section>
+<!--            <b>May 31, 2024:</b>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                  Finalized project idea-->
+<!--              </li>-->
+<!--            </ul>-->
 
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Week 2 (6/10/24-6/14/24)
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#Notebook">
-      <div class="accordion-body">
+<!--          </div>-->
+<!--       <div class="col-md-6">-->
+<!--    <div class="image-caption-wrapper">-->
+<!--        <img src="https://static.igem.wiki/teams/5178/notebook/img-6974.jpeg" max-width="380px" class="img-fluid" alt="A preliminary whiteboard diagram of our project. The left reads: 'PEI causes no lipase. PEI + Pancreatic cancer.' A vertical flowchart is in the middle and the first item is: 'Treatment = Pancrelipase (from pigs, bad).' An arrow points from here to the next item: 'lipase from yeast which makes amylase and protease (p. Pastoris). And lipase from e. coli (doesn't need glycosylation).' A bracket surrounding these says: 'Bad/not good for pancreatitis, low levels of lipase.' The next arrow points to: 'human pancreatic lipase from B. subtilis (common probiotic and good for pancreatitis). Makes amylase and protease.' The last arrow points to: 'Plus switch? Lac operon (ex)?'.">-->
+<!--            <h5 style="padding-top: 20px"><i>Brainstorming our project</i></h5>-->
 
-          <b>June 10-12:</b>
-          <ul>
-            <li>Determined assembly method</li>
-            <ul>
-              <li>Considered all options, including Standard, Golden Gate, and 3A</li>
-              <li>Settled on Gibson + Standard Asssembly for our final design</li>
-              <li>Finalized restriction enzymes to be used</li>
-            </ul>
-            <li>Worked on kill-switch mechanism</li>
+<!--    </div>-->
+<!--</div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
-          </ul>
-          <b>June 13:</b>
-          <ul>
-            <li>Finalized parts to order</li>
-            <li>Contacted experts in ethics and experts in pancreatic conditions</li>
-            <li>Started working on logo and visual ideas for the project and wiki</li>
-          </ul>
-          <b>June 14:</b>
-          <ul>
-            <li>Decided project/team name</li>
-            <li>Developed project logo</li>
-            <li>Worked on project description for wiki</li>
-            <li>Ordered parts</li>
-          </ul>
+<!--  <section id="june">-->
+<!--  <h2 class="mt-4 text-center">June</h2>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingTwo">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--        Week 1 (6/3/24-6/7/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
 
-
-
-      </div>
-    </div>
-  </div>
-<br>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingFour">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-        Week 3 (6/17/24-6/21/24)
-      </button>
-    </h2>
-    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#Notebook">
-      <div class="accordion-body">
-
-          <b>June 17:</b>
-          <ul>
-            <li>Started working on handbook and DIY synthetic biology kit</li>
-            <li>Started putting content on wiki</li>
-            <li>Prepared transformation buffer</li>
-            <li>Started pre-culture of <i>E. coli</i> DH5α to prepare for competent cell protocol</li>
-            <li>Started developing models using values from literature</li>
-
-          </ul>
-          <b>June 18:</b>
-          <ul>
-            <li>Ordered primers</li>
-            <li>Completed a majority of handbook</li>
-            <li>Developed a growth curve for <i>E. coli</i> DH5α using a spectrophotometer</li>
-            <li>Inoculated 500 mL flask using pre-culture</li>
-
-          </ul>
-          <b>June 19:</b>
-          <ul>
-            <li>Attempted to measure growth curve for 500 mL flask</li>
-            <ul>
-              <li>Discovered an error with the culture</li>
-            </ul>
-            <li>Made a new pre-culture with <i>E. coli</i> JM109</li>
-          </ul>
-        <b>June 20:</b>
-          <ul>
-            <li>Inoculated two 500 mL flasks with <i>E. coli</i>J M109 pre-culture</li>
-            <li>Developed "What is Synthetic Biology" video</li>
-            <li>Started writing questions for interviews</li>
-          </ul>
-        <b>June 21:</b>
-          <ul>
-            <li>Performed competent cell protocol using <i>E. coli</i> JM109 culture</li>
-            <ul>
-              <li>Test for competency was unsuccessful due to faulty plasmid</li>
-            </ul>
-            <li>Practiced PCR and gel electrophoresis using spare materials</li>
-            <li>Ran mock gel electrophoresis experiment for synthetic biology handbook</li>
-          </ul>
+<!--          <b>June 3:</b>-->
+<!--          <ul>-->
+<!--            <li>Decided on our project topic</li>-->
+<!--            <li>Toured our lab spaces for the summer</li>-->
+<!--          </ul>-->
+<!--          <b>June 4-June 7:</b>-->
+<!--          <ul>-->
+<!--            <li>Started biobricking our constructs</li>-->
+<!--            <li>Figured out glucose switch and read literature on transformation of human pancreatic lipase into bacteria</li>-->
+<!--            <li>First lab meeting on June 6</li>-->
+<!--          </ul>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--    </section>-->
 
 
-      </div>
-    </div>
-  </div>
-<br>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingFive">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-        Week 4 (6/24/24-6/28/24)
-      </button>
-    </h2>
-    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#Notebook">
-      <div class="accordion-body">
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingThree">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--        Week 2 (6/10/24-6/14/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
+
+<!--          <b>June 10-12:</b>-->
+<!--          <ul>-->
+<!--            <li>Determined assembly method</li>-->
+<!--            <ul>-->
+<!--              <li>Considered all options, including Standard, Golden Gate, and 3A</li>-->
+<!--              <li>Settled on Gibson + Standard Asssembly for our final design</li>-->
+<!--              <li>Finalized restriction enzymes to be used</li>-->
+<!--            </ul>-->
+<!--            <li>Worked on kill-switch mechanism</li>-->
+
+<!--          </ul>-->
+<!--          <b>June 13:</b>-->
+<!--          <ul>-->
+<!--            <li>Finalized parts to order</li>-->
+<!--            <li>Contacted experts in ethics and experts in pancreatic conditions</li>-->
+<!--            <li>Started working on logo and visual ideas for the project and wiki</li>-->
+<!--          </ul>-->
+<!--          <b>June 14:</b>-->
+<!--          <ul>-->
+<!--            <li>Decided project/team name</li>-->
+<!--            <li>Developed project logo</li>-->
+<!--            <li>Worked on project description for wiki</li>-->
+<!--            <li>Ordered parts</li>-->
+<!--          </ul>-->
 
 
-          <b>June 24:</b>
-          <ul>
-            <li>Attempted second transformation to test competent cells using pUC19</li>
-            <li>Completed interview with Mrs. Eleanor Nicholson, an expert in homeschool education</li>
-            <li>Added teacher's guide to synthetic biology handbook</li>
-            <li>Gained introduction into neural networking topics for modeling</li>
-            <li>Updated preliminary model on lipase and colipase using values from literature</li>
 
-          </ul>
-          <b>June 25:</b>
-          <ul>
-            <li>Analyzed plate of transformed cells from June 24</li>
-            <ul>
-              <li>Transformation was successful!</li>
-            </ul>
-            <li>Completed interview with Dr. Elizabeth Barnes, expert in healthcare philosophy</li>
-            <li>Continued developing teacher's guide</li>
-            <li>Incorporated glucose concentrations into model kinetics</li>
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--<br>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingFour">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+<!--        Week 3 (6/17/24-6/21/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
 
-          </ul>
-          <b>June 26:</b>
-          <ul>
-            <li>Counted transformed cells using ImageJ</li>
-            <ul>
-              <li>Calculated transformation efficiency</li>
-            </ul>
-            <li>Consolidated protocols, including PCR, gel electrophoresis, Western blot, etc</li>
-            <li>Continued to work on different interactions fo the glycolysis and lipase expression pathways in model</li>
-            <ul>
-              <li>Introduced new species (ex: T7RNAP transcription, GlcT RAT binding) and new rates</li>
-            </ul>
-            <li>Filmed applesauce enzyme lab for synthetic biology handbook</li>
-          </ul>
-        <b>June 27:</b>
-          <ul>
-            <li>Added repression mechanism for LAcI and T7RNAP genes to model</li>
-            <li>Completed interview with Dr. Ray Wadlow, expert in pancreatic cancer</li>
-            <li>Updated synthetic biology handbook based on peer feedbac</li>
-          </ul>
-        <b>June 28:</b>
-          <ul>
-            <li>Started investigating mechanism of LacI repression of T7RNAP in model</li>
-            <li>Started working on IRB forms for synthetic biology handbook focus group</li>
-            <li>Developed experimental plan for upcoming week</li>
-          </ul>
+<!--          <b>June 17:</b>-->
+<!--          <ul>-->
+<!--            <li>Started working on handbook and DIY synthetic biology kit</li>-->
+<!--            <li>Started putting content on wiki</li>-->
+<!--            <li>Prepared transformation buffer</li>-->
+<!--            <li>Started pre-culture of <i>E. coli</i> DH5α to prepare for competent cell protocol</li>-->
+<!--            <li>Started developing models using values from literature</li>-->
 
+<!--          </ul>-->
+<!--          <b>June 18:</b>-->
+<!--          <ul>-->
+<!--            <li>Ordered primers</li>-->
+<!--            <li>Completed a majority of handbook</li>-->
+<!--            <li>Developed a growth curve for <i>E. coli</i> DH5α using a spectrophotometer</li>-->
+<!--            <li>Inoculated 500 mL flask using pre-culture</li>-->
 
-      </div>
-    </div>
-  </div>
-    <section id="july">
-    <h2 class="mt-4 text-center">July</h2>
-
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingSix">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-        Week 5 (7/1/24-7/3/24)
-      </button>
-    </h2>
-    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#Notebook">
-      <div class="accordion-body">
-
-        <b>July 1:</b>
-          <ul>
-            <li>Hydrated primers</li>
-            <li>Plated bacterial stab with pBS1C primer</li>
-            <li>Considered sensitivity of lacI in model</li>
-            <li>Started CITI training in behavioral sciences research for IRB approval</li>
-            <li>Completed interview with Dr. Deborah Froh, an expert in pediatric cystic fibrosis, Dr. Kevin Lonabaugh, a clinical pharmacist, Kasey Wilburn, a registered dietitian, and Terri Quinan, executive director of the Virginia chapter of the Cystic Fibrosis Foundation. </li>
-          </ul>
-        <b>July 2:</b>
-        <ul>
-          <li>Submitted first draft of IRB protocol</li>
-          <li>Developed infographic explaining EPI for Instagram</li>
-          <li>Restreaked plates with pBS1C plasmid</li>
-          <li>Hydrated and diluted parts to create working stock for Gibson assembly</li>
-        </ul>
-        <b>July 3:</b>
-        <ul>
-          <li>Received feedback on IRB protocol; submitted second draft</li>
-          <li>Analyzed plates streaked yesterday and found that there were no single colonies</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-<br>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingSeven">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-        Week 6 (7/8/24-7/14/24)
-      </button>
-    </h2>
-    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#Notebook">
-      <div class="accordion-body">
-        <b>July 8:</b>
-        <ul>
-          <li>Started making captions for videos</li>
-          <li>Added alt-text to wiki pictures to increase accessibility for screen-reader usage</li>
-          <li>Investigated use of alphafold for 3D models integrated into computational models</li>
-          <li>Simplified MatLab SymBiology model</li>
-          <li>Started training large language model to simplify iGEM registry navigation</li>
-          <li>Streaked chloramphenicol and ampicillin plates with pBS1c</li>
-          <li>Ordered plasmid pHY300PLK for kill-switch</li>
-        </ul>
-        <b>July 9:</b>
-        <ul>
-          <li>Performed PCR and purification on parts 3B and 5A twice</li>
-          <ul>
-            <li>Both attempts were unsuccessful, but taught the team valuable skills</li>
-          </ul>
-          <li>Investigating how phosphorylation changes protein shape in model</li>
-          <li>Began coding database scraper for key components of iGEM registry for easier filtering</li>
-          <li>Modified general wiki design for increased accessibility</li>
-        </ul>
-        <b>July 10:</b>
-        <ul>
-          <li>Aimed to determine ideal concentration of chloramphenicol to add to LB-ampicillin media</li>
-          <li>Spoke with a panel of nine oncology dietitians</li>
-          <li>Completed interview with Dr. Shahid Ali, an expert in gastroenterology</li>
-          <li>Consolidated computational models</li>
-
-        </ul>
-        <b>July 11:</b>
-        <ul>
-          <li>First mini-prep of pBS1C</li>
-          <li>Observed overnight pBS1C liquid cultures from July 10</li>
-          <ul>
-            <li>Determined no growth of cells at any concentration of chloramphenicol</li>
-            <li>Investigated plasmid antibiotic resistance variability based on chassis</li>
-            <li>Streaked pBS1C onto ampicillin plates</li>
-          </ul>
-          <li>Inoculated LB-chloramphenicol media with pACYC (chloramphenicol-resistant plasmid)</li>
-          <ul>
-            <li>
-                Concentrations of chloramphenicol: 12.5 µg/mL, 25 µg/mL, 50 µg/mL, 75 µg/mL, 100, µg/mL
-            </li>
-          </ul>
-          <li>Poured new chloramphenicol plates at concentrations of 5 µg/mL, 25 µg/mL, 35 µg/mL</li>
-          <li>Completed interview with Dr. Daniel Strand, an expert in pancreatic cancer</li>
-        </ul>
-        <b>July 12:</b>
-        <ul>
-          <li>Observed ampicillin plates with pBS1C</li>
-          <li>Streaked onto chloramphenicol plates made July 11</li>
-          <li>Linearized mini-prepped pBS1C from July 11</li>
-          <ul>
-            <li>Ran linearized vector on gel to determine length (~7kb)</li>
-          </ul>
-        </ul>
-        <b>July 14:</b>
-        <ul>
-          <li>Inoculated overnight cultures of pBS1C</li>
-          <ul>
-            <li>Three cultures of 100 µg/mL ampicillin in 2 mL LB</li>
-            <li>Three cultures of 50 µg/mL ampicillin in 2 mL LB</li>
-          </ul>
-          </ul>
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingEight">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-        Week 7 (7/15/24-7/19/24)
-      </button>
-    </h2>
-    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#Notebook">
-      <div class="accordion-body">
- <b>July 15:</b>
-        <ul>
-          <li>Mini-prepped one tube of pBS1C overnight liquid culture</li>
-          <ul>
-            <li>Low yield due to expired materials and lack of experience</li>
-          </ul>
-          <li>Restriction digested with EcoRI-HF and PstI-HF in CutSmart Buffer</li>
-          <li>Made glycerol stocks with the remainder of the overnight culture</li>
-          <li>Inoculated new overnight liquid cultures: three cultures of 100 µg/mL ampicillin in 2 mL LB</li>
-        </ul>
-
-         <b>July 16:</b>
-        <ul>
-          <li>Mini-prepped overnight culture from July 15</li>
-          <ul>
-            <li>Yield from mini-prep was higher than previous attempt but still below desired range</li>
-          </ul>
-          <li>Restriction digested with EcoRI and PstI-HF in NEB r3.1 Buffer</li>
-          <ul>
-            <li>Set up two reactions of 50 µL each </li>
-          </ul>
-          <li>Ran gel with two 20 µL wells from one digested reaction</li>
-          <li>Gel was melted and unstable, and bands were smeared</li>
-          <li>Poured a new gel to run the following day</li>
-          <li>Inoculated new overnight liquid cultures of pBS1C: four cultures of 100 µg/mL ampicillin in 2 mL LB </li>
-          <li>Hydrated lyophilized pHY300PLK in nuclease-free water and transformed into competent <i>E. coli</i> JM109 </li>
-        </ul>
-        <b>July 17:</b>
-        <ul>
-          <li>Reran gel from July 16 with mini-prepped and digested template DNA</li>
-          <ul>
-            <li>Image of gel using Gel Doc EZ Imager appeared to have bright bands</li>
-            <li>After performing gel extraction, yield was very low</li>
-          </ul>
-         <li>Reattempted mini-prep to perfect technique and produce higher yield</li>
-          <ul>
-            <li>Yield was higher than previous attempts but still below desired range</li>
-          </ul>
-          <li>Restriction digested mini-prep with EcoRI-HF and PstI-HF in CutSmart Buffer</li>
-          <ul>
-            <li>Calculations for restriction digest were incorrect and thus only 300 ng (instead of 1000 ng) of DNA were used </li>
-            <li>Performed another restriction digest with correct calculation (1000 ng DNA)</li>
-          </ul>
-          <li>Ran gel with wrongly digested template DNA</li>
-          <ul>
-            <li>Image of gel using Gel Doc EZ Imager appeared to have bright bands</li>
-            <li>Will cut out bands and perform gel extraction on July 18</li>
-          </ul>
-          <li>Hydrated lyophilized <i>B. subtilis</i> 168 using potato media and plated onto potato-agar plates </li>
-          <li>Inoculated three overnight liquid cultures of pHY300PLK in 100 µg/mL ampicillin in 2 mL LB</li>
-        </ul>
-        <b>July 18:</b>
-        <ul>
-          <li>Ran gel with correctly digested template DNA from July 17</li>
-          <li>Gel extraction performed on both correctly digested template and wrongly digested template from July 17</li>
-          <ul>
-            <li>Yields for three out of four extractions were low, but one was high enough for Gibson assembly</li>
-          </ul>
-          <li>Attempted Gibson assembly with positive control and "A" parts for "Gibson plasmid A"</li>
-          <li>Transformed competent <i>E. coli</i> JM109 with "Gibson plasmid A" and positive control, and incubated</li>
-          <li>Observed <i>B. subtilis</i> 168 plates from July 17</li>
-          <ul>
-            <li>Restreaked plates, seeking single colonies</li>
-          </ul>
-          <li>Inoculated new overnight liquid cultures of pBS1C</li>
-          <ul>
-            <li>1. Two cultures containing 100 µg/mL ampicillin in 4 mL LB were grown for seven hours, and then 170 µg/mL chloramphenicol was added</li>
-            <li>2. Two cultures containing 100 µg/mL ampicillin and µg/mL chloramphenicol in 4 mL LB were grown overnight</li>
-            <li>3. Two cultures containing 100 µg/mL ampicillin in 4 mL LB were grown overnight</li>
-          </ul>
-        </ul>
-        <b>July 19:</b>
-        <ul>
-          <li>Attempted mini-prep of cultures 3 from July 18 using new Zymo mini-prep kits </li>
-          <ul>
-            <li>Yield was very high compared to previous attempts</li>
-          </ul>
-          <li>Restriction digested new mini-prepped pBS1C using EcoRI-HF and PstI-HF in CutSmart Buffer</li>
-          <li>Learned gel extraction techniques from Ms. Parker</li>
-          <li>Attempted gel extraction on restriction digested pBS1C from this morning</li>
-          <ul>
-            <li>Yield was higher than previous attempts</li>
-          </ul>
-          <li>Presented at UVA Bridge Program to educate incoming engineering students about iGEM</li>
-        </ul>
+<!--          </ul>-->
+<!--          <b>June 19:</b>-->
+<!--          <ul>-->
+<!--            <li>Attempted to measure growth curve for 500 mL flask</li>-->
+<!--            <ul>-->
+<!--              <li>Discovered an error with the culture</li>-->
+<!--            </ul>-->
+<!--            <li>Made a new pre-culture with <i>E. coli</i> JM109</li>-->
+<!--          </ul>-->
+<!--        <b>June 20:</b>-->
+<!--          <ul>-->
+<!--            <li>Inoculated two 500 mL flasks with <i>E. coli</i>J M109 pre-culture</li>-->
+<!--            <li>Developed "What is Synthetic Biology" video</li>-->
+<!--            <li>Started writing questions for interviews</li>-->
+<!--          </ul>-->
+<!--        <b>June 21:</b>-->
+<!--          <ul>-->
+<!--            <li>Performed competent cell protocol using <i>E. coli</i> JM109 culture</li>-->
+<!--            <ul>-->
+<!--              <li>Test for competency was unsuccessful due to faulty plasmid</li>-->
+<!--            </ul>-->
+<!--            <li>Practiced PCR and gel electrophoresis using spare materials</li>-->
+<!--            <li>Ran mock gel electrophoresis experiment for synthetic biology handbook</li>-->
+<!--          </ul>-->
 
 
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingNine">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-        Week 8 (7/22/24-7/26/24)
-      </button>
-    </h2>
-    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#Notebook">
-      <div class="accordion-body">
-        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTen">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-        Week 9 (7/29/24-8/2/24)
-      </button>
-    </h2>
-    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#Notebook">
-      <div class="accordion-body">
-        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
-      </div>
-    </div>
-  </div>
-    </section>
-  <section id="august">
-  <h2 class="mt-4 text-center">August</h2>
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--<br>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingFive">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">-->
+<!--        Week 4 (6/24/24-6/28/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingEleven">
-      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-        Week 10 (8/5/24-8/9/24)
-      </button>
-    </h2>
-    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#Notebook">
-      <div class="accordion-body">
-        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
-      </div>
-    </div>
-  </div>
-     </section>
-</div>
 
-</div>
+<!--          <b>June 24:</b>-->
+<!--          <ul>-->
+<!--            <li>Attempted second transformation to test competent cells using pUC19</li>-->
+<!--            <li>Completed interview with Mrs. Eleanor Nicholson, an expert in homeschool education</li>-->
+<!--            <li>Added teacher's guide to synthetic biology handbook</li>-->
+<!--            <li>Gained introduction into neural networking topics for modeling</li>-->
+<!--            <li>Updated preliminary model on lipase and colipase using values from literature</li>-->
 
-</div>
-</div>
-{% endblock %}
+<!--          </ul>-->
+<!--          <b>June 25:</b>-->
+<!--          <ul>-->
+<!--            <li>Analyzed plate of transformed cells from June 24</li>-->
+<!--            <ul>-->
+<!--              <li>Transformation was successful!</li>-->
+<!--            </ul>-->
+<!--            <li>Completed interview with Dr. Elizabeth Barnes, expert in healthcare philosophy</li>-->
+<!--            <li>Continued developing teacher's guide</li>-->
+<!--            <li>Incorporated glucose concentrations into model kinetics</li>-->
+
+<!--          </ul>-->
+<!--          <b>June 26:</b>-->
+<!--          <ul>-->
+<!--            <li>Counted transformed cells using ImageJ</li>-->
+<!--            <ul>-->
+<!--              <li>Calculated transformation efficiency</li>-->
+<!--            </ul>-->
+<!--            <li>Consolidated protocols, including PCR, gel electrophoresis, Western blot, etc</li>-->
+<!--            <li>Continued to work on different interactions fo the glycolysis and lipase expression pathways in model</li>-->
+<!--            <ul>-->
+<!--              <li>Introduced new species (ex: T7RNAP transcription, GlcT RAT binding) and new rates</li>-->
+<!--            </ul>-->
+<!--            <li>Filmed applesauce enzyme lab for synthetic biology handbook</li>-->
+<!--          </ul>-->
+<!--        <b>June 27:</b>-->
+<!--          <ul>-->
+<!--            <li>Added repression mechanism for LAcI and T7RNAP genes to model</li>-->
+<!--            <li>Completed interview with Dr. Ray Wadlow, expert in pancreatic cancer</li>-->
+<!--            <li>Updated synthetic biology handbook based on peer feedbac</li>-->
+<!--          </ul>-->
+<!--        <b>June 28:</b>-->
+<!--          <ul>-->
+<!--            <li>Started investigating mechanism of LacI repression of T7RNAP in model</li>-->
+<!--            <li>Started working on IRB forms for synthetic biology handbook focus group</li>-->
+<!--            <li>Developed experimental plan for upcoming week</li>-->
+<!--          </ul>-->
+
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--    <section id="july">-->
+<!--    <h2 class="mt-4 text-center">July</h2>-->
+
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingSix">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">-->
+<!--        Week 5 (7/1/24-7/3/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
+
+<!--        <b>July 1:</b>-->
+<!--          <ul>-->
+<!--            <li>Hydrated primers</li>-->
+<!--            <li>Plated bacterial stab with pBS1C primer</li>-->
+<!--            <li>Considered sensitivity of lacI in model</li>-->
+<!--            <li>Started CITI training in behavioral sciences research for IRB approval</li>-->
+<!--            <li>Completed interview with Dr. Deborah Froh, an expert in pediatric cystic fibrosis, Dr. Kevin Lonabaugh, a clinical pharmacist, Kasey Wilburn, a registered dietitian, and Terri Quinan, executive director of the Virginia chapter of the Cystic Fibrosis Foundation. </li>-->
+<!--          </ul>-->
+<!--        <b>July 2:</b>-->
+<!--        <ul>-->
+<!--          <li>Submitted first draft of IRB protocol</li>-->
+<!--          <li>Developed infographic explaining EPI for Instagram</li>-->
+<!--          <li>Restreaked plates with pBS1C plasmid</li>-->
+<!--          <li>Hydrated and diluted parts to create working stock for Gibson assembly</li>-->
+<!--        </ul>-->
+<!--        <b>July 3:</b>-->
+<!--        <ul>-->
+<!--          <li>Received feedback on IRB protocol; submitted second draft</li>-->
+<!--          <li>Analyzed plates streaked yesterday and found that there were no single colonies</li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--<br>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingSeven">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">-->
+<!--        Week 6 (7/8/24-7/14/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
+<!--        <b>July 8:</b>-->
+<!--        <ul>-->
+<!--          <li>Started making captions for videos</li>-->
+<!--          <li>Added alt-text to wiki pictures to increase accessibility for screen-reader usage</li>-->
+<!--          <li>Investigated use of alphafold for 3D models integrated into computational models</li>-->
+<!--          <li>Simplified MatLab SymBiology model</li>-->
+<!--          <li>Started training large language model to simplify iGEM registry navigation</li>-->
+<!--          <li>Streaked chloramphenicol and ampicillin plates with pBS1c</li>-->
+<!--          <li>Ordered plasmid pHY300PLK for kill-switch</li>-->
+<!--        </ul>-->
+<!--        <b>July 9:</b>-->
+<!--        <ul>-->
+<!--          <li>Performed PCR and purification on parts 3B and 5A twice</li>-->
+<!--          <ul>-->
+<!--            <li>Both attempts were unsuccessful, but taught the team valuable skills</li>-->
+<!--          </ul>-->
+<!--          <li>Investigating how phosphorylation changes protein shape in model</li>-->
+<!--          <li>Began coding database scraper for key components of iGEM registry for easier filtering</li>-->
+<!--          <li>Modified general wiki design for increased accessibility</li>-->
+<!--        </ul>-->
+<!--        <b>July 10:</b>-->
+<!--        <ul>-->
+<!--          <li>Aimed to determine ideal concentration of chloramphenicol to add to LB-ampicillin media</li>-->
+<!--          <li>Spoke with a panel of nine oncology dietitians</li>-->
+<!--          <li>Completed interview with Dr. Shahid Ali, an expert in gastroenterology</li>-->
+<!--          <li>Consolidated computational models</li>-->
+
+<!--        </ul>-->
+<!--        <b>July 11:</b>-->
+<!--        <ul>-->
+<!--          <li>First mini-prep of pBS1C</li>-->
+<!--          <li>Observed overnight pBS1C liquid cultures from July 10</li>-->
+<!--          <ul>-->
+<!--            <li>Determined no growth of cells at any concentration of chloramphenicol</li>-->
+<!--            <li>Investigated plasmid antibiotic resistance variability based on chassis</li>-->
+<!--            <li>Streaked pBS1C onto ampicillin plates</li>-->
+<!--          </ul>-->
+<!--          <li>Inoculated LB-chloramphenicol media with pACYC (chloramphenicol-resistant plasmid)</li>-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--                Concentrations of chloramphenicol: 12.5 µg/mL, 25 µg/mL, 50 µg/mL, 75 µg/mL, 100, µg/mL-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--          <li>Poured new chloramphenicol plates at concentrations of 5 µg/mL, 25 µg/mL, 35 µg/mL</li>-->
+<!--          <li>Completed interview with Dr. Daniel Strand, an expert in pancreatic cancer</li>-->
+<!--        </ul>-->
+<!--        <b>July 12:</b>-->
+<!--        <ul>-->
+<!--          <li>Observed ampicillin plates with pBS1C</li>-->
+<!--          <li>Streaked onto chloramphenicol plates made July 11</li>-->
+<!--          <li>Linearized mini-prepped pBS1C from July 11</li>-->
+<!--          <ul>-->
+<!--            <li>Ran linearized vector on gel to determine length (~7kb)</li>-->
+<!--          </ul>-->
+<!--        </ul>-->
+<!--        <b>July 14:</b>-->
+<!--        <ul>-->
+<!--          <li>Inoculated overnight cultures of pBS1C</li>-->
+<!--          <ul>-->
+<!--            <li>Three cultures of 100 µg/mL ampicillin in 2 mL LB</li>-->
+<!--            <li>Three cultures of 50 µg/mL ampicillin in 2 mL LB</li>-->
+<!--          </ul>-->
+<!--          </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--      <br>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingEight">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">-->
+<!--        Week 7 (7/15/24-7/19/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
+<!-- <b>July 15:</b>-->
+<!--        <ul>-->
+<!--          <li>Mini-prepped one tube of pBS1C overnight liquid culture</li>-->
+<!--          <ul>-->
+<!--            <li>Low yield due to expired materials and lack of experience</li>-->
+<!--          </ul>-->
+<!--          <li>Restriction digested with EcoRI-HF and PstI-HF in CutSmart Buffer</li>-->
+<!--          <li>Made glycerol stocks with the remainder of the overnight culture</li>-->
+<!--          <li>Inoculated new overnight liquid cultures: three cultures of 100 µg/mL ampicillin in 2 mL LB</li>-->
+<!--        </ul>-->
+
+<!--         <b>July 16:</b>-->
+<!--        <ul>-->
+<!--          <li>Mini-prepped overnight culture from July 15</li>-->
+<!--          <ul>-->
+<!--            <li>Yield from mini-prep was higher than previous attempt but still below desired range</li>-->
+<!--          </ul>-->
+<!--          <li>Restriction digested with EcoRI and PstI-HF in NEB r3.1 Buffer</li>-->
+<!--          <ul>-->
+<!--            <li>Set up two reactions of 50 µL each </li>-->
+<!--          </ul>-->
+<!--          <li>Ran gel with two 20 µL wells from one digested reaction</li>-->
+<!--          <li>Gel was melted and unstable, and bands were smeared</li>-->
+<!--          <li>Poured a new gel to run the following day</li>-->
+<!--          <li>Inoculated new overnight liquid cultures of pBS1C: four cultures of 100 µg/mL ampicillin in 2 mL LB </li>-->
+<!--          <li>Hydrated lyophilized pHY300PLK in nuclease-free water and transformed into competent <i>E. coli</i> JM109 </li>-->
+<!--        </ul>-->
+<!--        <b>July 17:</b>-->
+<!--        <ul>-->
+<!--          <li>Reran gel from July 16 with mini-prepped and digested template DNA</li>-->
+<!--          <ul>-->
+<!--            <li>Image of gel using Gel Doc EZ Imager appeared to have bright bands</li>-->
+<!--            <li>After performing gel extraction, yield was very low</li>-->
+<!--          </ul>-->
+<!--         <li>Reattempted mini-prep to perfect technique and produce higher yield</li>-->
+<!--          <ul>-->
+<!--            <li>Yield was higher than previous attempts but still below desired range</li>-->
+<!--          </ul>-->
+<!--          <li>Restriction digested mini-prep with EcoRI-HF and PstI-HF in CutSmart Buffer</li>-->
+<!--          <ul>-->
+<!--            <li>Calculations for restriction digest were incorrect and thus only 300 ng (instead of 1000 ng) of DNA were used </li>-->
+<!--            <li>Performed another restriction digest with correct calculation (1000 ng DNA)</li>-->
+<!--          </ul>-->
+<!--          <li>Ran gel with wrongly digested template DNA</li>-->
+<!--          <ul>-->
+<!--            <li>Image of gel using Gel Doc EZ Imager appeared to have bright bands</li>-->
+<!--            <li>Will cut out bands and perform gel extraction on July 18</li>-->
+<!--          </ul>-->
+<!--          <li>Hydrated lyophilized <i>B. subtilis</i> 168 using potato media and plated onto potato-agar plates </li>-->
+<!--          <li>Inoculated three overnight liquid cultures of pHY300PLK in 100 µg/mL ampicillin in 2 mL LB</li>-->
+<!--        </ul>-->
+<!--        <b>July 18:</b>-->
+<!--        <ul>-->
+<!--          <li>Ran gel with correctly digested template DNA from July 17</li>-->
+<!--          <li>Gel extraction performed on both correctly digested template and wrongly digested template from July 17</li>-->
+<!--          <ul>-->
+<!--            <li>Yields for three out of four extractions were low, but one was high enough for Gibson assembly</li>-->
+<!--          </ul>-->
+<!--          <li>Attempted Gibson assembly with positive control and "A" parts for "Gibson plasmid A"</li>-->
+<!--          <li>Transformed competent <i>E. coli</i> JM109 with "Gibson plasmid A" and positive control, and incubated</li>-->
+<!--          <li>Observed <i>B. subtilis</i> 168 plates from July 17</li>-->
+<!--          <ul>-->
+<!--            <li>Restreaked plates, seeking single colonies</li>-->
+<!--          </ul>-->
+<!--          <li>Inoculated new overnight liquid cultures of pBS1C</li>-->
+<!--          <ul>-->
+<!--            <li>1. Two cultures containing 100 µg/mL ampicillin in 4 mL LB were grown for seven hours, and then 170 µg/mL chloramphenicol was added</li>-->
+<!--            <li>2. Two cultures containing 100 µg/mL ampicillin and µg/mL chloramphenicol in 4 mL LB were grown overnight</li>-->
+<!--            <li>3. Two cultures containing 100 µg/mL ampicillin in 4 mL LB were grown overnight</li>-->
+<!--          </ul>-->
+<!--        </ul>-->
+<!--        <b>July 19:</b>-->
+<!--        <ul>-->
+<!--          <li>Attempted mini-prep of cultures 3 from July 18 using new Zymo mini-prep kits </li>-->
+<!--          <ul>-->
+<!--            <li>Yield was very high compared to previous attempts</li>-->
+<!--          </ul>-->
+<!--          <li>Restriction digested new mini-prepped pBS1C using EcoRI-HF and PstI-HF in CutSmart Buffer</li>-->
+<!--          <li>Learned gel extraction techniques from Ms. Parker</li>-->
+<!--          <li>Attempted gel extraction on restriction digested pBS1C from this morning</li>-->
+<!--          <ul>-->
+<!--            <li>Yield was higher than previous attempts</li>-->
+<!--          </ul>-->
+<!--          <li>Presented at UVA Bridge Program to educate incoming engineering students about iGEM</li>-->
+<!--        </ul>-->
+
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--      <br>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingNine">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">-->
+<!--        Week 8 (7/22/24-7/26/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
+<!--        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--      <br>-->
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingTen">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">-->
+<!--        Week 9 (7/29/24-8/2/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
+<!--        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--    </section>-->
+<!--  <section id="august">-->
+<!--  <h2 class="mt-4 text-center">August</h2>-->
+
+<!--  <div class="accordion-item">-->
+<!--    <h2 class="accordion-header" id="headingEleven">-->
+<!--      <button class="accordion-button collapsed accordion-header-style" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">-->
+<!--        Week 10 (8/5/24-8/9/24)-->
+<!--      </button>-->
+<!--    </h2>-->
+<!--    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#Notebook">-->
+<!--      <div class="accordion-body">-->
+<!--        <p><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--     </section>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+<!--{% endblock %}-->
