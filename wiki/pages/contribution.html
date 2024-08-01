@@ -37,45 +37,41 @@
   </div>
 </div>
 -->
+<style>
+#protein-viewer {
+  width: 600px;
+  height: 600px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+</style>
 <body>
-      <!-- McPC603 -->
-      <div class="pdb-struct McPC603-scFv d-flex flex-column flex-wrap align-items-center justify-content-evenly">
-        <!-- HELPER SCRIPT -->
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Create NGL Stage object
-        var stage = new NGL.Stage( "McPC603-VP", {
-          // NEED TO CHANGE THIS LATER if we change page color
-          backgroundColor: 'white',
-        });
+<div id="protein-viewer"></div>
 
-        // Load PDB
-        stage.loadFile("static/pdb/mcpc603-scFv.pdb").then(function (oMcPC603) {
-          oMcPC603.addRepresentation("surface", {
-              colorScheme: "bfactor",
-              contour: "true",
-              colorScale: "spectral",
-          });
-          oMcPC603.addRepresentation("cartoon", {
+<!-- Include NGL library from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/ngl@2.3.1/dist/ngl.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Create NGL Stage object
+  var stage = new NGL.Stage("protein-viewer", {
+      backgroundColor: 'white',
+  });
 
-          });
-          stage.setSpin(true);
-          oMcPC603.autoView();
-          
-        });
-        });
-        </script>
-        <!-- Initialize the Viewport -->
-        <div class="pdb">
-          <div id="McPC603-VP" style="width: 400px; height: 500px;"></div>
-        </div>
-        <div class="pdb-cap wrapper">
-          <h3>McPC603 scFv Ribbon and Surface Model</h3>
-          <div class="wrapper">
-            <p class="italic-text">This is a model generated from AlphaFold of the McPC603 antibody fragment. We generated models like these for our other antibodies to visualize them. Scroll to zoom in and out and click/drag to move the model around!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+  // Load PDB file
+  stage.loadFile("path/to/your/protein.pdb").then(function (component) {
+      // Add representations
+      component.addRepresentation("cartoon", {
+          color: "spectrum"
+      });
+      component.addRepresentation("surface", {
+          opacity: 0.3,
+          color: "white"
+      });
+
+      // Set auto view and enable spin
+      component.autoView();
+      stage.setSpin(true);
+  });
+});
+</script>
 {% endblock %}
