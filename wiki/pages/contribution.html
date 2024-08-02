@@ -77,13 +77,13 @@ body {
     text-align: center;
     border-radius: 50px;
     transition: transform 0.1s ease-in-out;
-    cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .button:not(.active):hover {
     color: #EDF0DA;
     background-color: #D88993;
+    cursor: pointer;
 }
 
 .button:active {
@@ -136,10 +136,8 @@ body {
           // Update button styles
           document.querySelectorAll('#controls .button').forEach(function(button) {
                     button.classList.remove('active');
-                    button.style.backgroundColor = '#8B555E';
                 });
                 button.classList.add('active');
-                button.style.backgroundColor = '#ccc';
       }
 
       // Default PDB (Lipase)
