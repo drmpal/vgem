@@ -121,16 +121,16 @@ body {
                   colorScheme: "residueindex"
               });
               component.addRepresentation("surface", {
-                  colorScheme: "atomindex",
-                  opacity: 0.3,
+                  colorScheme: "resname",
+                  opacity: 0.1,
               });
               component.autoView();
               stage.setSpin(false);
           });
 
           // Update button styles
-          document.querySelectorAll('#controls button').forEach(function(btn) {
-              btn.classList.remove('active');
+          document.querySelectorAll('#controls button').forEach(function(button) {
+              button.classList.remove('active');
           });
           button.classList.add('active');
       }
