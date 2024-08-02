@@ -38,40 +38,95 @@
 </div>
 -->
 <style>
-#protein-viewer {
-  width: 600px;
-  height: 600px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-}
+  pdb-display {
+      top: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+  }
+  #controls {
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+  }
+  button {
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+  }
+  button.active {
+      background-color: #ccc;
+  }
+  #protein-viewer {
+      width: 600px;
+      height: 600px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+  }
 </style>
 <body>
+<div id="pdb-display">
+<div id="controls">
+  <button id="lipase-button">Lipase</button>
+  <button id="colipase-button">Colipase</button>
+  <button id="complex-button">Complex</button>
+</div>
 <div id="protein-viewer"></div>
+</div>
 
 <!-- Include NGL library from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/ngl@2.3.1/dist/ngl.min.js"></script>
+
+<!-- Your custom script -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  // Create NGL Stage object
-  var stage = new NGL.Stage("protein-viewer", {
-      backgroundColor: 'white',
-  });
-
-  // Load PDB file
-  stage.loadFile('static/IntMol/AF-P16233-F1-model_v4__2_.pdb').then(function (component) {
-      // Add representations
-      component.addRepresentation("cartoon", {
-          color: "spectrum"
-      });
-      component.addRepresentation("surface", {
-          opacity: 0.3,
-          color: "white"
+  document.addEventListener("DOMContentLoaded", function () {
+      var stage = new NGL.Stage("protein-viewer", {
+          backgroundColor: 'white',
       });
 
-      // Set auto view and enable spin
-      component.autoView();
-      stage.setSpin(true);
+      // Function to load PDB file
+      function loadPDB(url, button) {
+          stage.removeAllComponents();
+          stage.loadFile(url).then(function (component) {
+              component.addRepresentation("cartoon", {
+                  colorScheme: "residueindex"
+              });
+              component.addRepresentation("surface", {
+                  colorScheme: "atomindex",
+                  opacity: 0.3,
+                  color: "white"
+              });
+              component.autoView();
+              stage.setSpin(true);
+          });
+
+          // Update button styles
+          document.querySelectorAll('#controls button').forEach(function(btn) {
+              btn.classList.remove('active');
+          });
+          button.classList.add('active');
+      }
+
+      // Default PDB (Lipase)
+      loadPDB("static/IntMol/AF-P16233-F1-model_v4__2_.pdb", document.getElementById("lipase-button"));
+
+      // Event listeners for buttons
+      document.getElementById("lipase-button").addEventListener("click", function () {
+          loadPDB("static/IntMol/AF-P16233-F1-model_v4__2_.pdb", this);
+      });
+
+      document.getElementById("colipase-button").addEventListener("click", function () {
+          loadPDB("static/IntMol/AF-P04118-F1-model_v4.pdb", this);
+      });
+
+      document.getElementById("complex-button").addEventListener("click", function () {
+          loadPDB("static/IntMol/Complex.pdb", this);
+      });
   });
-});
 </script>
+</body>
 {% endblock %}
