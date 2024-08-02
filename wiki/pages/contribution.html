@@ -39,9 +39,8 @@
 -->
 <style>
   pdb-display {
-      top: 20%;
+      margin-top: 400px;
       display: flex;
-      justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
@@ -51,16 +50,35 @@
       flex-direction: column;
       margin-right: 20px;
   }
-  button {
-      margin-bottom: 10px;
-      padding: 10px;
-      font-size: 16px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-  }
   button.active {
       background-color: #ccc;
   }
+
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    width: 120px;
+    height: auto;
+    font-size: 28px;
+    background-color: #8B555E;
+    color: #EDF0DA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    transition: transform 0.1s ease-in-out;
+}
+
+button:hover {
+    color: #EDF0DA; /* Ensure the text color stays white on hover */
+    background-color: #D88993
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
   #protein-viewer {
       width: 600px;
       height: 600px;
@@ -98,10 +116,9 @@
               component.addRepresentation("surface", {
                   colorScheme: "atomindex",
                   opacity: 0.3,
-                  color: "white"
               });
               component.autoView();
-              stage.setSpin(true);
+              stage.setSpin(false);
           });
 
           // Update button styles
