@@ -38,27 +38,34 @@
 </div>
 -->
 <style>
-  pdb-display {
+
+body {
+  justify-content: center;
+}
+
+.pdb-display {
       margin-top: 400px;
       display: flex;
       align-items: center;
       height: 100vh;
       margin: 0;
   }
+
   #controls {
       display: flex;
       flex-direction: column;
       margin-right: 20px;
   }
-  button.active {
+
+.button.active {
       background-color: #ccc;
   }
 
-  button {
+.button {
     display: inline-block;
     padding: 10px 20px;
-    margin-bottom: 10px;
-    width: 120px;
+    margin-bottom: 20%;
+    width: 240px;
     height: auto;
     font-size: 28px;
     background-color: #8B555E;
@@ -70,12 +77,12 @@
     transition: transform 0.1s ease-in-out;
 }
 
-button:hover {
+.button:hover {
     color: #EDF0DA; /* Ensure the text color stays white on hover */
     background-color: #D88993
 }
 
-button:active {
+.button:active {
     transform: scale(0.95);
 }
 
@@ -87,11 +94,11 @@ button:active {
   }
 </style>
 <body>
-<div id="pdb-display">
+<div class="pdb-display">
 <div id="controls">
-  <button id="lipase-button">Lipase</button>
-  <button id="colipase-button">Colipase</button>
-  <button id="complex-button">Complex</button>
+  <div class="button" id="lipase-button">Lipase</div>
+  <div class="button" id="colipase-button">Colipase</div>
+  <div class="button" id="complex-button">Complex</div>
 </div>
 <div id="protein-viewer"></div>
 </div>
