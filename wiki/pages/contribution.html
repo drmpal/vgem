@@ -41,6 +41,7 @@
 
 body {
   justify-content: center;
+  align-items: center;
 }
 
 .pdb-display {
@@ -54,7 +55,8 @@ body {
   #controls {
       display: flex;
       flex-direction: column;
-      margin-right: 20px;
+      margin-right: 40px;
+      margin-left: 40px;
   }
 
 .button.active {
@@ -64,7 +66,7 @@ body {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    margin-bottom: 20%;
+    margin-bottom: 30%;
     width: 240px;
     height: auto;
     font-size: 28px;
@@ -121,18 +123,21 @@ body {
                   colorScheme: "residueindex"
               });
               component.addRepresentation("surface", {
-                  colorScheme: "resname",
+                  colorScheme: "atomindex",
                   opacity: 0.1,
+                  color: "green"
               });
               component.autoView();
               stage.setSpin(false);
           });
 
           // Update button styles
-          document.querySelectorAll('#controls button').forEach(function(button) {
-              button.classList.remove('active');
-          });
-          button.classList.add('active');
+          document.querySelectorAll('#controls .buttons').forEach(function(btn) {
+                    btn.classList.remove('active');
+                    btn.style.backgroundColor = '#8B555E';
+                });
+                button.classList.add('active');
+                button.style.backgroundColor = '#ccc';
       }
 
       // Default PDB (Lipase)
