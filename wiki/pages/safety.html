@@ -47,4 +47,95 @@
   </div>
 </div>
 
+<style>
+  #imageBox {
+      width: 300px;
+      height: 300px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ccc;
+  }
+
+  #imageBox img {
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+  .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+  }
+
+  .toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 30%;
+    width: 240px;
+    height: auto;
+    font-size: 28px;
+    background-color: #8B555E;
+    color: #EDF0DA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50px;
+    transition: transform 0.1s ease-in-out;
+    transition: background-color 0.3s;
+  }
+  .toggle-button:not(.active):hover {
+    color: #EDF0DA;
+    background-color: #D88993;
+    cursor: pointer;
+  }
+
+  .toggle-button.active {
+    color: #EDF0DA;
+    background-color: #1e7995ff;
+    cursor: pointer;
+  }
+  
+</style>
+<body>
+<div id="imageBox">
+  <img id="mainImage" src="image1.jpg" alt="Image Option 1">
+</div>
+<div class="button-container">
+  <div class="toggle-button" id="button1" onclick="toggleButton(1)">Xylose</div>
+  <div class="toggle-button" id="button2" onclick="toggleButton(2)">37C</div>
+</div>
+
+<script>
+  const mainImage = document.getElementById('mainImage');
+  const button1 = document.getElementById('button1');
+  const button2 = document.getElementById('button2');
+
+  function toggleButton(buttonNumber) {
+      if (buttonNumber === 1) {
+          button1.classList.toggle('active');
+      } else if (buttonNumber === 2) {
+          button2.classList.toggle('active');
+      }
+
+      updateImage();
+  }
+
+  function updateImage() {
+      const isButton1Active = button1.classList.contains('active');
+      const isButton2Active = button2.classList.contains('active');
+
+      if (isButton1Active && isButton2Active) {
+          mainImage.src = 'https://static.igem.wiki/teams/5178/killswitch/1-with-both.webp';
+      } else if (isButton1Active) {
+          mainImage.src = 'https://static.igem.wiki/teams/5178/killswitch/3-only-xylose.webp';
+      } else if (isButton2Active) {
+          mainImage.src = 'https://static.igem.wiki/teams/5178/killswitch/2-only-heat.webp';
+      } else {
+          mainImage.src = 'https://static.igem.wiki/teams/5178/killswitch/4-none.webp';
+      }
+  }
+</script>
+
 {% endblock %}
