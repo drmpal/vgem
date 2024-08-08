@@ -185,8 +185,8 @@ section {
             <path class="arc" id="ampr" d="M350,593.649 A200,200 0 0,1 222,491.192" fill="none" stroke=#8B555E stroke-width="40"/>
         </g>
         <!-- Text labels outside the arcs -->
-        <text x="200" y="430" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 1</text>
-        <text x="550" y="430" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 2</text>
+        <text x="200" y="200" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 1</text>
+        <text x="550" y="200" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 2</text>
         <text x="550" y="570" font-family="Poppins" font-size="12" font-weight="500" fill="black">Part 3 & 4</text>
         <text x="200" y="570" font-family="Poppins" font-size="12" font-weight="500" fill="black">Amp Resistance</text>
 
@@ -270,14 +270,14 @@ document.addEventListener("DOMContentLoaded", function() {
     
     <!-- RiboJ (Green X with squiggle) -->
     <g class="riboj part-group">
-        <line class="riboJ part" x1="110" y1="62" x2="136" y2="88" stroke="green" stroke-width="5" />
-        <line class="riboJ part" x1="136" y1="62" x2="110" y2="88" stroke="green" stroke-width="5" />
-        <path class="riboJ part" d="M 123 100 Q 118 85 123 75" stroke="green" stroke-width="5" fill="none" />
+        <line class="riboj part" x1="110" y1="62" x2="136" y2="88" stroke="green" stroke-width="5" />
+        <line class="riboj part" x1="136" y1="62" x2="110" y2="88" stroke="green" stroke-width="5" />
+        <path class="riboj part" d="M 123 100 Q 118 85 123 75" stroke="green" stroke-width="5" fill="none" />
     </g>
 
     <!-- Ribosomal Binding Site (Orange Half Circle) -->
     <g class="rbs part-group"> 
-        <path class="ribosome part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
+        <path class="rbs part" d="M 150 90 A 25 25 0 1 1 200 90" fill="orange" stroke="orange" stroke-width="10" />
     </g>
 
     <!-- Terminator (Black T) -->
@@ -363,8 +363,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const partInfo = {
                 "promoter": "Promoter: Initiates transcription of the gene.",
-                "riboJ": "RiboJ: Protects RNA from degradation and improves gene expression.",
-                "ribosome": "Ribosomal Binding Site: Facilitates the binding of ribosomes for translation.",
+                "riboj": "RiboJ: Protects RNA from degradation and improves gene expression.",
+                "rbs": "Ribosomal Binding Site: Facilitates the binding of ribosomes for translation.",
                 "signal-peptide": "Signal Peptide: Directs the transport of the protein.",
                 "his6-tag": "His6 Tag: Used for protein purification.",
                 "coding-sequence": "Coding Sequence: Encodes the protein.",
